@@ -16,44 +16,38 @@
   --amber:#B85C0A;--amber-bg:#FEF2E7;--amber-border:rgba(184,92,10,0.22);
   --green:#187A3A;--green-bg:#E8F5EE;--green-border:rgba(24,122,58,0.22);
   --indigo:#2B3A98;--indigo-bg:#ECEEFC;--indigo-border:rgba(43,58,152,0.2);
-  --bg:#ECF0F8;--surface:#FFFFFF;--surface2:#F5F8FE;--surface3:#EEF3FB;
+  --bg:#ECF0F8;--surface:#FFFFFF;--surface2:#F5F8FE;
   --border:#D8E0F0;--border-soft:#E6EBF5;
   --text:#09172E;--text-mid:#243860;--text-muted:#5C6E98;--text-dim:#9AAAC8;
   --shadow-xs:0 1px 3px rgba(11,29,58,0.07);
   --shadow-sm:0 2px 8px rgba(11,29,58,0.09),0 1px 3px rgba(11,29,58,0.05);
   --shadow:0 6px 20px rgba(11,29,58,0.11),0 2px 6px rgba(11,29,58,0.06);
   --shadow-lg:0 12px 40px rgba(11,29,58,0.16),0 3px 10px rgba(11,29,58,0.08);
-  --glow-gold:0 0 0 3px rgba(200,134,10,0.18);
   --radius:18px;--radius-sm:12px;--radius-xs:8px;
 }
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:400;min-height:100vh;line-height:1.6;
-  background-image:radial-gradient(ellipse at 0% 0%,rgba(30,64,128,0.08) 0%,transparent 60%),radial-gradient(ellipse at 100% 100%,rgba(82,40,154,0.06) 0%,transparent 60%);}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;min-height:100vh;line-height:1.6;background-image:radial-gradient(ellipse at 0% 0%,rgba(30,64,128,0.08) 0%,transparent 60%),radial-gradient(ellipse at 100% 100%,rgba(82,40,154,0.06) 0%,transparent 60%)}
 .wrap{max-width:1180px;margin:0 auto;padding:2rem 1.75rem 5rem}
-
-/* ── HEADER ── */
 header{background:linear-gradient(130deg,var(--navy) 0%,#0E2B5C 50%,#152B66 100%);border-radius:var(--radius);padding:2.25rem 2.75rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
-header::before{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(200,134,10,0.22) 0%,transparent 70%);border-radius:50%;pointer-events:none}
-header::after{content:'';position:absolute;bottom:-80px;left:25%;width:360px;height:220px;background:radial-gradient(circle,rgba(82,40,154,0.14) 0%,transparent 70%);border-radius:50%;pointer-events:none}
-.header-orb{position:absolute;top:20px;right:240px;width:80px;height:80px;background:radial-gradient(circle,rgba(245,192,64,0.12) 0%,transparent 70%);border-radius:50%}
+header::before{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(200,134,10,0.22) 0%,transparent 70%);border-radius:50%}
+header::after{content:'';position:absolute;bottom:-80px;left:25%;width:360px;height:220px;background:radial-gradient(circle,rgba(82,40,154,0.14) 0%,transparent 70%);border-radius:50%}
 .header-left{position:relative;z-index:1}
 .header-eyebrow{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(245,192,64,0.7);margin-bottom:10px;font-weight:500}
 .header-left h1{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:#fff;line-height:1;letter-spacing:-0.02em}
 .header-left h1 em{color:var(--gold-bright);font-style:italic}
 .header-sub{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-top:10px}
 .header-right{text-align:right;position:relative;z-index:1}
-.date-main{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:rgba(255,255,255,0.8);letter-spacing:0.04em;margin-bottom:10px}
-.greeting-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:24px;padding:6px 16px;font-size:11px;letter-spacing:0.1em;color:var(--gold-bright);backdrop-filter:blur(8px)}
-.live-dot{width:6px;height:6px;border-radius:50%;background:var(--gold-bright);animation:blink 2.4s ease infinite;flex-shrink:0}
+.date-main{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:rgba(255,255,255,0.8);letter-spacing:0.04em;margin-bottom:8px}
+.greeting-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:24px;padding:6px 16px;font-size:11px;letter-spacing:0.1em;color:var(--gold-bright)}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--gold-bright);animation:blink 2.4s ease infinite}
 @keyframes blink{0%,100%{opacity:1;box-shadow:0 0 6px var(--gold-bright)}50%{opacity:0.3;box-shadow:none}}
-
-/* ── TABS ── */
-.tabs{display:flex;gap:3px;margin-bottom:1.75rem;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:5px;box-shadow:var(--shadow-sm);flex-wrap:wrap}
-.tab-btn{background:none;border:none;border-radius:12px;padding:9px 16px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);cursor:pointer;transition:all .22s;flex:1;min-width:70px;white-space:nowrap}
+.save-indicator{font-size:10px;color:rgba(255,255,255,0.35);margin-top:7px;display:block;min-height:14px;transition:all .3s;letter-spacing:0.05em}
+.save-indicator.saved{color:rgba(100,240,180,0.85)}
+.tabs{display:flex;gap:3px;margin-bottom:1.75rem;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:5px;box-shadow:var(--shadow-sm);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab-btn{background:none;border:none;border-radius:12px;padding:9px 15px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);cursor:pointer;transition:all .22s;white-space:nowrap;flex-shrink:0}
 .tab-btn:hover:not(.active){background:var(--surface2);color:var(--text-mid)}
 .tab-btn.active{background:linear-gradient(130deg,var(--navy) 0%,var(--navy-mid) 100%);color:#fff;box-shadow:var(--shadow-sm)}
 .tab-panel{display:none}.tab-panel.active{display:block}
-
-/* ── STATS ROW ── */
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:1.25rem}
 .stat-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 18px;text-align:center;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
 .stat-box::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px}
@@ -65,79 +59,60 @@ header::after{content:'';position:absolute;bottom:-80px;left:25%;width:360px;hei
 .stat-num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;line-height:1;margin-bottom:4px}
 .sn-teal{color:var(--teal)}.sn-navy{color:var(--navy)}.sn-violet{color:var(--violet)}.sn-gold{color:var(--gold)}
 .stat-lbl{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);font-weight:500}
-
-/* ── CUMULATIVE SCORECARD ── */
 .cum-row{display:grid;grid-template-columns:repeat(3,1fr) 1.4fr;gap:12px;margin-bottom:1.25rem}
-.cum-box{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:var(--radius-sm);padding:18px 20px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-.cum-box::after{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;background:radial-gradient(circle,rgba(255,255,255,0.06),transparent 70%);border-radius:50%}
+.cum-box{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:var(--radius-sm);padding:18px 20px;box-shadow:var(--shadow)}
 .cum-eyebrow{font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,192,64,0.65);margin-bottom:6px;font-weight:500}
 .cum-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#fff;line-height:1;margin-bottom:3px}
 .cum-lbl{font-size:10.5px;color:rgba(255,255,255,0.5)}
-.cum-ai-box{background:linear-gradient(135deg,var(--violet) 0%,#6B35B8 100%);border-radius:var(--radius-sm);padding:18px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
-.cum-ai-box::after{content:'';position:absolute;bottom:-30px;right:-30px;width:100px;height:100px;background:radial-gradient(circle,rgba(255,255,255,0.08),transparent 70%);border-radius:50%}
+.cum-ai-box{background:linear-gradient(135deg,var(--violet) 0%,#6B35B8 100%);border-radius:var(--radius-sm);padding:18px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between}
 .cum-ai-title{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:8px;font-weight:500}
 .cum-ai-text{font-size:12px;color:rgba(255,255,255,0.85);line-height:1.55;flex:1;margin-bottom:10px;font-style:italic}
-.cum-ai-btn{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.25);border-radius:8px;color:#fff;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;padding:7px 14px;cursor:pointer;transition:background .2s;letter-spacing:0.05em}
-.cum-ai-btn:hover{background:rgba(255,255,255,0.28)}
-.cum-ai-btn:disabled{opacity:.5;cursor:not-allowed}
-
-/* ── PROGRESS ── */
+.cum-ai-btn{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.25);border-radius:8px;color:#fff;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;padding:7px 14px;cursor:pointer;transition:background .2s}
+.cum-ai-btn:hover{background:rgba(255,255,255,0.28)}.cum-ai-btn:disabled{opacity:.5;cursor:not-allowed}
 .progress-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 24px;margin-bottom:1.25rem;box-shadow:var(--shadow-sm)}
 .progress-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
 .progress-label{font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);font-weight:500}
 .progress-pct{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--navy)}
 .progress-track{height:8px;background:var(--bg);border-radius:8px;overflow:hidden}
 .progress-fill{height:100%;background:linear-gradient(90deg,var(--navy) 0%,var(--navy-light) 50%,var(--gold-mid) 100%);border-radius:8px;transition:width .8s cubic-bezier(.4,0,.2,1)}
-
-/* ── GRID ── */
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-.col-wide{grid-column:span 2}
-
-/* ── CARD ── */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem 1.75rem;box-shadow:var(--shadow-sm)}
 .card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.1rem;padding-bottom:1rem;border-bottom:1px solid var(--border-soft)}
 .card-title{display:flex;align-items:center;gap:8px;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--navy);font-weight:600}
 .card-title-dot{width:7px;height:7px;border-radius:50%}
 .dot-gold{background:var(--gold)}.dot-teal{background:var(--teal)}.dot-violet{background:var(--violet)}.dot-navy{background:var(--navy)}.dot-rose{background:var(--rose)}.dot-green{background:var(--green)}.dot-amber{background:var(--amber)}
 .card-count{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--text-muted)}
-
-/* ── TASK ── */
-.task-item{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid var(--border-soft);cursor:pointer;transition:opacity .15s,background .15s;border-radius:6px}
+.task-item{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid var(--border-soft);cursor:pointer;transition:opacity .15s;border-radius:6px}
 .task-item:last-of-type{border-bottom:none}
 .task-item:hover{opacity:.82}
-.task-check{width:20px;height:20px;border:2px solid var(--border);border-radius:6px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .22s;background:transparent}
+.task-check{width:20px;height:20px;border:2px solid var(--border);border-radius:6px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .22s}
 .task-item.done .task-check{background:var(--teal);border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-bg)}
 .check-icon{display:none;width:10px;height:8px}.task-item.done .check-icon{display:block}
 .task-body{flex:1;min-width:0}
-.task-text{font-size:13.5px;color:var(--text);line-height:1.45;font-weight:400;transition:all .2s}
+.task-text{font-size:13.5px;color:var(--text);line-height:1.45;transition:all .2s}
 .task-item.done .task-text{color:var(--text-dim);text-decoration:line-through;text-decoration-color:var(--text-dim)}
 .task-time{font-size:11px;color:var(--teal);margin-top:3px;font-weight:500}
-.task-kpi-tag{font-size:9.5px;padding:2px 7px;border-radius:10px;flex-shrink:0;margin-top:3px;letter-spacing:0.03em;font-weight:600;border:1px solid;cursor:default}
-.task-tag{font-size:10px;padding:3px 9px;border-radius:12px;flex-shrink:0;margin-top:2px;letter-spacing:0.04em;font-weight:500}
+.task-kpi-tag{font-size:9.5px;padding:2px 7px;border-radius:10px;flex-shrink:0;margin-top:3px;font-weight:600;border:1px solid}
+.task-tag{font-size:10px;padding:3px 9px;border-radius:12px;flex-shrink:0;margin-top:2px;font-weight:500}
 .tag-coo{background:var(--gold-pale);color:var(--gold);border:1px solid var(--gold-border)}
 .tag-ops{background:var(--navy-soft);color:var(--navy-mid);border:1px solid rgba(11,29,58,0.15)}
 .tag-team{background:var(--teal-bg);color:var(--teal);border:1px solid var(--teal-border)}
 .del-btn{background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:18px;line-height:1;padding:0 2px;flex-shrink:0;opacity:0;transition:opacity .2s,color .2s;margin-top:1px}
 .task-item:hover .del-btn{opacity:1}.del-btn:hover{color:var(--rose)}
-
-/* ── ADD ROW ── */
-.add-row{display:flex;gap:8px;margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--border-soft)}
-.add-input{flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-xs);color:var(--text);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:400;padding:9px 14px;outline:none;transition:border-color .2s,box-shadow .2s}
+.add-row{display:flex;gap:8px;margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--border-soft);flex-wrap:wrap}
+.add-input{flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-xs);color:var(--text);font-family:'DM Sans',sans-serif;font-size:13px;padding:9px 14px;outline:none;transition:border-color .2s,box-shadow .2s}
 .add-input::placeholder{color:var(--text-dim)}
 .add-input:focus{border-color:var(--navy-mid);box-shadow:0 0 0 3px rgba(11,29,58,0.08)}
 .add-btn{background:linear-gradient(130deg,var(--navy),var(--navy-mid));border:none;border-radius:var(--radius-xs);color:#fff;font-size:22px;font-weight:300;padding:0 18px;cursor:pointer;transition:transform .15s,box-shadow .15s;line-height:1;box-shadow:var(--shadow-sm)}
 .add-btn:hover{transform:scale(1.04);box-shadow:var(--shadow)}.add-btn:active{transform:scale(0.97)}
-
-/* ── PROJECT ── */
-.project-item{padding:13px 0;border-bottom:1px solid var(--border-soft)}
-.project-item:last-child{border-bottom:none}
+.project-item{padding:13px 0;border-bottom:1px solid var(--border-soft)}.project-item:last-child{border-bottom:none}
 .project-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:9px;gap:8px}
 .project-left{flex:1;min-width:0}
 .project-name{font-size:13.5px;color:var(--text);font-weight:500}
 .project-due{font-size:11px;color:var(--text-muted);margin-top:2px}
 .project-due.overdue{color:var(--rose);font-weight:500}.project-due.soon{color:var(--amber);font-weight:500}
 .project-actions{display:flex;align-items:center;gap:6px;flex-shrink:0}
-.status-pill{font-size:10px;padding:3px 10px;border-radius:12px;letter-spacing:0.04em;cursor:pointer;transition:opacity .2s;font-weight:500}
+.status-pill{font-size:10px;padding:3px 10px;border-radius:12px;cursor:pointer;transition:opacity .2s;font-weight:500}
 .status-pill:hover{opacity:.75}
 .status-active{background:var(--navy-soft);color:var(--navy-mid);border:1px solid rgba(11,29,58,0.15)}
 .status-review{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-border)}
@@ -147,8 +122,6 @@ header::after{content:'';position:absolute;bottom:-80px;left:25%;width:360px;hei
 .bar-navy{background:linear-gradient(90deg,var(--navy),var(--navy-light))}.bar-amber{background:var(--amber)}.bar-teal{background:var(--teal)}
 .project-meta{font-size:11px;color:var(--text-muted);display:flex;justify-content:space-between;align-items:center}
 .project-meta input[type=range]{accent-color:var(--navy);cursor:pointer;width:90px}
-
-/* ── WINS ── */
 .wins-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
 .win-card{background:linear-gradient(145deg,var(--gold-pale) 0%,#FFFEF9 100%);border:1px solid var(--gold-border);border-radius:14px;padding:18px 20px;position:relative;transition:box-shadow .2s,transform .2s}
 .win-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
@@ -160,10 +133,8 @@ header::after{content:'';position:absolute;bottom:-80px;left:25%;width:360px;hei
 .win-date{font-size:10.5px;color:var(--text-dim)}
 .del-btn-win{position:absolute;top:12px;right:12px;background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:16px;opacity:0;transition:opacity .2s,color .2s}
 .win-card:hover .del-btn-win{opacity:1}.del-btn-win:hover{color:var(--rose)}
-
-/* ── WEEKLY ── */
 .week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:1.25rem}
-.week-day{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:14px 6px;text-align:center;transition:border-color .2s}
+.week-day{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:14px 6px;text-align:center}
 .week-day.today{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 100%);border-color:var(--navy)}
 .wd-label{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;font-weight:600}
 .week-day.today .wd-label{color:rgba(255,255,255,0.5)}
@@ -185,8 +156,6 @@ header::after{content:'';position:absolute;bottom:-80px;left:25%;width:360px;hei
 .history-table td{padding:10px 12px;border-bottom:1px solid var(--border-soft);color:var(--text-mid);vertical-align:top}
 .history-table tr:last-child td{border-bottom:none}
 .ht-badge{display:inline-block;font-size:10px;padding:3px 8px;border-radius:8px;font-weight:500}
-
-/* ── KPI DASHBOARD ── */
 .kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
 .kpi-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s}
 .kpi-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
@@ -201,12 +170,8 @@ header::after{content:'';position:absolute;bottom:-80px;left:25%;width:360px;hei
 .kpi-tasks-label{font-size:11px;color:var(--text-muted);margin-bottom:6px;font-weight:500}
 .kpi-task-chip{display:inline-block;font-size:10.5px;padding:3px 9px;border-radius:10px;margin:2px 3px 2px 0;border:1px solid;font-weight:400}
 .kpi-weight{font-size:10px;color:var(--text-dim);margin-top:6px}
-
-/* ── AI ANALYSIS ── */
 .ai-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(130deg,var(--violet) 0%,#7040C0 100%);border:none;border-radius:12px;color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;padding:11px 22px;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 16px rgba(82,40,154,0.35)}
-.ai-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(82,40,154,0.4)}.ai-btn:active{transform:scale(0.97)}
-.ai-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
-.ai-icon{font-size:16px}
+.ai-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(82,40,154,0.4)}.ai-btn:active{transform:scale(0.97)}.ai-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
 .ai-panel{background:linear-gradient(135deg,var(--violet-bg) 0%,#F9F5FE 100%);border:1px solid var(--violet-border);border-radius:14px;padding:20px 22px;margin-top:1rem;display:none}
 .ai-panel.visible{display:block}
 .ai-panel-title{font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--violet);font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:7px}
@@ -215,53 +180,41 @@ header::after{content:'';position:absolute;bottom:-80px;left:25%;width:360px;hei
 .ai-bar{width:100%;height:3px;background:var(--violet-bg);border-radius:3px;overflow:hidden;margin-bottom:12px}
 .ai-bar-fill{height:100%;background:var(--violet);border-radius:3px;animation:aiload 1.6s ease infinite}
 @keyframes aiload{0%{width:0%;margin-left:0}50%{width:60%;margin-left:20%}100%{width:0%;margin-left:100%}}
-
-/* ── TOOLS TAB ── */
-.tools-intro{background:linear-gradient(130deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:var(--radius-sm);padding:18px 22px;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between}
-.tools-intro-text{font-size:12.5px;color:rgba(255,255,255,0.65);line-height:1.6}
-.tools-intro-text strong{color:#fff}
-.tools-section-title{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin:0 0 10px;padding-left:2px}
 .tools-group{margin-bottom:1.5rem}
+.tools-section-title{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin:0 0 10px;padding-left:2px}
 .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
 .tool-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s,border-color .2s;box-shadow:var(--shadow-xs);cursor:pointer;position:relative;overflow:hidden}
 .tool-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;border-radius:14px 0 0 14px;opacity:0;transition:opacity .2s}
 .tool-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:rgba(11,29,58,0.2)}
 .tool-card:hover::before{opacity:1}
-.tool-jibu .tool-card:hover::before,.tool-jibu .tool-card::before{background:var(--teal)}
-.tool-ai .tool-card:hover::before,.tool-ai .tool-card::before{background:var(--violet)}
-.tool-dev .tool-card:hover::before,.tool-dev .tool-card::before{background:var(--amber)}
+.tool-jibu .tool-card::before{background:var(--teal)}.tool-ai .tool-card::before{background:var(--violet)}.tool-dev .tool-card::before{background:var(--amber)}
 .tool-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
 .tool-info{flex:1;min-width:0}
 .tool-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tool-desc{font-size:11px;color:var(--text-muted);line-height:1.4}
 .tool-arrow{font-size:14px;color:var(--text-dim);flex-shrink:0;transition:transform .2s,color .2s}
 .tool-card:hover .tool-arrow{transform:translateX(3px);color:var(--navy)}
-
-/* ── INTERNS TAB ── */
 .intern-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.25rem}
 .intern-header{background:linear-gradient(130deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:12px;padding:16px 20px;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between}
 .intern-name-block{display:flex;align-items:center;gap:12px}
-.intern-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:#fff;flex-shrink:0}
+.intern-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:#fff}
 .intern-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:#fff}
 .intern-role{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:2px}
 .intern-task-count{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--gold-bright)}
 .intern-task-lbl{font-size:10px;color:rgba(255,255,255,0.45);text-align:right}
 .intern-task-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--border-soft)}
 .intern-task-item:last-of-type{border-bottom:none}
-.intern-task-status{font-size:9.5px;padding:2px 8px;border-radius:10px;flex-shrink:0;margin-top:3px;font-weight:600;letter-spacing:0.04em;cursor:pointer;transition:opacity .2s}
+.intern-task-status{font-size:9.5px;padding:2px 8px;border-radius:10px;flex-shrink:0;margin-top:3px;font-weight:600;cursor:pointer;transition:opacity .2s}
 .intern-task-status:hover{opacity:.75}
 .ist-pending{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-border)}
 .ist-progress{background:var(--navy-soft);color:var(--navy-mid);border:1px solid rgba(11,29,58,0.15)}
 .ist-done{background:var(--teal-bg);color:var(--teal);border:1px solid var(--teal-border)}
 .intern-task-text{font-size:13px;color:var(--text);flex:1;line-height:1.45}
 .intern-task-date{font-size:10.5px;color:var(--text-dim);margin-top:2px}
-.intern-task-del{background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:16px;opacity:0;transition:opacity .2s,color .2s;flex-shrink:0;margin-top:1px}
+.intern-task-del{background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:16px;opacity:0;transition:opacity .2s,color .2s;flex-shrink:0}
 .intern-task-item:hover .intern-task-del{opacity:1}.intern-task-del:hover{color:var(--rose)}
-.handover-btn{display:inline-flex;align-items:center;gap:7px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text-mid);font-family:'DM Sans',sans-serif;font-size:11.5px;font-weight:500;padding:8px 16px;cursor:pointer;transition:all .2s;letter-spacing:0.04em}
-.handover-btn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
-.handover-btn:disabled{opacity:.5;cursor:not-allowed}
-
-/* ── SETTINGS ── */
+.handover-btn{display:inline-flex;align-items:center;gap:7px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text-mid);font-family:'DM Sans',sans-serif;font-size:11.5px;font-weight:500;padding:8px 16px;cursor:pointer;transition:all .2s}
+.handover-btn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}.handover-btn:disabled{opacity:.5;cursor:not-allowed}
 .settings-section{margin-bottom:1.5rem}
 .settings-label{font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--navy);font-weight:600;margin-bottom:8px;display:block}
 .settings-desc{font-size:12.5px;color:var(--text-muted);margin-bottom:10px;line-height:1.6}
@@ -277,37 +230,21 @@ header::after{content:'';position:absolute;bottom:-80px;left:25%;width:360px;hei
 .step-text{font-size:13px;color:var(--text-mid);line-height:1.55}
 .step-text a{color:var(--violet);font-weight:500}
 .info-box{background:var(--violet-bg);border:1px solid var(--violet-border);border-radius:10px;padding:13px 18px;margin-bottom:1.25rem;font-size:12.5px;color:var(--violet);line-height:1.65}
-
-/* ── EMPTY ── */
-.empty-state{color:var(--text-dim);font-size:12.5px;padding:18px;font-style:italic;text-align:center;background:var(--surface2);border-radius:10px;border:1px dashed var(--border);margin:4px 0}
-
-/* ── KPI SELECT ── */
 .kpi-select{flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-xs);color:var(--text);font-family:'DM Sans',sans-serif;font-size:12px;padding:9px 10px;outline:none;min-width:0}
-.kpi-select:focus{border-color:var(--navy-mid)}
-
-/* ── RESPONSIVE ── */
+.empty-state{color:var(--text-dim);font-size:12.5px;padding:18px;font-style:italic;text-align:center;background:var(--surface2);border-radius:10px;border:1px dashed var(--border);margin:4px 0}
 @media(max-width:780px){
-  .grid{grid-template-columns:1fr}.col-wide{grid-column:span 1}
-  .stats-row{grid-template-columns:repeat(2,1fr)}
-  .cum-row{grid-template-columns:1fr 1fr}
+  .grid,.intern-grid{grid-template-columns:1fr}
+  .stats-row,.cum-row{grid-template-columns:repeat(2,1fr)}
   .week-grid{grid-template-columns:repeat(4,1fr)}
-  .wins-grid{grid-template-columns:1fr}
-  .week-summary{grid-template-columns:1fr}
-  .kpi-grid{grid-template-columns:1fr}
-  .intern-grid{grid-template-columns:1fr}
-  header{flex-direction:column;align-items:flex-start;gap:1rem}
-  .header-right{text-align:left}
+  .wins-grid,.week-summary,.kpi-grid{grid-template-columns:1fr}
+  header{flex-direction:column;align-items:flex-start;gap:1rem}.header-right{text-align:left}
   .tabs{flex-wrap:wrap}
-  .tools-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 <div class="wrap">
-
-<!-- HEADER -->
 <header>
-  <div class="header-orb"></div>
   <div class="header-left">
     <div class="header-eyebrow">Executive Operations · Jibu Network</div>
     <h1>My <em>Command</em> Centre</h1>
@@ -316,10 +253,10 @@ header::after{content:'';position:absolute;bottom:-80px;left:25%;width:360px;hei
   <div class="header-right">
     <div class="date-main" id="dateBadge"></div>
     <div><div class="greeting-tag"><div class="live-dot"></div><span id="greetingText">Good morning</span></div></div>
+    <span class="save-indicator" id="saveIndicator"></span>
   </div>
 </header>
 
-<!-- TABS -->
 <div class="tabs">
   <button class="tab-btn active" data-tab="today">Today</button>
   <button class="tab-btn" data-tab="kpi">KPI Dashboard</button>
@@ -339,65 +276,37 @@ header::after{content:'';position:absolute;bottom:-80px;left:25%;width:360px;hei
     <div class="stat-box"><div class="stat-num sn-violet" id="statProjects">0</div><div class="stat-lbl">Active projects</div></div>
     <div class="stat-box"><div class="stat-num sn-gold" id="statWins">0</div><div class="stat-lbl">Solo wins</div></div>
   </div>
-
-  <!-- CUMULATIVE SCORECARD -->
   <div class="cum-row">
-    <div class="cum-box">
-      <div class="cum-eyebrow">All-time</div>
-      <div class="cum-num" id="cumTotal">0</div>
-      <div class="cum-lbl">Tasks completed ever</div>
-    </div>
-    <div class="cum-box">
-      <div class="cum-eyebrow">All-time</div>
-      <div class="cum-num" id="cumRate">0%</div>
-      <div class="cum-lbl">Avg. completion rate</div>
-    </div>
-    <div class="cum-box">
-      <div class="cum-eyebrow">Since Day 1</div>
-      <div class="cum-num" id="cumDays">0</div>
-      <div class="cum-lbl">Days tracked</div>
-    </div>
+    <div class="cum-box"><div class="cum-eyebrow">All-time</div><div class="cum-num" id="cumTotal">0</div><div class="cum-lbl">Tasks completed ever</div></div>
+    <div class="cum-box"><div class="cum-eyebrow">All-time</div><div class="cum-num" id="cumRate">0%</div><div class="cum-lbl">Avg. completion rate</div></div>
+    <div class="cum-box"><div class="cum-eyebrow">Since Day 1</div><div class="cum-num" id="cumDays">0</div><div class="cum-lbl">Days tracked</div></div>
     <div class="cum-ai-box">
       <div class="cum-ai-title">✦ Journey Reflection</div>
       <div class="cum-ai-text" id="cumAiText">Click below to get an AI reflection on your performance journey so far.</div>
       <button class="cum-ai-btn" id="cumAiBtn">Reflect on my journey</button>
     </div>
   </div>
-
   <div class="progress-wrap">
-    <div class="progress-meta">
-      <span class="progress-label">Today's completion</span>
-      <span class="progress-pct" id="pctLabel">0%</span>
-    </div>
+    <div class="progress-meta"><span class="progress-label">Today's completion</span><span class="progress-pct" id="pctLabel">0%</span></div>
     <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
   </div>
-
   <div class="grid">
     <div class="card">
-      <div class="card-header">
-        <span class="card-title"><span class="card-title-dot dot-gold"></span>Daily checklist</span>
-        <span class="card-count" id="dailyCount">0/0</span>
-      </div>
+      <div class="card-header"><span class="card-title"><span class="card-title-dot dot-gold"></span>Daily checklist</span><span class="card-count" id="dailyCount">0/0</span></div>
       <div id="dailyList"></div>
     </div>
     <div class="card">
-      <div class="card-header">
-        <span class="card-title"><span class="card-title-dot dot-teal"></span>Incoming tasks</span>
-        <span class="card-count" id="adHocCount">0 items</span>
-      </div>
+      <div class="card-header"><span class="card-title"><span class="card-title-dot dot-teal"></span>Incoming tasks</span><span class="card-count" id="adHocCount">0 items</span></div>
       <div id="adHocList"></div>
-      <div class="add-row" style="flex-wrap:wrap;gap:8px">
-        <input class="add-input" id="adHocInput" placeholder="Add incoming task…" style="flex:3;min-width:160px"/>
-        <select class="kpi-select" id="adHocKpi" style="flex:2;min-width:130px">
-          <option value="">— Link to KPI —</option>
-        </select>
-        <button class="add-btn" id="adHocAddBtn" style="flex:0 0 auto;padding:0 16px">+</button>
+      <div class="add-row">
+        <input class="add-input" id="adHocInput" placeholder="Add incoming task…" style="flex:3;min-width:140px"/>
+        <select class="kpi-select" id="adHocKpi" style="flex:2;min-width:120px"><option value="">— Link to KPI —</option></select>
+        <button class="add-btn" id="adHocAddBtn">+</button>
       </div>
     </div>
   </div>
-
   <div style="margin-top:1.25rem">
-    <button class="ai-btn" id="analyseBtn"><span class="ai-icon">✦</span> Analyse my day with AI</button>
+    <button class="ai-btn" id="analyseBtn"><span style="font-size:16px">✦</span> Analyse my day with AI</button>
     <div class="ai-panel" id="aiPanel">
       <div class="ai-panel-title">✦ AI Performance Analysis</div>
       <div class="ai-bar" id="aiBar" style="display:none"><div class="ai-bar-fill"></div></div>
@@ -409,11 +318,8 @@ header::after{content:'';position:absolute;bottom:-80px;left:25%;width:360px;hei
 <!-- KPI DASHBOARD -->
 <div class="tab-panel" id="tab-kpi">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:10px">
-    <div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--navy)">KPI Performance</h2>
-      <p style="font-size:12px;color:var(--text-muted);margin-top:3px">Based on your daily task completions this week</p>
-    </div>
-    <button class="ai-btn" id="kpiAnalyseBtn" style="font-size:12px;padding:9px 18px"><span class="ai-icon">✦</span> AI KPI Analysis</button>
+    <div><h2 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--navy)">KPI Performance</h2><p style="font-size:12px;color:var(--text-muted);margin-top:3px">Based on your daily task completions</p></div>
+    <button class="ai-btn" id="kpiAnalyseBtn" style="font-size:12px;padding:9px 18px"><span>✦</span> AI KPI Analysis</button>
   </div>
   <div class="ai-panel" id="kpiAiPanel" style="margin-bottom:1.25rem">
     <div class="ai-panel-title">✦ KPI Insight</div>
@@ -431,35 +337,24 @@ header::after{content:'';position:absolute;bottom:-80px;left:25%;width:360px;hei
     <div class="wsm-box"><div class="wsm-num" id="wkBestDay">—</div><div class="wsm-lbl">Best day this week</div></div>
   </div>
   <div class="card" style="margin-bottom:1.25rem">
-    <div class="card-header">
-      <span class="card-title"><span class="card-title-dot dot-navy"></span>Week at a glance</span>
-      <span class="card-count" id="weekRangeLabel"></span>
-    </div>
+    <div class="card-header"><span class="card-title"><span class="card-title-dot dot-navy"></span>Week at a glance</span><span class="card-count" id="weekRangeLabel"></span></div>
     <div class="week-grid" id="weekGrid"></div>
   </div>
   <div class="card">
-    <div class="card-header">
-      <span class="card-title"><span class="card-title-dot dot-teal"></span>Completed task log</span>
-      <span class="card-count" id="histCount">0 entries</span>
-    </div>
-    <div style="overflow-x:auto">
-      <table class="history-table"><thead><tr><th>Task</th><th>Type</th><th>KPI</th><th>Completed</th></tr></thead><tbody id="historyBody"></tbody></table>
-    </div>
+    <div class="card-header"><span class="card-title"><span class="card-title-dot dot-teal"></span>Completed task log</span><span class="card-count" id="histCount">0 entries</span></div>
+    <div style="overflow-x:auto"><table class="history-table"><thead><tr><th>Task</th><th>Type</th><th>KPI</th><th>Completed</th></tr></thead><tbody id="historyBody"></tbody></table></div>
   </div>
 </div>
 
 <!-- WINS -->
 <div class="tab-panel" id="tab-wins">
   <div class="card">
-    <div class="card-header">
-      <span class="card-title"><span class="card-title-dot dot-gold"></span>Solo wins &amp; achievements</span>
-      <span class="card-count" id="winsCount">0 achievements</span>
-    </div>
+    <div class="card-header"><span class="card-title"><span class="card-title-dot dot-gold"></span>Solo wins &amp; achievements</span><span class="card-count" id="winsCount">0</span></div>
     <p style="font-size:13px;color:var(--text-muted);margin-bottom:1.25rem;line-height:1.7;background:var(--navy-soft);padding:13px 18px;border-radius:10px;border-left:3px solid var(--navy)">Every project you closed, every initiative you drove — this is your record of impact. Your work deserves to be seen.</p>
     <div class="wins-grid" id="winsList"></div>
-    <div class="add-row" style="flex-wrap:wrap;gap:8px">
-      <input class="add-input" id="winInput" placeholder="Achievement title…" style="flex:2;min-width:180px"/>
-      <input class="add-input" id="winNoteInput" placeholder="Brief note about impact…" style="flex:2;min-width:160px"/>
+    <div class="add-row">
+      <input class="add-input" id="winInput" placeholder="Achievement title…" style="flex:2;min-width:170px"/>
+      <input class="add-input" id="winNoteInput" placeholder="Brief note about impact…" style="flex:2;min-width:150px"/>
       <button class="add-btn" id="winAddBtn">+</button>
     </div>
   </div>
@@ -468,15 +363,12 @@ header::after{content:'';position:absolute;bottom:-80px;left:25%;width:360px;hei
 <!-- PROJECTS -->
 <div class="tab-panel" id="tab-projects">
   <div class="card">
-    <div class="card-header">
-      <span class="card-title"><span class="card-title-dot dot-violet"></span>Active projects</span>
-      <span class="card-count" id="projCount">0 projects</span>
-    </div>
+    <div class="card-header"><span class="card-title"><span class="card-title-dot dot-violet"></span>Active projects</span><span class="card-count" id="projCount">0</span></div>
     <div id="projectList"></div>
-    <div class="add-row" style="flex-wrap:wrap;gap:8px">
-      <input class="add-input" id="projNameInput" placeholder="Project name…" style="flex:3;min-width:180px"/>
-      <input class="add-input" id="projDueInput" type="date" style="flex:1;min-width:140px"/>
-      <input class="add-input" id="projPctInput" placeholder="%" type="number" min="0" max="100" style="flex:0 0 60px"/>
+    <div class="add-row">
+      <input class="add-input" id="projNameInput" placeholder="Project name…" style="flex:3;min-width:170px"/>
+      <input class="add-input" id="projDueInput" type="date" style="flex:1;min-width:130px"/>
+      <input class="add-input" id="projPctInput" placeholder="%" type="number" min="0" max="100" style="flex:0 0 58px"/>
       <button class="add-btn" id="projAddBtn">+</button>
     </div>
   </div>
@@ -484,80 +376,34 @@ header::after{content:'';position:absolute;bottom:-80px;left:25%;width:360px;hei
 
 <!-- TOOLS -->
 <div class="tab-panel" id="tab-tools">
-  <div class="tools-intro">
-    <div class="tools-intro-text"><strong>Quick Access Hub</strong> — All your tools, one click away. No more hunting through bookmarks.</div>
+  <div style="background:linear-gradient(130deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:var(--radius-sm);padding:18px 22px;margin-bottom:1.25rem">
+    <div style="font-size:12.5px;color:rgba(255,255,255,0.65);line-height:1.6"><strong style="color:#fff">Quick Access Hub</strong> — All your tools, one click away.</div>
   </div>
-
   <div class="tools-group tool-jibu">
     <div class="tools-section-title">Jibu Systems</div>
     <div class="tools-grid">
-      <a class="tool-card" href="https://nexus.evouala.com/application/run/4685" target="_blank">
-        <div class="tool-icon" style="background:#E5F4F2;color:var(--teal)">💧</div>
-        <div class="tool-info"><div class="tool-name">Nexus / Evouala</div><div class="tool-desc">POS & franchise operations</div></div>
-        <div class="tool-arrow">→</div>
-      </a>
-      <a class="tool-card" href="https://portal.mwater.co/#/forms" target="_blank">
-        <div class="tool-icon" style="background:#E5F4F2;color:var(--teal)">📋</div>
-        <div class="tool-info"><div class="tool-name">mWater Forms</div><div class="tool-desc">Field surveys & NPS data</div></div>
-        <div class="tool-arrow">→</div>
-      </a>
-      <a class="tool-card" href="https://portal.ferntech.io/system/list" target="_blank">
-        <div class="tool-icon" style="background:#E5F4F2;color:var(--teal)">🔧</div>
-        <div class="tool-info"><div class="tool-name">Ferntech Portal</div><div class="tool-desc">System management</div></div>
-        <div class="tool-arrow">→</div>
-      </a>
-      <a class="tool-card" href="https://jibulms.frappe.cloud/app/lms" target="_blank">
-        <div class="tool-icon" style="background:#EBF0FA;color:var(--navy)">🎓</div>
-        <div class="tool-info"><div class="tool-name">Jibu LMS</div><div class="tool-desc">Learning management system</div></div>
-        <div class="tool-arrow">→</div>
-      </a>
-      <a class="tool-card" href="https://jibusupport.frappe.cloud/app/helpdesk" target="_blank">
-        <div class="tool-icon" style="background:#EBF0FA;color:var(--navy)">🎫</div>
-        <div class="tool-info"><div class="tool-name">Jibu Helpdesk</div><div class="tool-desc">Support tickets & SLA tracking</div></div>
-        <div class="tool-arrow">→</div>
-      </a>
-      <a class="tool-card" href="https://jibuposdata.frappe.cloud/insights/dashboard" target="_blank">
-        <div class="tool-icon" style="background:#EBF0FA;color:var(--navy)">📊</div>
-        <div class="tool-info"><div class="tool-name">POS Insights</div><div class="tool-desc">Data dashboards & analytics</div></div>
-        <div class="tool-arrow">→</div>
-      </a>
-      <a class="tool-card" href="https://jibuhr.frappe.cloud/app/hr" target="_blank">
-        <div class="tool-icon" style="background:#EBF0FA;color:var(--navy)">👥</div>
-        <div class="tool-info"><div class="tool-name">Jibu HR</div><div class="tool-desc">HR management & records</div></div>
-        <div class="tool-arrow">→</div>
-      </a>
+      <a class="tool-card" href="https://nexus.evouala.com/application/run/4685" target="_blank"><div class="tool-icon" style="background:#E5F4F2;color:var(--teal)">💧</div><div class="tool-info"><div class="tool-name">Nexus / Evouala</div><div class="tool-desc">POS & franchise operations</div></div><div class="tool-arrow">→</div></a>
+      <a class="tool-card" href="https://portal.mwater.co/#/forms" target="_blank"><div class="tool-icon" style="background:#E5F4F2;color:var(--teal)">📋</div><div class="tool-info"><div class="tool-name">mWater Forms</div><div class="tool-desc">Field surveys & NPS data</div></div><div class="tool-arrow">→</div></a>
+      <a class="tool-card" href="https://portal.ferntech.io/system/list" target="_blank"><div class="tool-icon" style="background:#E5F4F2;color:var(--teal)">🔧</div><div class="tool-info"><div class="tool-name">Ferntech Portal</div><div class="tool-desc">System management</div></div><div class="tool-arrow">→</div></a>
+      <a class="tool-card" href="https://jibulms.frappe.cloud/app/lms" target="_blank"><div class="tool-icon" style="background:#EBF0FA;color:var(--navy)">🎓</div><div class="tool-info"><div class="tool-name">Jibu LMS</div><div class="tool-desc">Learning management system</div></div><div class="tool-arrow">→</div></a>
+      <a class="tool-card" href="https://jibusupport.frappe.cloud/app/helpdesk" target="_blank"><div class="tool-icon" style="background:#EBF0FA;color:var(--navy)">🎫</div><div class="tool-info"><div class="tool-name">Jibu Helpdesk</div><div class="tool-desc">Support tickets & SLA tracking</div></div><div class="tool-arrow">→</div></a>
+      <a class="tool-card" href="https://jibuposdata.frappe.cloud/insights/dashboard" target="_blank"><div class="tool-icon" style="background:#EBF0FA;color:var(--navy)">📊</div><div class="tool-info"><div class="tool-name">POS Insights</div><div class="tool-desc">Data dashboards & analytics</div></div><div class="tool-arrow">→</div></a>
+      <a class="tool-card" href="https://jibuhr.frappe.cloud/app/hr" target="_blank"><div class="tool-icon" style="background:#EBF0FA;color:var(--navy)">👥</div><div class="tool-info"><div class="tool-name">Jibu HR</div><div class="tool-desc">HR management & records</div></div><div class="tool-arrow">→</div></a>
+      <a class="tool-card" href="https://jiburwanda.f.frappe.cloud/app/welcome-to-erpnext" target="_blank"><div class="tool-icon" style="background:#EBF0FA;color:var(--navy)">⚙️</div><div class="tool-info"><div class="tool-name">ERPNext Rwanda</div><div class="tool-desc">ERP & operations</div></div><div class="tool-arrow">→</div></a>
     </div>
   </div>
-
   <div class="tools-group tool-ai">
     <div class="tools-section-title">AI Tools</div>
     <div class="tools-grid">
-      <a class="tool-card" href="https://chatgpt.com/" target="_blank">
-        <div class="tool-icon" style="background:#F0EBFB;color:var(--violet)">🤖</div>
-        <div class="tool-info"><div class="tool-name">ChatGPT</div><div class="tool-desc">OpenAI conversational AI</div></div>
-        <div class="tool-arrow">→</div>
-      </a>
-      <a class="tool-card" href="https://chat.deepseek.com/" target="_blank">
-        <div class="tool-icon" style="background:#F0EBFB;color:var(--violet)">🧠</div>
-        <div class="tool-info"><div class="tool-name">DeepSeek</div><div class="tool-desc">Deep research & reasoning AI</div></div>
-        <div class="tool-arrow">→</div>
-      </a>
+      <a class="tool-card" href="https://chatgpt.com/" target="_blank"><div class="tool-icon" style="background:#F0EBFB;color:var(--violet)">🤖</div><div class="tool-info"><div class="tool-name">ChatGPT</div><div class="tool-desc">OpenAI conversational AI</div></div><div class="tool-arrow">→</div></a>
+      <a class="tool-card" href="https://chat.deepseek.com/" target="_blank"><div class="tool-icon" style="background:#F0EBFB;color:var(--violet)">🧠</div><div class="tool-info"><div class="tool-name">DeepSeek</div><div class="tool-desc">Deep research & reasoning AI</div></div><div class="tool-arrow">→</div></a>
     </div>
   </div>
-
   <div class="tools-group tool-dev">
     <div class="tools-section-title">Developer / API Tools</div>
     <div class="tools-grid">
-      <a class="tool-card" href="https://github.com/JibuCorporate/POS-Master" target="_blank">
-        <div class="tool-icon" style="background:#FEF2E7;color:var(--amber)">⌨️</div>
-        <div class="tool-info"><div class="tool-name">GitHub — POS Master</div><div class="tool-desc">Source code & version control</div></div>
-        <div class="tool-arrow">→</div>
-      </a>
-      <a class="tool-card" href="https://platform.openai.com/api-keys" target="_blank">
-        <div class="tool-icon" style="background:#FEF2E7;color:var(--amber)">🔑</div>
-        <div class="tool-info"><div class="tool-name">OpenAI API Keys</div><div class="tool-desc">Manage your API credentials</div></div>
-        <div class="tool-arrow">→</div>
-      </a>
+      <a class="tool-card" href="https://github.com/JibuCorporate/POS-Master" target="_blank"><div class="tool-icon" style="background:#FEF2E7;color:var(--amber)">⌨️</div><div class="tool-info"><div class="tool-name">GitHub — POS Master</div><div class="tool-desc">Source code & version control</div></div><div class="tool-arrow">→</div></a>
+      <a class="tool-card" href="https://platform.openai.com/api-keys" target="_blank"><div class="tool-icon" style="background:#FEF2E7;color:var(--amber)">🔑</div><div class="tool-info"><div class="tool-name">OpenAI API Keys</div><div class="tool-desc">Manage your API credentials</div></div><div class="tool-arrow">→</div></a>
     </div>
   </div>
 </div>
@@ -565,150 +411,118 @@ header::after{content:'';position:absolute;bottom:-80px;left:25%;width:360px;hei
 <!-- INTERNS -->
 <div class="tab-panel" id="tab-interns">
   <div style="background:var(--navy-soft);border-radius:10px;padding:12px 18px;margin-bottom:1.25rem;font-size:12.5px;color:var(--text-mid);line-height:1.65;border-left:3px solid var(--navy)">
-    Track what Sharon and Aalia own on the IT side. Use this as your leave cover reference — anyone can pick up exactly where things stand.
+    Track what Sharon and Aalia own on the IT side. Use this as your leave cover reference.
   </div>
-  <div class="intern-grid" id="internGrid">
-
-    <!-- SHARON -->
+  <div class="intern-grid">
     <div class="card" style="padding:0;overflow:hidden">
       <div class="intern-header">
-        <div class="intern-name-block">
-          <div class="intern-avatar" style="background:linear-gradient(135deg,var(--teal),#0DADA0)">S</div>
-          <div>
-            <div class="intern-name">Sharon</div>
-            <div class="intern-role">IT Intern</div>
-          </div>
-        </div>
-        <div style="text-align:right">
-          <div class="intern-task-count" id="sharonCount">0</div>
-          <div class="intern-task-lbl">tasks assigned</div>
-        </div>
+        <div class="intern-name-block"><div class="intern-avatar" style="background:linear-gradient(135deg,var(--teal),#0DADA0)">S</div><div><div class="intern-name">Sharon</div><div class="intern-role">IT Intern</div></div></div>
+        <div style="text-align:right"><div class="intern-task-count" id="sharonCount">0</div><div class="intern-task-lbl">tasks assigned</div></div>
       </div>
       <div style="padding:0 1.5rem">
         <div id="sharonList"></div>
-        <div class="add-row" style="flex-wrap:wrap;gap:7px">
-          <input class="add-input" id="sharonInput" placeholder="Add task for Sharon…" style="flex:3;min-width:150px"/>
-          <button class="add-btn" id="sharonAddBtn" style="padding:0 14px">+</button>
-        </div>
-        <div style="margin-top:12px;margin-bottom:16px;display:flex;gap:8px;flex-wrap:wrap">
-          <button class="handover-btn" id="sharonHandoverBtn">📋 Generate Handover Summary</button>
-        </div>
-        <div class="ai-panel" id="sharonAiPanel" style="margin-bottom:1rem">
-          <div class="ai-panel-title">✦ Sharon's Handover Brief</div>
-          <div class="ai-bar" id="sharonAiBar" style="display:none"><div class="ai-bar-fill"></div></div>
-          <div class="ai-content" id="sharonAiContent"></div>
-        </div>
+        <div class="add-row" style="gap:7px"><input class="add-input" id="sharonInput" placeholder="Add task for Sharon…" style="flex:3;min-width:140px"/><button class="add-btn" id="sharonAddBtn" style="padding:0 14px">+</button></div>
+        <div style="margin-top:12px;margin-bottom:16px"><button class="handover-btn" id="sharonHandoverBtn">📋 Generate Handover Summary</button></div>
+        <div class="ai-panel" id="sharonAiPanel" style="margin-bottom:1rem"><div class="ai-panel-title">✦ Sharon's Handover Brief</div><div class="ai-bar" id="sharonAiBar" style="display:none"><div class="ai-bar-fill"></div></div><div class="ai-content" id="sharonAiContent"></div></div>
       </div>
     </div>
-
-    <!-- AALIA -->
     <div class="card" style="padding:0;overflow:hidden">
       <div class="intern-header">
-        <div class="intern-name-block">
-          <div class="intern-avatar" style="background:linear-gradient(135deg,var(--violet),#7040C0)">A</div>
-          <div>
-            <div class="intern-name">Aalia</div>
-            <div class="intern-role">IT Intern</div>
-          </div>
-        </div>
-        <div style="text-align:right">
-          <div class="intern-task-count" id="aaliaCount">0</div>
-          <div class="intern-task-lbl">tasks assigned</div>
-        </div>
+        <div class="intern-name-block"><div class="intern-avatar" style="background:linear-gradient(135deg,var(--violet),#7040C0)">A</div><div><div class="intern-name">Aalia</div><div class="intern-role">IT Intern</div></div></div>
+        <div style="text-align:right"><div class="intern-task-count" id="aaliaCount">0</div><div class="intern-task-lbl">tasks assigned</div></div>
       </div>
       <div style="padding:0 1.5rem">
         <div id="aaliaList"></div>
-        <div class="add-row" style="flex-wrap:wrap;gap:7px">
-          <input class="add-input" id="aaliaInput" placeholder="Add task for Aalia…" style="flex:3;min-width:150px"/>
-          <button class="add-btn" id="aaliaAddBtn" style="padding:0 14px">+</button>
-        </div>
-        <div style="margin-top:12px;margin-bottom:16px;display:flex;gap:8px;flex-wrap:wrap">
-          <button class="handover-btn" id="aaliaHandoverBtn">📋 Generate Handover Summary</button>
-        </div>
-        <div class="ai-panel" id="aaliaAiPanel" style="margin-bottom:1rem">
-          <div class="ai-panel-title">✦ Aalia's Handover Brief</div>
-          <div class="ai-bar" id="aaliaAiBar" style="display:none"><div class="ai-bar-fill"></div></div>
-          <div class="ai-content" id="aaliaAiContent"></div>
-        </div>
+        <div class="add-row" style="gap:7px"><input class="add-input" id="aaliaInput" placeholder="Add task for Aalia…" style="flex:3;min-width:140px"/><button class="add-btn" id="aaliaAddBtn" style="padding:0 14px">+</button></div>
+        <div style="margin-top:12px;margin-bottom:16px"><button class="handover-btn" id="aaliaHandoverBtn">📋 Generate Handover Summary</button></div>
+        <div class="ai-panel" id="aaliaAiPanel" style="margin-bottom:1rem"><div class="ai-panel-title">✦ Aalia's Handover Brief</div><div class="ai-bar" id="aaliaAiBar" style="display:none"><div class="ai-bar-fill"></div></div><div class="ai-content" id="aaliaAiContent"></div></div>
       </div>
     </div>
-
   </div>
 </div>
 
 <!-- SETTINGS -->
 <div class="tab-panel" id="tab-settings">
   <div class="card">
-    <div class="card-header">
-      <span class="card-title"><span class="card-title-dot dot-violet"></span>AI Analysis Setup</span>
-    </div>
-    <div class="info-box">
-      ✦ This tracker uses <strong>Google Gemini</strong> for AI analysis — completely free, no credit card needed. It does <strong>not</strong> use your Claude Pro subscription.
-    </div>
+    <div class="card-header"><span class="card-title"><span class="card-title-dot dot-violet"></span>AI Analysis Setup</span></div>
+    <div class="info-box">✦ This tracker uses <strong>Google Gemini</strong> for AI analysis — completely free. It does NOT use your Claude Pro subscription.</div>
     <div class="settings-section">
       <span class="settings-label">How to get your free Gemini API key</span>
       <div class="steps-list">
         <div class="step-item"><div class="step-num">1</div><div class="step-text">Go to <a href="https://aistudio.google.com" target="_blank">aistudio.google.com</a> — sign in with your Google account</div></div>
-        <div class="step-item"><div class="step-num">2</div><div class="step-text">Click <strong>"Get API Key"</strong> in the top left menu, then <strong>"Create API Key"</strong></div></div>
-        <div class="step-item"><div class="step-num">3</div><div class="step-text">Copy the key (it starts with <strong>AIza...</strong>) and paste it below</div></div>
+        <div class="step-item"><div class="step-num">2</div><div class="step-text">Click <strong>"Get API Key"</strong> in the left menu then <strong>"Create API key in new project"</strong></div></div>
+        <div class="step-item"><div class="step-num">3</div><div class="step-text">Copy the full key (starts with <strong>AIza...</strong>) and paste it below</div></div>
         <div class="step-item"><div class="step-num">4</div><div class="step-text">Click Save — all AI buttons will now work. Free forever for normal use.</div></div>
       </div>
     </div>
     <div class="settings-section">
       <span class="settings-label">Your Gemini API Key</span>
-      <div class="settings-desc">Stored only in your browser — never sent anywhere except Google's AI servers when you click Analyse.</div>
+      <div class="settings-desc">Stored only in your browser — never sent anywhere except Google's AI when you click Analyse.</div>
       <input class="settings-input" type="password" id="apiKeyInput" placeholder="Paste your key here (AIza…)"/>
       <br/><button class="save-btn" id="saveApiKey">Save Key</button>
       <div class="success-msg" id="saveSuccess">✓ Key saved! All AI buttons will now work.</div>
     </div>
   </div>
 </div>
-
 </div>
 
 <script>
-// ── CONSTANTS & KEYS ──
+// ══ STORAGE KEYS - STABLE, NEVER CHANGE ══
 const K={
-  DAILY:'ccc_daily_v6',ADHOC:'ccc_adhoc_v6',PROJ:'ccc_proj_v6',WINS:'ccc_wins_v6',
-  DATE:'ccc_date_v6',HIST:'ccc_hist_v6',WEEK:'ccc_week_v6',APIKEY:'ccc_gemini_key',
-  CUMTOTAL:'ccc_cum_total',CUMDAYS:'ccc_cum_days',CUMRATES:'ccc_cum_rates',STARTDATE:'ccc_start_date',
-  SHARON:'ccc_sharon_v1',AALIA:'ccc_aalia_v1'
+  DAILY:'dcc_daily_v6',ADHOC:'dcc_adhoc_v6',PROJ:'dcc_proj_v6',WINS:'dcc_wins_v6',
+  DATE:'dcc_date_v6',HIST:'dcc_hist_v6',WEEK:'dcc_week_v6',APIKEY:'dcc_gemini_key',
+  CUMTOTAL:'dcc_cum_total',CUMDAYS:'dcc_cum_days',CUMRATES:'dcc_cum_rates',
+  STARTDATE:'dcc_start_date',SHARON:'dcc_sharon_v1',AALIA:'dcc_aalia_v1'
 };
+
+// ══ SAVE WITH VISIBLE INDICATOR ══
+function save(key,val){
+  try{
+    localStorage.setItem(key,JSON.stringify(val));
+    const el=document.getElementById('saveIndicator');
+    if(el){el.textContent='✓ Saved';el.classList.add('saved');clearTimeout(save._t);save._t=setTimeout(()=>{el.textContent='';el.classList.remove('saved')},2000)}
+    return true;
+  }catch(e){
+    const el=document.getElementById('saveIndicator');
+    if(el){el.textContent='⚠ Save failed';el.style.color='rgba(255,100,100,0.8)'}
+    console.error('Save failed:',e);return false;
+  }
+}
+function load(key,def){try{const r=localStorage.getItem(key);return r!==null?JSON.parse(r):def}catch{return def}}
+
 const todayStr=new Date().toDateString();
 const todayIso=new Date().toISOString().slice(0,10);
 const MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
 const DAYS=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const SHORT_DAYS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
-// ── KPI DEFINITIONS ──
 const KPIS=[
-  {id:1,area:"Executive Support",name:"COO action-item on-time closure rate",weight:10,target:"90%",dir:"higher",color:"gold"},
-  {id:2,area:"Executive Support",name:"Meeting readiness pack timeliness (agenda + pre-read ≥24hrs)",weight:8,target:"95%",dir:"higher",color:"gold"},
-  {id:3,area:"Country Coordination",name:"Country Manager deliverables on-track rate",weight:10,target:"85%",dir:"higher",color:"teal"},
-  {id:4,area:"Country Coordination",name:"Action tracker hygiene (countries updated in last 7 days)",weight:6,target:"100%",dir:"higher",color:"teal"},
-  {id:5,area:"Issue Management",name:"Escalation turnaround time (issue → assigned + plan confirmed)",weight:8,target:"<48hrs",dir:"lower",color:"rose"},
-  {id:6,area:"POS ToTs",name:"POS Champions Training execution vs plan",weight:8,target:"90%",dir:"higher",color:"violet"},
-  {id:7,area:"Projects",name:"Strategic initiative milestone on-time rate",weight:10,target:"85%",dir:"higher",color:"navy"},
-  {id:8,area:"Reporting",name:"Dashboard / reporting timeliness",weight:6,target:"95%",dir:"higher",color:"indigo"},
-  {id:9,area:"Reporting",name:"Data accuracy rate (validated reporting errors)",weight:6,target:"<2 errors",dir:"lower",color:"indigo"},
-  {id:10,area:"POS Product",name:"POS franchise voice-of-customer coverage",weight:8,target:"80%",dir:"higher",color:"amber"},
-  {id:11,area:"POS Delivery",name:"Developer delivery predictability (committed items delivered)",weight:10,target:"85%",dir:"higher",color:"amber"},
-  {id:12,area:"POS Support",name:"POS ticket SLA compliance (all priorities)",weight:10,target:"90%",dir:"higher",color:"green"},
-  {id:13,area:"POS Adoption",name:"POS usage rate (% franchises recording ≥90% of transactions)",weight:0,target:"85%",dir:"higher",color:"navy"},
-  {id:14,area:"POS Quality",name:"Repeat-issue rate (repeat incidents within 30 days)",weight:0,target:"<10%",dir:"lower",color:"rose"},
+  {id:1,area:"Executive Support",name:"COO action-item on-time closure rate",weight:10,target:"90%",color:"gold"},
+  {id:2,area:"Executive Support",name:"Meeting readiness pack timeliness (agenda + pre-read ≥24hrs)",weight:8,target:"95%",color:"gold"},
+  {id:3,area:"Country Coordination",name:"Country Manager deliverables on-track rate",weight:10,target:"85%",color:"teal"},
+  {id:4,area:"Country Coordination",name:"Action tracker hygiene (updated in last 7 days)",weight:6,target:"100%",color:"teal"},
+  {id:5,area:"Issue Management",name:"Escalation turnaround time (issue to plan confirmed)",weight:8,target:"<48hrs",color:"rose"},
+  {id:6,area:"POS ToTs",name:"POS Champions Training execution vs plan",weight:8,target:"90%",color:"violet"},
+  {id:7,area:"Projects",name:"Strategic initiative milestone on-time rate",weight:10,target:"85%",color:"navy"},
+  {id:8,area:"Reporting",name:"Dashboard / reporting timeliness",weight:6,target:"95%",color:"indigo"},
+  {id:9,area:"Reporting",name:"Data accuracy rate (validated reporting errors)",weight:6,target:"<2 errors",color:"indigo"},
+  {id:10,area:"POS Product",name:"POS franchise voice-of-customer coverage",weight:8,target:"80%",color:"amber"},
+  {id:11,area:"POS Delivery",name:"Developer delivery predictability",weight:10,target:"85%",color:"amber"},
+  {id:12,area:"POS Support",name:"POS ticket SLA compliance (all priorities)",weight:10,target:"90%",color:"green"},
+  {id:13,area:"POS Adoption",name:"POS usage rate (franchises recording ≥90% transactions)",weight:0,target:"85%",color:"navy"},
+  {id:14,area:"POS Quality",name:"Repeat-issue rate (incidents within 30 days)",weight:0,target:"<10%",color:"rose"},
 ];
-const KPI_COLORS={
-  gold:{area:'var(--gold)',bg:'var(--gold-pale)',border:'var(--gold-border)',bar:'var(--gold)'},
-  teal:{area:'var(--teal)',bg:'var(--teal-bg)',border:'var(--teal-border)',bar:'var(--teal)'},
-  rose:{area:'var(--rose)',bg:'var(--rose-bg)',border:'var(--rose-border)',bar:'var(--rose)'},
-  violet:{area:'var(--violet)',bg:'var(--violet-bg)',border:'var(--violet-border)',bar:'var(--violet)'},
-  navy:{area:'var(--navy)',bg:'var(--navy-soft)',border:'rgba(11,29,58,0.15)',bar:'var(--navy)'},
-  indigo:{area:'var(--indigo)',bg:'var(--indigo-bg)',border:'var(--indigo-border)',bar:'var(--indigo)'},
-  amber:{area:'var(--amber)',bg:'var(--amber-bg)',border:'var(--amber-border)',bar:'var(--amber)'},
-  green:{area:'var(--green)',bg:'var(--green-bg)',border:'var(--green-border)',bar:'var(--green)'},
+const KC={
+  gold:{a:'var(--gold)',bg:'var(--gold-pale)',bd:'var(--gold-border)',bar:'var(--gold)'},
+  teal:{a:'var(--teal)',bg:'var(--teal-bg)',bd:'var(--teal-border)',bar:'var(--teal)'},
+  rose:{a:'var(--rose)',bg:'var(--rose-bg)',bd:'var(--rose-border)',bar:'var(--rose)'},
+  violet:{a:'var(--violet)',bg:'var(--violet-bg)',bd:'var(--violet-border)',bar:'var(--violet)'},
+  navy:{a:'var(--navy)',bg:'var(--navy-soft)',bd:'rgba(11,29,58,0.15)',bar:'var(--navy)'},
+  indigo:{a:'var(--indigo)',bg:'var(--indigo-bg)',bd:'var(--indigo-border)',bar:'var(--indigo)'},
+  amber:{a:'var(--amber)',bg:'var(--amber-bg)',bd:'var(--amber-border)',bar:'var(--amber)'},
+  green:{a:'var(--green)',bg:'var(--green-bg)',bd:'var(--green-border)',bar:'var(--green)'},
 };
 
-// ── DEFAULT DATA ──
 const defaultDaily=[
   {id:1,text:"Ensure the COO has water in her flask",done:false,tag:"coo",completedAt:null,kpis:[1]},
   {id:2,text:"Follow-up with CMs & global leaders to update pre-reads",done:false,tag:"ops",completedAt:null,kpis:[2,3,4]},
@@ -720,40 +534,34 @@ const defaultDaily=[
 const defaultProjects=[{id:1,name:"Developer close-out — monitoring & follow-through",pct:35,status:"active",due:"",addedOn:todayIso}];
 const defaultWins=[{id:1,title:"Customer Order App",note:"Designed, built, and delivered entirely solo — end to end",addedOn:todayIso}];
 
-// ── STORAGE ──
-function load(key,def){try{const r=localStorage.getItem(key);return r!==null?JSON.parse(r):def}catch{return def}}
-function save(key,val){try{localStorage.setItem(key,JSON.stringify(val))}catch{}}
-
-// ── CUMULATIVE TRACKING INIT ──
-// Record start date if not set
-if(!localStorage.getItem(K.STARTDATE)){save(K.STARTDATE,todayIso);}
+// ══ CUMULATIVE INIT ══
+if(!localStorage.getItem(K.STARTDATE))save(K.STARTDATE,todayIso);
 let cumTotal=load(K.CUMTOTAL,0);
-let cumRates=load(K.CUMRATES,[]);// array of daily pct values
+let cumRates=load(K.CUMRATES,[]);
 
-// ── DAY RESET — only resets if truly a new calendar day ──
-let savedDate=localStorage.getItem(K.DATE);
-if(savedDate!==todayStr){
-  // Archive yesterday's data before reset
-  if(savedDate){
-    let wd=load(K.WEEK,{});
-    const pd=load(K.DAILY,defaultDaily);
-    const pa=load(K.ADHOC,[]);
-    const total=pd.length+pa.length;
-    const done=pd.filter(t=>t.done).length+pa.filter(t=>t.done).length;
-    const pct=total?Math.round(done/total*100):0;
-    wd[savedDate]={total,done,pct};
-    save(K.WEEK,wd);
-    // Accumulate cumulative
-    cumTotal+=done;
-    save(K.CUMTOTAL,cumTotal);
-    if(total>0){cumRates.push(pct);save(K.CUMRATES,cumRates);}
-    // Carry forward incomplete adhoc tasks
-    save(K.ADHOC,pa.filter(t=>!t.done));
-  }
-  save(K.DATE,todayStr);
-  save(K.DAILY,defaultDaily.map(t=>({...t,done:false,completedAt:null})));
+// ══ DAY RESET - runs once per new calendar day ══
+const savedDate=localStorage.getItem(K.DATE);
+if(savedDate && savedDate!==todayStr){
+  const wd=load(K.WEEK,{});
+  const pd=load(K.DAILY,defaultDaily);
+  const pa=load(K.ADHOC,[]);
+  const total=pd.length+pa.length;
+  const done=pd.filter(t=>t.done).length+pa.filter(t=>t.done).length;
+  const pct=total?Math.round(done/total*100):0;
+  wd[savedDate]={total,done,pct};
+  localStorage.setItem(K.WEEK,JSON.stringify(wd));
+  cumTotal+=done;
+  localStorage.setItem(K.CUMTOTAL,JSON.stringify(cumTotal));
+  if(total>0){cumRates.push(pct);localStorage.setItem(K.CUMRATES,JSON.stringify(cumRates));}
+  localStorage.setItem(K.ADHOC,JSON.stringify(pa.filter(t=>!t.done)));
+  localStorage.setItem(K.DAILY,JSON.stringify(defaultDaily.map(t=>({...t,done:false,completedAt:null}))));
+}
+if(!savedDate||savedDate!==todayStr){
+  localStorage.setItem(K.DATE,todayStr);
+  if(!savedDate)localStorage.setItem(K.DAILY,JSON.stringify(defaultDaily.map(t=>({...t,done:false,completedAt:null}))));
 }
 
+// ══ LOAD STATE ══
 let daily=load(K.DAILY,defaultDaily);
 let adhoc=load(K.ADHOC,[]);
 let projects=load(K.PROJ,defaultProjects);
@@ -763,74 +571,55 @@ let history=load(K.HIST,[]);
 let sharonTasks=load(K.SHARON,[]);
 let aaliaTasks=load(K.AALIA,[]);
 
-// ── DATE & GREETING ──
+// ══ DATE & GREETING ══
 const now=new Date();const h=now.getHours();
 document.getElementById('dateBadge').textContent=DAYS[now.getDay()]+' · '+now.getDate()+' '+MONTHS[now.getMonth()]+' '+now.getFullYear();
-document.getElementById('greetingText').textContent=h<12?'Good morning, Doreen':h<17?'Good afternoon, Doreen':'Good evening, Doreen';
+document.getElementById('greetingText').textContent=(h<12?'Good morning':h<17?'Good afternoon':'Good evening')+', Doreen';
 
-// ── TABS ──
+// ══ TABS ══
 document.querySelectorAll('.tab-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
     document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+    btn.classList.add('active');document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
     if(btn.dataset.tab==='weekly')renderWeekly();
     if(btn.dataset.tab==='kpi')renderKpiDashboard();
   });
 });
 
-// ── HELPERS ──
-function fmtTime(iso){if(!iso)return'';const d=new Date(iso);return d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}
+// ══ HELPERS ══
+function fmtTime(iso){if(!iso)return'';return new Date(iso).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}
 function fmtDate(iso){if(!iso)return'';const d=new Date(iso+'T00:00:00');return d.getDate()+' '+MONTHS[d.getMonth()].slice(0,3)+' '+d.getFullYear()}
 function daysUntil(iso){if(!iso)return null;return Math.round((new Date(iso+'T00:00:00')-new Date(todayStr))/86400000)}
-function checkSVG(){return`<svg class="check-icon" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.8 7L9 1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`}
-function tagClass(t){return t==='coo'?'tag-coo':t==='ops'?'tag-ops':'tag-team'}
-function tagLabel(t){return t==='coo'?'COO':t==='ops'?'Ops':'Team'}
-function kpiColor(id){const k=KPIS.find(x=>x.id===id);return k?KPI_COLORS[k.color]:KPI_COLORS.navy}
-function getKpiScore(kpiId){
-  const linked=daily.filter(t=>(t.kpis||[]).includes(kpiId));
-  const adhocLinked=adhoc.filter(t=>t.kpi===kpiId);
-  const all=[...linked,...adhocLinked];
-  if(!all.length)return null;
-  return Math.round(all.filter(t=>t.done).length/all.length*100);
+function ckSVG(){return'<svg class="check-icon" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.8 7L9 1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'}
+function tagCls(t){return t==='coo'?'tag-coo':t==='ops'?'tag-ops':'tag-team'}
+function tagLbl(t){return t==='coo'?'COO':t==='ops'?'Ops':'Team'}
+function kc(id){const k=KPIS.find(x=>x.id===id);return k?KC[k.color]:KC.navy}
+function kScore(kid){
+  const all=[...daily.filter(t=>(t.kpis||[]).includes(kid)),...adhoc.filter(t=>t.kpi===kid)];
+  return all.length?Math.round(all.filter(t=>t.done).length/all.length*100):null;
 }
-
-// ── KPI SELECT ──
 function populateKpiSelect(){
-  const sel=document.getElementById('adHocKpi');
-  sel.innerHTML='<option value="">— Link to KPI —</option>';
-  KPIS.forEach(k=>{
-    const o=document.createElement('option');o.value=k.id;o.textContent='KPI '+k.id+': '+k.area;sel.appendChild(o);
-  });
+  const s=document.getElementById('adHocKpi');s.innerHTML='<option value="">— Link to KPI —</option>';
+  KPIS.forEach(k=>{const o=document.createElement('option');o.value=k.id;o.textContent='KPI '+k.id+': '+k.area;s.appendChild(o)});
 }
 populateKpiSelect();
-
-// ── LOG HISTORY ──
 function logHistory(text,type,iso,kpis){
   history.unshift({text,type,iso:iso||new Date().toISOString(),kpis:kpis||[]});
-  if(history.length>200)history=history.slice(0,200);
-  save(K.HIST,history);
+  if(history.length>300)history=history.slice(0,300);save(K.HIST,history);
 }
 
-// ── RENDER DAILY ──
+// ══ RENDER DAILY ══
 function renderDaily(){
   const el=document.getElementById('dailyList');
-  const done=daily.filter(t=>t.done).length;
-  document.getElementById('dailyCount').textContent=done+'/'+daily.length;
+  const dn=daily.filter(t=>t.done).length;
+  document.getElementById('dailyCount').textContent=dn+'/'+daily.length;
   el.innerHTML=daily.map(t=>{
-    const kpiTags=(t.kpis||[]).map(kid=>{
-      const c=kpiColor(kid);
-      return`<span class="task-kpi-tag" style="background:${c.bg};color:${c.area};border-color:${c.border}">KPI ${kid}</span>`;
-    }).join('');
+    const chips=(t.kpis||[]).map(kid=>{const c=kc(kid);return`<span class="task-kpi-tag" style="background:${c.bg};color:${c.a};border-color:${c.bd}">KPI ${kid}</span>`}).join('');
     return`<div class="task-item${t.done?' done':''}" data-id="${t.id}">
-      <div class="task-check">${checkSVG()}</div>
-      <div class="task-body">
-        <div class="task-text">${t.text}</div>
-        <div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:4px">${kpiTags}</div>
-        ${t.completedAt?`<div class="task-time">✓ Done at ${fmtTime(t.completedAt)}</div>`:''}
-      </div>
-      ${t.tag?`<span class="task-tag ${tagClass(t.tag)}">${tagLabel(t.tag)}</span>`:''}
+      <div class="task-check">${ckSVG()}</div>
+      <div class="task-body"><div class="task-text">${t.text}</div><div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:4px">${chips}</div>${t.completedAt?`<div class="task-time">✓ Done at ${fmtTime(t.completedAt)}</div>`:''}</div>
+      ${t.tag?`<span class="task-tag ${tagCls(t.tag)}">${tagLbl(t.tag)}</span>`:''}
     </div>`;
   }).join('');
   el.querySelectorAll('.task-item').forEach(row=>{
@@ -843,20 +632,16 @@ function renderDaily(){
   });
 }
 
-// ── RENDER ADHOC ──
+// ══ RENDER ADHOC ══
 function renderAdHoc(){
   const el=document.getElementById('adHocList');
   document.getElementById('adHocCount').textContent=adhoc.length+' item'+(adhoc.length!==1?'s':'');
-  if(!adhoc.length){el.innerHTML=`<div class="empty-state">No incoming tasks — you're all clear!</div>`;return}
+  if(!adhoc.length){el.innerHTML='<div class="empty-state">No incoming tasks — all clear!</div>';return}
   el.innerHTML=adhoc.map(t=>{
-    const kpiTag=t.kpi?`<span class="task-kpi-tag" style="background:${kpiColor(t.kpi).bg};color:${kpiColor(t.kpi).area};border-color:${kpiColor(t.kpi).border}">KPI ${t.kpi}</span>`:'';
+    const chip=t.kpi?`<span class="task-kpi-tag" style="background:${kc(t.kpi).bg};color:${kc(t.kpi).a};border-color:${kc(t.kpi).bd}">KPI ${t.kpi}</span>`:'';
     return`<div class="task-item${t.done?' done':''}" data-id="${t.id}">
-      <div class="task-check">${checkSVG()}</div>
-      <div class="task-body">
-        <div class="task-text">${t.text}</div>
-        <div style="margin-top:4px">${kpiTag}</div>
-        ${t.completedAt?`<div class="task-time">✓ Done at ${fmtTime(t.completedAt)}</div>`:''}
-      </div>
+      <div class="task-check">${ckSVG()}</div>
+      <div class="task-body"><div class="task-text">${t.text}</div><div style="margin-top:4px">${chip}</div>${t.completedAt?`<div class="task-time">✓ Done at ${fmtTime(t.completedAt)}</div>`:''}</div>
       <button class="del-btn" data-dela="${t.id}">×</button>
     </div>`;
   }).join('');
@@ -869,417 +654,225 @@ function renderAdHoc(){
       save(K.ADHOC,adhoc);renderAll();
     });
   });
-  el.querySelectorAll('[data-dela]').forEach(btn=>{
-    btn.addEventListener('click',e=>{e.stopPropagation();adhoc=adhoc.filter(t=>t.id!==+btn.dataset.dela);save(K.ADHOC,adhoc);renderAll();});
-  });
+  el.querySelectorAll('[data-dela]').forEach(btn=>{btn.addEventListener('click',e=>{e.stopPropagation();adhoc=adhoc.filter(t=>t.id!==+btn.dataset.dela);save(K.ADHOC,adhoc);renderAll()})});
 }
 
-// ── KPI DASHBOARD ──
+// ══ KPI DASHBOARD ══
 function renderKpiDashboard(){
-  const grid=document.getElementById('kpiGrid');
-  grid.innerHTML=KPIS.map(k=>{
-    const s=getKpiScore(k.id);const c=KPI_COLORS[k.color];
-    const pct=s!==null?s:0;
+  document.getElementById('kpiGrid').innerHTML=KPIS.map(k=>{
+    const s=kScore(k.id);const c=KC[k.color];const pct=s||0;
     const linked=[...daily.filter(t=>(t.kpis||[]).includes(k.id)),...adhoc.filter(t=>t.kpi===k.id)];
-    const chips=linked.length?linked.map(t=>`<span class="kpi-task-chip" style="background:${c.bg};color:${c.area};border-color:${c.border}">${t.done?'✓ ':''} ${t.text.slice(0,36)}${t.text.length>36?'…':''}</span>`).join(''):`<span style="font-size:12px;color:var(--text-dim);font-style:italic">No tasks linked today</span>`;
-    return`<div class="kpi-card">
-      <div class="kpi-card-top">
-        <div>
-          <div class="kpi-area" style="color:${c.area}">${k.area}</div>
-          <div class="kpi-name">${k.name}</div>
-        </div>
-        <div class="kpi-score-wrap">
-          <div class="kpi-score" style="color:${c.area}">${s!==null?s+'%':'—'}</div>
-          <div class="kpi-target">Target: ${k.target}</div>
-        </div>
-      </div>
-      <div class="kpi-bar-track"><div class="kpi-bar-fill" style="width:${pct}%;background:${c.bar}"></div></div>
-      <div class="kpi-tasks-label">Linked tasks:</div>
-      <div>${chips}</div>
-      ${k.weight?`<div class="kpi-weight">Weight: ${k.weight}%</div>`:``}
-    </div>`;
+    const chips=linked.length?linked.map(t=>`<span class="kpi-task-chip" style="background:${c.bg};color:${c.a};border-color:${c.bd}">${t.done?'✓ ':''} ${t.text.slice(0,36)}${t.text.length>36?'…':''}</span>`).join(''):'<span style="font-size:12px;color:var(--text-dim);font-style:italic">No tasks linked today</span>';
+    return`<div class="kpi-card"><div class="kpi-card-top"><div><div class="kpi-area" style="color:${c.a}">${k.area}</div><div class="kpi-name">${k.name}</div></div><div class="kpi-score-wrap"><div class="kpi-score" style="color:${c.a}">${s!==null?s+'%':'—'}</div><div class="kpi-target">Target: ${k.target}</div></div></div><div class="kpi-bar-track"><div class="kpi-bar-fill" style="width:${pct}%;background:${c.bar}"></div></div><div class="kpi-tasks-label">Linked tasks:</div><div>${chips}</div>${k.weight?`<div class="kpi-weight">Weight: ${k.weight}%</div>`:''}</div>`;
   }).join('');
 }
 
-// ── PROJECTS ──
-function statusClass(s){return s==='active'?'status-active':s==='review'?'status-review':'status-done'}
-function statusLabel(s){return s==='active'?'In progress':s==='review'?'Under review':'Closed'}
-function barClass(s){return s==='active'?'bar-navy':s==='review'?'bar-amber':'bar-teal'}
+// ══ PROJECTS ══
+function sCls(s){return s==='active'?'status-active':s==='review'?'status-review':'status-done'}
+function sLbl(s){return s==='active'?'In progress':s==='review'?'Under review':'Closed'}
+function bCls(s){return s==='active'?'bar-navy':s==='review'?'bar-amber':'bar-teal'}
 function renderProjects(){
   const el=document.getElementById('projectList');
   document.getElementById('projCount').textContent=projects.length+' project'+(projects.length!==1?'s':'');
-  if(!projects.length){el.innerHTML=`<div class="empty-state">No projects yet — add one below.</div>`;return}
+  if(!projects.length){el.innerHTML='<div class="empty-state">No projects yet.</div>';return}
   el.innerHTML=projects.map(p=>{
-    const du=p.due?daysUntil(p.due):null;
-    let dueCls='',dueText='';
-    if(p.due){if(du<0){dueCls='overdue';dueText='Overdue by '+Math.abs(du)+' day'+(Math.abs(du)!==1?'s':'')}else if(du===0){dueCls='soon';dueText='Due today'}else if(du<=3){dueCls='soon';dueText='Due in '+du+' day'+(du!==1?'s':'')}else{dueText='Due '+fmtDate(p.due)}}
-    return`<div class="project-item">
-      <div class="project-top">
-        <div class="project-left">
-          <div class="project-name">${p.name}</div>
-          ${dueText?`<div class="project-due ${dueCls}">${dueText}</div>`:''}
-        </div>
-        <div class="project-actions">
-          <span class="status-pill ${statusClass(p.status)}" data-cycle="${p.id}">${statusLabel(p.status)}</span>
-          <button class="del-btn" data-delp="${p.id}" style="opacity:1">×</button>
-        </div>
-      </div>
-      <div class="project-bar-track"><div class="project-bar-fill ${barClass(p.status)}" style="width:${p.pct}%"></div></div>
-      <div class="project-meta"><span>${p.pct}% complete</span><input type="range" min="0" max="100" step="1" value="${p.pct}" data-pid="${p.id}"/></div>
-    </div>`;
+    const du=p.due?daysUntil(p.due):null;let dC='',dT='';
+    if(p.due){if(du<0){dC='overdue';dT='Overdue by '+Math.abs(du)+' day'+(Math.abs(du)!==1?'s':'')}else if(du===0){dC='soon';dT='Due today'}else if(du<=3){dC='soon';dT='Due in '+du+' day'+(du!==1?'s':'')}else dT='Due '+fmtDate(p.due)}
+    return`<div class="project-item"><div class="project-top"><div class="project-left"><div class="project-name">${p.name}</div>${dT?`<div class="project-due ${dC}">${dT}</div>`:''}</div><div class="project-actions"><span class="status-pill ${sCls(p.status)}" data-cycle="${p.id}">${sLbl(p.status)}</span><button class="del-btn" data-delp="${p.id}" style="opacity:1">×</button></div></div><div class="project-bar-track"><div class="project-bar-fill ${bCls(p.status)}" style="width:${p.pct}%"></div></div><div class="project-meta"><span>${p.pct}% complete</span><input type="range" min="0" max="100" step="1" value="${p.pct}" data-pid="${p.id}"/></div></div>`;
   }).join('');
   el.querySelectorAll('input[type=range]').forEach(sl=>{sl.addEventListener('input',()=>{const p=projects.find(x=>x.id===+sl.dataset.pid);if(p){p.pct=+sl.value;save(K.PROJ,projects);renderAll()}})});
   el.querySelectorAll('[data-cycle]').forEach(btn=>{btn.addEventListener('click',()=>{const p=projects.find(x=>x.id===+btn.dataset.cycle);if(p){const c=['active','review','done'];p.status=c[(c.indexOf(p.status)+1)%c.length];save(K.PROJ,projects);renderAll()}})});
   el.querySelectorAll('[data-delp]').forEach(btn=>{btn.addEventListener('click',()=>{projects=projects.filter(p=>p.id!==+btn.dataset.delp);save(K.PROJ,projects);renderAll()})});
 }
 
-// ── WINS ──
+// ══ WINS ══
 function renderWins(){
   const el=document.getElementById('winsList');
   document.getElementById('winsCount').textContent=wins.length+' achievement'+(wins.length!==1?'s':'');
-  if(!wins.length){el.innerHTML=`<div class="empty-state">Your wins will appear here. Start adding them!</div>`;return}
-  el.innerHTML=wins.map(w=>`<div class="win-card">
-    <button class="del-btn-win" data-delw="${w.id}">×</button>
-    <div class="win-badge"><svg class="star-icon" viewBox="0 0 12 12"><path d="M6 1l1.2 3.6H11l-3 2.2 1.1 3.6L6 8.2l-3.1 2.2L4 6.8 1 4.6h3.8z"/></svg>Solo achievement</div>
-    <div class="win-title">${w.title}</div>
-    ${w.note?`<div class="win-note">${w.note}</div>`:''}
-    ${w.addedOn?`<div class="win-date">Logged ${fmtDate(w.addedOn)}</div>`:''}
-  </div>`).join('');
+  if(!wins.length){el.innerHTML='<div class="empty-state">Your wins will appear here!</div>';return}
+  el.innerHTML=wins.map(w=>`<div class="win-card"><button class="del-btn-win" data-delw="${w.id}">×</button><div class="win-badge"><svg class="star-icon" viewBox="0 0 12 12"><path d="M6 1l1.2 3.6H11l-3 2.2 1.1 3.6L6 8.2l-3.1 2.2L4 6.8 1 4.6h3.8z"/></svg>Solo achievement</div><div class="win-title">${w.title}</div>${w.note?`<div class="win-note">${w.note}</div>`:''}<div class="win-date">Logged ${fmtDate(w.addedOn)}</div></div>`).join('');
   el.querySelectorAll('[data-delw]').forEach(btn=>{btn.addEventListener('click',()=>{wins=wins.filter(w=>w.id!==+btn.dataset.delw);save(K.WINS,wins);renderAll()})});
 }
 
-// ── WEEKLY ──
+// ══ WEEKLY ══
 function renderWeekly(){
-  const today=new Date();
-  const monday=new Date(today);monday.setDate(today.getDate()-((today.getDay()+6)%7));
-  const days=Array.from({length:7},(_,i)=>{const d=new Date(monday);d.setDate(monday.getDate()+i);return d});
+  const today=new Date();const mon=new Date(today);mon.setDate(today.getDate()-((today.getDay()+6)%7));
+  const days=Array.from({length:7},(_,i)=>{const d=new Date(mon);d.setDate(mon.getDate()+i);return d});
   document.getElementById('weekRangeLabel').textContent=days[0].getDate()+' '+MONTHS[days[0].getMonth()].slice(0,3)+' – '+days[6].getDate()+' '+MONTHS[days[6].getMonth()].slice(0,3);
   document.getElementById('weekGrid').innerHTML=days.map(d=>{
-    const ds=d.toDateString();const isToday=ds===todayStr;let pct=0,label='—';
-    if(isToday){const total=daily.length+adhoc.length;const done=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;pct=total?Math.round(done/total*100):0;label=pct+'%'}
-    else if(weekData[ds]){pct=weekData[ds].pct||0;label=pct+'%'}
-    return`<div class="week-day${isToday?' today':''}">
-      <div class="wd-label">${SHORT_DAYS[d.getDay()]}</div><div class="wd-date">${d.getDate()}</div>
-      <div class="wd-bar-wrap"><div class="wd-bar"><div class="wd-bar-fill" style="height:${pct}%"></div></div></div>
-      <div class="wd-pct">${label}</div>
-    </div>`;
+    const ds=d.toDateString();const iT=ds===todayStr;let pct=0,lbl='—';
+    if(iT){const tot=daily.length+adhoc.length;const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;pct=tot?Math.round(dn/tot*100):0;lbl=pct+'%'}
+    else if(weekData[ds]){pct=weekData[ds].pct||0;lbl=pct+'%'}
+    return`<div class="week-day${iT?' today':''}"><div class="wd-label">${SHORT_DAYS[d.getDay()]}</div><div class="wd-date">${d.getDate()}</div><div class="wd-bar-wrap"><div class="wd-bar"><div class="wd-bar-fill" style="height:${pct}%"></div></div></div><div class="wd-pct">${lbl}</div></div>`;
   }).join('');
-  const allPcts=days.map(d=>{const ds=d.toDateString();if(ds===todayStr){const total=daily.length+adhoc.length;const done=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;return{pct:total?Math.round(done/total*100):0,label:SHORT_DAYS[d.getDay()],has:total>0}}return weekData[ds]?{pct:weekData[ds].pct,label:SHORT_DAYS[d.getDay()],has:true}:{pct:0,label:SHORT_DAYS[d.getDay()],has:false}});
-  const active=allPcts.filter(x=>x.has);
-  const totalDone=days.reduce((acc,d)=>{const ds=d.toDateString();if(ds===todayStr)return acc+daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;return acc+(weekData[ds]?weekData[ds].done:0)},0);
-  const avg=active.length?Math.round(active.reduce((a,x)=>a+x.pct,0)/active.length):0;
-  const best=active.length?active.reduce((a,b)=>a.pct>=b.pct?a:b):null;
-  document.getElementById('wkTotalTasks').textContent=totalDone;
-  document.getElementById('wkAvgPct').textContent=avg+'%';
-  document.getElementById('wkBestDay').textContent=best?best.label:'—';
+  const allP=days.map(d=>{const ds=d.toDateString();if(ds===todayStr){const tot=daily.length+adhoc.length;const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;return{pct:tot?Math.round(dn/tot*100):0,lbl:SHORT_DAYS[d.getDay()],has:tot>0}}return weekData[ds]?{pct:weekData[ds].pct,lbl:SHORT_DAYS[d.getDay()],has:true}:{pct:0,lbl:'',has:false}});
+  const act=allP.filter(x=>x.has);
+  const totDn=days.reduce((acc,d)=>{const ds=d.toDateString();if(ds===todayStr)return acc+daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;return acc+(weekData[ds]?weekData[ds].done:0)},0);
+  const avg=act.length?Math.round(act.reduce((a,x)=>a+x.pct,0)/act.length):0;
+  const best=act.length?act.reduce((a,b)=>a.pct>=b.pct?a:b):null;
+  document.getElementById('wkTotalTasks').textContent=totDn;document.getElementById('wkAvgPct').textContent=avg+'%';document.getElementById('wkBestDay').textContent=best?best.lbl:'—';
   const hb=document.getElementById('historyBody');
   document.getElementById('histCount').textContent=history.length+' entr'+(history.length!==1?'ies':'y');
-  if(!history.length){hb.innerHTML=`<tr><td colspan="4" style="color:var(--text-dim);font-style:italic;padding:16px">Completed tasks will appear here.</td></tr>`;return}
+  if(!history.length){hb.innerHTML='<tr><td colspan="4" style="color:var(--text-dim);font-style:italic;padding:16px">Completed tasks will appear here.</td></tr>';return}
   hb.innerHTML=history.slice(0,60).map(h=>{
-    const isDaily=h.type==='Daily';
-    const bg=isDaily?'var(--gold-pale)':'var(--teal-bg)';const cl=isDaily?'var(--gold)':'var(--teal)';const bd=isDaily?'1px solid var(--gold-border)':'1px solid var(--teal-border)';
+    const iD=h.type==='Daily';const bg=iD?'var(--gold-pale)':'var(--teal-bg)';const cl=iD?'var(--gold)':'var(--teal)';const bd=iD?'1px solid var(--gold-border)':'1px solid var(--teal-border)';
     const d=new Date(h.iso);
-    const kpiStr=(h.kpis||[]).map(k=>`<span style="font-size:9.5px;background:var(--navy-soft);color:var(--navy);padding:1px 5px;border-radius:6px;margin-right:2px">KPI${k}</span>`).join('');
-    return`<tr><td style="color:var(--text)">${h.text}</td><td><span class="ht-badge" style="background:${bg};color:${cl};border:${bd}">${h.type}</span></td><td>${kpiStr||'—'}</td><td style="white-space:nowrap;color:var(--text-muted)">${d.toLocaleDateString([],{weekday:'short',day:'numeric',month:'short'})} · ${d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</td></tr>`;
+    const ks=(h.kpis||[]).map(k=>`<span style="font-size:9.5px;background:var(--navy-soft);color:var(--navy);padding:1px 5px;border-radius:6px;margin-right:2px">KPI${k}</span>`).join('');
+    return`<tr><td style="color:var(--text)">${h.text}</td><td><span class="ht-badge" style="background:${bg};color:${cl};border:${bd}">${h.type}</span></td><td>${ks||'—'}</td><td style="white-space:nowrap;color:var(--text-muted)">${d.toLocaleDateString([],{weekday:'short',day:'numeric',month:'short'})} · ${d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</td></tr>`;
   }).join('');
 }
 
-// ── STATS + CUMULATIVE ──
+// ══ STATS + CUMULATIVE ══
 function updateStats(){
-  const total=daily.length+adhoc.length;
-  const done=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;
-  const pct=total?Math.round(done/total*100):0;
-  document.getElementById('statDone').textContent=done;
-  document.getElementById('statPending').textContent=total-done;
+  const tot=daily.length+adhoc.length;const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;
+  const pct=tot?Math.round(dn/tot*100):0;
+  document.getElementById('statDone').textContent=dn;document.getElementById('statPending').textContent=tot-dn;
   document.getElementById('statProjects').textContent=projects.filter(p=>p.status!=='done').length;
   document.getElementById('statWins').textContent=wins.length;
-  document.getElementById('pctLabel').textContent=pct+'%';
-  document.getElementById('progressFill').style.width=pct+'%';
-
-  // Cumulative
-  const allTimeTotal=cumTotal+done;
-  document.getElementById('cumTotal').textContent=allTimeTotal;
-  const allRates=[...cumRates,...(total>0?[pct]:[])];
+  document.getElementById('pctLabel').textContent=pct+'%';document.getElementById('progressFill').style.width=pct+'%';
+  const allTimeTotal=cumTotal+dn;document.getElementById('cumTotal').textContent=allTimeTotal;
+  const allRates=[...cumRates,...(tot>0?[pct]:[])];
   const avgRate=allRates.length?Math.round(allRates.reduce((a,b)=>a+b,0)/allRates.length):0;
   document.getElementById('cumRate').textContent=avgRate+'%';
   const startStr=load(K.STARTDATE,todayIso);
-  const startDate=new Date(startStr+'T00:00:00');
-  const todayDate=new Date(todayIso+'T00:00:00');
-  const dayCount=Math.max(1,Math.round((todayDate-startDate)/86400000)+1);
+  const dayCount=Math.max(1,Math.round((new Date(todayIso+'T00:00:00')-new Date(startStr+'T00:00:00'))/86400000)+1);
   document.getElementById('cumDays').textContent=dayCount;
 }
 
-function renderAll(){renderDaily();renderAdHoc();renderProjects();renderWins();updateStats();renderInterns();}
+function renderAll(){renderDaily();renderAdHoc();renderProjects();renderWins();updateStats();renderInterns()}
 
-// ── ADD HANDLERS ──
-function addAdHoc(){
-  const v=document.getElementById('adHocInput').value.trim();if(!v)return;
-  const kpi=+document.getElementById('adHocKpi').value||null;
-  adhoc.push({id:Date.now(),text:v,done:false,completedAt:null,addedAt:new Date().toISOString(),kpi});
-  save(K.ADHOC,adhoc);document.getElementById('adHocInput').value='';document.getElementById('adHocKpi').value='';renderAll();
-}
+// ══ ADD HANDLERS ══
+function addAdHoc(){const v=document.getElementById('adHocInput').value.trim();if(!v)return;const kpi=+document.getElementById('adHocKpi').value||null;adhoc.push({id:Date.now(),text:v,done:false,completedAt:null,addedAt:new Date().toISOString(),kpi});save(K.ADHOC,adhoc);document.getElementById('adHocInput').value='';document.getElementById('adHocKpi').value='';renderAll()}
 document.getElementById('adHocAddBtn').addEventListener('click',addAdHoc);
 document.getElementById('adHocInput').addEventListener('keydown',e=>{if(e.key==='Enter')addAdHoc()});
 
-function addProject(){
-  const name=document.getElementById('projNameInput').value.trim();if(!name)return;
-  const due=document.getElementById('projDueInput').value;
-  const pct=Math.min(100,Math.max(0,+document.getElementById('projPctInput').value||0));
-  projects.push({id:Date.now(),name,pct,status:'active',due,addedOn:todayIso});save(K.PROJ,projects);
-  document.getElementById('projNameInput').value='';document.getElementById('projDueInput').value='';document.getElementById('projPctInput').value='';renderAll();
-}
+function addProject(){const n=document.getElementById('projNameInput').value.trim();if(!n)return;const due=document.getElementById('projDueInput').value;const pct=Math.min(100,Math.max(0,+document.getElementById('projPctInput').value||0));projects.push({id:Date.now(),name:n,pct,status:'active',due,addedOn:todayIso});save(K.PROJ,projects);document.getElementById('projNameInput').value='';document.getElementById('projDueInput').value='';document.getElementById('projPctInput').value='';renderAll()}
 document.getElementById('projAddBtn').addEventListener('click',addProject);
 document.getElementById('projNameInput').addEventListener('keydown',e=>{if(e.key==='Enter')addProject()});
 
-function addWin(){
-  const title=document.getElementById('winInput').value.trim();if(!title)return;
-  const note=document.getElementById('winNoteInput').value.trim();
-  wins.push({id:Date.now(),title,note,addedOn:todayIso});save(K.WINS,wins);
-  document.getElementById('winInput').value='';document.getElementById('winNoteInput').value='';renderAll();
-}
+function addWin(){const t=document.getElementById('winInput').value.trim();if(!t)return;const n=document.getElementById('winNoteInput').value.trim();wins.push({id:Date.now(),title:t,note:n,addedOn:todayIso});save(K.WINS,wins);document.getElementById('winInput').value='';document.getElementById('winNoteInput').value='';renderAll()}
 document.getElementById('winAddBtn').addEventListener('click',addWin);
 document.getElementById('winInput').addEventListener('keydown',e=>{if(e.key==='Enter')addWin()});
 
-// ── INTERNS ──
+// ══ INTERNS ══
 function renderInternList(tasks,elId,countId,intern){
-  const el=document.getElementById(elId);
-  document.getElementById(countId).textContent=tasks.length;
+  const el=document.getElementById(elId);document.getElementById(countId).textContent=tasks.length;
   if(!tasks.length){el.innerHTML=`<div class="empty-state">No tasks assigned to ${intern} yet.</div>`;return}
-  const statusCycle=['pending','in-progress','done'];
-  const statusClass={pending:'ist-pending','in-progress':'ist-progress',done:'ist-done'};
-  const statusLabel={pending:'Pending','in-progress':'In Progress',done:'Done'};
-  el.innerHTML=tasks.map(t=>`<div class="intern-task-item" data-itid="${t.id}">
-    <span class="intern-task-status ${statusClass[t.status]||'ist-pending'}" data-cycle-intern="${t.id}">${statusLabel[t.status]||'Pending'}</span>
-    <div class="task-body">
-      <div class="intern-task-text">${t.text}</div>
-      <div class="intern-task-date">Added ${fmtDate(t.addedOn)}</div>
-    </div>
-    <button class="intern-task-del" data-del-intern="${t.id}">×</button>
-  </div>`).join('');
-  el.querySelectorAll('[data-cycle-intern]').forEach(btn=>{
-    btn.addEventListener('click',e=>{
-      e.stopPropagation();
-      const t=tasks.find(x=>x.id===+btn.dataset.cycleIntern);if(!t)return;
-      const idx=statusCycle.indexOf(t.status||'pending');
-      t.status=statusCycle[(idx+1)%statusCycle.length];
-      if(intern==='Sharon')save(K.SHARON,sharonTasks);else save(K.AALIA,aaliaTasks);
-      renderInterns();
-    });
-  });
-  el.querySelectorAll('[data-del-intern]').forEach(btn=>{
-    btn.addEventListener('click',e=>{
-      e.stopPropagation();
-      if(intern==='Sharon'){sharonTasks=sharonTasks.filter(x=>x.id!==+btn.dataset.delIntern);save(K.SHARON,sharonTasks);}
-      else{aaliaTasks=aaliaTasks.filter(x=>x.id!==+btn.dataset.delIntern);save(K.AALIA,aaliaTasks);}
-      renderInterns();
-    });
-  });
+  const sCy=['pending','in-progress','done'];
+  const sCl={'pending':'ist-pending','in-progress':'ist-progress','done':'ist-done'};
+  const sLb={'pending':'Pending','in-progress':'In Progress','done':'Done'};
+  el.innerHTML=tasks.map(t=>`<div class="intern-task-item"><span class="intern-task-status ${sCl[t.status||'pending']}" data-ci="${t.id}">${sLb[t.status||'pending']}</span><div class="task-body"><div class="intern-task-text">${t.text}</div><div class="intern-task-date">Added ${fmtDate(t.addedOn)}</div></div><button class="intern-task-del" data-di="${t.id}">×</button></div>`).join('');
+  el.querySelectorAll('[data-ci]').forEach(btn=>{btn.addEventListener('click',e=>{e.stopPropagation();const t=tasks.find(x=>x.id===+btn.dataset.ci);if(!t)return;const i=sCy.indexOf(t.status||'pending');t.status=sCy[(i+1)%sCy.length];if(intern==='Sharon')save(K.SHARON,sharonTasks);else save(K.AALIA,aaliaTasks);renderInterns()})});
+  el.querySelectorAll('[data-di]').forEach(btn=>{btn.addEventListener('click',e=>{e.stopPropagation();if(intern==='Sharon'){sharonTasks=sharonTasks.filter(x=>x.id!==+btn.dataset.di);save(K.SHARON,sharonTasks)}else{aaliaTasks=aaliaTasks.filter(x=>x.id!==+btn.dataset.di);save(K.AALIA,aaliaTasks)}renderInterns()})});
 }
-function renderInterns(){
-  renderInternList(sharonTasks,'sharonList','sharonCount','Sharon');
-  renderInternList(aaliaTasks,'aaliaList','aaliaCount','Aalia');
-}
-
-function addInternTask(intern){
-  const inputId=intern==='Sharon'?'sharonInput':'aaliaInput';
-  const v=document.getElementById(inputId).value.trim();if(!v)return;
-  const task={id:Date.now(),text:v,status:'pending',addedOn:todayIso};
-  if(intern==='Sharon'){sharonTasks.push(task);save(K.SHARON,sharonTasks);}
-  else{aaliaTasks.push(task);save(K.AALIA,aaliaTasks);}
-  document.getElementById(inputId).value='';
-  renderInterns();
-}
+function renderInterns(){renderInternList(sharonTasks,'sharonList','sharonCount','Sharon');renderInternList(aaliaTasks,'aaliaList','aaliaCount','Aalia')}
+function addInternTask(intern){const id=intern==='Sharon'?'sharonInput':'aaliaInput';const v=document.getElementById(id).value.trim();if(!v)return;const t={id:Date.now(),text:v,status:'pending',addedOn:todayIso};if(intern==='Sharon'){sharonTasks.push(t);save(K.SHARON,sharonTasks)}else{aaliaTasks.push(t);save(K.AALIA,aaliaTasks)}document.getElementById(id).value='';renderInterns()}
 document.getElementById('sharonAddBtn').addEventListener('click',()=>addInternTask('Sharon'));
 document.getElementById('aaliaAddBtn').addEventListener('click',()=>addInternTask('Aalia'));
 document.getElementById('sharonInput').addEventListener('keydown',e=>{if(e.key==='Enter')addInternTask('Sharon')});
 document.getElementById('aaliaInput').addEventListener('keydown',e=>{if(e.key==='Enter')addInternTask('Aalia')});
 
-// ── SETTINGS ──
-const savedKey=load(K.APIKEY,'');
-if(savedKey)document.getElementById('apiKeyInput').value=savedKey;
+// ══ SETTINGS ══
+const savedKey=load(K.APIKEY,'');if(savedKey)document.getElementById('apiKeyInput').value=savedKey;
 document.getElementById('saveApiKey').addEventListener('click',()=>{
-  const k=document.getElementById('apiKeyInput').value.trim();
-  save(K.APIKEY,k);
+  const k=document.getElementById('apiKeyInput').value.trim();save(K.APIKEY,k);
   const s=document.getElementById('saveSuccess');s.style.display='block';setTimeout(()=>s.style.display='none',4000);
 });
 
-// ── GEMINI AI — FIXED MODELS ──
+// ══ GEMINI AI — AUTO-DETECT MODEL VIA LISTMODELS ══
+let cachedModel=null;
+async function getBestModel(apiKey){
+  if(cachedModel)return cachedModel;
+  try{
+    const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models?key='+apiKey);
+    const d=await r.json();
+    if(d.error||!d.models)return null;
+    const avail=d.models.filter(m=>(m.supportedGenerationMethods||[]).includes('generateContent')).map(m=>m.name.replace('models/',''));
+    const prefer=['gemini-1.5-flash','gemini-1.5-pro','gemini-2.0-flash','gemini-1.0-pro'];
+    for(const p of prefer){const found=avail.find(a=>a.startsWith(p));if(found){cachedModel=found;return cachedModel}}
+    if(avail.length){cachedModel=avail[0];return cachedModel}
+  }catch(e){console.error('ListModels failed:',e)}
+  return null;
+}
+
 async function runAI(promptText,contentEl,barEl,panelEl,btnEl){
   const apiKey=load(K.APIKEY,'');
-  if(!apiKey){
-    panelEl.classList.add('visible');
-    contentEl.innerHTML='<span style="color:var(--rose)">⚠ Please add your free Gemini API key in the Settings tab first.</span>';
-    return;
+  if(!apiKey){panelEl.classList.add('visible');contentEl.innerHTML='<span style="color:var(--rose)">⚠ Please add your free Gemini API key in the Settings tab first.</span>';return}
+  btnEl.disabled=true;panelEl.classList.add('visible');barEl.style.display='block';
+  contentEl.innerHTML='<span class="ai-loading">Finding best available model…</span>';
+  const model=await getBestModel(apiKey);
+  if(!model){
+    contentEl.innerHTML='<span style="color:var(--rose)">⚠ Could not connect to Gemini. Please:<br>1. Go to <strong>aistudio.google.com</strong><br>2. Get a fresh API key<br>3. Paste it in Settings tab and save</span>';
+    barEl.style.display='none';btnEl.disabled=false;return;
   }
-  btnEl.disabled=true;panelEl.classList.add('visible');
-  barEl.style.display='block';contentEl.innerHTML='<span class="ai-loading">Analysing…</span>';
-
-  // Only current working Gemini models
-  const models=['gemini-2.0-flash','gemini-1.5-flash'];
-  let succeeded=false;let lastError='';
-
-  for(const model of models){
-    if(succeeded)break;
-    try{
-      contentEl.innerHTML=`<span class="ai-loading">Connecting to ${model}…</span>`;
-      const res=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({contents:[{parts:[{text:promptText}]}],generationConfig:{temperature:0.72,maxOutputTokens:700}})
-      });
-      const data=await res.json();
-      if(data.error){
-        const code=data.error.code||0;lastError=`[${model}] ${code}: ${data.error.message}`;
-        if(code===429){contentEl.innerHTML='<span style="color:var(--rose)">⚠ Rate limit reached — wait 1 minute and try again.</span>';succeeded=true;break;}
-        continue;
-      }
-      const text=data.candidates?.[0]?.content?.parts?.[0]?.text||'No response returned.';
-      contentEl.textContent=text;succeeded=true;
-    }catch(err){lastError=`[${model}] fetch failed: ${err.message}`;continue;}
-  }
-
-  if(!succeeded){
-    contentEl.innerHTML=`<span style="color:var(--rose)">⚠ Could not connect. Last error: ${lastError}\n\nCheck: Is your API key correct? Go to aistudio.google.com, get a fresh key and re-save it in Settings.</span>`;
-  }
+  contentEl.innerHTML=`<span class="ai-loading">Analysing with ${model}…</span>`;
+  try{
+    const res=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({contents:[{parts:[{text:promptText}]}],generationConfig:{temperature:0.72,maxOutputTokens:700}})
+    });
+    const data=await res.json();
+    if(data.error){
+      if(data.error.code===429)contentEl.innerHTML='<span style="color:var(--rose)">⚠ Rate limit reached — wait 1 minute and try again.</span>';
+      else contentEl.innerHTML=`<span style="color:var(--rose)">⚠ Error: ${data.error.message}</span>`;
+    }else{
+      const text=data.candidates?.[0]?.content?.parts?.[0]?.text||'No response returned.';contentEl.textContent=text;
+    }
+  }catch(err){contentEl.innerHTML=`<span style="color:var(--rose)">⚠ Network error: ${err.message}</span>`}
   barEl.style.display='none';btnEl.disabled=false;
 }
 
-// ── PROMPT BUILDERS ──
+// ══ PROMPT BUILDERS ══
 function buildDayPrompt(){
-  const doneDaily=daily.filter(t=>t.done),pendingDaily=daily.filter(t=>!t.done);
-  const doneAdhoc=adhoc.filter(t=>t.done),pendingAdhoc=adhoc.filter(t=>!t.done);
-  const kpiLines=KPIS.filter(k=>k.weight>0).map(k=>{const s=getKpiScore(k.id);return`- KPI ${k.id} (${k.area}): ${s===null?'no tasks today':s+'% of tasks done'} [target: ${k.target}, weight: ${k.weight}%]`}).join('\n');
-  const allTimeTotal=cumTotal+doneDaily.length+doneAdhoc.length;
-  const allRates=[...cumRates,...(daily.length+adhoc.length>0?[daily.length+adhoc.length?Math.round((doneDaily.length+doneAdhoc.length)/(daily.length+adhoc.length)*100):0]:[])];
-  const avgRate=allRates.length?Math.round(allRates.reduce((a,b)=>a+b,0)/allRates.length):0;
-  return`You are a performance coach for Doreen, Operations Liaison Officer at Jibu (a water franchise network across East & Central Africa), reporting into the COO's office.
-
-Today is ${DAYS[now.getDay()]}, ${now.getDate()} ${MONTHS[now.getMonth()]} ${now.getFullYear()}.
-
-DAILY TASKS COMPLETED (${doneDaily.length}/${daily.length}):
-${doneDaily.map(t=>`✓ ${t.text} [KPIs: ${(t.kpis||[]).join(', ')||'none'}]`).join('\n')||'None yet'}
-
-DAILY TASKS PENDING:
-${pendingDaily.map(t=>`○ ${t.text}`).join('\n')||'All done!'}
-
-INCOMING TASKS — Done: ${doneAdhoc.length} | Pending: ${pendingAdhoc.length}
-${pendingAdhoc.map(t=>`○ ${t.text}`).join('\n')||''}
-
-KPI PERFORMANCE TODAY:
-${kpiLines}
-
-ALL-TIME STATS: ${allTimeTotal} tasks completed total | ${avgRate}% average completion rate
-
-WINS LOG: ${wins.map(w=>w.title).join(', ')||'None yet'}
-
-Give Doreen a short, honest, motivating daily analysis (4-5 paragraphs). Cover: what she accomplished and how it maps to her KPIs, what still needs attention, one specific strength observed, one practical suggestion for tomorrow. Tone: professional, warm, direct — like a trusted manager who genuinely wants her to succeed and get that salary increment.`;
+  const dD=daily.filter(t=>t.done),pD=daily.filter(t=>!t.done);
+  const dA=adhoc.filter(t=>t.done),pA=adhoc.filter(t=>!t.done);
+  const kl=KPIS.filter(k=>k.weight>0).map(k=>{const s=kScore(k.id);return`- KPI ${k.id} (${k.area}): ${s===null?'no tasks today':s+'% done'} [target: ${k.target}, weight: ${k.weight}%]`}).join('\n');
+  return`You are a performance coach for Doreen, Operations Liaison Officer at Jibu (water franchise network, East & Central Africa), reporting to the COO.\n\nToday is ${DAYS[now.getDay()]}, ${now.getDate()} ${MONTHS[now.getMonth()]} ${now.getFullYear()}.\n\nDAILY TASKS COMPLETED (${dD.length}/${daily.length}):\n${dD.map(t=>`✓ ${t.text} [KPIs: ${(t.kpis||[]).join(', ')||'none'}]`).join('\n')||'None yet'}\n\nPENDING:\n${pD.map(t=>`○ ${t.text}`).join('\n')||'All done!'}\n\nINCOMING: ${dA.length} done, ${pA.length} pending\n${pA.map(t=>`○ ${t.text}`).join('\n')||''}\n\nKPI STATUS:\n${kl}\n\nWINS: ${wins.map(w=>w.title).join(', ')||'none yet'}\n\nGive Doreen a short, honest, motivating daily analysis (4-5 paragraphs): what she accomplished, KPI impact, what still needs attention, one strength, one tip for tomorrow. Warm tone — like a manager who genuinely wants her to succeed and earn that salary increment.`;
 }
-
 function buildKpiPrompt(){
-  const kpiLines=KPIS.map(k=>{const s=getKpiScore(k.id);return`KPI ${k.id} | ${k.area} | ${k.name} | Task completion today: ${s===null?'no tasks linked':s+'%'} | Target: ${k.target} | Weight: ${k.weight}%`}).join('\n');
-  return`You are a performance analytics advisor for Doreen, Operations Liaison Officer at Jibu, reporting into the COO's office.
-
-Today is ${DAYS[now.getDay()]}, ${now.getDate()} ${MONTHS[now.getMonth()]} ${now.getFullYear()}.
-
-HER 14 KPIs AND TODAY'S PERFORMANCE:
-${kpiLines}
-
-SOLO WINS: ${wins.map(w=>w.title).join(', ')||'None yet'}
-
-Give a structured KPI performance interpretation (under 300 words):
-1. Top 3 KPIs being well-supported by today's activities
-2. KPIs with gaps — no tasks linked or incomplete (flag 2-3)
-3. One recommendation to better demonstrate KPI achievement this week
-4. A one-line performance message she could share with her COO
-
-Be specific, use KPI numbers, be encouraging but honest.`;
+  const kl=KPIS.map(k=>{const s=kScore(k.id);return`KPI ${k.id} | ${k.area} | ${k.name} | Today: ${s===null?'no tasks':s+'%'} | Target: ${k.target} | Weight: ${k.weight}%`}).join('\n');
+  return`You are a KPI advisor for Doreen, Operations Liaison Officer at Jibu.\n\nKPI STATUS TODAY:\n${kl}\n\nSOLO WINS: ${wins.map(w=>w.title).join(', ')||'none yet'}\n\nGive a structured KPI analysis (under 300 words): top 3 KPIs well-supported today, 2-3 with gaps, one recommendation for this week, a one-line message she could share with her COO. Use KPI numbers. Be specific and encouraging.`;
 }
-
 function buildCumPrompt(){
-  const doneToday=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;
-  const allTimeTotal=cumTotal+doneToday;
-  const allRates=[...cumRates,...(daily.length+adhoc.length>0?[Math.round(doneToday/(daily.length+adhoc.length)*100)]:[])];
-  const avgRate=allRates.length?Math.round(allRates.reduce((a,b)=>a+b,0)/allRates.length):0;
-  const startStr=load(K.STARTDATE,todayIso);
-  const dayCount=Math.max(1,Math.round((new Date(todayIso+'T00:00:00')-new Date(startStr+'T00:00:00'))/86400000)+1);
-  return`You are a performance coach for Doreen, Operations Liaison Officer at Jibu (water franchise network across Africa), reporting into the COO's office.
-
-She has been using this personal performance tracker consistently. Here is her journey so far:
-
-- Days tracked: ${dayCount}
-- Total tasks ever completed: ${allTimeTotal}
-- Average daily completion rate: ${avgRate}%
-- Solo wins logged: ${wins.length} (${wins.map(w=>w.title).join(', ')||'none yet'})
-
-Write a warm, honest 2-3 paragraph reflection on her performance journey. What does this data say about her discipline and work ethic? What should she be proud of? What should she keep working on? End with one powerful sentence she could keep as a personal reminder. Tone: like a senior mentor who knows her work well.`;
+  const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;
+  const tot=cumTotal+dn;const allR=[...cumRates,...(daily.length+adhoc.length>0?[Math.round(dn/(daily.length+adhoc.length)*100)]:[])];
+  const avg=allR.length?Math.round(allR.reduce((a,b)=>a+b,0)/allR.length):0;
+  const dayCount=Math.max(1,Math.round((new Date(todayIso+'T00:00:00')-new Date(load(K.STARTDATE,todayIso)+'T00:00:00'))/86400000)+1);
+  return`You are a career mentor for Doreen, Operations Liaison Officer at Jibu.\n\nHer tracker journey:\n- Days tracked: ${dayCount}\n- Total tasks completed: ${tot}\n- Average daily completion: ${avg}%\n- Solo wins: ${wins.length} (${wins.map(w=>w.title).join(', ')||'none yet'})\n\nWrite a warm, honest 2-3 paragraph reflection. What does this data say about her discipline and work ethic? What should she be proud of? End with one powerful sentence she can keep as a personal reminder. Tone: senior mentor who knows her work well.`;
 }
-
 function buildHandoverPrompt(intern,tasks){
-  const statusGroups={pending:tasks.filter(t=>(t.status||'pending')==='pending'),'in-progress':tasks.filter(t=>t.status==='in-progress'),done:tasks.filter(t=>t.status==='done')};
-  return`You are helping Doreen, Operations Liaison Officer at Jibu, prepare a handover brief for her IT intern ${intern} so that work can continue during her leave.
-
-${intern}'s current task list:
-
-PENDING (${statusGroups.pending.length}):
-${statusGroups.pending.map(t=>`- ${t.text}`).join('\n')||'None'}
-
-IN PROGRESS (${statusGroups['in-progress'].length}):
-${statusGroups['in-progress'].map(t=>`- ${t.text}`).join('\n')||'None'}
-
-COMPLETED (${statusGroups.done.length}):
-${statusGroups.done.map(t=>`- ${t.text}`).join('\n')||'None'}
-
-Write a clear, professional handover summary (3-4 short paragraphs) that:
-1. Summarises what ${intern} has been working on
-2. Clearly lists what is still pending or in progress and what needs immediate attention
-3. Notes any risks or items that could stall without oversight
-4. Gives a clear recommendation for who should supervise these tasks in Doreen's absence
-
-Keep it practical and concise. A colleague should be able to read this and immediately know what to do.`;
+  const sg={pending:tasks.filter(t=>(t.status||'pending')==='pending'),'in-progress':tasks.filter(t=>t.status==='in-progress'),done:tasks.filter(t=>t.status==='done')};
+  return`Help Doreen, Operations Liaison Officer at Jibu, prepare a handover brief for her IT intern ${intern}.\n\n${intern}'s tasks:\nPENDING (${sg.pending.length}): ${sg.pending.map(t=>t.text).join(', ')||'none'}\nIN PROGRESS (${sg['in-progress'].length}): ${sg['in-progress'].map(t=>t.text).join(', ')||'none'}\nDONE (${sg.done.length}): ${sg.done.map(t=>t.text).join(', ')||'none'}\n\nWrite a clear handover summary (3-4 paragraphs): what ${intern} has been working on, what is still pending and needs immediate attention, any risks, and a clear recommendation for who supervises in Doreen's absence. Keep it practical.`;
 }
 
-// ── AI BUTTON WIRES ──
-document.getElementById('analyseBtn').addEventListener('click',()=>{
-  runAI(buildDayPrompt(),document.getElementById('aiContent'),document.getElementById('aiBar'),document.getElementById('aiPanel'),document.getElementById('analyseBtn'));
-});
-document.getElementById('kpiAnalyseBtn').addEventListener('click',()=>{
-  runAI(buildKpiPrompt(),document.getElementById('kpiAiContent'),document.getElementById('kpiAiBar'),document.getElementById('kpiAiPanel'),document.getElementById('kpiAnalyseBtn'));
-});
+// ══ WIRE AI BUTTONS ══
+document.getElementById('analyseBtn').addEventListener('click',()=>runAI(buildDayPrompt(),document.getElementById('aiContent'),document.getElementById('aiBar'),document.getElementById('aiPanel'),document.getElementById('analyseBtn')));
+document.getElementById('kpiAnalyseBtn').addEventListener('click',()=>runAI(buildKpiPrompt(),document.getElementById('kpiAiContent'),document.getElementById('kpiAiBar'),document.getElementById('kpiAiPanel'),document.getElementById('kpiAnalyseBtn')));
+document.getElementById('sharonHandoverBtn').addEventListener('click',()=>runAI(buildHandoverPrompt('Sharon',sharonTasks),document.getElementById('sharonAiContent'),document.getElementById('sharonAiBar'),document.getElementById('sharonAiPanel'),document.getElementById('sharonHandoverBtn')));
+document.getElementById('aaliaHandoverBtn').addEventListener('click',()=>runAI(buildHandoverPrompt('Aalia',aaliaTasks),document.getElementById('aaliaAiContent'),document.getElementById('aaliaAiBar'),document.getElementById('aaliaAiPanel'),document.getElementById('aaliaHandoverBtn')));
+
 document.getElementById('cumAiBtn').addEventListener('click',()=>{
-  const btn=document.getElementById('cumAiBtn');
-  const textEl=document.getElementById('cumAiText');
-  btn.disabled=true;
-  textEl.textContent='Reflecting on your journey…';
+  const btn=document.getElementById('cumAiBtn');const textEl=document.getElementById('cumAiText');
+  btn.disabled=true;textEl.textContent='Reflecting on your journey…';
   const apiKey=load(K.APIKEY,'');
-  if(!apiKey){textEl.textContent='⚠ Add your Gemini API key in Settings first.';btn.disabled=false;return;}
-  const models=['gemini-2.0-flash','gemini-1.5-flash'];
+  if(!apiKey){textEl.textContent='⚠ Add your Gemini API key in Settings first.';btn.disabled=false;return}
   (async()=>{
-    let succeeded=false;
-    for(const model of models){
-      if(succeeded)break;
-      try{
-        const res=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,{
-          method:'POST',headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({contents:[{parts:[{text:buildCumPrompt()}]}],generationConfig:{temperature:0.75,maxOutputTokens:400}})
-        });
-        const data=await res.json();
-        if(data.error){if(data.error.code===429){textEl.textContent='⚠ Rate limit — wait 1 minute.';succeeded=true;break;}continue;}
-        textEl.textContent=data.candidates?.[0]?.content?.parts?.[0]?.text||'No response.';succeeded=true;
-      }catch{continue;}
-    }
-    if(!succeeded)textEl.textContent='⚠ Could not connect. Check your API key in Settings.';
+    const model=await getBestModel(apiKey);
+    if(!model){textEl.textContent='⚠ Could not connect. Check your API key in Settings.';btn.disabled=false;return}
+    try{
+      const res=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({contents:[{parts:[{text:buildCumPrompt()}]}],generationConfig:{temperature:0.75,maxOutputTokens:400}})
+      });
+      const data=await res.json();
+      if(data.error){textEl.textContent='⚠ Error: '+data.error.message}
+      else textEl.textContent=data.candidates?.[0]?.content?.parts?.[0]?.text||'No response.';
+    }catch(e){textEl.textContent='⚠ Network error: '+e.message}
     btn.disabled=false;
   })();
 });
 
-document.getElementById('sharonHandoverBtn').addEventListener('click',()=>{
-  runAI(buildHandoverPrompt('Sharon',sharonTasks),document.getElementById('sharonAiContent'),document.getElementById('sharonAiBar'),document.getElementById('sharonAiPanel'),document.getElementById('sharonHandoverBtn'));
-});
-document.getElementById('aaliaHandoverBtn').addEventListener('click',()=>{
-  runAI(buildHandoverPrompt('Aalia',aaliaTasks),document.getElementById('aaliaAiContent'),document.getElementById('aaliaAiBar'),document.getElementById('aaliaAiPanel'),document.getElementById('aaliaHandoverBtn'));
-});
-
-// ── INIT ──
+// ══ INIT ══
 renderAll();
 </script>
 </body>
