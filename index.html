@@ -3,131 +3,114 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Doreen · Personal Tracker — Jibu</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<title>Doreen · Command Centre — Jibu</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  /* === REFINED PROFESSIONAL PALETTE === */
-
-  /* Slate — primary structural color (replaces heavy navy) */
-  --slate:#1E293B;--slate-d:#0F172A;--slate-m:#334155;--slate-l:#475569;
-  --slate-s:#F1F5F9;--slate-p:#F8FAFC;--slate-br:rgba(30,41,59,.12);
-
-  /* Amber-Gold — warm accent (refined, less saturated) */
-  --gold:#B45309;--gold-b:#D97706;--gold-l:#F59E0B;--gold-p:#FFFBEB;
-  --gold-br:rgba(180,83,9,.18);--gold-glow:rgba(217,119,6,.12);
-
-  /* Emerald — success/teal replacement */
-  --em:#047857;--em-l:#059669;--em-bg:#ECFDF5;--em-br:rgba(4,120,87,.15);
-
-  /* Violet — accent (replaces vt) */
-  --vi:#5B21B6;--vi-bg:#F5F3FF;--vi-br:rgba(91,33,182,.15);
-
-  /* Rose — alert (replaces rs) */
-  --ro:#BE123C;--ro-bg:#FFF1F2;--ro-br:rgba(190,18,60,.15);
-
-  /* Amber — warning (replaces am) */
-  --am:#92400E;--am-bg:#FFFBEB;--am-br:rgba(146,64,14,.18);
-
-  /* Indigo */
-  --in:#3730A3;--in-bg:#EEF2FF;--in-br:rgba(55,48,163,.15);
-
-  /* Sky */
-  --sk:#0369A1;--sk-bg:#F0F9FF;--sk-br:rgba(3,105,161,.15);
-
-  /* Green */
-  --gn:#166534;--gn-bg:#F0FDF4;--gn-br:rgba(22,101,52,.15);
-
-  /* Backgrounds — clean whites and very light grays */
-  --bg:#F8FAFC;--sf:#FFFFFF;--sf2:#FAFAFA;--sf3:#F4F4F5;
-  --br:#E2E8F0;--brs:#EDF0F4;
-
-  /* Text — slate-based, not pure black */
-  --tx:#1E293B;--tm:#334155;--tmu:#64748B;--td:#94A3B8;
-
-  /* Shadows — subtle and refined */
-  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
-  --s2:0 4px 16px rgba(15,23,42,.08),0 1px 4px rgba(15,23,42,.04);
-  --s3:0 8px 32px rgba(15,23,42,.10),0 2px 8px rgba(15,23,42,.06);
-  --sg:0 4px 16px rgba(180,83,9,.18);
-
-  --r:16px;--rs2:12px;--rx:8px;
+  --ink:#0F0F1A;--ink-m:#1E1E35;--ink-l:#2D2D50;
+  --indigo:#4338CA;--indigo-b:#5B50D6;--indigo-l:#818CF8;--indigo-p:#EEF2FF;--indigo-s:#F5F3FF;--indigo-br:rgba(67,56,202,.15);
+  --violet:#7C3AED;--violet-p:#F5F3FF;
+  --sky:#0EA5E9;--sky-p:#F0F9FF;--sky-br:rgba(14,165,233,.15);
+  --em:#059669;--em-p:#ECFDF5;--em-br:rgba(5,150,105,.15);
+  --ro:#E11D48;--ro-p:#FFF1F2;--ro-br:rgba(225,29,72,.15);
+  --am:#D97706;--am-p:#FFFBEB;--am-br:rgba(217,119,6,.18);
+  --slate:#475569;--slate-l:#64748B;--slate-s:#F1F5F9;--slate-p:#F8FAFC;
+  --bg:#F7F7FB;--sf:#FFFFFF;--sf2:#FAFAFE;--sf3:#F4F3FF;
+  --br:#E4E4F0;--brs:#EDEDF8;
+  --tx:#0F0F1A;--tm:#1E1E35;--tmu:#64748B;--td:#94A3B8;
+  --s1:0 1px 3px rgba(15,15,26,.06),0 1px 2px rgba(15,15,26,.04);
+  --s2:0 4px 20px rgba(67,56,202,.08),0 1px 4px rgba(15,15,26,.04);
+  --s3:0 8px 40px rgba(67,56,202,.12),0 2px 8px rgba(15,15,26,.06);
+  --si:0 4px 20px rgba(67,56,202,.2);
+  --r:16px;--rs:12px;--rx:8px;
 }
-body{background:var(--bg);color:var(--tx);font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;min-height:100vh;line-height:1.6}
-.wrap{max-width:1200px;margin:0 auto;padding:1.75rem 1.25rem 5rem}
+body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;font-size:14px;min-height:100vh;line-height:1.6}
+.wrap{max-width:1240px;margin:0 auto;padding:1.75rem 1.25rem 5rem}
 
 /* HEADER */
-header{background:var(--slate-d);border-radius:var(--r);padding:2rem 2.25rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--s3);position:relative;overflow:hidden;flex-wrap:wrap;gap:1rem;border-bottom:2px solid var(--gold-l)}
-header::before{content:'';position:absolute;top:0;right:0;width:320px;height:100%;background:linear-gradient(135deg,transparent 60%,rgba(245,158,11,.06) 100%);pointer-events:none}
+header{background:var(--ink);border-radius:20px;padding:2rem 2.5rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--s3);position:relative;overflow:hidden;flex-wrap:wrap;gap:1rem}
+header::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 80% 50%,rgba(67,56,202,.25) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(124,58,237,.12) 0%,transparent 50%);pointer-events:none}
+header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(129,140,248,.4),transparent)}
 .hl{position:relative;z-index:1}
-.heyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(148,163,184,.7);margin-bottom:8px;font-weight:500}
-.hl h1{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:#F8FAFC;line-height:1.05;letter-spacing:-.02em}
-.hl h1 em{color:var(--gold-l);font-style:italic}
-.hsub{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(148,163,184,.45);margin-top:8px}
+.heyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(129,140,248,.65);margin-bottom:10px;font-weight:500}
+.hl h1{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:#F8FAFC;line-height:1;letter-spacing:-.02em}
+.hl h1 em{color:var(--indigo-l);font-style:italic;font-weight:400}
+.hsub{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(148,163,184,.35);margin-top:10px}
 .hr{text-align:right;position:relative;z-index:1}
-.hdate{font-family:'Playfair Display',serif;font-size:1rem;color:rgba(248,250,252,.75);letter-spacing:.04em;margin-bottom:8px}
-.htag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:5px 14px;font-size:11px;letter-spacing:.08em;color:var(--gold-l)}
-.ldot{width:6px;height:6px;border-radius:50%;background:var(--gold-l);animation:pu 2.4s ease infinite;flex-shrink:0}
-@keyframes pu{0%,100%{opacity:1}50%{opacity:.3}}
-.svi{font-size:10px;color:rgba(148,163,184,.45);margin-top:6px;display:block;min-height:14px;transition:color .3s}
-.svi.ok{color:rgba(52,211,153,.8)}
+.hdate{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:rgba(248,250,252,.7);letter-spacing:.04em;margin-bottom:8px}
+.htag{display:inline-flex;align-items:center;gap:7px;background:rgba(67,56,202,.3);border:1px solid rgba(129,140,248,.25);border-radius:20px;padding:5px 14px;font-size:11px;letter-spacing:.08em;color:var(--indigo-l)}
+.ldot{width:6px;height:6px;border-radius:50%;background:var(--indigo-l);animation:pu 2.4s ease infinite;flex-shrink:0}
+@keyframes pu{0%,100%{opacity:1}50%{opacity:.25}}
+.svi{font-size:10px;color:rgba(148,163,184,.4);margin-top:6px;display:block;min-height:14px;transition:color .3s}
+.svi.ok{color:rgba(52,211,153,.75)}
+
+/* MORNING BRIEFING BANNER */
+.mbanner{background:linear-gradient(135deg,var(--indigo) 0%,var(--violet) 100%);border-radius:var(--r);padding:1.5rem 2rem;margin-bottom:1.5rem;position:relative;overflow:hidden;box-shadow:var(--si)}
+.mbanner::before{content:'';position:absolute;top:-30px;right:-30px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.06)}
+.mbanner::after{content:'';position:absolute;bottom:-20px;left:30%;width:200px;height:100px;border-radius:50%;background:rgba(255,255,255,.04)}
+.mbt{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:6px;font-weight:600;position:relative;z-index:1}
+.mbh{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:#fff;margin-bottom:8px;position:relative;z-index:1;line-height:1.2}
+.mbc{font-size:13px;color:rgba(255,255,255,.8);line-height:1.7;position:relative;z-index:1}
+.mbpills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;position:relative;z-index:1}
+.mbpill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,.85);font-weight:500}
+.mbpill.warn{background:rgba(251,191,36,.15);border-color:rgba(251,191,36,.3);color:#FCD34D}
+.mbpill.good{background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.25);color:#6EE7B7}
 
 /* TABS */
-.tabs{display:flex;gap:3px;margin-bottom:1.5rem;background:var(--sf);border:1px solid var(--br);border-radius:14px;padding:5px;box-shadow:var(--s1);overflow-x:auto;scrollbar-width:none;flex-wrap:nowrap}
+.tabs{display:flex;gap:2px;margin-bottom:1.5rem;background:var(--sf);border:1px solid var(--br);border-radius:14px;padding:5px;box-shadow:var(--s1);overflow-x:auto;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
-.tb{background:none;border:none;border-radius:10px;padding:8px 13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--tmu);cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0}
-.tb:hover:not(.active){background:var(--slate-s);color:var(--tm)}
-.tb.active{background:var(--slate);color:#F8FAFC;font-weight:700}
-
+.tb{background:none;border:none;border-radius:10px;padding:8px 14px;font-family:'DM Sans',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--tmu);cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.tb:hover:not(.active){background:var(--indigo-s);color:var(--indigo)}
+.tb.active{background:var(--indigo);color:#fff;font-weight:700;box-shadow:var(--si)}
 .tp{display:none}.tp.active{display:block}
 
-/* STATS */
+/* STAT BOXES */
 .srow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.25rem}
-.sbox{background:var(--sf);border:1px solid var(--br);border-radius:var(--rs2);padding:18px 14px;text-align:center;box-shadow:var(--s1);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
-.sbox::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:opacity .3s}
-.sbox:hover{transform:translateY(-2px);box-shadow:var(--s2)}.sbox:hover::after{opacity:1}
-.sb1::after{background:var(--em)}.sb2::after{background:var(--slate)}.sb3::after{background:var(--vi)}.sb4::after{background:var(--gold-b)}
-.snum{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;line-height:1;margin-bottom:4px}
-.c1{color:var(--em)}.c2{color:var(--slate)}.c3{color:var(--vi)}.c4{color:var(--gold-b)}
-.slbl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--tmu);font-weight:600}
+.sbox{background:var(--sf);border:1px solid var(--br);border-radius:var(--rs);padding:18px 16px;text-align:center;box-shadow:var(--s1);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.sbox::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:var(--rs) var(--rs) 0 0}
+.sb1::before{background:var(--em)}.sb2::before{background:var(--indigo)}.sb3::before{background:var(--violet)}.sb4::before{background:var(--am)}
+.sbox:hover{transform:translateY(-2px);box-shadow:var(--s2)}
+.snum{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;line-height:1;margin-bottom:3px}
+.c1{color:var(--em)}.c2{color:var(--indigo)}.c3{color:var(--violet)}.c4{color:var(--am)}
+.slbl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--tmu);font-weight:500}
 
-/* CUMULATIVE ROW */
-.crow{display:grid;grid-template-columns:repeat(3,1fr) 1.4fr;gap:10px;margin-bottom:1.25rem}
-.cbox{background:var(--slate);border-radius:var(--rs2);padding:16px 18px;box-shadow:var(--s2);position:relative;overflow:hidden;border-left:3px solid var(--gold-l)}
-.cbox::after{content:'';position:absolute;top:-30px;right:-20px;width:80px;height:80px;background:radial-gradient(circle,rgba(245,158,11,.1),transparent 70%);border-radius:50%}
-.cey{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(148,163,184,.6);margin-bottom:5px;font-weight:700;position:relative;z-index:1}
-.cnum{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:#F8FAFC;line-height:1;margin-bottom:2px;position:relative;z-index:1}
-.clbl{font-size:10px;color:rgba(148,163,184,.65);position:relative;z-index:1}
-.caib{background:var(--sf);border:1px solid var(--br);border-radius:var(--rs2);padding:16px 18px;box-shadow:var(--s1);display:flex;flex-direction:column;justify-content:space-between}
-.cait{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-b);margin-bottom:7px;font-weight:700}
+/* CUMULATIVE */
+.crow{display:grid;grid-template-columns:repeat(3,1fr) 1.5fr;gap:10px;margin-bottom:1.25rem}
+.cbox{background:var(--ink);border-radius:var(--rs);padding:16px 18px;position:relative;overflow:hidden}
+.cbox::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(67,56,202,.3),transparent 60%)}
+.cey{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(129,140,248,.5);margin-bottom:5px;font-weight:600;position:relative;z-index:1}
+.cnum{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#F8FAFC;line-height:1;margin-bottom:2px;position:relative;z-index:1}
+.clbl{font-size:10px;color:rgba(148,163,184,.55);position:relative;z-index:1}
+.caib{background:var(--sf);border:1px solid var(--br);border-radius:var(--rs);padding:16px 18px;box-shadow:var(--s1);display:flex;flex-direction:column}
+.cait{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--indigo);font-weight:700;margin-bottom:7px}
 .catx{font-size:12px;color:var(--tmu);line-height:1.6;flex:1;margin-bottom:10px;font-style:italic}
-.cab{background:var(--slate);border:none;border-radius:7px;color:#F8FAFC;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;padding:7px 14px;cursor:pointer;transition:all .2s}
-.cab:hover{background:var(--slate-m);transform:translateY(-1px)}.cab:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.cab{background:var(--indigo);border:none;border-radius:7px;color:#fff;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;padding:7px 14px;cursor:pointer;transition:all .2s}
+.cab:hover{background:var(--indigo-b);transform:translateY(-1px)}
 
 /* PROGRESS */
-.pw{background:var(--sf);border:1px solid var(--br);border-radius:var(--rs2);padding:16px 20px;margin-bottom:1.25rem;box-shadow:var(--s1)}
+.pw{background:var(--sf);border:1px solid var(--br);border-radius:var(--rs);padding:16px 20px;margin-bottom:1.25rem;box-shadow:var(--s1)}
 .pm{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}
-.plbl{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--tmu);font-weight:600}
-.ppct{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--slate)}
-.ptr{height:6px;background:var(--slate-s);border-radius:6px;overflow:hidden}
-.pfl{height:100%;background:var(--gold-b);border-radius:6px;transition:width .8s cubic-bezier(.4,0,.2,1)}
+.plbl{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--tmu);font-weight:600}
+.ppct{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--indigo)}
+.ptr{height:6px;background:var(--indigo-s);border-radius:6px;overflow:hidden}
+.pfl{height:100%;background:var(--indigo);border-radius:6px;transition:width .8s cubic-bezier(.4,0,.2,1)}
 
 /* GRID & CARD */
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
 .cw{grid-column:span 2}
 .card{background:var(--sf);border:1px solid var(--br);border-radius:var(--r);padding:1.4rem 1.6rem;box-shadow:var(--s1);transition:box-shadow .2s,border-color .2s}
-.card:hover{border-color:rgba(30,41,59,.16);box-shadow:var(--s2)}
-.ch{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding-bottom:.9rem;border-bottom:1px solid var(--brs)}
-.ct{display:flex;align-items:center;gap:7px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);font-weight:700}
+.card:hover{border-color:var(--indigo-br);box-shadow:var(--s2)}
+.ch{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding-bottom:.85rem;border-bottom:1px solid var(--brs)}
+.ct{display:flex;align-items:center;gap:7px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-m);font-weight:700}
 .ctd{width:6px;height:6px;border-radius:50%;flex-shrink:0}
-.dg{background:var(--gold-b)}.dt{background:var(--em)}.dv{background:var(--vi)}.dn{background:var(--slate)}.dr{background:var(--ro)}.dgn{background:var(--gn)}.ds{background:var(--sk)}
-.cc{font-family:'Playfair Display',serif;font-size:1rem;color:var(--tmu)}
+.di{background:var(--indigo)}.dem{background:var(--em)}.dv{background:var(--violet)}.dink{background:var(--ink)}.dro{background:var(--ro)}.dam{background:var(--am)}.dsk{background:var(--sky)}
+.cc{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--tmu)}
 
 /* TASK */
-.ti{display:flex;align-items:flex-start;gap:11px;padding:10px 0;border-bottom:1px solid var(--brs);cursor:pointer;transition:opacity .15s}
+.ti{display:flex;align-items:flex-start;gap:11px;padding:10px 0;border-bottom:1px solid var(--brs);cursor:pointer;transition:all .15s}
 .ti:last-of-type{border-bottom:none}
-.ti:hover{opacity:.8}
+.ti:hover{opacity:.85}
 .tck{width:18px;height:18px;border:1.5px solid var(--br);border-radius:5px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .2s}
 .ti.done .tck{background:var(--em);border-color:var(--em)}
 .ci{display:none;width:9px;height:7px}.ti.done .ci{display:block}
@@ -136,22 +119,31 @@ header::before{content:'';position:absolute;top:0;right:0;width:320px;height:100
 .ti.done .tt{color:var(--td);text-decoration:line-through;text-decoration-color:var(--td)}
 .ttm{font-size:10.5px;color:var(--em);margin-top:3px;font-weight:500}
 .ttgs{display:flex;flex-wrap:wrap;gap:3px;margin-top:4px}
-.kch{font-size:9.5px;padding:2px 6px;border-radius:6px;font-weight:600;border:1px solid}
+.kch{font-size:9.5px;padding:2px 7px;border-radius:6px;font-weight:600;border:1px solid}
 .rtg{font-size:10px;padding:3px 9px;border-radius:12px;flex-shrink:0;margin-top:2px;font-weight:500}
-.rc{background:var(--gold-p);color:var(--am);border:1px solid var(--gold-br)}
-.ro2{background:var(--slate-s);color:var(--slate-l);border:1px solid var(--slate-br)}
-.rt{background:var(--em-bg);color:var(--em);border:1px solid var(--em-br)}
+.rc{background:var(--indigo-p);color:var(--indigo);border:1px solid var(--indigo-br)}
+.ro2{background:var(--slate-s);color:var(--slate);border:1px solid rgba(71,85,105,.15)}
+.rt{background:var(--em-p);color:var(--em);border:1px solid var(--em-br)}
 .dx{background:none;border:none;color:var(--td);cursor:pointer;font-size:17px;line-height:1;padding:0 2px;flex-shrink:0;opacity:0;transition:opacity .2s;margin-top:1px}
 .ti:hover .dx{opacity:1}.dx:hover{color:var(--ro)}
 
+/* EDIT TASK INLINE */
+.ti-edit{padding:8px 0;border-bottom:1px solid var(--brs);display:flex;gap:8px;align-items:center}
+.ti-edit input{flex:1;background:var(--indigo-s);border:1px solid var(--indigo-br);border-radius:var(--rx);color:var(--tx);font-family:'DM Sans',sans-serif;font-size:13px;padding:6px 10px;outline:none}
+.ti-edit input:focus{border-color:var(--indigo);box-shadow:0 0 0 3px rgba(67,56,202,.08)}
+.ti-save{background:var(--indigo);border:none;border-radius:var(--rx);color:#fff;font-size:11px;font-weight:600;padding:6px 12px;cursor:pointer;font-family:'DM Sans',sans-serif}
+.ti-cancel{background:none;border:1px solid var(--br);border-radius:var(--rx);color:var(--tmu);font-size:11px;font-weight:600;padding:6px 10px;cursor:pointer;font-family:'DM Sans',sans-serif}
+.ti-edit-btn{background:none;border:none;color:var(--td);cursor:pointer;font-size:13px;opacity:0;transition:opacity .2s;padding:0 3px;flex-shrink:0}
+.ti:hover .ti-edit-btn{opacity:1}.ti-edit-btn:hover{color:var(--indigo)}
+
 /* ADD ROW */
 .ar{display:flex;gap:8px;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--brs);flex-wrap:wrap}
-.ai2{flex:1;background:var(--sf2);border:1px solid var(--br);border-radius:var(--rx);color:var(--tx);font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;padding:9px 13px;outline:none;transition:border-color .2s,box-shadow .2s;min-width:0}
+.ai2{flex:1;background:var(--sf2);border:1px solid var(--br);border-radius:var(--rx);color:var(--tx);font-family:'DM Sans',sans-serif;font-size:13px;padding:9px 13px;outline:none;transition:border-color .2s,box-shadow .2s;min-width:0}
 .ai2::placeholder{color:var(--td)}
-.ai2:focus{border-color:var(--slate-m);box-shadow:0 0 0 3px rgba(30,41,59,.06)}
-.asel{flex:1;background:var(--sf2);border:1px solid var(--br);border-radius:var(--rx);color:var(--tm);font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;padding:9px 10px;outline:none;cursor:pointer;min-width:0}
-.abtn{background:var(--slate);border:none;border-radius:var(--rx);color:#F8FAFC;font-size:20px;font-weight:300;padding:0 16px;cursor:pointer;transition:all .2s;line-height:1;flex-shrink:0}
-.abtn:hover{background:var(--slate-m);transform:scale(1.04)}.abtn:active{transform:scale(.97)}
+.ai2:focus{border-color:var(--indigo);box-shadow:0 0 0 3px rgba(67,56,202,.07)}
+.asel{flex:1;background:var(--sf2);border:1px solid var(--br);border-radius:var(--rx);color:var(--tm);font-family:'DM Sans',sans-serif;font-size:12px;padding:9px 10px;outline:none;cursor:pointer;min-width:0}
+.abtn{background:var(--indigo);border:none;border-radius:var(--rx);color:#fff;font-size:20px;font-weight:300;padding:0 16px;cursor:pointer;transition:all .2s;line-height:1;flex-shrink:0}
+.abtn:hover{background:var(--indigo-b);transform:scale(1.04)}.abtn:active{transform:scale(.97)}
 
 /* PROJECT */
 .pji{padding:12px 0;border-bottom:1px solid var(--brs)}.pji:last-child{border-bottom:none}
@@ -163,22 +155,22 @@ header::before{content:'';position:absolute;top:0;right:0;width:320px;height:100
 .pja{display:flex;align-items:center;gap:6px;flex-shrink:0}
 .sp{font-size:10px;padding:3px 9px;border-radius:10px;cursor:pointer;transition:opacity .2s;font-weight:600;letter-spacing:.04em}
 .sp:hover{opacity:.75}
-.spa{background:var(--slate-s);color:var(--slate-m);border:1px solid var(--slate-br)}
-.spr{background:var(--am-bg);color:var(--am);border:1px solid var(--am-br)}
-.spd{background:var(--em-bg);color:var(--em);border:1px solid var(--em-br)}
+.spa{background:var(--slate-s);color:var(--slate);border:1px solid rgba(71,85,105,.15)}
+.spr{background:var(--am-p);color:var(--am);border:1px solid var(--am-br)}
+.spd{background:var(--em-p);color:var(--em);border:1px solid var(--em-br)}
 .pbt{height:5px;background:var(--bg);border-radius:5px;margin-bottom:5px;overflow:hidden}
 .pbf{height:100%;border-radius:5px;transition:width .5s ease}
-.bfn{background:var(--slate)}.bfa{background:var(--gold-b)}.bft{background:var(--em)}
+.bfn{background:var(--indigo)}.bfa{background:var(--am)}.bft{background:var(--em)}
 .pm2{font-size:11px;color:var(--tmu);display:flex;justify-content:space-between;align-items:center}
-.pm2 input[type=range]{accent-color:var(--slate);cursor:pointer;width:80px}
+.pm2 input[type=range]{accent-color:var(--indigo);cursor:pointer;width:80px}
 
 /* WINS */
 .wg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:11px}
 .wc{background:var(--sf);border:1px solid var(--br);border-radius:14px;padding:16px 18px;position:relative;transition:box-shadow .2s,transform .2s}
 .wc:hover{box-shadow:var(--s2);transform:translateY(-2px)}
-.wc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold-b);border-radius:14px 14px 0 0}
-.wb{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-b);margin-bottom:6px;display:flex;align-items:center;gap:5px;font-weight:700}
-.wic{width:10px;height:10px;fill:var(--gold-b)}
+.wc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--indigo),var(--violet));border-radius:14px 14px 0 0}
+.wb{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--indigo);margin-bottom:6px;display:flex;align-items:center;gap:5px;font-weight:700}
+.wic{width:10px;height:10px;fill:var(--indigo)}
 .wt{font-size:13px;color:var(--tx);line-height:1.4;margin-bottom:4px;font-weight:600}
 .wn{font-size:12px;color:var(--tmu);font-style:italic;line-height:1.5;margin-bottom:5px}
 .wdt{font-size:10px;color:var(--td)}
@@ -188,21 +180,21 @@ header::before{content:'';position:absolute;top:0;right:0;width:320px;height:100
 /* WEEKLY */
 .wkgd{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin-bottom:1.25rem}
 .wkd{background:var(--sf2);border:1px solid var(--br);border-radius:11px;padding:12px 5px;text-align:center}
-.wkd.today{background:var(--slate);border-color:var(--slate)}
+.wkd.today{background:var(--ink);border-color:var(--ink)}
 .wdl{font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:600}
-.wkd.today .wdl{color:rgba(148,163,184,.6)}
-.wdn{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--tm);line-height:1;margin-bottom:7px}
-.wkd.today .wdn{color:var(--gold-l)}
+.wkd.today .wdl{color:rgba(129,140,248,.5)}
+.wdn{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--tm);line-height:1;margin-bottom:7px}
+.wkd.today .wdn{color:var(--indigo-l)}
 .wbw{height:40px;display:flex;align-items:flex-end;justify-content:center}
 .wbr{width:16px;background:var(--br);border-radius:3px;position:relative;overflow:hidden;height:40px}
-.wkd.today .wbr{background:rgba(255,255,255,.12)}
-.wbf{position:absolute;bottom:0;left:0;right:0;background:var(--slate-s);border-radius:3px;transition:height .7s ease}
-.wkd.today .wbf{background:var(--gold-l)}
+.wkd.today .wbr{background:rgba(255,255,255,.1)}
+.wbf{position:absolute;bottom:0;left:0;right:0;background:var(--indigo-p);border-radius:3px;transition:height .7s ease}
+.wkd.today .wbf{background:var(--indigo-l)}
 .wpc{font-size:9.5px;color:var(--td);margin-top:4px;font-weight:500}
-.wkd.today .wpc{color:rgba(148,163,184,.7)}
+.wkd.today .wpc{color:rgba(129,140,248,.7)}
 .wsr{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.25rem}
 .wsb{background:var(--sf);border:1px solid var(--br);border-radius:13px;padding:16px 18px;box-shadow:var(--s1)}
-.wsn{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--slate);line-height:1;margin-bottom:4px}
+.wsn{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:var(--indigo);line-height:1;margin-bottom:4px}
 .wsl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--tmu);font-weight:600}
 .htbl{width:100%;border-collapse:collapse;font-size:12.5px}
 .htbl th{text-align:left;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--tmu);font-weight:700;padding:9px 12px;border-bottom:1px solid var(--br)}
@@ -216,9 +208,9 @@ header::before{content:'';position:absolute;top:0;right:0;width:320px;height:100
 .kpic:hover{transform:translateY(-2px);box-shadow:var(--s2)}
 .kpit{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:9px}
 .kpia{font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;margin-bottom:3px}
-.kpin{font-size:12.5px;color:var(--tx);font-weight:500;line-height:1.4}
+.kpin{font-size:12.5px;color:var(--tx);font-weight:400;line-height:1.4}
 .kpsw{text-align:right;flex-shrink:0;margin-left:10px}
-.kps{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;line-height:1}
+.kps{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;line-height:1}
 .kptr{font-size:10px;color:var(--tmu);margin-top:2px}
 .kpbt{height:4px;background:var(--bg);border-radius:5px;margin-bottom:7px;overflow:hidden}
 .kpbf{height:100%;border-radius:5px;transition:width .6s ease}
@@ -226,101 +218,139 @@ header::before{content:'';position:absolute;top:0;right:0;width:320px;height:100
 .kpwt{font-size:10px;color:var(--td);margin-top:5px}
 
 /* SMART ANALYSIS */
-.smart-btn{display:inline-flex;align-items:center;gap:8px;background:var(--slate);border:none;border-radius:10px;color:#F8FAFC;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:600;padding:10px 20px;cursor:pointer;transition:all .2s;letter-spacing:.01em}
-.smart-btn:hover{background:var(--slate-m);transform:translateY(-1px)}.smart-btn:active{transform:scale(.97)}.smart-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.smart-btn{display:inline-flex;align-items:center;gap:8px;background:var(--indigo);border:none;border-radius:10px;color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;padding:10px 20px;cursor:pointer;transition:all .2s;box-shadow:var(--si)}
+.smart-btn:hover{background:var(--indigo-b);transform:translateY(-1px)}.smart-btn:active{transform:scale(.97)}.smart-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
 .aip{background:var(--sf);border:1px solid var(--br);border-radius:14px;padding:20px 24px;margin-top:1rem;display:none;box-shadow:var(--s1)}
 .aip.vis{display:block}
-.aipt{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-b);font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px;padding-bottom:12px;border-bottom:1px solid var(--brs)}
+.aipt{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--indigo);font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px;padding-bottom:12px;border-bottom:1px solid var(--brs)}
 .aic{font-size:13.5px;color:var(--tm);line-height:1.85}
-.aib2{width:100%;height:3px;background:var(--slate-s);border-radius:3px;overflow:hidden;margin-bottom:12px}
-.aibf{height:100%;background:var(--gold-b);border-radius:3px;animation:ald 1.6s ease infinite}
-@keyframes ald{0%{width:0%;margin-left:0}50%{width:55%;margin-left:22%}100%{width:0%;margin-left:100%}}
 
-/* TOOLS */
-.tgrp{margin-bottom:1.4rem}
-.tstt{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--tmu);font-weight:700;margin:0 0 9px;padding-bottom:5px;border-bottom:1px solid var(--brs)}
-.tgrd{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:9px}
-.tlc{background:var(--sf);border:1px solid var(--br);border-radius:13px;padding:14px 16px;display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s,border-color .2s;box-shadow:var(--s1);position:relative;overflow:hidden}
-.tlc::before{content:'';position:absolute;top:0;left:0;bottom:0;width:2px;border-radius:0;opacity:0;transition:opacity .2s}
-.tlc:hover{transform:translateY(-2px);box-shadow:var(--s2);border-color:rgba(30,41,59,.16)}.tlc:hover::before{opacity:1}
-.tg-jibu .tlc::before{background:var(--em)}.tg-ai .tlc::before{background:var(--vi)}.tg-dev .tlc::before{background:var(--gold-b)}
-.tlic{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
-.tlnm{font-size:12.5px;font-weight:600;color:var(--tx);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tldc{font-size:10.5px;color:var(--tmu);line-height:1.35}
-.tlar{font-size:13px;color:var(--td);flex-shrink:0;transition:transform .2s,color .2s}
-.tlc:hover .tlar{transform:translateX(3px);color:var(--slate)}
+/* COMMAND CENTRE */
+.ccgrd{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.cctile{background:var(--sf);border:1px solid var(--br);border-radius:14px;padding:16px 18px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;transition:transform .2s,box-shadow .2s,border-color .2s;box-shadow:var(--s1);position:relative;overflow:hidden}
+.cctile::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:14px 14px 0 0;transition:opacity .2s}
+.cctile:hover{transform:translateY(-3px);box-shadow:var(--s2);border-color:var(--indigo-br)}.cctile:hover::before{opacity:1}
+.ccico{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.ccnm{font-size:13.5px;font-weight:600;color:var(--tx)}
+.ccdc{font-size:11.5px;color:var(--tmu);line-height:1.4}
+.ccarw{font-size:12px;color:var(--td);margin-top:auto;transition:color .2s}
+.cctile:hover .ccarw{color:var(--indigo)}
+
+/* COO PULSE */
+.coopulse{background:linear-gradient(135deg,var(--ink) 0%,var(--ink-m) 100%);border-radius:var(--r);padding:1.5rem 2rem;margin-bottom:1.25rem;position:relative;overflow:hidden}
+.coopulse::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 0% 100%,rgba(67,56,202,.2),transparent 55%)}
+.cphead{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;position:relative;z-index:1}
+.cptitle{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:rgba(129,140,248,.6);font-weight:700}
+.cpstatus{display:flex;align-items:center;gap:7px;font-size:11px;color:rgba(255,255,255,.55)}
+.cpgrd{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;position:relative;z-index:1}
+.cpitem{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px 14px}
+.cpil{font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:rgba(129,140,248,.55);font-weight:600;margin-bottom:5px}
+.cpit{font-size:12.5px;color:rgba(255,255,255,.85);line-height:1.45}
+.cpst{display:inline-flex;align-items:center;gap:5px;font-size:10px;padding:2px 9px;border-radius:10px;margin-top:6px;font-weight:600}
+.cs-done{background:rgba(5,150,105,.2);color:#6EE7B7}
+.cs-pending{background:rgba(217,119,6,.2);color:#FCD34D}
+.cs-today{background:rgba(67,56,202,.3);color:var(--indigo-l)}
+
+/* END OF DAY */
+.eod-btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);border:1px solid rgba(129,140,248,.2);border-radius:10px;color:var(--indigo-l);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;padding:10px 20px;cursor:pointer;transition:all .2s}
+.eod-btn:hover{background:var(--ink-m);border-color:rgba(129,140,248,.35);color:#fff}
+.eod-out{background:var(--ink);border-radius:14px;padding:20px 24px;margin-top:1rem;display:none;position:relative;overflow:hidden}
+.eod-out::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(67,56,202,.2),transparent 55%)}
+.eod-out.vis{display:block}
+.eod-title{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(129,140,248,.6);font-weight:700;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.06);position:relative;z-index:1}
+.eod-body{font-size:13.5px;color:rgba(255,255,255,.82);line-height:1.85;position:relative;z-index:1}
 
 /* SKILLS */
 .skgd{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:9px;margin-bottom:1rem}
 .skc{background:var(--sf);border:1px solid var(--br);border-radius:13px;padding:13px 15px;box-shadow:var(--s1);transition:transform .2s,box-shadow .2s;position:relative}
 .skc:hover{transform:translateY(-2px);box-shadow:var(--s2)}
 .skc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:13px 13px 0 0}
-.sk-tech::before{background:var(--em)}.sk-ops::before{background:var(--slate)}.sk-lead::before{background:var(--gold-b)}.sk-data::before{background:var(--vi)}
+.sk-tech::before{background:var(--em)}.sk-ops::before{background:var(--indigo)}.sk-lead::before{background:var(--am)}.sk-data::before{background:var(--violet)}
+.skc.auto-earned{border-color:var(--indigo-br);background:var(--indigo-s)}
+.skc.auto-earned::after{content:'auto';position:absolute;top:8px;right:8px;font-size:8px;letter-spacing:.1em;text-transform:uppercase;background:var(--indigo-p);color:var(--indigo);padding:2px 6px;border-radius:5px;font-weight:700}
 .sklv{font-size:9px;letter-spacing:.17em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
 .sknm{font-size:12.5px;font-weight:600;color:var(--tx);margin-bottom:3px}
 .sknt{font-size:11px;color:var(--tmu);line-height:1.4}
 .sklbar{height:3px;background:var(--bg);border-radius:4px;margin-top:8px;overflow:hidden}
 .sklbf{height:100%;border-radius:4px;transition:width .5s ease}
 .skdt{font-size:10px;color:var(--td);margin-top:5px}
-.dsk{position:absolute;top:9px;right:9px;background:none;border:none;color:var(--td);cursor:pointer;font-size:14px;opacity:0;transition:opacity .2s}
-.skc:hover .dsk{opacity:1}.dsk:hover{color:var(--ro)}
+.dskb{position:absolute;top:9px;right:9px;background:none;border:none;color:var(--td);cursor:pointer;font-size:14px;opacity:0;transition:opacity .2s}
+.skc:hover .dskb{opacity:1}.dskb:hover{color:var(--ro)}
+
+/* TOOLS */
+.tgrp{margin-bottom:1.4rem}
+.tstt{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--tmu);font-weight:700;margin:0 0 9px;padding-bottom:5px;border-bottom:1px solid var(--brs)}
+.tgrd{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:9px}
+.tlc{background:var(--sf);border:1px solid var(--br);border-radius:13px;padding:14px 16px;display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s,border-color .2s;box-shadow:var(--s1);position:relative;overflow:hidden}
+.tlc::before{content:'';position:absolute;top:0;left:0;bottom:0;width:2px;opacity:0;transition:opacity .2s}
+.tlc:hover{transform:translateY(-2px);box-shadow:var(--s2);border-color:var(--indigo-br)}.tlc:hover::before{opacity:1}
+.tg-jibu .tlc::before{background:var(--em)}.tg-ai .tlc::before{background:var(--violet)}.tg-dev .tlc::before{background:var(--am)}
+.tlic{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.tlnm{font-size:12.5px;font-weight:600;color:var(--tx);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tldc{font-size:10.5px;color:var(--tmu);line-height:1.35}
+.tlar{font-size:13px;color:var(--td);flex-shrink:0;transition:transform .2s,color .2s}
+.tlc:hover .tlar{transform:translateX(3px);color:var(--indigo)}
 
 /* INTERNS */
 .ing{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
-.inh{background:var(--slate);border-radius:12px;padding:15px 18px;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between}
-.inab{display:flex;align-items:center;gap:11px}
-.ina{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#fff;flex-shrink:0}
-.innm{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:#F8FAFC}
-.inrl{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:rgba(148,163,184,.5);margin-top:2px}
-.intc{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold-l)}
-.intl{font-size:10px;color:rgba(148,163,184,.5);text-align:right}
+.inh{background:var(--ink);border-radius:12px;padding:15px 18px;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
+.inh::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at right,rgba(67,56,202,.2),transparent 60%)}
+.inab{display:flex;align-items:center;gap:11px;position:relative;z-index:1}
+.ina{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:#fff;flex-shrink:0}
+.innm{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:#F8FAFC}
+.inrl{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:rgba(148,163,184,.45);margin-top:2px}
+.intc{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--indigo-l);position:relative;z-index:1}
+.intl{font-size:10px;color:rgba(148,163,184,.45);text-align:right;position:relative;z-index:1}
 .iti{display:flex;align-items:flex-start;gap:9px;padding:9px 0;border-bottom:1px solid var(--brs)}
 .iti:last-of-type{border-bottom:none}
 .its{font-size:9.5px;padding:2px 8px;border-radius:8px;flex-shrink:0;margin-top:3px;font-weight:600;cursor:pointer;transition:opacity .2s}
 .its:hover{opacity:.75}
-.itp{background:var(--am-bg);color:var(--am);border:1px solid var(--am-br)}
-.iti2{background:var(--slate-s);color:var(--slate-m);border:1px solid var(--slate-br)}
-.itd{background:var(--em-bg);color:var(--em);border:1px solid var(--em-br)}
+.itp{background:var(--am-p);color:var(--am);border:1px solid var(--am-br)}
+.iti2{background:var(--indigo-p);color:var(--indigo);border:1px solid var(--indigo-br)}
+.itd{background:var(--em-p);color:var(--em);border:1px solid var(--em-br)}
 .ittx{font-size:12.5px;color:var(--tx);flex:1;line-height:1.4}
 .itdt{font-size:10px;color:var(--td);margin-top:2px}
 .itdl{background:none;border:none;color:var(--td);cursor:pointer;font-size:14px;opacity:0;transition:opacity .2s;flex-shrink:0}
 .iti:hover .itdl{opacity:1}.itdl:hover{color:var(--ro)}
-.hvb{display:inline-flex;align-items:center;gap:6px;background:var(--sf2);border:1px solid var(--br);border-radius:9px;color:var(--tm);font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;padding:7px 14px;cursor:pointer;transition:all .2s}
-.hvb:hover{background:var(--slate);color:#F8FAFC;border-color:var(--slate)}.hvb:disabled{opacity:.5;cursor:not-allowed}
+.hvb{display:inline-flex;align-items:center;gap:6px;background:var(--sf2);border:1px solid var(--br);border-radius:9px;color:var(--tm);font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;padding:7px 14px;cursor:pointer;transition:all .2s}
+.hvb:hover{background:var(--ink);color:#F8FAFC;border-color:var(--ink)}
 
 /* SETTINGS */
-.ssl2{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--slate);font-weight:700;margin-bottom:7px;display:block}
+.ssl2{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--indigo);font-weight:700;margin-bottom:7px;display:block}
 .ssd{font-size:12.5px;color:var(--tmu);margin-bottom:9px;line-height:1.6}
-.ssi{width:100%;background:var(--sf2);border:1px solid var(--br);border-radius:var(--rx);color:var(--tx);font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;padding:9px 13px;outline:none;transition:border-color .2s}
-.ssi:focus{border-color:var(--vi);box-shadow:0 0 0 3px rgba(91,33,182,.07)}
-.svb{background:var(--slate);border:none;border-radius:var(--rx);color:#F8FAFC;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:600;padding:9px 22px;cursor:pointer;margin-top:9px;transition:background .2s}
-.svb:hover{background:var(--slate-m)}
+.ssi{width:100%;background:var(--sf2);border:1px solid var(--br);border-radius:var(--rx);color:var(--tx);font-family:'DM Sans',sans-serif;font-size:13px;padding:9px 13px;outline:none;transition:border-color .2s}
+.ssi:focus{border-color:var(--indigo);box-shadow:0 0 0 3px rgba(67,56,202,.08)}
+.svb{background:var(--indigo);border:none;border-radius:var(--rx);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;padding:9px 22px;cursor:pointer;margin-top:9px;transition:background .2s}
+.svb:hover{background:var(--indigo-b)}
 .okm{display:none;font-size:12px;color:var(--em);margin-top:7px;font-weight:600}
 .stpl{list-style:none}
 .stpi{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--brs)}
 .stpi:last-child{border-bottom:none}
-.stn{width:23px;height:23px;border-radius:50%;background:var(--slate);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.stt{font-size:13px;color:var(--tm);line-height:1.55}
-.stt a{color:var(--vi);font-weight:600}
-.ibox{background:var(--in-bg);border:1px solid var(--in-br);border-radius:10px;padding:12px 16px;margin-bottom:1.25rem;font-size:12.5px;color:var(--in);line-height:1.65;font-weight:500}
+.stn{width:23px;height:23px;border-radius:50%;background:var(--indigo);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.stt{font-size:13px;color:var(--tm);line-height:1.55}.stt a{color:var(--indigo);font-weight:600}
+.ibox{background:var(--indigo-p);border:1px solid var(--indigo-br);border-radius:10px;padding:12px 16px;margin-bottom:1.25rem;font-size:12.5px;color:var(--indigo);line-height:1.65;font-weight:500}
 .em{color:var(--td);font-size:12.5px;padding:16px;font-style:italic;text-align:center;background:var(--sf2);border-radius:10px;border:1px dashed var(--br);margin:4px 0}
 
-/* RESPONSIVE */
+/* PATTERN INSIGHTS */
+.ins-grd{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-bottom:1.25rem}
+.ins-c{background:var(--sf);border:1px solid var(--br);border-radius:14px;padding:16px 18px;box-shadow:var(--s1);position:relative;overflow:hidden}
+.ins-c::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:14px 14px 0 0;background:linear-gradient(90deg,var(--indigo),var(--violet))}
+.ins-lbl{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--indigo);font-weight:700;margin-bottom:5px}
+.ins-val{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--ink);line-height:1;margin-bottom:3px}
+.ins-sub{font-size:12px;color:var(--tmu);line-height:1.4}
+
 @media(max-width:900px){
-  .grid,.ing,.crow{grid-template-columns:1fr}
-  .cw{grid-column:span 1}
+  .grid,.ing,.crow{grid-template-columns:1fr}.cw{grid-column:span 1}
   .srow,.wsr{grid-template-columns:repeat(2,1fr)}
   .wkgd{grid-template-columns:repeat(4,1fr)}
-  .wg,.kpig{grid-template-columns:1fr}
-  header{flex-direction:column;align-items:flex-start}
-  .hr{text-align:left}
-  .hl h1{font-size:2rem}
+  .wg,.kpig,.ins-grd{grid-template-columns:1fr}
+  header{flex-direction:column;align-items:flex-start}.hr{text-align:left}
+  .hl h1{font-size:2.2rem}.cpgrd{grid-template-columns:1fr 1fr}
 }
 @media(max-width:500px){
-  .srow{grid-template-columns:repeat(2,1fr)}
-  .tabs{flex-wrap:wrap}
-  .wrap{padding:1rem .75rem 4rem}
-  header{padding:1.5rem 1.25rem}
+  .srow{grid-template-columns:repeat(2,1fr)}.tabs{flex-wrap:wrap}
+  .wrap{padding:1rem .75rem 4rem}.header{padding:1.5rem 1.25rem}
+  .cpgrd{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -330,7 +360,7 @@ header::before{content:'';position:absolute;top:0;right:0;width:320px;height:100
 <header>
   <div class="hl">
     <div class="heyebrow">Operations Liaison Officer &amp; IT Support · Jibu</div>
-    <h1>Doreen's <em>Personal</em> Tracker</h1>
+    <h1>Doreen's <em>Command Centre</em></h1>
     <p class="hsub">Personal Performance Dashboard · Jibu Network</p>
   </div>
   <div class="hr">
@@ -340,12 +370,22 @@ header::before{content:'';position:absolute;top:0;right:0;width:320px;height:100
   </div>
 </header>
 
+<!-- MORNING BRIEFING -->
+<div class="mbanner" id="mBanner">
+  <div class="mbt">Morning Briefing</div>
+  <div class="mbh" id="mBHead">Good morning, Doreen.</div>
+  <div class="mbc" id="mBBody">Loading your briefing…</div>
+  <div class="mbpills" id="mBPills"></div>
+</div>
+
 <div class="tabs">
   <button class="tb active" data-tab="today">Today</button>
+  <button class="tb" data-tab="coo">COO Pulse</button>
   <button class="tb" data-tab="kpi">KPI Dashboard</button>
   <button class="tb" data-tab="weekly">Weekly</button>
-  <button class="tb" data-tab="wins">My Wins</button>
+  <button class="tb" data-tab="wins">Impact Log</button>
   <button class="tb" data-tab="projects">Projects</button>
+  <button class="tb" data-tab="hub">Command Centre</button>
   <button class="tb" data-tab="tools">Tools &amp; Skills</button>
   <button class="tb" data-tab="interns">My Team</button>
   <button class="tb" data-tab="settings">Settings</button>
@@ -357,10 +397,10 @@ header::before{content:'';position:absolute;top:0;right:0;width:320px;height:100
     <div class="sbox sb1"><div class="snum c1" id="sDone">0</div><div class="slbl">Done today</div></div>
     <div class="sbox sb2"><div class="snum c2" id="sPend">0</div><div class="slbl">Pending</div></div>
     <div class="sbox sb3"><div class="snum c3" id="sProj">0</div><div class="slbl">Active projects</div></div>
-    <div class="sbox sb4"><div class="snum c4" id="sWins">0</div><div class="slbl">Solo wins</div></div>
+    <div class="sbox sb4"><div class="snum c4" id="sWins">0</div><div class="slbl">Achievements</div></div>
   </div>
   <div class="crow">
-    <div class="cbox"><div class="cey">All-time</div><div class="cnum" id="cTot">0</div><div class="clbl">Tasks completed ever</div></div>
+    <div class="cbox"><div class="cey">All-time</div><div class="cnum" id="cTot">0</div><div class="clbl">Tasks completed</div></div>
     <div class="cbox"><div class="cey">All-time</div><div class="cnum" id="cRate">0%</div><div class="clbl">Avg. completion rate</div></div>
     <div class="cbox"><div class="cey">Since Day 1</div><div class="cnum" id="cDays">0</div><div class="clbl">Days tracked</div></div>
     <div class="caib">
@@ -375,11 +415,25 @@ header::before{content:'';position:absolute;top:0;right:0;width:320px;height:100
   </div>
   <div class="grid">
     <div class="card">
-      <div class="ch"><span class="ct"><span class="ctd dg"></span>Daily checklist</span><span class="cc" id="dCnt">0/0</span></div>
+      <div class="ch">
+        <span class="ct"><span class="ctd di"></span>Daily checklist</span>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class="cc" id="dCnt">0/0</span>
+          <button id="dAddBtn" style="background:var(--indigo-p);border:1px solid var(--indigo-br);border-radius:7px;color:var(--indigo);font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;padding:4px 10px;cursor:pointer;transition:all .2s" onmouseover="this.style.background='var(--indigo)';this.style.color='#fff'" onmouseout="this.style.background='var(--indigo-p)';this.style.color='var(--indigo)'">+ Add task</button>
+        </div>
+      </div>
       <div id="dList"></div>
+      <div id="dAddRow" style="display:none" class="ti-edit">
+        <input id="dAddInp" placeholder="New daily task…"/>
+        <select id="dAddTag" style="background:var(--sf2);border:1px solid var(--br);border-radius:var(--rx);color:var(--tm);font-family:'DM Sans',sans-serif;font-size:12px;padding:6px 8px;outline:none">
+          <option value="coo">COO</option><option value="ops">Ops</option><option value="team">Team</option>
+        </select>
+        <button class="ti-save" id="dAddSave">Save</button>
+        <button class="ti-cancel" id="dAddCancel">Cancel</button>
+      </div>
     </div>
     <div class="card">
-      <div class="ch"><span class="ct"><span class="ctd dt"></span>Incoming tasks</span><span class="cc" id="aCnt">0 items</span></div>
+      <div class="ch"><span class="ct"><span class="ctd dem"></span>Incoming tasks</span><span class="cc" id="aCnt">0 items</span></div>
       <div id="aList"></div>
       <div class="ar">
         <input class="ai2" id="aInp" placeholder="Add incoming task…" style="flex:3;min-width:120px"/>
@@ -390,11 +444,33 @@ header::before{content:'';position:absolute;top:0;right:0;width:320px;height:100
   </div>
   <div style="margin-top:1.25rem;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
     <button class="smart-btn" id="dayBtn">◎ Smart Daily Analysis</button>
-    <span style="font-size:11px;color:var(--tmu)">Instant · no internet needed</span>
+    <button class="eod-btn" id="eodBtn">◑ End-of-Day Wrap</button>
   </div>
-  <div class="aip" id="dayPnl">
-    <div class="aipt">◎ Daily Performance Analysis</div>
-    <div class="aic" id="dayCnt"></div>
+  <div class="aip" id="dayPnl"><div class="aipt">◎ Daily Performance Analysis</div><div class="aic" id="dayCnt"></div></div>
+  <div class="eod-out" id="eodPnl"><div class="eod-title">◑ End-of-Day Summary</div><div class="eod-body" id="eodBody"></div></div>
+</div>
+
+<!-- COO PULSE -->
+<div class="tp" id="tab-coo">
+  <div class="coopulse">
+    <div class="cphead">
+      <div class="cptitle">COO Pulse — Live Status</div>
+      <div class="cpstatus"><div class="ldot"></div>Updated now</div>
+    </div>
+    <div class="cpgrd" id="cooGrid"></div>
+  </div>
+  <div class="card" style="margin-top:1.25rem">
+    <div class="ch"><span class="ct"><span class="ctd di"></span>COO action items</span><span class="cc" id="cooAcnt">0</span></div>
+    <div id="cooAList"></div>
+    <div class="ar">
+      <input class="ai2" id="cooAInp" placeholder="Add COO action item…" style="flex:3"/>
+      <select class="asel" id="cooAPri" style="flex:1;min-width:100px">
+        <option value="urgent">Urgent</option>
+        <option value="today" selected>Today</option>
+        <option value="this-week">This week</option>
+      </select>
+      <button class="abtn" id="cooABtn">+</button>
+    </div>
   </div>
 </div>
 
@@ -402,40 +478,38 @@ header::before{content:'';position:absolute;top:0;right:0;width:320px;height:100
 <div class="tp" id="tab-kpi">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:10px">
     <div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--slate)">KPI Performance</h2>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--indigo)">KPI Performance</h2>
       <p style="font-size:12px;color:var(--tmu);margin-top:3px">Live scores based on today's task completions</p>
     </div>
     <button class="smart-btn" id="kpiBtn" style="font-size:12px;padding:9px 16px">◎ Smart KPI Analysis</button>
   </div>
-  <div class="aip" id="kpiPnl" style="margin-bottom:1.25rem">
-    <div class="aipt">◎ KPI Scorecard</div>
-    <div class="aic" id="kpiCnt"></div>
-  </div>
+  <div class="aip" id="kpiPnl" style="margin-bottom:1.25rem"><div class="aipt">◎ KPI Scorecard</div><div class="aic" id="kpiCnt"></div></div>
   <div class="kpig" id="kpiGrid"></div>
 </div>
 
 <!-- WEEKLY -->
 <div class="tp" id="tab-weekly">
+  <div class="ins-grd" id="insGrid"></div>
   <div class="wsr">
     <div class="wsb"><div class="wsn" id="wDone">0</div><div class="wsl">Tasks this week</div></div>
     <div class="wsb"><div class="wsn" id="wAvg">0%</div><div class="wsl">Avg. daily completion</div></div>
     <div class="wsb"><div class="wsn" id="wBest">—</div><div class="wsl">Best day this week</div></div>
   </div>
   <div class="card" style="margin-bottom:1.2rem">
-    <div class="ch"><span class="ct"><span class="ctd dn"></span>Week at a glance</span><span class="cc" id="wRng"></span></div>
+    <div class="ch"><span class="ct"><span class="ctd dink"></span>Week at a glance</span><span class="cc" id="wRng"></span></div>
     <div class="wkgd" id="wkGrid"></div>
   </div>
   <div class="card">
-    <div class="ch"><span class="ct"><span class="ctd dt"></span>Completed task log</span><span class="cc" id="hCnt">0 entries</span></div>
+    <div class="ch"><span class="ct"><span class="ctd dem"></span>Completed task log</span><span class="cc" id="hCnt">0 entries</span></div>
     <div style="overflow-x:auto"><table class="htbl"><thead><tr><th>Task</th><th>Type</th><th>KPI</th><th>Completed</th></tr></thead><tbody id="hBody"></tbody></table></div>
   </div>
 </div>
 
-<!-- WINS -->
+<!-- IMPACT LOG (WINS) -->
 <div class="tp" id="tab-wins">
   <div class="card">
-    <div class="ch"><span class="ct"><span class="ctd dg"></span>Solo wins &amp; achievements</span><span class="cc" id="wnCnt">0</span></div>
-    <p style="font-size:13px;color:var(--tmu);margin-bottom:1.2rem;line-height:1.7;background:var(--slate-s);padding:12px 16px;border-radius:10px;border-left:2px solid var(--slate)">Every project you closed, every initiative you drove — this is your visible record of impact. This is what gets you that salary increment.</p>
+    <div class="ch"><span class="ct"><span class="ctd di"></span>Impact log &amp; achievements</span><span class="cc" id="wnCnt">0</span></div>
+    <p style="font-size:13px;color:var(--tmu);margin-bottom:1.2rem;line-height:1.7;background:var(--indigo-p);padding:12px 16px;border-radius:10px;border-left:2px solid var(--indigo)">Every project you closed, every initiative you drove — your visible record of professional impact.</p>
     <div class="wg" id="wnList"></div>
     <div class="ar">
       <input class="ai2" id="wnInp" placeholder="Achievement title…" style="flex:2;min-width:150px"/>
@@ -459,98 +533,127 @@ header::before{content:'';position:absolute;top:0;right:0;width:320px;height:100
   </div>
 </div>
 
-<!-- TOOLS & SKILLS -->
-<div class="tp" id="tab-tools">
-  <div style="background:var(--slate);border-radius:var(--rs2);padding:16px 20px;margin-bottom:1.25rem">
-    <div style="font-size:12.5px;color:rgba(148,163,184,.75);line-height:1.6"><strong style="color:#F8FAFC">Quick Access Hub</strong> — all your tools one click away. Plus your growing skills portfolio below.</div>
+<!-- COMMAND CENTRE (DASHBOARDS) -->
+<div class="tp" id="tab-hub">
+  <div style="margin-bottom:1.5rem">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--indigo);margin-bottom:4px">Command Centre</h2>
+    <p style="font-size:12px;color:var(--tmu)">Your key dashboards and working tools — one click away.</p>
   </div>
+
+  <div style="margin-bottom:1.5rem">
+    <div class="tstt" style="margin-bottom:14px">My Dashboards</div>
+    <div class="ccgrd">
+      <a class="cctile" href="https://aquaforall.sharepoint.com/:x:/r/sites/2.ProgrammeManagement/_layouts/15/Doc.aspx?sourcedoc=%7B13321A60-16B8-4E5B-8812-B2B6C3DB3BF1%7D&file=2024_IMP_JIBU%20v3.xlsx&action=default&mobileredirect=true" target="_blank" style="--tc:var(--indigo)">
+        <style>.cctile:nth-child(1)::before{background:var(--indigo)}</style>
+        <div class="ccico" style="background:var(--indigo-p);color:var(--indigo)">📊</div>
+        <div>
+          <div class="ccnm">IMP Data Tool</div>
+          <div class="ccdc">ILF project support — track milestones, data inputs and programme reporting</div>
+        </div>
+        <div class="ccarw">Open →</div>
+      </a>
+      <a class="cctile" href="https://docs.google.com/spreadsheets/d/130id7-Jlep27qM9Qxy-qdoY3e5ohtsIxTMhRDrqXc5Q/edit?gid=2064683733#gid=2064683733" target="_blank">
+        <div class="ccico" style="background:var(--em-p);color:var(--em)">📋</div>
+        <div>
+          <div class="ccnm">CM Pre-reads</div>
+          <div class="ccdc">Country Manager pre-reads — check and follow up with CMs and global leaders daily</div>
+        </div>
+        <div class="ccarw">Open →</div>
+      </a>
+      <a class="cctile" href="https://jibu.byoosi.com/app/monthly-target-tracking" target="_blank">
+        <div class="ccico" style="background:var(--am-p);color:var(--am)">🎯</div>
+        <div>
+          <div class="ccnm">Production Dashboards</div>
+          <div class="ccdc">Monthly target tracking — production stats, franchise performance and operational health</div>
+        </div>
+        <div class="ccarw">Open →</div>
+      </a>
+      <div class="cctile" id="addDashTile" style="border-style:dashed;cursor:pointer;justify-content:center;align-items:center;gap:8px;flex-direction:row" onclick="showAddDash()">
+        <span style="font-size:22px;color:var(--td)">+</span>
+        <span style="font-size:13px;color:var(--tmu);font-weight:500">Add dashboard</span>
+      </div>
+    </div>
+    <div id="addDashForm" style="display:none;margin-top:12px" class="card">
+      <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--indigo);font-weight:700;margin-bottom:10px">Add a dashboard link</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <input class="ai2" id="dashNm" placeholder="Dashboard name…" style="flex:2"/>
+        <input class="ai2" id="dashUrl" placeholder="https://…" style="flex:3"/>
+        <input class="ai2" id="dashDc" placeholder="What you check here daily…" style="flex:3"/>
+        <button class="abtn" id="dashBtn">+</button>
+      </div>
+    </div>
+    <div id="extraDashes"></div>
+  </div>
+
   <div class="tgrp tg-jibu">
     <div class="tstt">Jibu Systems</div>
     <div class="tgrd">
-      <a class="tlc" href="https://nexus.evouala.com/application/run/4685" target="_blank"><div class="tlic" style="background:var(--em-bg);color:var(--em)">💧</div><div style="flex:1;min-width:0"><div class="tlnm">Nexus / Evouala</div><div class="tldc">POS &amp; franchise ops</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://portal.mwater.co/#/forms" target="_blank"><div class="tlic" style="background:var(--em-bg);color:var(--em)">📋</div><div style="flex:1;min-width:0"><div class="tlnm">mWater Forms</div><div class="tldc">Field surveys &amp; NPS</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://portal.ferntech.io/system/list" target="_blank"><div class="tlic" style="background:var(--em-bg);color:var(--em)">🔧</div><div style="flex:1;min-width:0"><div class="tlnm">Ferntech Portal</div><div class="tldc">System management</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://jibulms.frappe.cloud/app/lms" target="_blank"><div class="tlic" style="background:var(--slate-s);color:var(--slate)">🎓</div><div style="flex:1;min-width:0"><div class="tlnm">Jibu LMS</div><div class="tldc">Learning management</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://jibusupport.frappe.cloud/app/helpdesk" target="_blank"><div class="tlic" style="background:var(--slate-s);color:var(--slate)">🎫</div><div style="flex:1;min-width:0"><div class="tlnm">Jibu Helpdesk</div><div class="tldc">Support &amp; SLA tracking</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://jibuposdata.frappe.cloud/insights/dashboard" target="_blank"><div class="tlic" style="background:var(--slate-s);color:var(--slate)">📊</div><div style="flex:1;min-width:0"><div class="tlnm">POS Insights</div><div class="tldc">Dashboards &amp; analytics</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://jibuhr.frappe.cloud/app/hr" target="_blank"><div class="tlic" style="background:var(--slate-s);color:var(--slate)">👥</div><div style="flex:1;min-width:0"><div class="tlnm">Jibu HR</div><div class="tldc">HR &amp; records</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://jiburwanda.f.frappe.cloud/app/welcome-to-erpnext" target="_blank"><div class="tlic" style="background:var(--slate-s);color:var(--slate)">⚙️</div><div style="flex:1;min-width:0"><div class="tlnm">ERPNext Rwanda</div><div class="tldc">ERP &amp; operations</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://nexus.evouala.com/application/run/4685" target="_blank"><div class="tlic" style="background:var(--em-p);color:var(--em)">💧</div><div style="flex:1;min-width:0"><div class="tlnm">Nexus / Evouala</div><div class="tldc">POS &amp; franchise ops</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://portal.mwater.co/#/forms" target="_blank"><div class="tlic" style="background:var(--em-p);color:var(--em)">📋</div><div style="flex:1;min-width:0"><div class="tlnm">mWater Forms</div><div class="tldc">Field surveys &amp; NPS</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://portal.ferntech.io/system/list" target="_blank"><div class="tlic" style="background:var(--em-p);color:var(--em)">🔧</div><div style="flex:1;min-width:0"><div class="tlnm">Ferntech Portal</div><div class="tldc">System management</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://jibulms.frappe.cloud/app/lms" target="_blank"><div class="tlic" style="background:var(--indigo-p);color:var(--indigo)">🎓</div><div style="flex:1;min-width:0"><div class="tlnm">Jibu LMS</div><div class="tldc">Learning management</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://jibusupport.frappe.cloud/app/helpdesk" target="_blank"><div class="tlic" style="background:var(--indigo-p);color:var(--indigo)">🎫</div><div style="flex:1;min-width:0"><div class="tlnm">Jibu Helpdesk</div><div class="tldc">Support &amp; SLA tracking</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://jibuposdata.frappe.cloud/insights/dashboard" target="_blank"><div class="tlic" style="background:var(--indigo-p);color:var(--indigo)">📊</div><div style="flex:1;min-width:0"><div class="tlnm">POS Insights</div><div class="tldc">Dashboards &amp; analytics</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://jibuhr.frappe.cloud/app/hr" target="_blank"><div class="tlic" style="background:var(--indigo-p);color:var(--indigo)">👥</div><div style="flex:1;min-width:0"><div class="tlnm">Jibu HR</div><div class="tldc">HR &amp; records</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://jiburwanda.f.frappe.cloud/app/welcome-to-erpnext" target="_blank"><div class="tlic" style="background:var(--indigo-p);color:var(--indigo)">⚙️</div><div style="flex:1;min-width:0"><div class="tlnm">ERPNext Rwanda</div><div class="tldc">ERP &amp; operations</div></div><div class="tlar">→</div></a>
     </div>
   </div>
-  <div class="tgrp tg-ai">
+  <div class="tgrp tg-ai" style="margin-top:1rem">
     <div class="tstt">AI Tools</div>
     <div class="tgrd">
-      <a class="tlc" href="https://chatgpt.com/" target="_blank"><div class="tlic" style="background:var(--vi-bg);color:var(--vi)">🤖</div><div style="flex:1;min-width:0"><div class="tlnm">ChatGPT</div><div class="tldc">OpenAI conversational AI</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://chat.deepseek.com/" target="_blank"><div class="tlic" style="background:var(--vi-bg);color:var(--vi)">🧠</div><div style="flex:1;min-width:0"><div class="tlnm">DeepSeek</div><div class="tldc">Research &amp; reasoning AI</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://chatgpt.com/" target="_blank"><div class="tlic" style="background:var(--violet-p);color:var(--violet)">🤖</div><div style="flex:1;min-width:0"><div class="tlnm">ChatGPT</div><div class="tldc">OpenAI conversational AI</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://chat.deepseek.com/" target="_blank"><div class="tlic" style="background:var(--violet-p);color:var(--violet)">🧠</div><div style="flex:1;min-width:0"><div class="tlnm">DeepSeek</div><div class="tldc">Research &amp; reasoning AI</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://github.com/JibuCorporate/POS-Master" target="_blank"><div class="tlic" style="background:var(--am-p);color:var(--am)">⌨️</div><div style="flex:1;min-width:0"><div class="tlnm">GitHub — POS Master</div><div class="tldc">Source code &amp; version control</div></div><div class="tlar">→</div></a>
     </div>
   </div>
-  <div class="tgrp tg-dev">
-    <div class="tstt">Developer &amp; API</div>
-    <div class="tgrd">
-      <a class="tlc" href="https://github.com/JibuCorporate/POS-Master" target="_blank"><div class="tlic" style="background:var(--gold-p);color:var(--am)">⌨️</div><div style="flex:1;min-width:0"><div class="tlnm">GitHub — POS Master</div><div class="tldc">Source code &amp; version control</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://platform.openai.com/api-keys" target="_blank"><div class="tlic" style="background:var(--gold-p);color:var(--am)">🔑</div><div style="flex:1;min-width:0"><div class="tlnm">OpenAI API Keys</div><div class="tldc">Manage API credentials</div></div><div class="tlar">→</div></a>
-    </div>
-  </div>
+</div>
 
-  <div style="margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--brs)">
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:8px">
-      <div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--slate)">Skills Attained</h3>
-        <p style="font-size:12px;color:var(--tmu);margin-top:3px">Your growing professional toolkit — built in this role at Jibu.</p>
-      </div>
-      <span id="skCnt" style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--tmu)">0 skills</span>
+<!-- TOOLS & SKILLS -->
+<div class="tp" id="tab-tools">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:8px">
+    <div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--indigo)">Skills Portfolio</h2>
+      <p style="font-size:12px;color:var(--tmu);margin-top:3px">Auto-builds from your work. Manually add anything extra.</p>
     </div>
-    <div class="skgd" id="skList"></div>
-    <div class="card" style="padding:1.2rem 1.5rem">
-      <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);font-weight:700;margin-bottom:10px">Add a skill</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:stretch">
-        <input class="ai2" id="skNm" placeholder="Skill name (e.g. POS Troubleshooting)…" style="flex:3;min-width:160px"/>
-        <input class="ai2" id="skNt" placeholder="Where / how you use it…" style="flex:2;min-width:130px"/>
-        <select class="asel" id="skCat" style="flex:1;min-width:120px">
-          <option value="tech">Technology</option>
-          <option value="ops">Operations</option>
-          <option value="lead">Leadership</option>
-          <option value="data">Data &amp; Reporting</option>
-        </select>
-        <select class="asel" id="skLv" style="flex:1;min-width:105px">
-          <option value="learning">Learning</option>
-          <option value="proficient">Proficient</option>
-          <option value="expert">Expert</option>
-        </select>
-        <button class="abtn" id="skBtn">+</button>
-      </div>
+    <span id="skCnt" style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--tmu)">0 skills</span>
+  </div>
+  <div id="skSugg"></div>
+  <div class="skgd" id="skList"></div>
+  <div class="card" style="padding:1.2rem 1.5rem">
+    <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--indigo);font-weight:700;margin-bottom:10px">Add a skill manually</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:stretch">
+      <input class="ai2" id="skNm" placeholder="Skill name…" style="flex:3;min-width:160px"/>
+      <input class="ai2" id="skNt" placeholder="Where / how you use it…" style="flex:2;min-width:130px"/>
+      <select class="asel" id="skCat" style="flex:1;min-width:120px">
+        <option value="tech">Technology</option><option value="ops">Operations</option>
+        <option value="lead">Leadership</option><option value="data">Data &amp; Reporting</option>
+      </select>
+      <select class="asel" id="skLv" style="flex:1;min-width:105px">
+        <option value="learning">Learning</option><option value="proficient">Proficient</option><option value="expert">Expert</option>
+      </select>
+      <button class="abtn" id="skBtn">+</button>
     </div>
   </div>
 </div>
 
 <!-- MY TEAM -->
 <div class="tp" id="tab-interns">
-  <div style="background:var(--sk-bg);border:1px solid var(--sk-br);border-radius:10px;padding:12px 16px;margin-bottom:1.2rem;font-size:12.5px;color:var(--sk);font-weight:500;line-height:1.6">
-    IT task delegation tracker. Use this as your leave cover reference — anyone can pick up exactly where things stand.
-  </div>
+  <div class="ibox">IT task delegation tracker — your leave cover reference. Anyone can pick up exactly where things stand.</div>
   <div class="ing">
     <div class="card" style="padding:0;overflow:hidden">
-      <div class="inh">
-        <div class="inab"><div class="ina" style="background:var(--em)">S</div><div><div class="innm">Sharon</div><div class="inrl">IT Intern</div></div></div>
-        <div style="text-align:right"><div class="intc" id="shCnt">0</div><div class="intl">tasks assigned</div></div>
-      </div>
-      <div style="padding:0 1.4rem">
-        <div id="shList"></div>
-        <div class="ar" style="gap:7px"><input class="ai2" id="shInp" placeholder="Add task for Sharon…" style="flex:3;min-width:130px"/><button class="abtn" id="shBtn" style="padding:0 13px">+</button></div>
+      <div class="inh"><div class="inab"><div class="ina" style="background:var(--em)">S</div><div><div class="innm">Sharon</div><div class="inrl">IT Intern</div></div></div><div style="text-align:right;position:relative;z-index:1"><div class="intc" id="shCnt">0</div><div class="intl">tasks assigned</div></div></div>
+      <div style="padding:0 1.4rem"><div id="shList"></div>
+        <div class="ar" style="gap:7px"><input class="ai2" id="shInp" placeholder="Add task for Sharon…" style="flex:3"/><button class="abtn" id="shBtn" style="padding:0 13px">+</button></div>
         <div style="margin:12px 0 14px"><button class="hvb" id="shHv">📋 Smart Handover Summary</button></div>
-        <div class="aip" id="shPnl" style="margin-bottom:1rem"><div class="aipt">◎ Sharon's Handover Brief</div><div class="aib2" id="shBar" style="display:none"><div class="aibf"></div></div><div class="aic" id="shCt"></div></div>
+        <div class="aip" id="shPnl" style="margin-bottom:1rem"><div class="aipt">◎ Sharon's Handover Brief</div><div class="aic" id="shCt"></div></div>
       </div>
     </div>
     <div class="card" style="padding:0;overflow:hidden">
-      <div class="inh">
-        <div class="inab"><div class="ina" style="background:var(--vi)">A</div><div><div class="innm">Aalia</div><div class="inrl">IT Intern</div></div></div>
-        <div style="text-align:right"><div class="intc" id="aaCnt">0</div><div class="intl">tasks assigned</div></div>
-      </div>
-      <div style="padding:0 1.4rem">
-        <div id="aaList"></div>
-        <div class="ar" style="gap:7px"><input class="ai2" id="aaInp" placeholder="Add task for Aalia…" style="flex:3;min-width:130px"/><button class="abtn" id="aaBtn" style="padding:0 13px">+</button></div>
+      <div class="inh"><div class="inab"><div class="ina" style="background:var(--violet)">A</div><div><div class="innm">Aalia</div><div class="inrl">IT Intern</div></div></div><div style="text-align:right;position:relative;z-index:1"><div class="intc" id="aaCnt">0</div><div class="intl">tasks assigned</div></div></div>
+      <div style="padding:0 1.4rem"><div id="aaList"></div>
+        <div class="ar" style="gap:7px"><input class="ai2" id="aaInp" placeholder="Add task for Aalia…" style="flex:3"/><button class="abtn" id="aaBtn" style="padding:0 13px">+</button></div>
         <div style="margin:12px 0 14px"><button class="hvb" id="aaHv">📋 Smart Handover Summary</button></div>
-        <div class="aip" id="aaPnl" style="margin-bottom:1rem"><div class="aipt">◎ Aalia's Handover Brief</div><div class="aib2" id="aaBar" style="display:none"><div class="aibf"></div></div><div class="aic" id="aaCt"></div></div>
+        <div class="aip" id="aaPnl" style="margin-bottom:1rem"><div class="aipt">◎ Aalia's Handover Brief</div><div class="aic" id="aaCt"></div></div>
       </div>
     </div>
   </div>
@@ -559,58 +662,53 @@ header::before{content:'';position:absolute;top:0;right:0;width:320px;height:100
 <!-- SETTINGS -->
 <div class="tp" id="tab-settings">
   <div class="card">
-    <div class="ch"><span class="ct"><span class="ctd dv"></span>Settings</span></div>
-    <div class="ibox">◎ Smart Analysis works instantly with <strong>zero internet</strong>. If you also have a Gemini API key, it upgrades the analysis silently when available.</div>
+    <div class="ch"><span class="ct"><span class="ctd di"></span>Settings</span></div>
     <div style="margin-bottom:1.5rem">
-      <span class="ssl2">Gemini API Key (optional bonus)</span>
-      <div class="ssd">If you have a key from aistudio.google.com, paste it here. Smart Analysis always works without it.</div>
-      <ol class="stpl">
-        <li class="stpi"><div class="stn">1</div><div class="stt">Go to <a href="https://aistudio.google.com" target="_blank">aistudio.google.com</a> → sign in with Google</div></li>
-        <li class="stpi"><div class="stn">2</div><div class="stt">Click <strong>"Get API Key"</strong> → <strong>"Create API key in new project"</strong></div></li>
-        <li class="stpi"><div class="stn">3</div><div class="stt">Copy the key (starts with <strong>AIza...</strong>) and paste below</div></li>
-        <li class="stpi"><div class="stn">4</div><div class="stt">Click Save — it upgrades analysis to AI narrative when available</div></li>
-      </ol>
+      <span class="ssl2">Reset daily checklist to defaults</span>
+      <div class="ssd">This will restore the original 6 daily tasks. Your completed history is kept.</div>
+      <button class="svb" id="resetDailyBtn" style="background:var(--ro)">Reset checklist</button>
     </div>
-    <span class="ssl2">Your Gemini API Key</span>
-    <div class="ssd">Stored only in your browser.</div>
-    <input class="ssi" type="password" id="apiInp" placeholder="Paste key here (AIza…)"/>
-    <br/><button class="svb" id="svKey">Save Key</button>
-    <div class="okm" id="keyOk">✓ Key saved!</div>
+    <div style="border-top:1px solid var(--brs);padding-top:1.5rem;margin-bottom:1.5rem">
+      <span class="ssl2">Gemini API Key (optional)</span>
+      <div class="ssd">Paste a key from aistudio.google.com to upgrade Smart Analysis with AI narrative. Always works without it.</div>
+      <input class="ssi" type="password" id="apiInp" placeholder="AIza…"/>
+      <br/><button class="svb" id="svKey">Save Key</button>
+      <div class="okm" id="keyOk">✓ Key saved!</div>
+    </div>
   </div>
 </div>
 </div>
 
 <script>
-const K={D:'dcc_daily_v6',A:'dcc_adhoc_v6',P:'dcc_proj_v6',W:'dcc_wins_v6',DT:'dcc_date_v6',HS:'dcc_hist_v6',WK:'dcc_week_v6',GK:'dcc_gemini_key',CT:'dcc_cum_total',CR:'dcc_cum_rates',SD:'dcc_start_date',SH:'dcc_sharon_v1',AA:'dcc_aalia_v1',SK:'dcc_skills_v1'};
+const K={D:'dcc_daily_v7',A:'dcc_adhoc_v7',P:'dcc_proj_v7',W:'dcc_wins_v7',DT:'dcc_date_v7',HS:'dcc_hist_v7',WK:'dcc_week_v7',GK:'dcc_gemini_key',CT:'dcc_cum_total',CR:'dcc_cum_rates',SD:'dcc_start_date',SH:'dcc_sharon_v2',AA:'dcc_aalia_v2',SK:'dcc_skills_v2',CA:'dcc_cooactions_v1',ED:'dcc_extdash_v1'};
 const todayS=new Date().toDateString(),todayI=new Date().toISOString().slice(0,10);
 const MO=["January","February","March","April","May","June","July","August","September","October","November","December"];
 const DY=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-const SD=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const SD2=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 const KPIS=[
-  {id:1,area:"Executive Support",name:"COO action-item on-time closure rate",w:10,tgt:"90%",c:"gold"},
-  {id:2,area:"Executive Support",name:"Meeting readiness pack timeliness (pre-read ≥24hrs)",w:8,tgt:"95%",c:"gold"},
-  {id:3,area:"Country Coordination",name:"Country Manager deliverables on-track rate",w:10,tgt:"85%",c:"teal"},
-  {id:4,area:"Country Coordination",name:"Action tracker hygiene (updated in 7 days)",w:6,tgt:"100%",c:"teal"},
-  {id:5,area:"Issue Management",name:"Escalation turnaround time (issue to plan confirmed)",w:8,tgt:"<48hrs",c:"rose"},
+  {id:1,area:"Executive Support",name:"COO action-item on-time closure rate",w:10,tgt:"90%",c:"indigo"},
+  {id:2,area:"Executive Support",name:"Meeting readiness pack timeliness (pre-read ≥24hrs)",w:8,tgt:"95%",c:"indigo"},
+  {id:3,area:"Country Coordination",name:"Country Manager deliverables on-track rate",w:10,tgt:"85%",c:"em"},
+  {id:4,area:"Country Coordination",name:"Action tracker hygiene (updated in 7 days)",w:6,tgt:"100%",c:"em"},
+  {id:5,area:"Issue Management",name:"Escalation turnaround time (issue to plan confirmed)",w:8,tgt:"<48hrs",c:"ro"},
   {id:6,area:"POS ToTs",name:"POS Champions Training execution vs plan",w:8,tgt:"90%",c:"violet"},
-  {id:7,area:"Projects",name:"Strategic initiative milestone on-time rate",w:10,tgt:"85%",c:"navy"},
-  {id:8,area:"Reporting",name:"Dashboard / reporting timeliness",w:6,tgt:"95%",c:"indigo"},
-  {id:9,area:"Reporting",name:"Data accuracy rate (validated reporting errors)",w:6,tgt:"<2 errors",c:"indigo"},
-  {id:10,area:"POS Product",name:"POS franchise voice-of-customer coverage",w:8,tgt:"80%",c:"amber"},
-  {id:11,area:"POS Delivery",name:"Developer delivery predictability",w:10,tgt:"85%",c:"amber"},
-  {id:12,area:"POS Support",name:"POS ticket SLA compliance (all priorities)",w:10,tgt:"90%",c:"green"},
-  {id:13,area:"POS Adoption",name:"POS usage rate (franchises recording ≥90%)",w:0,tgt:"85%",c:"navy"},
-  {id:14,area:"POS Quality",name:"Repeat-issue rate (incidents within 30 days)",w:0,tgt:"<10%",c:"rose"},
+  {id:7,area:"Projects",name:"Strategic initiative milestone on-time rate",w:10,tgt:"85%",c:"ink"},
+  {id:8,area:"Reporting",name:"Dashboard / reporting timeliness",w:6,tgt:"95%",c:"sky"},
+  {id:9,area:"Reporting",name:"Data accuracy rate (validated reporting errors)",w:6,tgt:"<2 errors",c:"sky"},
+  {id:10,area:"POS Product",name:"POS franchise voice-of-customer coverage",w:8,tgt:"80%",c:"am"},
+  {id:11,area:"POS Delivery",name:"Developer delivery predictability",w:10,tgt:"85%",c:"am"},
+  {id:12,area:"POS Support",name:"POS ticket SLA compliance (all priorities)",w:10,tgt:"90%",c:"em"},
+  {id:13,area:"POS Adoption",name:"POS usage rate (franchises recording ≥90%)",w:0,tgt:"85%",c:"ink"},
+  {id:14,area:"POS Quality",name:"Repeat-issue rate (incidents within 30 days)",w:0,tgt:"<10%",c:"ro"},
 ];
 const KC={
-  gold:{a:'var(--gold-b)',bg:'var(--gold-p)',bd:'var(--gold-br)',bar:'var(--gold-b)'},
-  teal:{a:'var(--em)',bg:'var(--em-bg)',bd:'var(--em-br)',bar:'var(--em)'},
-  rose:{a:'var(--ro)',bg:'var(--ro-bg)',bd:'var(--ro-br)',bar:'var(--ro)'},
-  violet:{a:'var(--vi)',bg:'var(--vi-bg)',bd:'var(--vi-br)',bar:'var(--vi)'},
-  navy:{a:'var(--slate)',bg:'var(--slate-s)',bd:'var(--slate-br)',bar:'var(--slate)'},
-  indigo:{a:'var(--in)',bg:'var(--in-bg)',bd:'var(--in-br)',bar:'var(--in)'},
-  amber:{a:'var(--am)',bg:'var(--am-bg)',bd:'var(--am-br)',bar:'var(--gold-b)'},
-  green:{a:'var(--gn)',bg:'var(--gn-bg)',bd:'var(--gn-br)',bar:'var(--gn)'}
+  indigo:{a:'var(--indigo)',bg:'var(--indigo-p)',bd:'var(--indigo-br)',bar:'var(--indigo)'},
+  em:{a:'var(--em)',bg:'var(--em-p)',bd:'var(--em-br)',bar:'var(--em)'},
+  ro:{a:'var(--ro)',bg:'var(--ro-p)',bd:'var(--ro-br)',bar:'var(--ro)'},
+  violet:{a:'var(--violet)',bg:'var(--violet-p)',bd:'rgba(124,58,237,.15)',bar:'var(--violet)'},
+  ink:{a:'var(--ink)',bg:'var(--slate-s)',bd:'rgba(15,15,26,.12)',bar:'var(--ink)'},
+  sky:{a:'var(--sky)',bg:'var(--sky-p)',bd:'var(--sky-br)',bar:'var(--sky)'},
+  am:{a:'var(--am)',bg:'var(--am-p)',bd:'var(--am-br)',bar:'var(--am)'},
 };
 const DEF_D=[
   {id:1,text:"Ensure the COO has water in her flask",done:false,tag:"coo",ca:null,kpis:[1]},
@@ -623,34 +721,34 @@ const DEF_D=[
 const DEF_P=[{id:1,name:"Developer close-out — monitoring & follow-through",pct:35,status:"active",due:"",ao:todayI}];
 const DEF_W=[{id:1,title:"Customer Order App",note:"Designed, built, and delivered entirely solo — end to end",ao:todayI}];
 const DEF_SK=[
-  {id:1,name:"POS System Management",note:"Daily monitoring and troubleshooting across franchises",cat:"tech",lv:"proficient",ao:todayI},
-  {id:2,name:"Executive Support & COO Liaison",note:"Action tracking, meeting prep, pre-reads for COO office",cat:"ops",lv:"expert",ao:todayI},
-  {id:3,name:"Country Coordination",note:"Managing deliverables across country teams",cat:"lead",lv:"proficient",ao:todayI},
-  {id:4,name:"Dashboard & Reporting",note:"Health checks, data accuracy, Metabase & Looker",cat:"data",lv:"proficient",ao:todayI},
-  {id:5,name:"Escalation Management",note:"Issue identification, assignment and resolution tracking",cat:"ops",lv:"proficient",ao:todayI},
-  {id:6,name:"POS Training Coordination",note:"Champions ToT planning and execution tracking",cat:"lead",lv:"learning",ao:todayI},
+  {id:1,name:"POS System Management",note:"Daily monitoring and troubleshooting across franchises",cat:"tech",lv:"proficient",ao:todayI,auto:true},
+  {id:2,name:"Executive Support & COO Liaison",note:"Action tracking, meeting prep, pre-reads for COO office",cat:"ops",lv:"expert",ao:todayI,auto:true},
+  {id:3,name:"Country Coordination",note:"Managing deliverables across country teams",cat:"lead",lv:"proficient",ao:todayI,auto:true},
+  {id:4,name:"Dashboard & Reporting",note:"Health checks, data accuracy, Metabase & Looker",cat:"data",lv:"proficient",ao:todayI,auto:true},
+  {id:5,name:"Escalation Management",note:"Issue identification, assignment and resolution tracking",cat:"ops",lv:"proficient",ao:todayI,auto:true},
+  {id:6,name:"POS Training Coordination",note:"Champions ToT planning and execution tracking",cat:"lead",lv:"learning",ao:todayI,auto:true},
 ];
 
 function ld(k,d){try{const r=localStorage.getItem(k);return r!==null?JSON.parse(r):d}catch{return d}}
-function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));const el=document.getElementById('svi');if(el){el.textContent='✓ Saved';el.classList.add('ok');clearTimeout(sv._t);sv._t=setTimeout(()=>{el.textContent='';el.classList.remove('ok')},2000)}}catch(e){const el=document.getElementById('svi');if(el){el.textContent='⚠ Save failed';el.style.color='rgba(239,68,68,.8)'}}}
+function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));const el=document.getElementById('svi');if(el){el.textContent='✓ Saved';el.classList.add('ok');clearTimeout(sv._t);sv._t=setTimeout(()=>{el.textContent='';el.classList.remove('ok')},2000)}}catch(e){}}
 
 let cumT=ld(K.CT,0),cumR=ld(K.CR,[]);
 if(!localStorage.getItem(K.SD))sv(K.SD,todayI);
-const sd2=localStorage.getItem(K.DT);
-if(sd2&&sd2!==todayS){
+const sd2x=localStorage.getItem(K.DT);
+if(sd2x&&sd2x!==todayS){
   const wd=ld(K.WK,{});const pd=ld(K.D,DEF_D);const pa=ld(K.A,[]);
   const tot=pd.length+pa.length;const dn=pd.filter(t=>t.done).length+pa.filter(t=>t.done).length;const pct=tot?Math.round(dn/tot*100):0;
-  wd[sd2]={total:tot,done:dn,pct};localStorage.setItem(K.WK,JSON.stringify(wd));
+  wd[sd2x]={total:tot,done:dn,pct};localStorage.setItem(K.WK,JSON.stringify(wd));
   cumT+=dn;localStorage.setItem(K.CT,JSON.stringify(cumT));
   if(tot>0){cumR.push(pct);localStorage.setItem(K.CR,JSON.stringify(cumR))}
   localStorage.setItem(K.A,JSON.stringify(pa.filter(t=>!t.done)));
-  localStorage.setItem(K.D,JSON.stringify(DEF_D.map(t=>({...t,done:false,ca:null}))));
+  localStorage.setItem(K.D,JSON.stringify(pd.map(t=>({...t,done:false,ca:null}))));
 }
-if(!sd2||sd2!==todayS){localStorage.setItem(K.DT,todayS);if(!sd2)localStorage.setItem(K.D,JSON.stringify(DEF_D.map(t=>({...t,done:false,ca:null}))))}
+if(!sd2x||sd2x!==todayS){localStorage.setItem(K.DT,todayS);if(!sd2x)sv(K.D,DEF_D.map(t=>({...t,done:false,ca:null})))}
 
-let daily=ld(K.D,DEF_D),adhoc=ld(K.A,[]),projs=ld(K.P,DEF_P),wins=ld(K.W,DEF_W),wkData=ld(K.WK,{}),hist=ld(K.HS,[]),sharon=ld(K.SH,[]),aalia=ld(K.AA,[]),skills=ld(K.SK,DEF_SK);
+let daily=ld(K.D,DEF_D),adhoc=ld(K.A,[]),projs=ld(K.P,DEF_P),wins=ld(K.W,DEF_W),wkData=ld(K.WK,{}),hist=ld(K.HS,[]),sharon=ld(K.SH,[]),aalia=ld(K.AA,[]),skills=ld(K.SK,DEF_SK),cooActions=ld(K.CA,[]),extraDashes=ld(K.ED,[]);
 
-const now=new Date();const hr2=now.getHours();
+const now=new Date(),hr2=now.getHours();
 document.getElementById('hDate').textContent=DY[now.getDay()]+' · '+now.getDate()+' '+MO[now.getMonth()]+' '+now.getFullYear();
 document.getElementById('hGreet').textContent=(hr2<12?'Good morning':hr2<17?'Good afternoon':'Good evening')+', Doreen';
 
@@ -660,6 +758,7 @@ document.querySelectorAll('.tb').forEach(btn=>{
     document.querySelectorAll('.tp').forEach(p=>p.classList.remove('active'));
     btn.classList.add('active');document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
     if(btn.dataset.tab==='weekly')rWeekly();if(btn.dataset.tab==='kpi')rKpi();
+    if(btn.dataset.tab==='coo')rCoo();if(btn.dataset.tab==='weekly')rInsights();
   });
 });
 
@@ -669,21 +768,127 @@ function du(iso){if(!iso)return null;return Math.round((new Date(iso+'T00:00:00'
 function ck(){return'<svg class="ci" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.8 7L9 1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'}
 function tCls(t){return t==='coo'?'rc':t==='ops'?'ro2':'rt'}
 function tLbl(t){return t==='coo'?'COO':t==='ops'?'Ops':'Team'}
-function kc2(id){const k=KPIS.find(x=>x.id===id);return k?KC[k.c]:KC.navy}
+function kc2(id){const k=KPIS.find(x=>x.id===id);return k?KC[k.c]:KC.indigo}
 function kSc(kid){const all=[...daily.filter(t=>(t.kpis||[]).includes(kid)),...adhoc.filter(t=>t.kpi===kid)];return all.length?Math.round(all.filter(t=>t.done).length/all.length*100):null}
 function lHist(tx,tp,iso,kpis){hist.unshift({text:tx,type:tp,iso:iso||new Date().toISOString(),kpis:kpis||[]});if(hist.length>300)hist=hist.slice(0,300);sv(K.HS,hist)}
 
 function bKpiSel(sid){const s=document.getElementById(sid);if(!s)return;s.innerHTML='<option value="">— KPI —</option>';KPIS.forEach(k=>{const o=document.createElement('option');o.value=k.id;o.textContent='KPI '+k.id+': '+k.area;s.appendChild(o)})}
 bKpiSel('aKpi');
 
+// ── MORNING BRIEFING ──
+function rBriefing(){
+  const tot=daily.length+adhoc.length;const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;
+  const pct=tot?Math.round(dn/tot*100):0;
+  const carry=adhoc.filter(t=>!t.done);
+  const todayDeadlines=projs.filter(p=>{const d=p.due?du(p.due):null;return d!==null&&d<=2&&p.status!=='done'});
+  const noKpiTasks=KPIS.filter(k=>k.w>=8&&kSc(k.id)===null);
+
+  const greet=hr2<12?'Good morning':'hr2'<17?'Good afternoon':'Good evening';
+  const day=DY[now.getDay()];
+  document.getElementById('mBHead').textContent=greet+', Doreen. It\'s '+day+'.';
+
+  let body='';
+  if(carry.length>0)body+=`${carry.length} task${carry.length>1?'s':''} carried over from yesterday. `;
+  if(todayDeadlines.length>0)body+=`${todayDeadlines.length} project${todayDeadlines.length>1?'s are':' is'} due soon. `;
+  if(noKpiTasks.length>0)body+=`KPI ${noKpiTasks[0].id} (${noKpiTasks[0].area}) has no tasks linked yet — it carries ${noKpiTasks[0].w}% weight.`;
+  if(!body)body=`Your checklist is ready. ${daily.length} tasks to close today — let\'s make it a clean sweep.`;
+  document.getElementById('mBBody').textContent=body;
+
+  const pills=document.getElementById('mBPills');pills.innerHTML='';
+  const addPill=(txt,cls)=>{const p=document.createElement('div');p.className='mbpill'+(cls?' '+cls:'');p.textContent=txt;pills.appendChild(p)};
+  addPill(daily.length+' checklist tasks');
+  if(carry.length)addPill(carry.length+' carried over','warn');
+  if(todayDeadlines.length)addPill(todayDeadlines[0].name.slice(0,22)+'… due soon','warn');
+  const doneKpis=KPIS.filter(k=>kSc(k.id)!==null&&kSc(k.id)>=80);
+  if(doneKpis.length)addPill(doneKpis.length+' KPI'+(doneKpis.length>1?'s':'')+' on track','good');
+  if(pct>0)addPill(pct+'% done today',pct>=80?'good':'');
+}
+
+// ── DAILY CHECKLIST with edit/add/delete ──
 function rDaily(){
   const el=document.getElementById('dList');const dn=daily.filter(t=>t.done).length;
   document.getElementById('dCnt').textContent=dn+'/'+daily.length;
-  el.innerHTML=daily.map(t=>{const chips=(t.kpis||[]).map(kid=>{const c=kc2(kid);return`<span class="kch" style="background:${c.bg};color:${c.a};border-color:${c.bd}">KPI ${kid}</span>`}).join('');
-  return`<div class="ti${t.done?' done':''}" data-id="${t.id}"><div class="tck">${ck()}</div><div class="tb2"><div class="tt">${t.text}</div><div class="ttgs">${chips}</div>${t.ca?`<div class="ttm">✓ Done at ${fmtT(t.ca)}</div>`:''}</div>${t.tag?`<span class="rtg ${tCls(t.tag)}">${tLbl(t.tag)}</span>`:''}</div>`}).join('');
-  el.querySelectorAll('.ti').forEach(row=>{row.addEventListener('click',()=>{const item=daily.find(t=>t.id===+row.dataset.id);if(!item)return;item.done=!item.done;item.ca=item.done?new Date().toISOString():null;if(item.done)lHist(item.text,'Daily',item.ca,item.kpis||[]);sv(K.D,daily);rAll()})});
+  if(!daily.length){el.innerHTML='<div class="em">No daily tasks — add some above.</div>';return}
+  el.innerHTML=daily.map(t=>{
+    const chips=(t.kpis||[]).map(kid=>{const c=kc2(kid);return`<span class="kch" style="background:${c.bg};color:${c.a};border-color:${c.bd}">KPI ${kid}</span>`}).join('');
+    return`<div class="ti${t.done?' done':''}" data-id="${t.id}">
+      <div class="tck">${ck()}</div>
+      <div class="tb2"><div class="tt">${t.text}</div><div class="ttgs">${chips}</div>${t.ca?`<div class="ttm">✓ Done at ${fmtT(t.ca)}</div>`:''}</div>
+      ${t.tag?`<span class="rtg ${tCls(t.tag)}">${tLbl(t.tag)}</span>`:''}
+      <button class="ti-edit-btn" data-edit="${t.id}" title="Edit">✎</button>
+      <button class="dx" data-dl="${t.id}">×</button>
+    </div>`;
+  }).join('');
+  el.querySelectorAll('.ti').forEach(row=>{
+    row.addEventListener('click',e=>{
+      if(e.target.closest('.dx')||e.target.closest('.ti-edit-btn'))return;
+      const item=daily.find(t=>t.id===+row.dataset.id);if(!item)return;
+      item.done=!item.done;item.ca=item.done?new Date().toISOString():null;
+      if(item.done)lHist(item.text,'Daily',item.ca,item.kpis||[]);
+      sv(K.D,daily);rAll();
+    });
+  });
+  el.querySelectorAll('[data-edit]').forEach(btn=>{
+    btn.addEventListener('click',e=>{e.stopPropagation();showEditRow(+btn.dataset.edit)});
+  });
+  el.querySelectorAll('[data-dl]').forEach(btn=>{
+    btn.addEventListener('click',e=>{e.stopPropagation();if(confirm('Remove this daily task?')){daily=daily.filter(t=>t.id!==+btn.dataset.dl);sv(K.D,daily);rAll()}});
+  });
 }
 
+function showEditRow(id){
+  const item=daily.find(t=>t.id===id);if(!item)return;
+  const el=document.getElementById('dList');
+  const row=el.querySelector(`[data-id="${id}"]`);if(!row)return;
+  const edit=document.createElement('div');edit.className='ti-edit';
+  edit.innerHTML=`<input value="${item.text}" style="flex:1;background:var(--indigo-s);border:1px solid var(--indigo-br);border-radius:var(--rx);color:var(--tx);font-family:'DM Sans',sans-serif;font-size:13px;padding:6px 10px;outline:none"/><button class="ti-save">Save</button><button class="ti-cancel">Cancel</button>`;
+  row.replaceWith(edit);
+  edit.querySelector('.ti-save').addEventListener('click',()=>{const v=edit.querySelector('input').value.trim();if(v){item.text=v;sv(K.D,daily);}rDaily();});
+  edit.querySelector('.ti-cancel').addEventListener('click',()=>rDaily());
+  edit.querySelector('input').focus();
+}
+
+document.getElementById('dAddBtn').addEventListener('click',()=>{
+  document.getElementById('dAddRow').style.display='flex';
+  document.getElementById('dAddInp').focus();
+});
+document.getElementById('dAddSave').addEventListener('click',()=>{
+  const v=document.getElementById('dAddInp').value.trim();if(!v)return;
+  const tag=document.getElementById('dAddTag').value;
+  daily.push({id:Date.now(),text:v,done:false,tag,ca:null,kpis:[],custom:true});
+  sv(K.D,daily);document.getElementById('dAddInp').value='';
+  document.getElementById('dAddRow').style.display='none';rAll();
+});
+document.getElementById('dAddCancel').addEventListener('click',()=>{document.getElementById('dAddRow').style.display='none';document.getElementById('dAddInp').value='';});
+document.getElementById('dAddInp').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('dAddSave').click();if(e.key==='Escape')document.getElementById('dAddCancel').click();});
+
+// ── COO PULSE ──
+const COO_ITEMS=[
+  {id:'flask',label:'Flask',desc:'COO has water in her flask',kpi:1},
+  {id:'prereads',label:'Pre-reads',desc:'Pre-reads updated ≥24hrs before meetings',kpi:2},
+  {id:'issues',label:'Issues check',desc:'Department issues surfaced to COO',kpi:5},
+  {id:'actions',label:'Action items',desc:'COO action items on track',kpi:1},
+];
+function rCoo(){
+  const grid=document.getElementById('cooGrid');
+  grid.innerHTML=COO_ITEMS.map(item=>{
+    const linked=daily.find(t=>(t.kpis||[]).includes(item.kpi)&&t.done);
+    const st=linked?'cs-done':'cs-pending';const stl=linked?'✓ Done':'Pending';
+    return`<div class="cpitem"><div class="cpil">${item.label}</div><div class="cpit">${item.desc}</div><span class="cpst ${st}">${stl}</span></div>`;
+  }).join('');
+  const el=document.getElementById('cooAList');document.getElementById('cooAcnt').textContent=cooActions.length;
+  if(!cooActions.length){el.innerHTML='<div class="em">No COO action items logged.</div>';return}
+  const pclr={urgent:'var(--ro)',today:'var(--am)','this-week':'var(--em)'};
+  const plbl={urgent:'Urgent',today:'Today','this-week':'This week'};
+  el.innerHTML=cooActions.map(a=>`<div class="ti${a.done?' done':''}"><div class="tck">${ck()}</div><div class="tb2"><div class="tt">${a.text}</div><div class="ttgs"><span class="kch" style="background:var(--indigo-p);color:var(--indigo);border-color:var(--indigo-br)">${plbl[a.pri||'today']}</span></div></div><button class="dx" data-dca="${a.id}">×</button></div>`).join('');
+  el.querySelectorAll('.ti').forEach(row=>{row.addEventListener('click',e=>{if(e.target.closest('.dx'))return;const a=cooActions.find(x=>x.id===+row.dataset.id);if(!a)return;a.done=!a.done;sv(K.CA,cooActions);rCoo()})});
+  el.querySelectorAll('[data-dca]').forEach(btn=>{btn.addEventListener('click',e=>{e.stopPropagation();cooActions=cooActions.filter(x=>x.id!==+btn.dataset.dca);sv(K.CA,cooActions);rCoo()})});
+}
+function addCooAction(){const v=document.getElementById('cooAInp').value.trim();if(!v)return;const pri=document.getElementById('cooAPri').value;cooActions.push({id:Date.now(),text:v,done:false,pri,ao:todayI});sv(K.CA,cooActions);document.getElementById('cooAInp').value='';rCoo()}
+document.getElementById('cooABtn').addEventListener('click',addCooAction);
+document.getElementById('cooAInp').addEventListener('keydown',e=>{if(e.key==='Enter')addCooAction()});
+
+// ── ADHOC ──
 function rAdhoc(){
   const el=document.getElementById('aList');document.getElementById('aCnt').textContent=adhoc.length+' item'+(adhoc.length!==1?'s':'');
   if(!adhoc.length){el.innerHTML='<div class="em">No incoming tasks — all clear!</div>';return}
@@ -693,11 +898,13 @@ function rAdhoc(){
   el.querySelectorAll('[data-dl]').forEach(btn=>{btn.addEventListener('click',e=>{e.stopPropagation();adhoc=adhoc.filter(t=>t.id!==+btn.dataset.dl);sv(K.A,adhoc);rAll()})});
 }
 
+// ── KPI ──
 function rKpi(){
-  document.getElementById('kpiGrid').innerHTML=KPIS.map(k=>{const s=kSc(k.id);const c=KC[k.c];const pct=s||0;const linked=[...daily.filter(t=>(t.kpis||[]).includes(k.id)),...adhoc.filter(t=>t.kpi===k.id)];const chips=linked.length?linked.map(t=>`<span class="kptch" style="background:${c.bg};color:${c.a};border-color:${c.bd}">${t.done?'✓ ':''} ${t.text.slice(0,34)}${t.text.length>34?'…':''}</span>`).join(''):'<span style="font-size:11.5px;color:var(--td);font-style:italic">No tasks linked today</span>';
+  document.getElementById('kpiGrid').innerHTML=KPIS.map(k=>{const s=kSc(k.id);const c=KC[k.c]||KC.indigo;const pct=s||0;const linked=[...daily.filter(t=>(t.kpis||[]).includes(k.id)),...adhoc.filter(t=>t.kpi===k.id)];const chips=linked.length?linked.map(t=>`<span class="kptch" style="background:${c.bg};color:${c.a};border-color:${c.bd}">${t.done?'✓ ':''} ${t.text.slice(0,34)}${t.text.length>34?'…':''}</span>`).join(''):'<span style="font-size:11.5px;color:var(--td);font-style:italic">No tasks linked today</span>';
   return`<div class="kpic"><div class="kpit"><div><div class="kpia" style="color:${c.a}">${k.area}</div><div class="kpin">${k.name}</div></div><div class="kpsw"><div class="kps" style="color:${c.a}">${s!==null?s+'%':'—'}</div><div class="kptr">Target: ${k.tgt}</div></div></div><div class="kpbt"><div class="kpbf" style="width:${pct}%;background:${c.bar}"></div></div><div style="font-size:10.5px;color:var(--tmu);margin-bottom:5px;font-weight:500">Linked tasks:</div><div>${chips}</div>${k.w?`<div class="kpwt">Weight: ${k.w}%</div>`:''}</div>`}).join('');
 }
 
+// ── PROJECTS ──
 function sCls(s){return s==='active'?'spa':s==='review'?'spr':'spd'}
 function sLbl(s){return s==='active'?'In progress':s==='review'?'Under review':'Closed'}
 function bCls(s){return s==='active'?'bfn':s==='review'?'bfa':'bft'}
@@ -711,29 +918,52 @@ function rProjs(){
   el.querySelectorAll('[data-dp]').forEach(btn=>{btn.addEventListener('click',()=>{projs=projs.filter(p=>p.id!==+btn.dataset.dp);sv(K.P,projs);rAll()})});
 }
 
+// ── WINS ──
 function rWins(){
   const el=document.getElementById('wnList');document.getElementById('wnCnt').textContent=wins.length+' achievement'+(wins.length!==1?'s':'');
-  if(!wins.length){el.innerHTML='<div class="em">Your wins will appear here!</div>';return}
-  el.innerHTML=wins.map(w=>`<div class="wc"><button class="dw" data-dw="${w.id}">×</button><div class="wb"><svg class="wic" viewBox="0 0 12 12"><path d="M6 1l1.2 3.6H11l-3 2.2 1.1 3.6L6 8.2l-3.1 2.2L4 6.8 1 4.6h3.8z"/></svg>Solo achievement</div><div class="wt">${w.title}</div>${w.note?`<div class="wn">${w.note}</div>`:''}<div class="wdt">Logged ${fmtD(w.ao)}</div></div>`).join('');
+  if(!wins.length){el.innerHTML='<div class="em">Your achievements will appear here.</div>';return}
+  el.innerHTML=wins.map(w=>`<div class="wc"><button class="dw" data-dw="${w.id}">×</button><div class="wb"><svg class="wic" viewBox="0 0 12 12"><path d="M6 1l1.2 3.6H11l-3 2.2 1.1 3.6L6 8.2l-3.1 2.2L4 6.8 1 4.6h3.8z"/></svg>Achievement</div><div class="wt">${w.title}</div>${w.note?`<div class="wn">${w.note}</div>`:''}<div class="wdt">Logged ${fmtD(w.ao)}</div></div>`).join('');
   el.querySelectorAll('[data-dw]').forEach(btn=>{btn.addEventListener('click',()=>{wins=wins.filter(w=>w.id!==+btn.dataset.dw);sv(K.W,wins);rAll()})});
 }
 
+// ── WEEKLY + PATTERN INSIGHTS ──
+function rInsights(){
+  const allDays=Object.values(wkData);if(allDays.length<2){document.getElementById('insGrid').innerHTML='';return}
+  const pcts=allDays.filter(d=>d.total>0).map(d=>d.pct);
+  const avg=pcts.length?Math.round(pcts.reduce((a,b)=>a+b,0)/pcts.length):0;
+  const best=pcts.length?Math.max(...pcts):0;
+  const streak=calcStreak();
+  const sdt=ld(K.SD,todayI);const dayC=Math.max(1,Math.round((new Date(todayI+'T00:00:00')-new Date(sdt+'T00:00:00'))/86400000)+1);
+  document.getElementById('insGrid').innerHTML=`
+    <div class="ins-c"><div class="ins-lbl">Avg. Completion</div><div class="ins-val">${avg}%</div><div class="ins-sub">${avg>=80?'Above high-performance benchmark':avg>=60?'Solid — push toward 80%':'Building your track record'}</div></div>
+    <div class="ins-c"><div class="ins-lbl">Best Day Ever</div><div class="ins-val">${best}%</div><div class="ins-sub">Your personal record completion day</div></div>
+    <div class="ins-c"><div class="ins-lbl">Current Streak</div><div class="ins-val">${streak}d</div><div class="ins-sub">${streak>=3?'Strong consistency — keep it going':streak>=1?'Streak in progress':'Log tasks daily to build your streak'}</div></div>
+    <div class="ins-c"><div class="ins-lbl">Days Tracked</div><div class="ins-val">${dayC}</div><div class="ins-sub">Every day tracked is data in your favour</div></div>
+  `;
+}
+function calcStreak(){
+  let s=0;const d=new Date();
+  for(let i=0;i<30;i++){const ds=new Date(d);ds.setDate(d.getDate()-i);const key=ds.toDateString();if(wkData[key]&&wkData[key].pct>=50)s++;else if(i>0)break;}
+  return s;
+}
 function rWeekly(){
+  rInsights();
   const td2=new Date();const mon=new Date(td2);mon.setDate(td2.getDate()-((td2.getDay()+6)%7));
   const days=Array.from({length:7},(_,i)=>{const d=new Date(mon);d.setDate(mon.getDate()+i);return d});
   document.getElementById('wRng').textContent=days[0].getDate()+' '+MO[days[0].getMonth()].slice(0,3)+' – '+days[6].getDate()+' '+MO[days[6].getMonth()].slice(0,3);
   document.getElementById('wkGrid').innerHTML=days.map(d=>{const ds=d.toDateString();const iT=ds===todayS;let pct=0,lbl='—';if(iT){const tot=daily.length+adhoc.length;const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;pct=tot?Math.round(dn/tot*100):0;lbl=pct+'%'}else if(wkData[ds]){pct=wkData[ds].pct||0;lbl=pct+'%'}
-  return`<div class="wkd${iT?' today':''}"><div class="wdl">${SD[d.getDay()]}</div><div class="wdn">${d.getDate()}</div><div class="wbw"><div class="wbr"><div class="wbf" style="height:${pct}%"></div></div></div><div class="wpc">${lbl}</div></div>`}).join('');
-  const allP=days.map(d=>{const ds=d.toDateString();if(ds===todayS){const tot=daily.length+adhoc.length;const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;return{pct:tot?Math.round(dn/tot*100):0,lbl:SD[d.getDay()],has:tot>0}}return wkData[ds]?{pct:wkData[ds].pct,lbl:SD[d.getDay()],has:true}:{pct:0,lbl:'',has:false}});
+  return`<div class="wkd${iT?' today':''}"><div class="wdl">${SD2[d.getDay()]}</div><div class="wdn">${d.getDate()}</div><div class="wbw"><div class="wbr"><div class="wbf" style="height:${pct}%"></div></div></div><div class="wpc">${lbl}</div></div>`}).join('');
+  const allP=days.map(d=>{const ds=d.toDateString();if(ds===todayS){const tot=daily.length+adhoc.length;const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;return{pct:tot?Math.round(dn/tot*100):0,lbl:SD2[d.getDay()],has:tot>0}}return wkData[ds]?{pct:wkData[ds].pct,lbl:SD2[d.getDay()],has:true}:{pct:0,lbl:'',has:false}});
   const act=allP.filter(x=>x.has);const totDn=days.reduce((acc,d)=>{const ds=d.toDateString();if(ds===todayS)return acc+daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;return acc+(wkData[ds]?wkData[ds].done:0)},0);
   const avg=act.length?Math.round(act.reduce((a,x)=>a+x.pct,0)/act.length):0;const best=act.length?act.reduce((a,b)=>a.pct>=b.pct?a:b):null;
   document.getElementById('wDone').textContent=totDn;document.getElementById('wAvg').textContent=avg+'%';document.getElementById('wBest').textContent=best?best.lbl:'—';
   const hb=document.getElementById('hBody');document.getElementById('hCnt').textContent=hist.length+' entr'+(hist.length!==1?'ies':'y');
   if(!hist.length){hb.innerHTML='<tr><td colspan="4" style="color:var(--td);font-style:italic;padding:14px">Completed tasks will appear here.</td></tr>';return}
-  hb.innerHTML=hist.slice(0,60).map(h=>{const iD=h.type==='Daily';const bg=iD?'var(--gold-p)':'var(--em-bg)';const cl=iD?'var(--gold-b)':'var(--em)';const bd=iD?'1px solid var(--gold-br)':'1px solid var(--em-br)';const d=new Date(h.iso);const ks=(h.kpis||[]).map(k=>`<span style="font-size:9.5px;background:var(--slate-s);color:var(--slate);padding:1px 5px;border-radius:4px;margin-right:2px;font-weight:600">K${k}</span>`).join('');
+  hb.innerHTML=hist.slice(0,60).map(h=>{const iD=h.type==='Daily';const bg=iD?'var(--indigo-p)':'var(--em-p)';const cl=iD?'var(--indigo)':'var(--em)';const bd=iD?'1px solid var(--indigo-br)':'1px solid var(--em-br)';const d=new Date(h.iso);const ks=(h.kpis||[]).map(k=>`<span style="font-size:9.5px;background:var(--indigo-p);color:var(--indigo);padding:1px 5px;border-radius:4px;margin-right:2px;font-weight:600">K${k}</span>`).join('');
   return`<tr><td style="color:var(--tx)">${h.text}</td><td><span class="hbg" style="background:${bg};color:${cl};border:${bd}">${h.type}</span></td><td>${ks||'—'}</td><td style="white-space:nowrap;color:var(--tmu)">${d.toLocaleDateString([],{weekday:'short',day:'numeric',month:'short'})} · ${d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</td></tr>`}).join('');
 }
 
+// ── STATS ──
 function uStats(){
   const tot=daily.length+adhoc.length;const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;const pct=tot?Math.round(dn/tot*100):0;
   document.getElementById('sDone').textContent=dn;document.getElementById('sPend').textContent=tot-dn;
@@ -746,23 +976,70 @@ function uStats(){
   document.getElementById('cDays').textContent=dayC;
 }
 
-const SKCAT={tech:{lbl:'Technology',cls:'sk-tech',clr:'var(--em)'},ops:{lbl:'Operations',cls:'sk-ops',clr:'var(--slate)'},lead:{lbl:'Leadership',cls:'sk-lead',clr:'var(--gold-b)'},data:{lbl:'Data & Reporting',cls:'sk-data',clr:'var(--vi)'}};
-const SKLV={learning:{lbl:'Learning',pct:33,clr:'var(--gold-b)'},proficient:{lbl:'Proficient',pct:67,clr:'var(--em)'},expert:{lbl:'Expert',pct:100,clr:'var(--slate)'}};
+// ── AUTO-SKILLS ──
+const KPI_SKILL_MAP={
+  'Executive Support':{name:'Executive Support & COO Liaison',note:'Action tracking, meeting prep, pre-reads for COO office',cat:'ops'},
+  'Country Coordination':{name:'Country Coordination & Follow-up',note:'Managing deliverables across country managers',cat:'lead'},
+  'Issue Management':{name:'Escalation Management',note:'Issue identification, assignment and resolution tracking',cat:'ops'},
+  'POS ToTs':{name:'POS Champions Training Coordination',note:'Training planning, execution and attendance tracking',cat:'lead'},
+  'Projects':{name:'Strategic Project Management',note:'Milestone tracking, initiative follow-through',cat:'lead'},
+  'Reporting':{name:'Dashboard & Reporting',note:'Data health checks, accuracy validation',cat:'data'},
+  'POS Product':{name:'Voice-of-Customer Research',note:'Franchise feedback, surveys, VOC coverage',cat:'ops'},
+  'POS Delivery':{name:'Developer Delivery Management',note:'Sprint tracking, release follow-up',cat:'tech'},
+  'POS Support':{name:'POS Technical Support',note:'Helpdesk oversight, SLA compliance, ticket management',cat:'tech'},
+  'POS Adoption':{name:'POS System Adoption Tracking',note:'Franchise usage monitoring, transaction recording rates',cat:'data'},
+  'POS Quality':{name:'POS Quality Assurance',note:'Repeat-issue monitoring, incident tracking',cat:'tech'},
+};
+const SKCAT={tech:{lbl:'Technology',cls:'sk-tech',clr:'var(--em)'},ops:{lbl:'Operations',cls:'sk-ops',clr:'var(--indigo)'},lead:{lbl:'Leadership',cls:'sk-lead',clr:'var(--am)'},data:{lbl:'Data & Reporting',cls:'sk-data',clr:'var(--violet)'}};
+const SKLV={learning:{lbl:'Learning',pct:33,clr:'var(--am)'},proficient:{lbl:'Proficient',pct:67,clr:'var(--em)'},expert:{lbl:'Expert',pct:100,clr:'var(--indigo)'}};
+
+function autoEarnSkills(){
+  const activeAreas=new Set();
+  daily.filter(t=>t.done).forEach(t=>(t.kpis||[]).forEach(kid=>{const k=KPIS.find(x=>x.id===kid);if(k)activeAreas.add(k.area)}));
+  adhoc.filter(t=>t.done&&t.kpi).forEach(t=>{const k=KPIS.find(x=>x.id===t.kpi);if(k)activeAreas.add(k.area)});
+  const existingNames=skills.map(s=>s.name.toLowerCase());
+  let added=false;
+  activeAreas.forEach(area=>{
+    const sk=KPI_SKILL_MAP[area];
+    if(sk&&!existingNames.some(n=>n.includes(sk.name.toLowerCase().slice(0,15)))){
+      skills.push({id:Date.now()+Math.random(),name:sk.name,note:sk.note,cat:sk.cat,lv:'proficient',ao:todayI,auto:true});
+      added=true;
+    }
+  });
+  if(added)sv(K.SK,skills);
+}
+
 function rSkills(){
   const el=document.getElementById('skList');if(!el)return;
   document.getElementById('skCnt').textContent=skills.length+' skill'+(skills.length!==1?'s':'');
-  if(!skills.length){el.innerHTML='<div class="em">Add your first skill below.</div>';return}
+  if(!skills.length){el.innerHTML='<div class="em">Skills will appear automatically as you complete tasks. Add more manually below.</div>';return}
   el.innerHTML=skills.map(s=>{const cat=SKCAT[s.cat]||SKCAT.tech;const lv=SKLV[s.lv]||SKLV.learning;
-  return`<div class="skc ${cat.cls}"><button class="dsk" data-dsk="${s.id}">×</button><div class="sklv" style="color:${cat.clr}">${cat.lbl}</div><div class="sknm">${s.name}</div>${s.note?`<div class="sknt">${s.note}</div>`:''}<div class="sklbar"><div class="sklbf" style="width:${lv.pct}%;background:${lv.clr}"></div></div><div class="skdt" style="color:${lv.clr};font-weight:600">${lv.lbl} · Added ${fmtD(s.ao)}</div></div>`}).join('');
+  return`<div class="skc ${cat.cls}${s.auto?' auto-earned':''}"><button class="dskb" data-dsk="${s.id}">×</button><div class="sklv" style="color:${cat.clr}">${cat.lbl}</div><div class="sknm">${s.name}</div>${s.note?`<div class="sknt">${s.note}</div>`:''}<div class="sklbar"><div class="sklbf" style="width:${lv.pct}%;background:${lv.clr}"></div></div><div class="skdt" style="color:${lv.clr};font-weight:600">${lv.lbl} · ${s.auto?'Auto-earned':'Added'} ${fmtD(s.ao)}</div></div>`}).join('');
   el.querySelectorAll('[data-dsk]').forEach(btn=>{btn.addEventListener('click',()=>{skills=skills.filter(s=>s.id!==+btn.dataset.dsk);sv(K.SK,skills);rSkills()})});
+  document.getElementById('skSugg').innerHTML='';
 }
 document.getElementById('skBtn')?.addEventListener('click',()=>{
   const n=document.getElementById('skNm').value.trim();if(!n)return;
   skills.push({id:Date.now(),name:n,note:document.getElementById('skNt').value.trim(),cat:document.getElementById('skCat').value,lv:document.getElementById('skLv').value,ao:todayI,auto:false});
   sv(K.SK,skills);document.getElementById('skNm').value='';document.getElementById('skNt').value='';rSkills();
 });
-document.getElementById('skNm')?.addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('skBtn').click()});
 
+// ── EXTRA DASHBOARDS ──
+function showAddDash(){document.getElementById('addDashForm').style.display='block';document.getElementById('dashNm').focus()}
+window.showAddDash=showAddDash;
+function rExtraDashes(){
+  const el=document.getElementById('extraDashes');if(!extraDashes.length){el.innerHTML='';return}
+  el.innerHTML='<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:10px">'+
+  extraDashes.map(d=>`<a class="cctile" href="${d.url}" target="_blank"><div class="ccico" style="background:var(--indigo-p);color:var(--indigo)">🔗</div><div><div class="ccnm">${d.name}</div><div class="ccdc">${d.desc||''}</div></div><div class="ccarw">Open →</div></a>`).join('')+'</div>';
+}
+document.getElementById('dashBtn')?.addEventListener('click',()=>{
+  const n=document.getElementById('dashNm').value.trim();const u=document.getElementById('dashUrl').value.trim();if(!n||!u)return;
+  extraDashes.push({id:Date.now(),name:n,url:u,desc:document.getElementById('dashDc').value.trim()});
+  sv(K.ED,extraDashes);document.getElementById('dashNm').value='';document.getElementById('dashUrl').value='';document.getElementById('dashDc').value='';
+  document.getElementById('addDashForm').style.display='none';rExtraDashes();
+});
+
+// ── INTERNS ──
 function rInternList(tasks,elId,cntId,name){
   const el=document.getElementById(elId);document.getElementById(cntId).textContent=tasks.length;
   if(!tasks.length){el.innerHTML=`<div class="em">No tasks assigned to ${name} yet.</div>`;return}
@@ -776,8 +1053,9 @@ function addIT(name){const id=name==='Sharon'?'shInp':'aaInp';const v=document.g
 document.getElementById('shBtn').addEventListener('click',()=>addIT('Sharon'));document.getElementById('aaBtn').addEventListener('click',()=>addIT('Aalia'));
 document.getElementById('shInp').addEventListener('keydown',e=>{if(e.key==='Enter')addIT('Sharon')});document.getElementById('aaInp').addEventListener('keydown',e=>{if(e.key==='Enter')addIT('Aalia')});
 
-function rAll(){rDaily();rAdhoc();rProjs();rWins();uStats();rInterns();rSkills()}
+function rAll(){rDaily();rAdhoc();rProjs();rWins();uStats();rInterns();autoEarnSkills();rSkills();rBriefing();rExtraDashes()}
 
+// ── ADD HANDLERS ──
 function addAdhoc(){const v=document.getElementById('aInp').value.trim();if(!v)return;const kpi=+document.getElementById('aKpi').value||null;adhoc.push({id:Date.now(),text:v,done:false,ca:null,aa:new Date().toISOString(),kpi});sv(K.A,adhoc);document.getElementById('aInp').value='';document.getElementById('aKpi').value='';rAll()}
 document.getElementById('aBtn').addEventListener('click',addAdhoc);document.getElementById('aInp').addEventListener('keydown',e=>{if(e.key==='Enter')addAdhoc()});
 function addProj(){const n=document.getElementById('prInp').value.trim();if(!n)return;const due=document.getElementById('prDue').value;const pct=Math.min(100,Math.max(0,+document.getElementById('prPct').value||0));projs.push({id:Date.now(),name:n,pct,status:'active',due,ao:todayI});sv(K.P,projs);document.getElementById('prInp').value='';document.getElementById('prDue').value='';document.getElementById('prPct').value='';rAll()}
@@ -785,13 +1063,16 @@ document.getElementById('prBtn').addEventListener('click',addProj);document.getE
 function addWin(){const t=document.getElementById('wnInp').value.trim();if(!t)return;const n=document.getElementById('wnNote').value.trim();wins.push({id:Date.now(),title:t,note:n,ao:todayI});sv(K.W,wins);document.getElementById('wnInp').value='';document.getElementById('wnNote').value='';rAll()}
 document.getElementById('wnBtn').addEventListener('click',addWin);document.getElementById('wnInp').addEventListener('keydown',e=>{if(e.key==='Enter')addWin()});
 
-const sk2=ld(K.GK,'');if(sk2)document.getElementById('apiInp').value=sk2;
+// ── SETTINGS ──
+const sk2x=ld(K.GK,'');if(sk2x)document.getElementById('apiInp').value=sk2x;
 document.getElementById('svKey').addEventListener('click',()=>{sv(K.GK,document.getElementById('apiInp').value.trim());const ok=document.getElementById('keyOk');ok.style.display='block';setTimeout(()=>ok.style.display='none',3500)});
+document.getElementById('resetDailyBtn').addEventListener('click',()=>{if(confirm('Reset daily checklist to the original 6 tasks? Your completion history is kept.')){sv(K.D,DEF_D.map(t=>({...t,done:false,ca:null})));daily=ld(K.D,DEF_D);rAll()}});
 
+// ── SMART ANALYSIS ENGINE ──
 const S={
   sec:(title,color,items)=>`<div style="margin-bottom:18px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:${color};margin-bottom:10px;display:flex;align-items:center;gap:7px"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${color};flex-shrink:0"></span>${title}</div><div style="display:flex;flex-direction:column;gap:6px">${items}</div></div>`,
-  item:(txt,col)=>`<div style="font-size:13px;color:var(--tx);line-height:1.6;padding:8px 12px;background:${col||'var(--sf2)'};border-radius:8px;border-left:2px solid rgba(0,0,0,.07)">${txt}</div>`,
-  krow:(k,s,c)=>`<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:${s===null?'var(--sf2)':s>=80?'var(--em-bg)':s>=50?'var(--gold-p)':'var(--ro-bg)'};border-radius:8px;border-left:2px solid ${s===null?'var(--br)':s>=80?'var(--em)':s>=50?'var(--gold-b)':'var(--ro)'};margin-bottom:5px"><div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:${c};margin-bottom:1px">KPI ${k.id} · ${k.area}</div><div style="font-size:12px;color:var(--tm)">${k.name}</div></div><div style="text-align:right;flex-shrink:0;margin-left:12px"><div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:${s===null?'var(--td)':s>=80?'var(--em)':s>=50?'var(--gold-b)':'var(--ro)'}">${s===null?'—':s+'%'}</div><div style="font-size:10px;color:var(--td)">target: ${k.tgt}</div></div></div>`,
+  item:(txt,col)=>`<div style="font-size:13px;color:var(--tx);line-height:1.6;padding:8px 12px;background:${col||'var(--sf2)'};border-radius:8px;border-left:2px solid rgba(0,0,0,.06)">${txt}</div>`,
+  krow:(k,s)=>{const c=KC[k.c]||KC.indigo;return`<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:${s===null?'var(--sf2)':s>=80?'var(--em-p)':s>=50?'var(--am-p)':'var(--ro-p)'};border-radius:8px;border-left:2px solid ${s===null?'var(--br)':s>=80?'var(--em)':s>=50?'var(--am)':'var(--ro)'};margin-bottom:5px"><div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:${c.a};margin-bottom:1px">KPI ${k.id} · ${k.area}</div><div style="font-size:12px;color:var(--tm)">${k.name}</div></div><div style="text-align:right;flex-shrink:0;margin-left:12px"><div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:${s===null?'var(--td)':s>=80?'var(--em)':s>=50?'var(--am)':'var(--ro)'}">${s===null?'—':s+'%'}</div><div style="font-size:10px;color:var(--td)">target: ${k.tgt}</div></div></div>`},
 };
 
 function smartDay(){
@@ -802,39 +1083,31 @@ function smartDay(){
   const noT=weighted.filter(k=>kSc(k.id)===null);
   const strong=weighted.filter(k=>kSc(k.id)!==null&&kSc(k.id)>=80).sort((a,b)=>b.w-a.w);
   const weak=weighted.filter(k=>kSc(k.id)!==null&&kSc(k.id)<60).sort((a,b)=>b.w-a.w);
-  const KC2={gold:'var(--gold-b)',teal:'var(--em)',rose:'var(--ro)',violet:'var(--vi)',navy:'var(--slate)',indigo:'var(--in)',amber:'var(--am)',green:'var(--gn)'};
-
-  const statusClr=pct===100?'var(--em)':pct>=80?'var(--em)':pct>=50?'var(--gold-b)':'var(--ro)';
-  const statusBg=pct===100?'var(--em-bg)':pct>=80?'var(--em-bg)':pct>=50?'var(--gold-p)':'var(--ro-bg)';
+  const statusClr=pct===100?'var(--em)':pct>=80?'var(--em)':pct>=50?'var(--am)':'var(--ro)';
+  const statusBg=pct===100?'var(--em-p)':pct>=80?'var(--em-p)':pct>=50?'var(--am-p)':'var(--ro-p)';
   const statusMsg=pct===100?'Perfect — every task closed today ✓':pct>=80?`Strong day — ${dn} of ${tot} tasks done`:pct>=50?`${dn} of ${tot} done — push for the remaining ${tot-dn}`:dn===0?'No tasks completed yet — start with the checklist':`${dn} of ${tot} done — needs attention before close`;
-
-  let h=`<div style="padding:12px 16px;background:${statusBg};border-radius:10px;border-left:3px solid ${statusClr};margin-bottom:20px"><div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:${statusClr}">${pct}%</div><div style="font-size:13px;color:var(--tm);margin-top:2px">${statusMsg}</div></div>`;
-
-  if(strong.length){h+=S.sec('KPIs Well Supported','var(--em)',strong.slice(0,3).map(k=>S.item(`<strong>KPI ${k.id}</strong> · ${k.area} — ${kSc(k.id)}% completion`,'var(--em-bg)')).join(''))}
-  if(noT.length){h+=S.sec('KPIs Needing Attention','var(--gold-b)',noT.slice(0,4).map(k=>S.item(`<strong>KPI ${k.id}</strong> · ${k.area}&ensp;<span style="font-size:11px;background:var(--gold-p);color:var(--am);padding:2px 7px;border-radius:5px;font-weight:600">${k.w}% weight</span>&ensp;<span style="color:var(--td);font-size:12px">target: ${k.tgt} · no tasks linked</span>`,'var(--gold-p)')).join(''))}
-  if(weak.length){h+=S.sec('Low Completion','var(--ro)',weak.slice(0,3).map(k=>S.item(`<strong>KPI ${k.id}</strong> · ${k.area}&ensp;<span style="font-size:12px;color:var(--ro);font-weight:600">${kSc(k.id)}%</span> vs target ${k.tgt}`,'var(--ro-bg)')).join(''))}
-  if(pend.length){h+=S.sec('Still Pending Today','var(--slate)',pend.map(t=>S.item(t.text,'var(--slate-s)')).join(''))}
-
-  const tip=noT.length?`Focus on KPI ${noT[0].id} (${noT[0].area}) tomorrow — highest unlinked weight at ${noT[0].w}%`:pct<70?`Close ${Math.max(1,Math.ceil(tot*.8)-dn)} more task${Math.ceil(tot*.8)-dn!==1?'s':''} to hit the 80% benchmark`:wins.length?`Consistency like this is what wins salary reviews — you have ${wins.length} win${wins.length>1?'s':''} on record already`:`Keep this standard — consistent daily delivery is your strongest career asset`;
-  h+=`<div style="padding:12px 16px;background:var(--gold-p);border-radius:10px;border-left:3px solid var(--gold-b);font-size:13px;color:var(--tm);line-height:1.65"><strong style="color:var(--gold-b)">◎ Tip</strong>&ensp;${tip}</div>`;
+  let h=`<div style="padding:12px 16px;background:${statusBg};border-radius:10px;border-left:3px solid ${statusClr};margin-bottom:20px"><div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:${statusClr}">${pct}%</div><div style="font-size:13px;color:var(--tm);margin-top:2px">${statusMsg}</div></div>`;
+  if(strong.length)h+=S.sec('KPIs Well Supported','var(--em)',strong.slice(0,3).map(k=>S.item(`<strong>KPI ${k.id}</strong> · ${k.area} — ${kSc(k.id)}% completion`,'var(--em-p)')).join(''));
+  if(noT.length)h+=S.sec('KPIs Needing Attention','var(--am)',noT.slice(0,4).map(k=>S.item(`<strong>KPI ${k.id}</strong> · ${k.area} &nbsp;<span style="font-size:11px;background:var(--am-p);color:var(--am);padding:2px 7px;border-radius:5px;font-weight:600">${k.w}% weight</span>&nbsp; target: ${k.tgt}`,'var(--am-p)')).join(''));
+  if(weak.length)h+=S.sec('Low Completion','var(--ro)',weak.slice(0,3).map(k=>S.item(`<strong>KPI ${k.id}</strong> · ${k.area} — ${kSc(k.id)}% vs target ${k.tgt}`,'var(--ro-p)')).join(''));
+  if(pend.length)h+=S.sec('Still Pending','var(--indigo)',pend.map(t=>S.item(t.text,'var(--indigo-p)')).join(''));
+  const tip=noT.length?`Focus on KPI ${noT[0].id} (${noT[0].area}) — highest unlinked weight at ${noT[0].w}%`:pct<70?`Close ${Math.max(1,Math.ceil(tot*.8)-dn)} more task${Math.ceil(tot*.8)-dn!==1?'s':''} to reach the 80% mark`:`Consistent delivery like this is your strongest professional asset.`;
+  h+=`<div style="padding:12px 16px;background:var(--indigo-p);border-radius:10px;border-left:3px solid var(--indigo);font-size:13px;color:var(--tm);line-height:1.65"><strong style="color:var(--indigo)">◎ Focus</strong> &nbsp;${tip}</div>`;
   return h;
 }
 
 function smartKpi(){
   const weighted=KPIS.filter(k=>k.w>0);const scored=weighted.filter(k=>kSc(k.id)!==null);
   const ws=scored.length?Math.round(scored.reduce((acc,k)=>acc+(kSc(k.id)*k.w),0)/scored.reduce((acc,k)=>acc+k.w,0)):null;
-  const KC2={gold:'var(--gold-b)',teal:'var(--em)',rose:'var(--ro)',violet:'var(--vi)',navy:'var(--slate)',indigo:'var(--in)',amber:'var(--am)',green:'var(--gn)'};
-
   let h=`<div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap">`;
-  if(ws!==null)h+=`<div style="flex:1;min-width:120px;background:var(--slate);border-radius:12px;padding:14px 16px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(148,163,184,.65);margin-bottom:3px;font-weight:700">Weighted Score</div><div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#F8FAFC">${ws}%</div></div>`;
-  h+=`<div style="flex:1;min-width:120px;background:var(--sf2);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">Active KPIs</div><div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--slate)">${scored.length}/${weighted.length}</div></div>`;
-  const strong2=weighted.filter(k=>kSc(k.id)!==null&&kSc(k.id)>=80).length;
-  h+=`<div style="flex:1;min-width:120px;background:var(--em-bg);border:1px solid var(--em-br);border-radius:12px;padding:14px 16px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--em);margin-bottom:3px;font-weight:700">On Target</div><div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--em)">${strong2}</div></div>`;
-  h+=`</div>`;
-  h+=`<div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--tmu);margin-bottom:12px">All 14 KPIs</div>`;
-  KPIS.forEach(k=>h+=S.krow(k,kSc(k.id),KC2[k.c]||'var(--slate)'));
+  if(ws!==null)h+=`<div style="flex:1;min-width:120px;background:var(--indigo);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(129,140,248,.65);margin-bottom:3px;font-weight:700">Weighted Score</div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:#fff">${ws}%</div></div>`;
+  h+=`<div style="flex:1;min-width:120px;background:var(--sf2);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">Active KPIs</div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--indigo)">${scored.length}/${weighted.length}</div></div>`;
+  const on=weighted.filter(k=>kSc(k.id)!==null&&kSc(k.id)>=80).length;
+  h+=`<div style="flex:1;min-width:120px;background:var(--em-p);border:1px solid var(--em-br);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--em);margin-bottom:3px;font-weight:700">On Target</div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--em)">${on}</div></div>`;
+  h+=`</div><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--tmu);margin-bottom:12px">All 14 KPIs</div>`;
+  KPIS.forEach(k=>h+=S.krow(k,kSc(k.id)));
   const gaps=weighted.filter(k=>kSc(k.id)===null).sort((a,b)=>b.w-a.w);
-  if(gaps.length)h+=`<div style="margin-top:16px;padding:12px 16px;background:var(--gold-p);border-radius:10px;border-left:3px solid var(--gold-b);font-size:13px;color:var(--tm);line-height:1.65"><strong style="color:var(--gold-b)">◎ Priority action</strong>&ensp;Link tasks to KPI ${gaps[0].id} — ${gaps[0].name} (${gaps[0].w}% weight, target ${gaps[0].tgt})</div>`;
+  if(gaps.length)h+=`<div style="margin-top:16px;padding:12px 16px;background:var(--indigo-p);border-radius:10px;border-left:3px solid var(--indigo);font-size:13px;color:var(--tm);line-height:1.65"><strong style="color:var(--indigo)">◎ Priority</strong> &nbsp;Link tasks to KPI ${gaps[0].id} — ${gaps[0].name} (${gaps[0].w}% weight)</div>`;
   return h;
 }
 
@@ -842,41 +1115,59 @@ function smartJourney(){
   const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;const tot=daily.length+adhoc.length;const pct=tot?Math.round(dn/tot*100):0;
   const allTot=cumT+dn;const allR=[...cumR,...(tot>0?[pct]:[])];const avg=allR.length?Math.round(allR.reduce((a,b)=>a+b,0)/allR.length):0;
   const sdt=ld(K.SD,todayI);const dayC=Math.max(1,Math.round((new Date(todayI+'T00:00:00')-new Date(sdt+'T00:00:00'))/86400000)+1);
-
   let h=`<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px">`;
-  h+=`<div style="background:var(--slate);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(148,163,184,.6);margin-bottom:3px;font-weight:700">Days Tracked</div><div style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:#F8FAFC">${dayC}</div></div>`;
-  h+=`<div style="background:var(--sf2);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">Total Tasks</div><div style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--slate)">${allTot}</div></div>`;
-  h+=`<div style="background:var(--sf2);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">Avg. Rate</div><div style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:${avg>=80?'var(--em)':avg>=60?'var(--gold-b)':'var(--ro)'}">${avg}%</div></div>`;
+  h+=`<div style="background:var(--ink);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(148,163,184,.55);margin-bottom:3px;font-weight:700">Days Tracked</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:#F8FAFC">${dayC}</div></div>`;
+  h+=`<div style="background:var(--indigo);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(129,140,248,.6);margin-bottom:3px;font-weight:700">Total Tasks</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:#fff">${allTot}</div></div>`;
+  h+=`<div style="background:var(--sf2);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">Avg. Rate</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:${avg>=80?'var(--em)':avg>=60?'var(--am)':'var(--ro)'}">${avg}%</div></div>`;
   h+=`</div>`;
-
-  const msg=avg>=80?`You are performing above 80% consistently — that is the standard of a high-impact professional. ${allTot} tasks is not a small number. Each one is a data point in your case for advancement.`:avg>=60?`At ${avg}% average over ${dayC} days, you are building a solid record. Pushing toward 80% daily will significantly strengthen your case.`:`Every day you track counts. You are building your evidence file. Consistency over time creates a compelling argument for advancement.`;
+  const msg=avg>=80?`You are performing above 80% consistently — that is the standard of a high-impact professional. ${allTot} tasks completed is not a small number.`:avg>=60?`At ${avg}% average over ${dayC} days, you are building a solid record. Pushing toward 80% will significantly strengthen your standing.`:`Every day you track counts. Consistency over time is what creates a compelling professional record.`;
   h+=`<div style="padding:16px 18px;background:var(--sf2);border-radius:12px;border:1px solid var(--br);margin-bottom:14px;line-height:1.75;font-size:13.5px;color:var(--tm)">${msg}</div>`;
-
-  if(wins.length){const wmsg=wins.length>=3?`With <strong>${wins.length} solo achievements</strong> logged, you have concrete, named examples of initiative and ownership. These are the stories that win salary reviews.`:`You have <strong>${wins.length} achievement${wins.length>1?'s':''}</strong> logged. Keep adding — each one is evidence of your value to Jibu.`;h+=`<div style="padding:14px 16px;background:var(--gold-p);border-radius:12px;border:1px solid var(--gold-br);margin-bottom:14px;font-size:13px;color:var(--tm);line-height:1.7">${wmsg}</div>`}
+  if(wins.length)h+=`<div style="padding:14px 16px;background:var(--indigo-p);border-radius:12px;border:1px solid var(--indigo-br);margin-bottom:14px;font-size:13px;color:var(--tm);line-height:1.7">You have <strong>${wins.length} achievement${wins.length>1?'s':''}</strong> on record — concrete, named examples of your impact at Jibu.</div>`;
   if(skills.length)h+=`<div style="padding:12px 16px;background:var(--slate-s);border-radius:10px;font-size:13px;color:var(--tm);line-height:1.65"><strong>${skills.length} skill${skills.length>1?'s':''} in your portfolio</strong> — your professional toolkit is growing with every week in this role.</div>`;
-  h+=`<div style="margin-top:14px;padding:14px 18px;background:var(--slate);border-radius:12px;font-size:13px;font-weight:600;color:#F8FAFC;line-height:1.6;text-align:center">"${avg>=70?'Your consistency speaks louder than any title. Keep the standard high.':'Every task you close is a brick in the case for your advancement. Build every day.'}"</div>`;
+  h+=`<div style="margin-top:14px;padding:14px 18px;background:var(--ink);border-radius:12px;font-size:13px;font-weight:500;color:rgba(248,250,252,.85);line-height:1.6;text-align:center">"${avg>=70?'Your consistency speaks louder than any title. Keep the standard high.':'Every task you close is a brick in the case for your advancement. Build every day.'}"</div>`;
+  return h;
+}
+
+function smartEod(){
+  const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;
+  const tot=daily.length+adhoc.length;const pct=tot?Math.round(dn/tot*100):0;
+  const dDone=daily.filter(t=>t.done);const aDone=adhoc.filter(t=>t.done);
+  const pend=daily.filter(t=>!t.done);const carry=adhoc.filter(t=>!t.done);
+  const kpisCovered=new Set();dDone.forEach(t=>(t.kpis||[]).forEach(k=>kpisCovered.add(k)));aDone.forEach(t=>{if(t.kpi)kpisCovered.add(t.kpi)});
+  const pctClr=pct===100?'#6EE7B7':pct>=80?'#6EE7B7':pct>=50?'#FCD34D':'#FCA5A5';
+  let h=`<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:16px"><div style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:${pctClr};line-height:1">${pct}%</div><div style="font-size:13px;color:rgba(255,255,255,.6)">${dn} of ${tot} tasks completed today</div></div>`;
+  if(dDone.length||aDone.length){
+    h+=`<div style="margin-bottom:14px"><div style="font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(129,140,248,.55);margin-bottom:8px;font-weight:700">Completed today</div>`;
+    [...dDone,...aDone].forEach(t=>{h+=`<div style="font-size:12.5px;color:rgba(255,255,255,.75);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:8px"><span style="color:#6EE7B7;font-size:11px">✓</span>${t.text}</div>`});
+    h+=`</div>`;
+  }
+  if(kpisCovered.size){h+=`<div style="margin-bottom:14px"><div style="font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(129,140,248,.55);margin-bottom:8px;font-weight:700">KPIs supported</div><div style="display:flex;flex-wrap:wrap;gap:6px">`;[...kpisCovered].forEach(k=>{const kp=KPIS.find(x=>x.id===k);if(kp)h+=`<span style="background:rgba(67,56,202,.3);border:1px solid rgba(129,140,248,.2);border-radius:8px;padding:3px 10px;font-size:11px;color:var(--indigo-l);font-weight:600">KPI ${k} · ${kp.area}</span>`});h+=`</div></div>`;}
+  if(pend.length||carry.length){h+=`<div style="margin-bottom:14px"><div style="font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(253,186,116,.6);margin-bottom:8px;font-weight:700">Carries to tomorrow</div>`;[...pend,...carry].forEach(t=>{h+=`<div style="font-size:12.5px;color:rgba(255,255,255,.55);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:center;gap:8px"><span style="color:#FCD34D;font-size:11px">○</span>${t.text}</div>`});h+=`</div>`;}
+  const close=pct===100?'Flawless day. Everything closed.':pct>=80?'Strong close. You delivered.':pct>=50?'Solid effort. Finish the rest first thing tomorrow.':'Tomorrow is a fresh start — pick up where you left off.';
+  h+=`<div style="margin-top:16px;padding:12px 16px;background:rgba(67,56,202,.2);border-radius:10px;border-left:2px solid rgba(129,140,248,.4);font-size:13px;color:rgba(255,255,255,.75);font-style:italic">${close}</div>`;
   return h;
 }
 
 function smartHandover(name,tasks){
   const pend=tasks.filter(t=>(t.status||'pending')==='pending');const prog=tasks.filter(t=>t.status==='in-progress');const done2=tasks.filter(t=>t.status==='done');
   let h=`<div style="display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap">`;
-  h+=`<div style="flex:1;min-width:80px;background:var(--am-bg);border:1px solid var(--am-br);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--am)">${pend.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--am);font-weight:700">Pending</div></div>`;
-  h+=`<div style="flex:1;min-width:80px;background:var(--slate-s);border:1px solid var(--slate-br);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--slate)">${prog.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate-l);font-weight:700">In Progress</div></div>`;
-  h+=`<div style="flex:1;min-width:80px;background:var(--em-bg);border:1px solid var(--em-br);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--em)">${done2.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--em);font-weight:700">Done</div></div>`;
+  h+=`<div style="flex:1;min-width:80px;background:var(--am-p);border:1px solid var(--am-br);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--am)">${pend.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--am);font-weight:700">Pending</div></div>`;
+  h+=`<div style="flex:1;min-width:80px;background:var(--indigo-p);border:1px solid var(--indigo-br);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--indigo)">${prog.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--indigo);font-weight:700">In Progress</div></div>`;
+  h+=`<div style="flex:1;min-width:80px;background:var(--em-p);border:1px solid var(--em-br);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--em)">${done2.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--em);font-weight:700">Done</div></div>`;
   h+=`</div>`;
   if(!tasks.length){h+=`<div style="padding:14px;background:var(--sf2);border-radius:10px;font-size:13px;color:var(--tmu);text-align:center;font-style:italic">No tasks currently assigned to ${name}.</div>`;return h}
-  if(prog.length){h+=S.sec('In Progress — Needs Immediate Handover','var(--ro)',prog.map(t=>S.item(t.text,'var(--ro-bg)')).join(''))}
-  if(pend.length){h+=S.sec('Pending — Not Started','var(--gold-b)',pend.map(t=>S.item(t.text,'var(--gold-p)')).join(''))}
-  if(done2.length){h+=S.sec('Completed','var(--em)',done2.map(t=>S.item(t.text,'var(--em-bg)')).join(''))}
-  const rec=prog.length>0?`In-progress tasks need immediate reassignment to a senior team member.`:`Review pending items and assign cover during Doreen's absence.`;
-  h+=`<div style="padding:12px 16px;background:var(--gold-p);border-radius:10px;border-left:3px solid var(--gold-b);font-size:13px;color:var(--tm);line-height:1.65"><strong style="color:var(--gold-b)">◎ Recommendation</strong>&ensp;${rec}</div>`;
+  if(prog.length)h+=S.sec('In Progress — Needs Immediate Handover','var(--ro)',prog.map(t=>S.item(t.text,'var(--ro-p)')).join(''));
+  if(pend.length)h+=S.sec('Pending — Not Started','var(--am)',pend.map(t=>S.item(t.text,'var(--am-p)')).join(''));
+  if(done2.length)h+=S.sec('Completed','var(--em)',done2.map(t=>S.item(t.text,'var(--em-p)')).join(''));
+  h+=`<div style="padding:12px 16px;background:var(--indigo-p);border-radius:10px;border-left:3px solid var(--indigo);font-size:13px;color:var(--tm);line-height:1.65"><strong style="color:var(--indigo)">◎ Recommendation</strong> &nbsp;${prog.length>0?'In-progress tasks need immediate reassignment to a senior team member.':'Review pending items and assign cover during absence.'}</div>`;
   return h;
 }
 
-document.getElementById('dayBtn').addEventListener('click',()=>{const el=document.getElementById('dayCnt');const pnl=document.getElementById('dayPnl');el.innerHTML=smartDay();pnl.classList.add('vis')});
+// ── WIRE BUTTONS ──
+document.getElementById('dayBtn').addEventListener('click',()=>{const el=document.getElementById('dayCnt');const pnl=document.getElementById('dayPnl');el.innerHTML=smartDay();pnl.classList.add('vis');document.getElementById('eodPnl').classList.remove('vis')});
+document.getElementById('eodBtn').addEventListener('click',()=>{const el=document.getElementById('eodBody');const pnl=document.getElementById('eodPnl');el.innerHTML=smartEod();pnl.classList.add('vis');document.getElementById('dayPnl').classList.remove('vis')});
 document.getElementById('kpiBtn').addEventListener('click',()=>{const el=document.getElementById('kpiCnt');const pnl=document.getElementById('kpiPnl');el.innerHTML=smartKpi();pnl.classList.add('vis')});
-document.getElementById('cAiBtn').addEventListener('click',()=>{document.getElementById('cAiTx').innerHTML=smartJourney();document.getElementById('cAiBtn').textContent='◎ Refresh reflection'});
+document.getElementById('cAiBtn').addEventListener('click',()=>{document.getElementById('cAiTx').innerHTML=smartJourney();document.getElementById('cAiBtn').textContent='◎ Refresh'});
 document.getElementById('shHv').addEventListener('click',()=>{const el=document.getElementById('shCt');const pnl=document.getElementById('shPnl');el.innerHTML=smartHandover('Sharon',sharon);pnl.classList.add('vis')});
 document.getElementById('aaHv').addEventListener('click',()=>{const el=document.getElementById('aaCt');const pnl=document.getElementById('aaPnl');el.innerHTML=smartHandover('Aalia',aalia);pnl.classList.add('vis')});
 
