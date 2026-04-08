@@ -8,130 +8,150 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  /* Navy — for text & structural elements */
-  --navy:#0B1C3D;--navy-d:#060E22;--navy-l:#1A3268;--navy-s:#EBF0FA;--navy-p:#F3F6FD;
-  /* Gold — THE signature color, rich & vibrant */
-  --gold:#C07800;--gold-b:#E8960A;--gold-l:#F5B82A;--gold-p:#FEF5E0;--gold-br:rgba(192,120,0,.3);
-  --gold-glow:rgba(232,150,10,.18);
-  /* Supporting palette */
-  --teal:#0A7A6A;--teal-l:#0FA890;--teal-bg:#E4F5F2;--teal-br:rgba(10,122,106,.2);
-  --vt:#5828A0;--vt-bg:#F0EAF8;--vt-br:rgba(88,40,160,.2);
-  --rs:#B81C38;--rs-bg:#FCEEF1;--rs-br:rgba(184,28,56,.2);
-  --am:#B05808;--am-bg:#FEF2E2;--am-br:rgba(176,88,8,.22);
-  --gn:#187838;--gn-bg:#E8F5EE;--gn-br:rgba(24,120,56,.2);
-  --in:#2638A0;--in-bg:#ECF0FA;--in-br:rgba(38,56,160,.2);
-  --sk:#0868C0;--sk-bg:#E8F2FC;--sk-br:rgba(8,104,192,.2);
-  /* Background & surfaces — LIGHT & CLEAN */
-  --bg:#F0F2FA;--sf:#FFFFFF;--sf2:#FAFBFF;--sf3:#F5F7FF;
-  --sf-warm:#FFFEF9;
-  --br:#DDE3F2;--brs:#E8EDF8;
-  /* Text */
-  --tx:#08152E;--tm:#1A2E58;--tmu:#546090;--td:#98AACE;
-  /* Shadows — warmer, softer */
-  --s1:0 1px 4px rgba(11,28,61,.07),0 1px 2px rgba(11,28,61,.05);
-  --s2:0 4px 20px rgba(11,28,61,.09),0 1px 5px rgba(11,28,61,.06);
-  --s3:0 10px 40px rgba(11,28,61,.13),0 2px 10px rgba(11,28,61,.07);
-  --sg:0 4px 20px rgba(192,120,0,.22);
-  --r:18px;--rs2:12px;--rx:8px;
+  /* === REFINED PROFESSIONAL PALETTE === */
+
+  /* Slate — primary structural color (replaces heavy navy) */
+  --slate:#1E293B;--slate-d:#0F172A;--slate-m:#334155;--slate-l:#475569;
+  --slate-s:#F1F5F9;--slate-p:#F8FAFC;--slate-br:rgba(30,41,59,.12);
+
+  /* Amber-Gold — warm accent (refined, less saturated) */
+  --gold:#B45309;--gold-b:#D97706;--gold-l:#F59E0B;--gold-p:#FFFBEB;
+  --gold-br:rgba(180,83,9,.18);--gold-glow:rgba(217,119,6,.12);
+
+  /* Emerald — success/teal replacement */
+  --em:#047857;--em-l:#059669;--em-bg:#ECFDF5;--em-br:rgba(4,120,87,.15);
+
+  /* Violet — accent (replaces vt) */
+  --vi:#5B21B6;--vi-bg:#F5F3FF;--vi-br:rgba(91,33,182,.15);
+
+  /* Rose — alert (replaces rs) */
+  --ro:#BE123C;--ro-bg:#FFF1F2;--ro-br:rgba(190,18,60,.15);
+
+  /* Amber — warning (replaces am) */
+  --am:#92400E;--am-bg:#FFFBEB;--am-br:rgba(146,64,14,.18);
+
+  /* Indigo */
+  --in:#3730A3;--in-bg:#EEF2FF;--in-br:rgba(55,48,163,.15);
+
+  /* Sky */
+  --sk:#0369A1;--sk-bg:#F0F9FF;--sk-br:rgba(3,105,161,.15);
+
+  /* Green */
+  --gn:#166534;--gn-bg:#F0FDF4;--gn-br:rgba(22,101,52,.15);
+
+  /* Backgrounds — clean whites and very light grays */
+  --bg:#F8FAFC;--sf:#FFFFFF;--sf2:#FAFAFA;--sf3:#F4F4F5;
+  --br:#E2E8F0;--brs:#EDF0F4;
+
+  /* Text — slate-based, not pure black */
+  --tx:#1E293B;--tm:#334155;--tmu:#64748B;--td:#94A3B8;
+
+  /* Shadows — subtle and refined */
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 1px 4px rgba(15,23,42,.04);
+  --s3:0 8px 32px rgba(15,23,42,.10),0 2px 8px rgba(15,23,42,.06);
+  --sg:0 4px 16px rgba(180,83,9,.18);
+
+  --r:16px;--rs2:12px;--rx:8px;
 }
 body{background:var(--bg);color:var(--tx);font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;min-height:100vh;line-height:1.6}
 .wrap{max-width:1200px;margin:0 auto;padding:1.75rem 1.25rem 5rem}
 
 /* HEADER */
-header{background:linear-gradient(135deg,#0A1530 0%,#0E1F44 45%,#142448 100%);border-radius:var(--r);padding:2rem 2.25rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--s3);position:relative;overflow:hidden;flex-wrap:wrap;gap:1rem;border-bottom:3px solid var(--gold)}
-header::before{content:'';position:absolute;top:-40px;right:-40px;width:300px;height:300px;background:radial-gradient(circle,rgba(232,150,10,.22) 0%,rgba(192,120,0,.08) 40%,transparent 70%);border-radius:50%;pointer-events:none}
-header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;height:200px;background:radial-gradient(circle,rgba(232,150,10,.1) 0%,transparent 65%);border-radius:50%;pointer-events:none}
+header{background:var(--slate-d);border-radius:var(--r);padding:2rem 2.25rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--s3);position:relative;overflow:hidden;flex-wrap:wrap;gap:1rem;border-bottom:2px solid var(--gold-l)}
+header::before{content:'';position:absolute;top:0;right:0;width:320px;height:100%;background:linear-gradient(135deg,transparent 60%,rgba(245,158,11,.06) 100%);pointer-events:none}
 .hl{position:relative;z-index:1}
-.heyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:rgba(247,200,74,.7);margin-bottom:8px;font-weight:500}
-.hl h1{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:700;color:#fff;line-height:1.05;letter-spacing:-.02em}
+.heyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(148,163,184,.7);margin-bottom:8px;font-weight:500}
+.hl h1{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:#F8FAFC;line-height:1.05;letter-spacing:-.02em}
 .hl h1 em{color:var(--gold-l);font-style:italic}
-.hsub{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:8px}
+.hsub{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(148,163,184,.45);margin-top:8px}
 .hr{text-align:right;position:relative;z-index:1}
-.hdate{font-family:'Playfair Display',serif;font-size:1.05rem;color:rgba(255,255,255,.8);letter-spacing:.04em;margin-bottom:8px}
-.htag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:5px 14px;font-size:11px;letter-spacing:.09em;color:var(--gold-l)}
-.ldot{width:6px;height:6px;border-radius:50%;background:var(--gold-b);animation:pu 2.4s ease infinite;flex-shrink:0}
+.hdate{font-family:'Playfair Display',serif;font-size:1rem;color:rgba(248,250,252,.75);letter-spacing:.04em;margin-bottom:8px}
+.htag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:5px 14px;font-size:11px;letter-spacing:.08em;color:var(--gold-l)}
+.ldot{width:6px;height:6px;border-radius:50%;background:var(--gold-l);animation:pu 2.4s ease infinite;flex-shrink:0}
 @keyframes pu{0%,100%{opacity:1}50%{opacity:.3}}
-.svi{font-size:10px;color:rgba(255,255,255,.35);margin-top:6px;display:block;min-height:14px;transition:color .3s}
-.svi.ok{color:rgba(100,240,180,.8)}
+.svi{font-size:10px;color:rgba(148,163,184,.45);margin-top:6px;display:block;min-height:14px;transition:color .3s}
+.svi.ok{color:rgba(52,211,153,.8)}
 
 /* TABS */
 .tabs{display:flex;gap:3px;margin-bottom:1.5rem;background:var(--sf);border:1px solid var(--br);border-radius:14px;padding:5px;box-shadow:var(--s1);overflow-x:auto;scrollbar-width:none;flex-wrap:nowrap}
 .tabs::-webkit-scrollbar{display:none}
-.tb{background:none;border:none;border-radius:10px;padding:8px 13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tmu);cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0}
-.tb:hover:not(.active){background:var(--sf2);color:var(--tm)}
-.tb.active{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-b) 100%);color:#fff;box-shadow:var(--sg);font-weight:700}
+.tb{background:none;border:none;border-radius:10px;padding:8px 13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--tmu);cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.tb:hover:not(.active){background:var(--slate-s);color:var(--tm)}
+.tb.active{background:var(--slate);color:#F8FAFC;font-weight:700}
+
 .tp{display:none}.tp.active{display:block}
 
 /* STATS */
 .srow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.25rem}
 .sbox{background:var(--sf);border:1px solid var(--br);border-radius:var(--rs2);padding:18px 14px;text-align:center;box-shadow:var(--s1);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
-.sbox::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;opacity:0;transition:opacity .3s}
-.sbox:hover{transform:translateY(-3px);box-shadow:var(--sg)}.sbox:hover::after{opacity:1}
-.sb1::after{background:linear-gradient(90deg,var(--teal),var(--teal-l))}.sb2::after{background:linear-gradient(90deg,var(--navy),var(--navy-l))}.sb3::after{background:linear-gradient(90deg,var(--vt),#8050C8)}.sb4::after{background:linear-gradient(90deg,var(--gold),var(--gold-b))}
+.sbox::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:opacity .3s}
+.sbox:hover{transform:translateY(-2px);box-shadow:var(--s2)}.sbox:hover::after{opacity:1}
+.sb1::after{background:var(--em)}.sb2::after{background:var(--slate)}.sb3::after{background:var(--vi)}.sb4::after{background:var(--gold-b)}
 .snum{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;line-height:1;margin-bottom:4px}
-.c1{color:var(--teal)}.c2{color:var(--navy)}.c3{color:var(--vt)}.c4{color:var(--gold)}
-.slbl{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--tmu);font-weight:600}
+.c1{color:var(--em)}.c2{color:var(--slate)}.c3{color:var(--vi)}.c4{color:var(--gold-b)}
+.slbl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--tmu);font-weight:600}
 
 /* CUMULATIVE ROW */
 .crow{display:grid;grid-template-columns:repeat(3,1fr) 1.4fr;gap:10px;margin-bottom:1.25rem}
-.cbox{background:linear-gradient(135deg,#7A4C00 0%,var(--gold) 60%,var(--gold-b) 100%);border-radius:var(--rs2);padding:16px 18px;box-shadow:var(--sg);position:relative;overflow:hidden}
-.cbox::after{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;background:radial-gradient(circle,rgba(255,255,255,.12),transparent 70%);border-radius:50%}
-.cey{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:5px;font-weight:700;position:relative;z-index:1}
-.cnum{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:#fff;line-height:1;margin-bottom:2px;position:relative;z-index:1;text-shadow:0 1px 8px rgba(0,0,0,.2)}
-.clbl{font-size:10px;color:rgba(255,255,255,.7);position:relative;z-index:1}
-.caib{background:linear-gradient(135deg,var(--navy-d) 0%,var(--navy) 100%);border-radius:var(--rs2);padding:16px 18px;box-shadow:var(--s2);display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(232,150,10,.25)}
-.cait{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:7px;font-weight:700}
-.catx{font-size:12px;color:rgba(255,255,255,.78);line-height:1.6;flex:1;margin-bottom:10px;font-style:italic}
-.cab{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-b) 100%);border:none;border-radius:7px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;padding:7px 14px;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(192,120,0,.35)}
-.cab:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(192,120,0,.4)}.cab:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.cbox{background:var(--slate);border-radius:var(--rs2);padding:16px 18px;box-shadow:var(--s2);position:relative;overflow:hidden;border-left:3px solid var(--gold-l)}
+.cbox::after{content:'';position:absolute;top:-30px;right:-20px;width:80px;height:80px;background:radial-gradient(circle,rgba(245,158,11,.1),transparent 70%);border-radius:50%}
+.cey{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(148,163,184,.6);margin-bottom:5px;font-weight:700;position:relative;z-index:1}
+.cnum{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:#F8FAFC;line-height:1;margin-bottom:2px;position:relative;z-index:1}
+.clbl{font-size:10px;color:rgba(148,163,184,.65);position:relative;z-index:1}
+.caib{background:var(--sf);border:1px solid var(--br);border-radius:var(--rs2);padding:16px 18px;box-shadow:var(--s1);display:flex;flex-direction:column;justify-content:space-between}
+.cait{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-b);margin-bottom:7px;font-weight:700}
+.catx{font-size:12px;color:var(--tmu);line-height:1.6;flex:1;margin-bottom:10px;font-style:italic}
+.cab{background:var(--slate);border:none;border-radius:7px;color:#F8FAFC;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;padding:7px 14px;cursor:pointer;transition:all .2s}
+.cab:hover{background:var(--slate-m);transform:translateY(-1px)}.cab:disabled{opacity:.5;cursor:not-allowed;transform:none}
 
 /* PROGRESS */
 .pw{background:var(--sf);border:1px solid var(--br);border-radius:var(--rs2);padding:16px 20px;margin-bottom:1.25rem;box-shadow:var(--s1)}
 .pm{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}
 .plbl{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--tmu);font-weight:600}
-.ppct{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--navy)}
-.ptr{height:8px;background:var(--bg);border-radius:8px;overflow:hidden}
-.pfl{height:100%;background:linear-gradient(90deg,var(--gold) 0%,var(--gold-b) 60%,var(--gold-l) 100%);border-radius:8px;transition:width .8s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px rgba(192,120,0,.3)}
+.ppct{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--slate)}
+.ptr{height:6px;background:var(--slate-s);border-radius:6px;overflow:hidden}
+.pfl{height:100%;background:var(--gold-b);border-radius:6px;transition:width .8s cubic-bezier(.4,0,.2,1)}
 
 /* GRID & CARD */
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
 .cw{grid-column:span 2}
 .card{background:var(--sf);border:1px solid var(--br);border-radius:var(--r);padding:1.4rem 1.6rem;box-shadow:var(--s1);transition:box-shadow .2s,border-color .2s}
-.card:hover{border-color:rgba(192,120,0,.18);box-shadow:var(--s2)}
+.card:hover{border-color:rgba(30,41,59,.16);box-shadow:var(--s2)}
 .ch{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding-bottom:.9rem;border-bottom:1px solid var(--brs)}
-.ct{display:flex;align-items:center;gap:7px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);font-weight:700}
+.ct{display:flex;align-items:center;gap:7px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);font-weight:700}
 .ctd{width:6px;height:6px;border-radius:50%;flex-shrink:0}
-.dg{background:var(--gold)}.dt{background:var(--teal)}.dv{background:var(--vt)}.dn{background:var(--navy)}.dr{background:var(--rs)}.dgn{background:var(--gn)}.ds{background:var(--sk)}
+.dg{background:var(--gold-b)}.dt{background:var(--em)}.dv{background:var(--vi)}.dn{background:var(--slate)}.dr{background:var(--ro)}.dgn{background:var(--gn)}.ds{background:var(--sk)}
 .cc{font-family:'Playfair Display',serif;font-size:1rem;color:var(--tmu)}
 
 /* TASK */
 .ti{display:flex;align-items:flex-start;gap:11px;padding:10px 0;border-bottom:1px solid var(--brs);cursor:pointer;transition:opacity .15s}
 .ti:last-of-type{border-bottom:none}
 .ti:hover{opacity:.8}
-.tck{width:19px;height:19px;border:2px solid var(--br);border-radius:6px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.ti.done .tck{background:linear-gradient(135deg,var(--gold),var(--gold-b));border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-p)}
+.tck{width:18px;height:18px;border:1.5px solid var(--br);border-radius:5px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.ti.done .tck{background:var(--em);border-color:var(--em)}
 .ci{display:none;width:9px;height:7px}.ti.done .ci{display:block}
 .tb2{flex:1;min-width:0}
 .tt{font-size:13px;color:var(--tx);line-height:1.45;transition:all .2s}
 .ti.done .tt{color:var(--td);text-decoration:line-through;text-decoration-color:var(--td)}
-.ttm{font-size:10.5px;color:var(--teal);margin-top:3px;font-weight:500}
+.ttm{font-size:10.5px;color:var(--em);margin-top:3px;font-weight:500}
 .ttgs{display:flex;flex-wrap:wrap;gap:3px;margin-top:4px}
-.kch{font-size:9.5px;padding:2px 6px;border-radius:8px;font-weight:600;border:1px solid}
+.kch{font-size:9.5px;padding:2px 6px;border-radius:6px;font-weight:600;border:1px solid}
 .rtg{font-size:10px;padding:3px 9px;border-radius:12px;flex-shrink:0;margin-top:2px;font-weight:500}
-.rc{background:var(--gold-p);color:var(--gold);border:1px solid var(--gold-br)}
-.ro{background:var(--navy-s);color:var(--navy-l);border:1px solid rgba(14,31,64,.15)}
-.rt{background:var(--teal-bg);color:var(--teal);border:1px solid var(--teal-br)}
+.rc{background:var(--gold-p);color:var(--am);border:1px solid var(--gold-br)}
+.ro2{background:var(--slate-s);color:var(--slate-l);border:1px solid var(--slate-br)}
+.rt{background:var(--em-bg);color:var(--em);border:1px solid var(--em-br)}
 .dx{background:none;border:none;color:var(--td);cursor:pointer;font-size:17px;line-height:1;padding:0 2px;flex-shrink:0;opacity:0;transition:opacity .2s;margin-top:1px}
-.ti:hover .dx{opacity:1}.dx:hover{color:var(--rs)}
+.ti:hover .dx{opacity:1}.dx:hover{color:var(--ro)}
 
 /* ADD ROW */
 .ar{display:flex;gap:8px;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--brs);flex-wrap:wrap}
 .ai2{flex:1;background:var(--sf2);border:1px solid var(--br);border-radius:var(--rx);color:var(--tx);font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;padding:9px 13px;outline:none;transition:border-color .2s,box-shadow .2s;min-width:0}
 .ai2::placeholder{color:var(--td)}
-.ai2:focus{border-color:var(--navy-l);box-shadow:0 0 0 3px rgba(14,31,64,.07)}
+.ai2:focus{border-color:var(--slate-m);box-shadow:0 0 0 3px rgba(30,41,59,.06)}
 .asel{flex:1;background:var(--sf2);border:1px solid var(--br);border-radius:var(--rx);color:var(--tm);font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;padding:9px 10px;outline:none;cursor:pointer;min-width:0}
-.abtn{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-b) 100%);border:none;border-radius:var(--rx);color:#fff;font-size:20px;font-weight:300;padding:0 16px;cursor:pointer;transition:all .2s;line-height:1;flex-shrink:0;box-shadow:0 2px 8px rgba(192,120,0,.3)}
-.abtn:hover{transform:scale(1.05);box-shadow:0 4px 14px rgba(192,120,0,.4)}.abtn:active{transform:scale(.97)}
+.abtn{background:var(--slate);border:none;border-radius:var(--rx);color:#F8FAFC;font-size:20px;font-weight:300;padding:0 16px;cursor:pointer;transition:all .2s;line-height:1;flex-shrink:0}
+.abtn:hover{background:var(--slate-m);transform:scale(1.04)}.abtn:active{transform:scale(.97)}
 
 /* PROJECT */
 .pji{padding:12px 0;border-bottom:1px solid var(--brs)}.pji:last-child{border-bottom:none}
@@ -139,56 +159,56 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 .pjl{flex:1;min-width:0}
 .pjn{font-size:13px;color:var(--tx);font-weight:500}
 .pjd{font-size:11px;color:var(--tmu);margin-top:2px}
-.pjd.ov{color:var(--rs);font-weight:500}.pjd.sn{color:var(--am);font-weight:500}
+.pjd.ov{color:var(--ro);font-weight:500}.pjd.sn{color:var(--am);font-weight:500}
 .pja{display:flex;align-items:center;gap:6px;flex-shrink:0}
 .sp{font-size:10px;padding:3px 9px;border-radius:10px;cursor:pointer;transition:opacity .2s;font-weight:600;letter-spacing:.04em}
 .sp:hover{opacity:.75}
-.spa{background:var(--navy-s);color:var(--navy-l);border:1px solid rgba(14,31,64,.15)}
+.spa{background:var(--slate-s);color:var(--slate-m);border:1px solid var(--slate-br)}
 .spr{background:var(--am-bg);color:var(--am);border:1px solid var(--am-br)}
-.spd{background:var(--teal-bg);color:var(--teal);border:1px solid var(--teal-br)}
-.pbt{height:6px;background:var(--bg);border-radius:6px;margin-bottom:5px;overflow:hidden}
-.pbf{height:100%;border-radius:6px;transition:width .5s ease}
-.bfn{background:linear-gradient(90deg,var(--navy),var(--sk))}.bfa{background:var(--am)}.bft{background:var(--teal)}
+.spd{background:var(--em-bg);color:var(--em);border:1px solid var(--em-br)}
+.pbt{height:5px;background:var(--bg);border-radius:5px;margin-bottom:5px;overflow:hidden}
+.pbf{height:100%;border-radius:5px;transition:width .5s ease}
+.bfn{background:var(--slate)}.bfa{background:var(--gold-b)}.bft{background:var(--em)}
 .pm2{font-size:11px;color:var(--tmu);display:flex;justify-content:space-between;align-items:center}
-.pm2 input[type=range]{accent-color:var(--navy);cursor:pointer;width:80px}
+.pm2 input[type=range]{accent-color:var(--slate);cursor:pointer;width:80px}
 
 /* WINS */
 .wg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:11px}
-.wc{background:linear-gradient(145deg,var(--gold-p) 0%,#FFFEFB 100%);border:1px solid var(--gold-br);border-radius:14px;padding:16px 18px;position:relative;transition:box-shadow .2s,transform .2s}
+.wc{background:var(--sf);border:1px solid var(--br);border-radius:14px;padding:16px 18px;position:relative;transition:box-shadow .2s,transform .2s}
 .wc:hover{box-shadow:var(--s2);transform:translateY(-2px)}
-.wc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-b),var(--gold-l));border-radius:14px 14px 0 0}
-.wb{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:flex;align-items:center;gap:5px;font-weight:700}
-.wic{width:10px;height:10px;fill:var(--gold)}
+.wc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold-b);border-radius:14px 14px 0 0}
+.wb{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-b);margin-bottom:6px;display:flex;align-items:center;gap:5px;font-weight:700}
+.wic{width:10px;height:10px;fill:var(--gold-b)}
 .wt{font-size:13px;color:var(--tx);line-height:1.4;margin-bottom:4px;font-weight:600}
 .wn{font-size:12px;color:var(--tmu);font-style:italic;line-height:1.5;margin-bottom:5px}
 .wdt{font-size:10px;color:var(--td)}
 .dw{position:absolute;top:10px;right:10px;background:none;border:none;color:var(--td);cursor:pointer;font-size:15px;opacity:0;transition:opacity .2s}
-.wc:hover .dw{opacity:1}.dw:hover{color:var(--rs)}
+.wc:hover .dw{opacity:1}.dw:hover{color:var(--ro)}
 
 /* WEEKLY */
 .wkgd{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin-bottom:1.25rem}
 .wkd{background:var(--sf2);border:1px solid var(--br);border-radius:11px;padding:12px 5px;text-align:center}
-.wkd.today{background:var(--navy);border-color:var(--navy)}
+.wkd.today{background:var(--slate);border-color:var(--slate)}
 .wdl{font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:600}
-.wkd.today .wdl{color:rgba(255,255,255,.5)}
+.wkd.today .wdl{color:rgba(148,163,184,.6)}
 .wdn{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--tm);line-height:1;margin-bottom:7px}
 .wkd.today .wdn{color:var(--gold-l)}
 .wbw{height:40px;display:flex;align-items:flex-end;justify-content:center}
 .wbr{width:16px;background:var(--br);border-radius:3px;position:relative;overflow:hidden;height:40px}
-.wkd.today .wbr{background:rgba(255,255,255,.15)}
-.wbf{position:absolute;bottom:0;left:0;right:0;background:var(--navy-s);border-radius:3px;transition:height .7s ease}
-.wkd.today .wbf{background:var(--gold-b)}
+.wkd.today .wbr{background:rgba(255,255,255,.12)}
+.wbf{position:absolute;bottom:0;left:0;right:0;background:var(--slate-s);border-radius:3px;transition:height .7s ease}
+.wkd.today .wbf{background:var(--gold-l)}
 .wpc{font-size:9.5px;color:var(--td);margin-top:4px;font-weight:500}
-.wkd.today .wpc{color:rgba(255,255,255,.65)}
+.wkd.today .wpc{color:rgba(148,163,184,.7)}
 .wsr{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.25rem}
 .wsb{background:var(--sf);border:1px solid var(--br);border-radius:13px;padding:16px 18px;box-shadow:var(--s1)}
-.wsn{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--navy);line-height:1;margin-bottom:4px}
+.wsn{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--slate);line-height:1;margin-bottom:4px}
 .wsl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--tmu);font-weight:600}
 .htbl{width:100%;border-collapse:collapse;font-size:12.5px}
 .htbl th{text-align:left;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--tmu);font-weight:700;padding:9px 12px;border-bottom:1px solid var(--br)}
 .htbl td{padding:9px 12px;border-bottom:1px solid var(--brs);color:var(--tm);vertical-align:top}
 .htbl tr:last-child td{border-bottom:none}
-.hbg{display:inline-block;font-size:10px;padding:2px 8px;border-radius:7px;font-weight:600}
+.hbg{display:inline-block;font-size:10px;padding:2px 8px;border-radius:6px;font-weight:600}
 
 /* KPI */
 .kpig{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
@@ -200,20 +220,20 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 .kpsw{text-align:right;flex-shrink:0;margin-left:10px}
 .kps{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;line-height:1}
 .kptr{font-size:10px;color:var(--tmu);margin-top:2px}
-.kpbt{height:5px;background:var(--bg);border-radius:5px;margin-bottom:7px;overflow:hidden}
+.kpbt{height:4px;background:var(--bg);border-radius:5px;margin-bottom:7px;overflow:hidden}
 .kpbf{height:100%;border-radius:5px;transition:width .6s ease}
-.kptch{display:inline-block;font-size:10px;padding:3px 8px;border-radius:9px;margin:2px 2px 2px 0;border:1px solid}
+.kptch{display:inline-block;font-size:10px;padding:3px 8px;border-radius:8px;margin:2px 2px 2px 0;border:1px solid}
 .kpwt{font-size:10px;color:var(--td);margin-top:5px}
 
 /* SMART ANALYSIS */
-.smart-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-b) 100%);border:none;border-radius:11px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;padding:10px 20px;cursor:pointer;transition:all .2s;box-shadow:var(--sg);letter-spacing:.02em}
-.smart-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(192,120,0,.38)}.smart-btn:active{transform:scale(.97)}.smart-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
-.aip{background:linear-gradient(135deg,#FFFBF0 0%,#FFFEF9 100%);border:1px solid rgba(192,120,0,.2);border-radius:14px;padding:20px 24px;margin-top:1rem;display:none;box-shadow:0 4px 20px rgba(192,120,0,.08)}
+.smart-btn{display:inline-flex;align-items:center;gap:8px;background:var(--slate);border:none;border-radius:10px;color:#F8FAFC;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:600;padding:10px 20px;cursor:pointer;transition:all .2s;letter-spacing:.01em}
+.smart-btn:hover{background:var(--slate-m);transform:translateY(-1px)}.smart-btn:active{transform:scale(.97)}.smart-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.aip{background:var(--sf);border:1px solid var(--br);border-radius:14px;padding:20px 24px;margin-top:1rem;display:none;box-shadow:var(--s1)}
 .aip.vis{display:block}
-.aipt{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px;padding-bottom:12px;border-bottom:1px solid rgba(192,120,0,.15)}
+.aipt{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-b);font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px;padding-bottom:12px;border-bottom:1px solid var(--brs)}
 .aic{font-size:13.5px;color:var(--tm);line-height:1.85}
-.aib2{width:100%;height:3px;background:var(--gold-p);border-radius:3px;overflow:hidden;margin-bottom:12px}
-.aibf{height:100%;background:var(--gold);border-radius:3px;animation:ald 1.6s ease infinite}
+.aib2{width:100%;height:3px;background:var(--slate-s);border-radius:3px;overflow:hidden;margin-bottom:12px}
+.aibf{height:100%;background:var(--gold-b);border-radius:3px;animation:ald 1.6s ease infinite}
 @keyframes ald{0%{width:0%;margin-left:0}50%{width:55%;margin-left:22%}100%{width:0%;margin-left:100%}}
 
 /* TOOLS */
@@ -221,71 +241,68 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 .tstt{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--tmu);font-weight:700;margin:0 0 9px;padding-bottom:5px;border-bottom:1px solid var(--brs)}
 .tgrd{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:9px}
 .tlc{background:var(--sf);border:1px solid var(--br);border-radius:13px;padding:14px 16px;display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s,border-color .2s;box-shadow:var(--s1);position:relative;overflow:hidden}
-.tlc::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;border-radius:13px 0 0 13px;opacity:0;transition:opacity .2s}
-.tlc:hover{transform:translateY(-2px);box-shadow:var(--s2);border-color:rgba(14,31,64,.18)}.tlc:hover::before{opacity:1}
-.tg-jibu .tlc::before{background:var(--teal)}.tg-ai .tlc::before{background:var(--vt)}.tg-dev .tlc::before{background:var(--am)}
+.tlc::before{content:'';position:absolute;top:0;left:0;bottom:0;width:2px;border-radius:0;opacity:0;transition:opacity .2s}
+.tlc:hover{transform:translateY(-2px);box-shadow:var(--s2);border-color:rgba(30,41,59,.16)}.tlc:hover::before{opacity:1}
+.tg-jibu .tlc::before{background:var(--em)}.tg-ai .tlc::before{background:var(--vi)}.tg-dev .tlc::before{background:var(--gold-b)}
 .tlic{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
 .tlnm{font-size:12.5px;font-weight:600;color:var(--tx);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tldc{font-size:10.5px;color:var(--tmu);line-height:1.35}
 .tlar{font-size:13px;color:var(--td);flex-shrink:0;transition:transform .2s,color .2s}
-.tlc:hover .tlar{transform:translateX(3px);color:var(--navy)}
+.tlc:hover .tlar{transform:translateX(3px);color:var(--slate)}
 
 /* SKILLS */
 .skgd{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:9px;margin-bottom:1rem}
 .skc{background:var(--sf);border:1px solid var(--br);border-radius:13px;padding:13px 15px;box-shadow:var(--s1);transition:transform .2s,box-shadow .2s;position:relative}
 .skc:hover{transform:translateY(-2px);box-shadow:var(--s2)}
-.skc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:13px 13px 0 0}
-.sk-tech::before{background:linear-gradient(90deg,var(--teal),var(--teal-l))}
-.sk-ops::before{background:linear-gradient(90deg,var(--navy),var(--navy-l))}
-.sk-lead::before{background:linear-gradient(90deg,var(--gold),var(--gold-b))}
-.sk-data::before{background:linear-gradient(90deg,var(--vt),#8050C8)}
+.skc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:13px 13px 0 0}
+.sk-tech::before{background:var(--em)}.sk-ops::before{background:var(--slate)}.sk-lead::before{background:var(--gold-b)}.sk-data::before{background:var(--vi)}
 .sklv{font-size:9px;letter-spacing:.17em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
 .sknm{font-size:12.5px;font-weight:600;color:var(--tx);margin-bottom:3px}
 .sknt{font-size:11px;color:var(--tmu);line-height:1.4}
-.sklbar{height:4px;background:var(--bg);border-radius:4px;margin-top:8px;overflow:hidden}
+.sklbar{height:3px;background:var(--bg);border-radius:4px;margin-top:8px;overflow:hidden}
 .sklbf{height:100%;border-radius:4px;transition:width .5s ease}
 .skdt{font-size:10px;color:var(--td);margin-top:5px}
 .dsk{position:absolute;top:9px;right:9px;background:none;border:none;color:var(--td);cursor:pointer;font-size:14px;opacity:0;transition:opacity .2s}
-.skc:hover .dsk{opacity:1}.dsk:hover{color:var(--rs)}
+.skc:hover .dsk{opacity:1}.dsk:hover{color:var(--ro)}
 
 /* INTERNS */
 .ing{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
-.inh{background:linear-gradient(130deg,var(--navy) 0%,var(--navy-l) 100%);border-radius:12px;padding:15px 18px;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between}
+.inh{background:var(--slate);border-radius:12px;padding:15px 18px;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between}
 .inab{display:flex;align-items:center;gap:11px}
 .ina{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#fff;flex-shrink:0}
-.innm{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:#fff}
-.inrl{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:2px}
+.innm{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:#F8FAFC}
+.inrl{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:rgba(148,163,184,.5);margin-top:2px}
 .intc{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold-l)}
-.intl{font-size:10px;color:rgba(255,255,255,.45);text-align:right}
+.intl{font-size:10px;color:rgba(148,163,184,.5);text-align:right}
 .iti{display:flex;align-items:flex-start;gap:9px;padding:9px 0;border-bottom:1px solid var(--brs)}
 .iti:last-of-type{border-bottom:none}
-.its{font-size:9.5px;padding:2px 8px;border-radius:9px;flex-shrink:0;margin-top:3px;font-weight:600;cursor:pointer;transition:opacity .2s}
+.its{font-size:9.5px;padding:2px 8px;border-radius:8px;flex-shrink:0;margin-top:3px;font-weight:600;cursor:pointer;transition:opacity .2s}
 .its:hover{opacity:.75}
 .itp{background:var(--am-bg);color:var(--am);border:1px solid var(--am-br)}
-.iti2{background:var(--navy-s);color:var(--navy-l);border:1px solid rgba(14,31,64,.15)}
-.itd{background:var(--teal-bg);color:var(--teal);border:1px solid var(--teal-br)}
+.iti2{background:var(--slate-s);color:var(--slate-m);border:1px solid var(--slate-br)}
+.itd{background:var(--em-bg);color:var(--em);border:1px solid var(--em-br)}
 .ittx{font-size:12.5px;color:var(--tx);flex:1;line-height:1.4}
 .itdt{font-size:10px;color:var(--td);margin-top:2px}
 .itdl{background:none;border:none;color:var(--td);cursor:pointer;font-size:14px;opacity:0;transition:opacity .2s;flex-shrink:0}
-.iti:hover .itdl{opacity:1}.itdl:hover{color:var(--rs)}
+.iti:hover .itdl{opacity:1}.itdl:hover{color:var(--ro)}
 .hvb{display:inline-flex;align-items:center;gap:6px;background:var(--sf2);border:1px solid var(--br);border-radius:9px;color:var(--tm);font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;padding:7px 14px;cursor:pointer;transition:all .2s}
-.hvb:hover{background:var(--navy);color:#fff;border-color:var(--navy)}.hvb:disabled{opacity:.5;cursor:not-allowed}
+.hvb:hover{background:var(--slate);color:#F8FAFC;border-color:var(--slate)}.hvb:disabled{opacity:.5;cursor:not-allowed}
 
 /* SETTINGS */
-.ssl2{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:7px;display:block}
+.ssl2{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--slate);font-weight:700;margin-bottom:7px;display:block}
 .ssd{font-size:12.5px;color:var(--tmu);margin-bottom:9px;line-height:1.6}
 .ssi{width:100%;background:var(--sf2);border:1px solid var(--br);border-radius:var(--rx);color:var(--tx);font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;padding:9px 13px;outline:none;transition:border-color .2s}
-.ssi:focus{border-color:var(--vt);box-shadow:0 0 0 3px rgba(96,48,160,.08)}
-.svb{background:var(--navy);border:none;border-radius:var(--rx);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:600;padding:9px 22px;cursor:pointer;margin-top:9px;transition:background .2s}
-.svb:hover{background:var(--navy-l)}
-.okm{display:none;font-size:12px;color:var(--teal);margin-top:7px;font-weight:600}
+.ssi:focus{border-color:var(--vi);box-shadow:0 0 0 3px rgba(91,33,182,.07)}
+.svb{background:var(--slate);border:none;border-radius:var(--rx);color:#F8FAFC;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:600;padding:9px 22px;cursor:pointer;margin-top:9px;transition:background .2s}
+.svb:hover{background:var(--slate-m)}
+.okm{display:none;font-size:12px;color:var(--em);margin-top:7px;font-weight:600}
 .stpl{list-style:none}
 .stpi{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--brs)}
 .stpi:last-child{border-bottom:none}
-.stn{width:23px;height:23px;border-radius:50%;background:var(--navy);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.stn{width:23px;height:23px;border-radius:50%;background:var(--slate);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
 .stt{font-size:13px;color:var(--tm);line-height:1.55}
-.stt a{color:var(--vt);font-weight:600}
-.ibox{background:var(--vt-bg);border:1px solid var(--vt-br);border-radius:10px;padding:12px 16px;margin-bottom:1.25rem;font-size:12.5px;color:var(--vt);line-height:1.65;font-weight:500}
+.stt a{color:var(--vi);font-weight:600}
+.ibox{background:var(--in-bg);border:1px solid var(--in-br);border-radius:10px;padding:12px 16px;margin-bottom:1.25rem;font-size:12.5px;color:var(--in);line-height:1.65;font-weight:500}
 .em{color:var(--td);font-size:12.5px;padding:16px;font-style:italic;text-align:center;background:var(--sf2);border-radius:10px;border:1px dashed var(--br);margin:4px 0}
 
 /* RESPONSIVE */
@@ -348,7 +365,7 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
     <div class="cbox"><div class="cey">Since Day 1</div><div class="cnum" id="cDays">0</div><div class="clbl">Days tracked</div></div>
     <div class="caib">
       <div class="cait">◎ Journey Reflection</div>
-      <div class="catx" id="cAiTx" style="font-size:12px;color:rgba(255,255,255,.82);line-height:1.55;flex:1;margin-bottom:10px">Click below for a smart reflection on your performance journey.</div>
+      <div class="catx" id="cAiTx">Click below for a smart reflection on your performance journey.</div>
       <button class="cab" id="cAiBtn">◎ Reflect on my journey</button>
     </div>
   </div>
@@ -385,7 +402,7 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 <div class="tp" id="tab-kpi">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:10px">
     <div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--navy)">KPI Performance</h2>
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--slate)">KPI Performance</h2>
       <p style="font-size:12px;color:var(--tmu);margin-top:3px">Live scores based on today's task completions</p>
     </div>
     <button class="smart-btn" id="kpiBtn" style="font-size:12px;padding:9px 16px">◎ Smart KPI Analysis</button>
@@ -418,7 +435,7 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 <div class="tp" id="tab-wins">
   <div class="card">
     <div class="ch"><span class="ct"><span class="ctd dg"></span>Solo wins &amp; achievements</span><span class="cc" id="wnCnt">0</span></div>
-    <p style="font-size:13px;color:var(--tmu);margin-bottom:1.2rem;line-height:1.7;background:var(--navy-s);padding:12px 16px;border-radius:10px;border-left:3px solid var(--navy)">Every project you closed, every initiative you drove — this is your visible record of impact. This is what gets you that salary increment.</p>
+    <p style="font-size:13px;color:var(--tmu);margin-bottom:1.2rem;line-height:1.7;background:var(--slate-s);padding:12px 16px;border-radius:10px;border-left:2px solid var(--slate)">Every project you closed, every initiative you drove — this is your visible record of impact. This is what gets you that salary increment.</p>
     <div class="wg" id="wnList"></div>
     <div class="ar">
       <input class="ai2" id="wnInp" placeholder="Achievement title…" style="flex:2;min-width:150px"/>
@@ -444,49 +461,48 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 
 <!-- TOOLS & SKILLS -->
 <div class="tp" id="tab-tools">
-  <div style="background:linear-gradient(130deg,var(--navy-d) 0%,var(--navy) 100%);border-radius:var(--rs2);padding:16px 20px;margin-bottom:1.25rem">
-    <div style="font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.6"><strong style="color:#fff">Quick Access Hub</strong> — all your tools one click away. Plus your growing skills portfolio below.</div>
+  <div style="background:var(--slate);border-radius:var(--rs2);padding:16px 20px;margin-bottom:1.25rem">
+    <div style="font-size:12.5px;color:rgba(148,163,184,.75);line-height:1.6"><strong style="color:#F8FAFC">Quick Access Hub</strong> — all your tools one click away. Plus your growing skills portfolio below.</div>
   </div>
   <div class="tgrp tg-jibu">
     <div class="tstt">Jibu Systems</div>
     <div class="tgrd">
-      <a class="tlc" href="https://nexus.evouala.com/application/run/4685" target="_blank"><div class="tlic" style="background:#E4F5F2;color:var(--teal)">💧</div><div style="flex:1;min-width:0"><div class="tlnm">Nexus / Evouala</div><div class="tldc">POS &amp; franchise ops</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://portal.mwater.co/#/forms" target="_blank"><div class="tlic" style="background:#E4F5F2;color:var(--teal)">📋</div><div style="flex:1;min-width:0"><div class="tlnm">mWater Forms</div><div class="tldc">Field surveys &amp; NPS</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://portal.ferntech.io/system/list" target="_blank"><div class="tlic" style="background:#E4F5F2;color:var(--teal)">🔧</div><div style="flex:1;min-width:0"><div class="tlnm">Ferntech Portal</div><div class="tldc">System management</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://jibulms.frappe.cloud/app/lms" target="_blank"><div class="tlic" style="background:#ECF0FA;color:var(--navy)">🎓</div><div style="flex:1;min-width:0"><div class="tlnm">Jibu LMS</div><div class="tldc">Learning management</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://jibusupport.frappe.cloud/app/helpdesk" target="_blank"><div class="tlic" style="background:#ECF0FA;color:var(--navy)">🎫</div><div style="flex:1;min-width:0"><div class="tlnm">Jibu Helpdesk</div><div class="tldc">Support &amp; SLA tracking</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://jibuposdata.frappe.cloud/insights/dashboard" target="_blank"><div class="tlic" style="background:#ECF0FA;color:var(--navy)">📊</div><div style="flex:1;min-width:0"><div class="tlnm">POS Insights</div><div class="tldc">Dashboards &amp; analytics</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://jibuhr.frappe.cloud/app/hr" target="_blank"><div class="tlic" style="background:#ECF0FA;color:var(--navy)">👥</div><div style="flex:1;min-width:0"><div class="tlnm">Jibu HR</div><div class="tldc">HR &amp; records</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://jiburwanda.f.frappe.cloud/app/welcome-to-erpnext" target="_blank"><div class="tlic" style="background:#ECF0FA;color:var(--navy)">⚙️</div><div style="flex:1;min-width:0"><div class="tlnm">ERPNext Rwanda</div><div class="tldc">ERP &amp; operations</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://nexus.evouala.com/application/run/4685" target="_blank"><div class="tlic" style="background:var(--em-bg);color:var(--em)">💧</div><div style="flex:1;min-width:0"><div class="tlnm">Nexus / Evouala</div><div class="tldc">POS &amp; franchise ops</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://portal.mwater.co/#/forms" target="_blank"><div class="tlic" style="background:var(--em-bg);color:var(--em)">📋</div><div style="flex:1;min-width:0"><div class="tlnm">mWater Forms</div><div class="tldc">Field surveys &amp; NPS</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://portal.ferntech.io/system/list" target="_blank"><div class="tlic" style="background:var(--em-bg);color:var(--em)">🔧</div><div style="flex:1;min-width:0"><div class="tlnm">Ferntech Portal</div><div class="tldc">System management</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://jibulms.frappe.cloud/app/lms" target="_blank"><div class="tlic" style="background:var(--slate-s);color:var(--slate)">🎓</div><div style="flex:1;min-width:0"><div class="tlnm">Jibu LMS</div><div class="tldc">Learning management</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://jibusupport.frappe.cloud/app/helpdesk" target="_blank"><div class="tlic" style="background:var(--slate-s);color:var(--slate)">🎫</div><div style="flex:1;min-width:0"><div class="tlnm">Jibu Helpdesk</div><div class="tldc">Support &amp; SLA tracking</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://jibuposdata.frappe.cloud/insights/dashboard" target="_blank"><div class="tlic" style="background:var(--slate-s);color:var(--slate)">📊</div><div style="flex:1;min-width:0"><div class="tlnm">POS Insights</div><div class="tldc">Dashboards &amp; analytics</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://jibuhr.frappe.cloud/app/hr" target="_blank"><div class="tlic" style="background:var(--slate-s);color:var(--slate)">👥</div><div style="flex:1;min-width:0"><div class="tlnm">Jibu HR</div><div class="tldc">HR &amp; records</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://jiburwanda.f.frappe.cloud/app/welcome-to-erpnext" target="_blank"><div class="tlic" style="background:var(--slate-s);color:var(--slate)">⚙️</div><div style="flex:1;min-width:0"><div class="tlnm">ERPNext Rwanda</div><div class="tldc">ERP &amp; operations</div></div><div class="tlar">→</div></a>
     </div>
   </div>
   <div class="tgrp tg-ai">
     <div class="tstt">AI Tools</div>
     <div class="tgrd">
-      <a class="tlc" href="https://chatgpt.com/" target="_blank"><div class="tlic" style="background:#F0EAF8;color:var(--vt)">🤖</div><div style="flex:1;min-width:0"><div class="tlnm">ChatGPT</div><div class="tldc">OpenAI conversational AI</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://chat.deepseek.com/" target="_blank"><div class="tlic" style="background:#F0EAF8;color:var(--vt)">🧠</div><div style="flex:1;min-width:0"><div class="tlnm">DeepSeek</div><div class="tldc">Research &amp; reasoning AI</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://chatgpt.com/" target="_blank"><div class="tlic" style="background:var(--vi-bg);color:var(--vi)">🤖</div><div style="flex:1;min-width:0"><div class="tlnm">ChatGPT</div><div class="tldc">OpenAI conversational AI</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://chat.deepseek.com/" target="_blank"><div class="tlic" style="background:var(--vi-bg);color:var(--vi)">🧠</div><div style="flex:1;min-width:0"><div class="tlnm">DeepSeek</div><div class="tldc">Research &amp; reasoning AI</div></div><div class="tlar">→</div></a>
     </div>
   </div>
   <div class="tgrp tg-dev">
     <div class="tstt">Developer &amp; API</div>
     <div class="tgrd">
-      <a class="tlc" href="https://github.com/JibuCorporate/POS-Master" target="_blank"><div class="tlic" style="background:#FEF2E4;color:var(--am)">⌨️</div><div style="flex:1;min-width:0"><div class="tlnm">GitHub — POS Master</div><div class="tldc">Source code &amp; version control</div></div><div class="tlar">→</div></a>
-      <a class="tlc" href="https://platform.openai.com/api-keys" target="_blank"><div class="tlic" style="background:#FEF2E4;color:var(--am)">🔑</div><div style="flex:1;min-width:0"><div class="tlnm">OpenAI API Keys</div><div class="tldc">Manage API credentials</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://github.com/JibuCorporate/POS-Master" target="_blank"><div class="tlic" style="background:var(--gold-p);color:var(--am)">⌨️</div><div style="flex:1;min-width:0"><div class="tlnm">GitHub — POS Master</div><div class="tldc">Source code &amp; version control</div></div><div class="tlar">→</div></a>
+      <a class="tlc" href="https://platform.openai.com/api-keys" target="_blank"><div class="tlic" style="background:var(--gold-p);color:var(--am)">🔑</div><div style="flex:1;min-width:0"><div class="tlnm">OpenAI API Keys</div><div class="tldc">Manage API credentials</div></div><div class="tlar">→</div></a>
     </div>
   </div>
 
-  <!-- SKILLS SECTION -->
-  <div style="margin-top:1.75rem;padding-top:1.5rem;border-top:2px solid var(--brs)">
+  <div style="margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--brs)">
     <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:8px">
       <div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--navy)">Skills Attained</h3>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--slate)">Skills Attained</h3>
         <p style="font-size:12px;color:var(--tmu);margin-top:3px">Your growing professional toolkit — built in this role at Jibu.</p>
       </div>
       <span id="skCnt" style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--tmu)">0 skills</span>
     </div>
     <div class="skgd" id="skList"></div>
     <div class="card" style="padding:1.2rem 1.5rem">
-      <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:10px">Add a skill</div>
+      <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);font-weight:700;margin-bottom:10px">Add a skill</div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:stretch">
         <input class="ai2" id="skNm" placeholder="Skill name (e.g. POS Troubleshooting)…" style="flex:3;min-width:160px"/>
         <input class="ai2" id="skNt" placeholder="Where / how you use it…" style="flex:2;min-width:130px"/>
@@ -515,7 +531,7 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
   <div class="ing">
     <div class="card" style="padding:0;overflow:hidden">
       <div class="inh">
-        <div class="inab"><div class="ina" style="background:linear-gradient(135deg,var(--teal),var(--teal-l))">S</div><div><div class="innm">Sharon</div><div class="inrl">IT Intern</div></div></div>
+        <div class="inab"><div class="ina" style="background:var(--em)">S</div><div><div class="innm">Sharon</div><div class="inrl">IT Intern</div></div></div>
         <div style="text-align:right"><div class="intc" id="shCnt">0</div><div class="intl">tasks assigned</div></div>
       </div>
       <div style="padding:0 1.4rem">
@@ -527,7 +543,7 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
     </div>
     <div class="card" style="padding:0;overflow:hidden">
       <div class="inh">
-        <div class="inab"><div class="ina" style="background:linear-gradient(135deg,var(--vt),#7040C0)">A</div><div><div class="innm">Aalia</div><div class="inrl">IT Intern</div></div></div>
+        <div class="inab"><div class="ina" style="background:var(--vi)">A</div><div><div class="innm">Aalia</div><div class="inrl">IT Intern</div></div></div>
         <div style="text-align:right"><div class="intc" id="aaCnt">0</div><div class="intl">tasks assigned</div></div>
       </div>
       <div style="padding:0 1.4rem">
@@ -586,7 +602,16 @@ const KPIS=[
   {id:13,area:"POS Adoption",name:"POS usage rate (franchises recording ≥90%)",w:0,tgt:"85%",c:"navy"},
   {id:14,area:"POS Quality",name:"Repeat-issue rate (incidents within 30 days)",w:0,tgt:"<10%",c:"rose"},
 ];
-const KC={gold:{a:'var(--gold)',bg:'var(--gold-p)',bd:'var(--gold-br)',bar:'var(--gold)'},teal:{a:'var(--teal)',bg:'var(--teal-bg)',bd:'var(--teal-br)',bar:'var(--teal)'},rose:{a:'var(--rs)',bg:'var(--rs-bg)',bd:'var(--rs-br)',bar:'var(--rs)'},violet:{a:'var(--vt)',bg:'var(--vt-bg)',bd:'var(--vt-br)',bar:'var(--vt)'},navy:{a:'var(--navy)',bg:'var(--navy-s)',bd:'rgba(14,31,64,.15)',bar:'var(--navy)'},indigo:{a:'var(--in)',bg:'var(--in-bg)',bd:'var(--in-br)',bar:'var(--in)'},amber:{a:'var(--am)',bg:'var(--am-bg)',bd:'var(--am-br)',bar:'var(--am)'},green:{a:'var(--gn)',bg:'var(--gn-bg)',bd:'var(--gn-br)',bar:'var(--gn)'}};
+const KC={
+  gold:{a:'var(--gold-b)',bg:'var(--gold-p)',bd:'var(--gold-br)',bar:'var(--gold-b)'},
+  teal:{a:'var(--em)',bg:'var(--em-bg)',bd:'var(--em-br)',bar:'var(--em)'},
+  rose:{a:'var(--ro)',bg:'var(--ro-bg)',bd:'var(--ro-br)',bar:'var(--ro)'},
+  violet:{a:'var(--vi)',bg:'var(--vi-bg)',bd:'var(--vi-br)',bar:'var(--vi)'},
+  navy:{a:'var(--slate)',bg:'var(--slate-s)',bd:'var(--slate-br)',bar:'var(--slate)'},
+  indigo:{a:'var(--in)',bg:'var(--in-bg)',bd:'var(--in-br)',bar:'var(--in)'},
+  amber:{a:'var(--am)',bg:'var(--am-bg)',bd:'var(--am-br)',bar:'var(--gold-b)'},
+  green:{a:'var(--gn)',bg:'var(--gn-bg)',bd:'var(--gn-br)',bar:'var(--gn)'}
+};
 const DEF_D=[
   {id:1,text:"Ensure the COO has water in her flask",done:false,tag:"coo",ca:null,kpis:[1]},
   {id:2,text:"Follow-up with CMs & global leaders to update pre-reads",done:false,tag:"ops",ca:null,kpis:[2,3,4]},
@@ -599,7 +624,7 @@ const DEF_P=[{id:1,name:"Developer close-out — monitoring & follow-through",pc
 const DEF_W=[{id:1,title:"Customer Order App",note:"Designed, built, and delivered entirely solo — end to end",ao:todayI}];
 const DEF_SK=[
   {id:1,name:"POS System Management",note:"Daily monitoring and troubleshooting across franchises",cat:"tech",lv:"proficient",ao:todayI},
-  {id:2,name:"Executive Support & COO Liaison",note:"Action tracking, pre-reads, meeting prep",cat:"ops",lv:"expert",ao:todayI},
+  {id:2,name:"Executive Support & COO Liaison",note:"Action tracking, meeting prep, pre-reads for COO office",cat:"ops",lv:"expert",ao:todayI},
   {id:3,name:"Country Coordination",note:"Managing deliverables across country teams",cat:"lead",lv:"proficient",ao:todayI},
   {id:4,name:"Dashboard & Reporting",note:"Health checks, data accuracy, Metabase & Looker",cat:"data",lv:"proficient",ao:todayI},
   {id:5,name:"Escalation Management",note:"Issue identification, assignment and resolution tracking",cat:"ops",lv:"proficient",ao:todayI},
@@ -607,9 +632,8 @@ const DEF_SK=[
 ];
 
 function ld(k,d){try{const r=localStorage.getItem(k);return r!==null?JSON.parse(r):d}catch{return d}}
-function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));const el=document.getElementById('svi');if(el){el.textContent='✓ Saved';el.classList.add('ok');clearTimeout(sv._t);sv._t=setTimeout(()=>{el.textContent='';el.classList.remove('ok')},2000)}}catch(e){const el=document.getElementById('svi');if(el){el.textContent='⚠ Save failed';el.style.color='rgba(255,120,100,.8)'}}}
+function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));const el=document.getElementById('svi');if(el){el.textContent='✓ Saved';el.classList.add('ok');clearTimeout(sv._t);sv._t=setTimeout(()=>{el.textContent='';el.classList.remove('ok')},2000)}}catch(e){const el=document.getElementById('svi');if(el){el.textContent='⚠ Save failed';el.style.color='rgba(239,68,68,.8)'}}}
 
-// Day reset
 let cumT=ld(K.CT,0),cumR=ld(K.CR,[]);
 if(!localStorage.getItem(K.SD))sv(K.SD,todayI);
 const sd2=localStorage.getItem(K.DT);
@@ -643,7 +667,7 @@ function fmtT(iso){if(!iso)return'';return new Date(iso).toLocaleTimeString([],{
 function fmtD(iso){if(!iso)return'';const d=new Date(iso+'T00:00:00');return d.getDate()+' '+MO[d.getMonth()].slice(0,3)+' '+d.getFullYear()}
 function du(iso){if(!iso)return null;return Math.round((new Date(iso+'T00:00:00')-new Date(todayS))/86400000)}
 function ck(){return'<svg class="ci" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.8 7L9 1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'}
-function tCls(t){return t==='coo'?'rc':t==='ops'?'ro':'rt'}
+function tCls(t){return t==='coo'?'rc':t==='ops'?'ro2':'rt'}
 function tLbl(t){return t==='coo'?'COO':t==='ops'?'Ops':'Team'}
 function kc2(id){const k=KPIS.find(x=>x.id===id);return k?KC[k.c]:KC.navy}
 function kSc(kid){const all=[...daily.filter(t=>(t.kpis||[]).includes(kid)),...adhoc.filter(t=>t.kpi===kid)];return all.length?Math.round(all.filter(t=>t.done).length/all.length*100):null}
@@ -706,7 +730,7 @@ function rWeekly(){
   document.getElementById('wDone').textContent=totDn;document.getElementById('wAvg').textContent=avg+'%';document.getElementById('wBest').textContent=best?best.lbl:'—';
   const hb=document.getElementById('hBody');document.getElementById('hCnt').textContent=hist.length+' entr'+(hist.length!==1?'ies':'y');
   if(!hist.length){hb.innerHTML='<tr><td colspan="4" style="color:var(--td);font-style:italic;padding:14px">Completed tasks will appear here.</td></tr>';return}
-  hb.innerHTML=hist.slice(0,60).map(h=>{const iD=h.type==='Daily';const bg=iD?'var(--gold-p)':'var(--teal-bg)';const cl=iD?'var(--gold)':'var(--teal)';const bd=iD?'1px solid var(--gold-br)':'1px solid var(--teal-br)';const d=new Date(h.iso);const ks=(h.kpis||[]).map(k=>`<span style="font-size:9.5px;background:var(--navy-s);color:var(--navy);padding:1px 5px;border-radius:5px;margin-right:2px;font-weight:600">K${k}</span>`).join('');
+  hb.innerHTML=hist.slice(0,60).map(h=>{const iD=h.type==='Daily';const bg=iD?'var(--gold-p)':'var(--em-bg)';const cl=iD?'var(--gold-b)':'var(--em)';const bd=iD?'1px solid var(--gold-br)':'1px solid var(--em-br)';const d=new Date(h.iso);const ks=(h.kpis||[]).map(k=>`<span style="font-size:9.5px;background:var(--slate-s);color:var(--slate);padding:1px 5px;border-radius:4px;margin-right:2px;font-weight:600">K${k}</span>`).join('');
   return`<tr><td style="color:var(--tx)">${h.text}</td><td><span class="hbg" style="background:${bg};color:${cl};border:${bd}">${h.type}</span></td><td>${ks||'—'}</td><td style="white-space:nowrap;color:var(--tmu)">${d.toLocaleDateString([],{weekday:'short',day:'numeric',month:'short'})} · ${d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</td></tr>`}).join('');
 }
 
@@ -722,9 +746,8 @@ function uStats(){
   document.getElementById('cDays').textContent=dayC;
 }
 
-// SKILLS
-const SKCAT={tech:{lbl:'Technology',cls:'sk-tech',clr:'var(--teal)'},ops:{lbl:'Operations',cls:'sk-ops',clr:'var(--navy)'},lead:{lbl:'Leadership',cls:'sk-lead',clr:'var(--gold)'},data:{lbl:'Data & Reporting',cls:'sk-data',clr:'var(--vt)'}};
-const SKLV={learning:{lbl:'Learning',pct:33,clr:'var(--am)'},proficient:{lbl:'Proficient',pct:67,clr:'var(--teal)'},expert:{lbl:'Expert',pct:100,clr:'var(--navy)'}};
+const SKCAT={tech:{lbl:'Technology',cls:'sk-tech',clr:'var(--em)'},ops:{lbl:'Operations',cls:'sk-ops',clr:'var(--slate)'},lead:{lbl:'Leadership',cls:'sk-lead',clr:'var(--gold-b)'},data:{lbl:'Data & Reporting',cls:'sk-data',clr:'var(--vi)'}};
+const SKLV={learning:{lbl:'Learning',pct:33,clr:'var(--gold-b)'},proficient:{lbl:'Proficient',pct:67,clr:'var(--em)'},expert:{lbl:'Expert',pct:100,clr:'var(--slate)'}};
 function rSkills(){
   const el=document.getElementById('skList');if(!el)return;
   document.getElementById('skCnt').textContent=skills.length+' skill'+(skills.length!==1?'s':'');
@@ -740,47 +763,6 @@ document.getElementById('skBtn')?.addEventListener('click',()=>{
 });
 document.getElementById('skNm')?.addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('skBtn').click()});
 
-// AUTO-SUGGEST skills from active KPI areas
-function suggestSkills(){
-  const KPI_SKILL_MAP={
-    'Executive Support':{name:'Executive Support & COO Liaison',note:'Action tracking, meeting prep, pre-reads for COO office',cat:'ops'},
-    'Country Coordination':{name:'Country Coordination & Follow-up',note:'Managing deliverables across country managers and global leaders',cat:'lead'},
-    'Issue Management':{name:'Escalation Management',note:'Issue identification, assignment and resolution tracking',cat:'ops'},
-    'POS ToTs':{name:'POS Champions Training Coordination',note:'Training planning, execution and attendance tracking',cat:'lead'},
-    'Projects':{name:'Strategic Project Management',note:'Milestone tracking, initiative follow-through',cat:'lead'},
-    'Reporting':{name:'Dashboard & Reporting',note:'Data health checks, accuracy validation, reporting timeliness',cat:'data'},
-    'POS Product':{name:'Voice-of-Customer Research',note:'Franchise feedback, surveys, VOC coverage',cat:'ops'},
-    'POS Delivery':{name:'Developer Delivery Management',note:'Sprint tracking, release follow-up, predictability monitoring',cat:'tech'},
-    'POS Support':{name:'POS Technical Support',note:'Helpdesk oversight, SLA compliance, ticket management',cat:'tech'},
-    'POS Adoption':{name:'POS System Adoption Tracking',note:'Franchise usage monitoring, transaction recording rates',cat:'data'},
-    'POS Quality':{name:'POS Quality Assurance',note:'Repeat-issue monitoring, incident tracking',cat:'tech'},
-  };
-  // Find KPI areas with at least one completed task
-  const activeAreas=new Set();
-  daily.filter(t=>t.done).forEach(t=>(t.kpis||[]).forEach(kid=>{const k=KPIS.find(x=>x.id===kid);if(k)activeAreas.add(k.area)}));
-  adhoc.filter(t=>t.done&&t.kpi).forEach(t=>{const k=KPIS.find(x=>x.id===t.kpi);if(k)activeAreas.add(k.area)});
-  // Suggest skills not yet added
-  const existingNames=skills.map(s=>s.name.toLowerCase());
-  const suggestions=[];
-  activeAreas.forEach(area=>{
-    const sk=KPI_SKILL_MAP[area];
-    if(sk&&!existingNames.some(n=>n.includes(sk.name.toLowerCase().slice(0,15))))suggestions.push({...sk,area});
-  });
-  return suggestions;
-}
-
-// Show suggestion chips if any
-function rSkillSuggestions(){
-  const sug=suggestSkills();
-  let el=document.getElementById('skSugg');
-  if(!el){el=document.createElement('div');el.id='skSugg';el.style.cssText='margin-bottom:12px';const container=document.getElementById('skList')?.parentElement;if(container)container.insertBefore(el,document.getElementById('skList'));}
-  if(!sug.length){el.innerHTML='';return}
-  el.innerHTML=`<div style="margin-bottom:10px"><div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px">◎ Suggested from your active KPIs today</div><div style="display:flex;flex-wrap:wrap;gap:7px">${sug.map(s=>`<button onclick="addSugSkill(${JSON.stringify(s).replace(/"/g,'&quot;')})" style="background:var(--gold-p);border:1px solid var(--gold-br);border-radius:9px;color:var(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:600;padding:6px 13px;cursor:pointer;transition:all .2s" onmouseover="this.style.background='var(--gold)';this.style.color='#fff'" onmouseout="this.style.background='var(--gold-p)';this.style.color='var(--gold)'">+ ${s.name}</button>`).join('')}</div></div>`;
-}
-function addSugSkill(s){skills.push({id:Date.now(),name:s.name,note:s.note,cat:s.cat,lv:'proficient',ao:todayI,auto:true});sv(K.SK,skills);rSkills()}
-window.addSugSkill=addSugSkill;
-
-// INTERNS
 function rInternList(tasks,elId,cntId,name){
   const el=document.getElementById(elId);document.getElementById(cntId).textContent=tasks.length;
   if(!tasks.length){el.innerHTML=`<div class="em">No tasks assigned to ${name} yet.</div>`;return}
@@ -794,9 +776,8 @@ function addIT(name){const id=name==='Sharon'?'shInp':'aaInp';const v=document.g
 document.getElementById('shBtn').addEventListener('click',()=>addIT('Sharon'));document.getElementById('aaBtn').addEventListener('click',()=>addIT('Aalia'));
 document.getElementById('shInp').addEventListener('keydown',e=>{if(e.key==='Enter')addIT('Sharon')});document.getElementById('aaInp').addEventListener('keydown',e=>{if(e.key==='Enter')addIT('Aalia')});
 
-function rAll(){rDaily();rAdhoc();rProjs();rWins();uStats();rInterns();rSkills();rSkillSuggestions()}
+function rAll(){rDaily();rAdhoc();rProjs();rWins();uStats();rInterns();rSkills()}
 
-// ADD HANDLERS
 function addAdhoc(){const v=document.getElementById('aInp').value.trim();if(!v)return;const kpi=+document.getElementById('aKpi').value||null;adhoc.push({id:Date.now(),text:v,done:false,ca:null,aa:new Date().toISOString(),kpi});sv(K.A,adhoc);document.getElementById('aInp').value='';document.getElementById('aKpi').value='';rAll()}
 document.getElementById('aBtn').addEventListener('click',addAdhoc);document.getElementById('aInp').addEventListener('keydown',e=>{if(e.key==='Enter')addAdhoc()});
 function addProj(){const n=document.getElementById('prInp').value.trim();if(!n)return;const due=document.getElementById('prDue').value;const pct=Math.min(100,Math.max(0,+document.getElementById('prPct').value||0));projs.push({id:Date.now(),name:n,pct,status:'active',due,ao:todayI});sv(K.P,projs);document.getElementById('prInp').value='';document.getElementById('prDue').value='';document.getElementById('prPct').value='';rAll()}
@@ -804,16 +785,13 @@ document.getElementById('prBtn').addEventListener('click',addProj);document.getE
 function addWin(){const t=document.getElementById('wnInp').value.trim();if(!t)return;const n=document.getElementById('wnNote').value.trim();wins.push({id:Date.now(),title:t,note:n,ao:todayI});sv(K.W,wins);document.getElementById('wnInp').value='';document.getElementById('wnNote').value='';rAll()}
 document.getElementById('wnBtn').addEventListener('click',addWin);document.getElementById('wnInp').addEventListener('keydown',e=>{if(e.key==='Enter')addWin()});
 
-// SETTINGS
 const sk2=ld(K.GK,'');if(sk2)document.getElementById('apiInp').value=sk2;
 document.getElementById('svKey').addEventListener('click',()=>{sv(K.GK,document.getElementById('apiInp').value.trim());const ok=document.getElementById('keyOk');ok.style.display='block';setTimeout(()=>ok.style.display='none',3500)});
 
-// ══ SMART ANALYSIS ENGINE — renders beautiful HTML sections ══
 const S={
-  sec:(title,color,items)=>`<div style="margin-bottom:18px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:${color};margin-bottom:10px;display:flex;align-items:center;gap:7px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${color};flex-shrink:0"></span>${title}</div><div style="display:flex;flex-direction:column;gap:6px">${items}</div></div>`,
-  item:(txt,col)=>`<div style="font-size:13px;color:#243860;line-height:1.6;padding:8px 12px;background:${col||'#F8FAFF'};border-radius:8px;border-left:3px solid rgba(0,0,0,.08)">${txt}</div>`,
-  badge:(txt,bg,clr)=>`<span style="display:inline-flex;align-items:center;font-size:11px;padding:3px 10px;border-radius:10px;font-weight:600;background:${bg};color:${clr};margin:2px 3px 2px 0">${txt}</span>`,
-  krow:(k,s,c)=>`<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:${s===null?'#F8FAFF':s>=80?'#E8F5EE':s>=50?'#FEF5E0':'#FCEEF1'};border-radius:8px;border-left:3px solid ${s===null?'#D4DCF0':s>=80?'#1A7840':s>=50?'#C07800':'#B81C38'};margin-bottom:5px"><div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:${c};margin-bottom:1px">KPI ${k.id} · ${k.area}</div><div style="font-size:12px;color:#243860">${k.name}</div></div><div style="text-align:right;flex-shrink:0;margin-left:12px"><div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:${s===null?'#9AAACE':s>=80?'#1A7840':s>=50?'#C07800':'#B81C38'}">${s===null?'—':s+'%'}</div><div style="font-size:10px;color:#9AAACE">target: ${k.tgt}</div></div></div>`,
+  sec:(title,color,items)=>`<div style="margin-bottom:18px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:${color};margin-bottom:10px;display:flex;align-items:center;gap:7px"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${color};flex-shrink:0"></span>${title}</div><div style="display:flex;flex-direction:column;gap:6px">${items}</div></div>`,
+  item:(txt,col)=>`<div style="font-size:13px;color:var(--tx);line-height:1.6;padding:8px 12px;background:${col||'var(--sf2)'};border-radius:8px;border-left:2px solid rgba(0,0,0,.07)">${txt}</div>`,
+  krow:(k,s,c)=>`<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:${s===null?'var(--sf2)':s>=80?'var(--em-bg)':s>=50?'var(--gold-p)':'var(--ro-bg)'};border-radius:8px;border-left:2px solid ${s===null?'var(--br)':s>=80?'var(--em)':s>=50?'var(--gold-b)':'var(--ro)'};margin-bottom:5px"><div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:${c};margin-bottom:1px">KPI ${k.id} · ${k.area}</div><div style="font-size:12px;color:var(--tm)">${k.name}</div></div><div style="text-align:right;flex-shrink:0;margin-left:12px"><div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:${s===null?'var(--td)':s>=80?'var(--em)':s>=50?'var(--gold-b)':'var(--ro)'}">${s===null?'—':s+'%'}</div><div style="font-size:10px;color:var(--td)">target: ${k.tgt}</div></div></div>`,
 };
 
 function smartDay(){
@@ -824,41 +802,39 @@ function smartDay(){
   const noT=weighted.filter(k=>kSc(k.id)===null);
   const strong=weighted.filter(k=>kSc(k.id)!==null&&kSc(k.id)>=80).sort((a,b)=>b.w-a.w);
   const weak=weighted.filter(k=>kSc(k.id)!==null&&kSc(k.id)<60).sort((a,b)=>b.w-a.w);
+  const KC2={gold:'var(--gold-b)',teal:'var(--em)',rose:'var(--ro)',violet:'var(--vi)',navy:'var(--slate)',indigo:'var(--in)',amber:'var(--am)',green:'var(--gn)'};
 
-  const statusClr=pct===100?'#1A7840':pct>=80?'#1A7840':pct>=50?'#C07800':'#B81C38';
-  const statusBg=pct===100?'#E8F5EE':pct>=80?'#E8F5EE':pct>=50?'#FEF5E0':'#FCEEF1';
+  const statusClr=pct===100?'var(--em)':pct>=80?'var(--em)':pct>=50?'var(--gold-b)':'var(--ro)';
+  const statusBg=pct===100?'var(--em-bg)':pct>=80?'var(--em-bg)':pct>=50?'var(--gold-p)':'var(--ro-bg)';
   const statusMsg=pct===100?'Perfect — every task closed today ✓':pct>=80?`Strong day — ${dn} of ${tot} tasks done`:pct>=50?`${dn} of ${tot} done — push for the remaining ${tot-dn}`:dn===0?'No tasks completed yet — start with the checklist':`${dn} of ${tot} done — needs attention before close`;
 
-  let h=`<div style="padding:12px 16px;background:${statusBg};border-radius:10px;border-left:4px solid ${statusClr};margin-bottom:20px"><div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:${statusClr}">${pct}%</div><div style="font-size:13px;color:#243860;margin-top:2px">${statusMsg}</div></div>`;
+  let h=`<div style="padding:12px 16px;background:${statusBg};border-radius:10px;border-left:3px solid ${statusClr};margin-bottom:20px"><div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:${statusClr}">${pct}%</div><div style="font-size:13px;color:var(--tm);margin-top:2px">${statusMsg}</div></div>`;
 
-  if(strong.length){h+=S.sec('KPIs Well Supported','#1A7840',strong.slice(0,3).map(k=>S.item(`<strong>KPI ${k.id}</strong> · ${k.area} — ${kSc(k.id)}% completion&nbsp;&nbsp;<span style="color:#1A7840;font-weight:600">✓ ${k.tgt} target</span>`,'#E8F5EE')).join(''))}
-
-  if(noT.length){h+=S.sec('KPIs Needing Attention','#C07800',noT.slice(0,4).map(k=>S.item(`<strong>KPI ${k.id}</strong> · ${k.area}&ensp;<span style="font-size:11px;background:#FEF5E0;color:#C07800;padding:2px 8px;border-radius:6px;font-weight:600">${k.w}% weight</span>&ensp;<span style="color:#9AAACE;font-size:12px">target: ${k.tgt} · no tasks linked</span>`,'#FEF9F0')).join(''))}
-
-  if(weak.length){h+=S.sec('Low Completion','#B81C38',weak.slice(0,3).map(k=>S.item(`<strong>KPI ${k.id}</strong> · ${k.area}&ensp;<span style="font-size:12px;color:#B81C38;font-weight:600">${kSc(k.id)}%</span> vs target ${k.tgt}`,'#FEF0F2')).join(''))}
-
-  if(pend.length){h+=S.sec('Still Pending Today','#5868A0',pend.map(t=>S.item(t.text,'#F3F6FD')).join(''))}
+  if(strong.length){h+=S.sec('KPIs Well Supported','var(--em)',strong.slice(0,3).map(k=>S.item(`<strong>KPI ${k.id}</strong> · ${k.area} — ${kSc(k.id)}% completion`,'var(--em-bg)')).join(''))}
+  if(noT.length){h+=S.sec('KPIs Needing Attention','var(--gold-b)',noT.slice(0,4).map(k=>S.item(`<strong>KPI ${k.id}</strong> · ${k.area}&ensp;<span style="font-size:11px;background:var(--gold-p);color:var(--am);padding:2px 7px;border-radius:5px;font-weight:600">${k.w}% weight</span>&ensp;<span style="color:var(--td);font-size:12px">target: ${k.tgt} · no tasks linked</span>`,'var(--gold-p)')).join(''))}
+  if(weak.length){h+=S.sec('Low Completion','var(--ro)',weak.slice(0,3).map(k=>S.item(`<strong>KPI ${k.id}</strong> · ${k.area}&ensp;<span style="font-size:12px;color:var(--ro);font-weight:600">${kSc(k.id)}%</span> vs target ${k.tgt}`,'var(--ro-bg)')).join(''))}
+  if(pend.length){h+=S.sec('Still Pending Today','var(--slate)',pend.map(t=>S.item(t.text,'var(--slate-s)')).join(''))}
 
   const tip=noT.length?`Focus on KPI ${noT[0].id} (${noT[0].area}) tomorrow — highest unlinked weight at ${noT[0].w}%`:pct<70?`Close ${Math.max(1,Math.ceil(tot*.8)-dn)} more task${Math.ceil(tot*.8)-dn!==1?'s':''} to hit the 80% benchmark`:wins.length?`Consistency like this is what wins salary reviews — you have ${wins.length} win${wins.length>1?'s':''} on record already`:`Keep this standard — consistent daily delivery is your strongest career asset`;
-  h+=`<div style="padding:12px 16px;background:linear-gradient(135deg,#FEF5E0,#FFFBF0);border-radius:10px;border-left:4px solid var(--gold);font-size:13px;color:#243860;line-height:1.65"><strong style="color:var(--gold)">◎ Tip</strong>&ensp;${tip}</div>`;
+  h+=`<div style="padding:12px 16px;background:var(--gold-p);border-radius:10px;border-left:3px solid var(--gold-b);font-size:13px;color:var(--tm);line-height:1.65"><strong style="color:var(--gold-b)">◎ Tip</strong>&ensp;${tip}</div>`;
   return h;
 }
 
 function smartKpi(){
   const weighted=KPIS.filter(k=>k.w>0);const scored=weighted.filter(k=>kSc(k.id)!==null);
   const ws=scored.length?Math.round(scored.reduce((acc,k)=>acc+(kSc(k.id)*k.w),0)/scored.reduce((acc,k)=>acc+k.w,0)):null;
-  const KC2={gold:'var(--gold)',teal:'var(--teal)',rose:'var(--rs)',violet:'var(--vt)',navy:'var(--navy)',indigo:'var(--in)',amber:'var(--am)',green:'var(--gn)'};
+  const KC2={gold:'var(--gold-b)',teal:'var(--em)',rose:'var(--ro)',violet:'var(--vi)',navy:'var(--slate)',indigo:'var(--in)',amber:'var(--am)',green:'var(--gn)'};
 
   let h=`<div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap">`;
-  if(ws!==null)h+=`<div style="flex:1;min-width:120px;background:linear-gradient(135deg,var(--gold),var(--gold-b));border-radius:12px;padding:14px 16px;box-shadow:var(--sg)"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:3px;font-weight:700">Weighted Score</div><div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#fff">${ws}%</div></div>`;
-  h+=`<div style="flex:1;min-width:120px;background:var(--sf);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">Active KPIs</div><div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--navy)">${scored.length}/${weighted.length}</div></div>`;
+  if(ws!==null)h+=`<div style="flex:1;min-width:120px;background:var(--slate);border-radius:12px;padding:14px 16px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(148,163,184,.65);margin-bottom:3px;font-weight:700">Weighted Score</div><div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#F8FAFC">${ws}%</div></div>`;
+  h+=`<div style="flex:1;min-width:120px;background:var(--sf2);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">Active KPIs</div><div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--slate)">${scored.length}/${weighted.length}</div></div>`;
   const strong2=weighted.filter(k=>kSc(k.id)!==null&&kSc(k.id)>=80).length;
-  h+=`<div style="flex:1;min-width:120px;background:var(--sf);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">On Target</div><div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gn)">${strong2}</div></div>`;
+  h+=`<div style="flex:1;min-width:120px;background:var(--em-bg);border:1px solid var(--em-br);border-radius:12px;padding:14px 16px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--em);margin-bottom:3px;font-weight:700">On Target</div><div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--em)">${strong2}</div></div>`;
   h+=`</div>`;
   h+=`<div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--tmu);margin-bottom:12px">All 14 KPIs</div>`;
-  KPIS.forEach(k=>h+=S.krow(k,kSc(k.id),KC2[k.c]||'var(--navy)'));
+  KPIS.forEach(k=>h+=S.krow(k,kSc(k.id),KC2[k.c]||'var(--slate)'));
   const gaps=weighted.filter(k=>kSc(k.id)===null).sort((a,b)=>b.w-a.w);
-  if(gaps.length)h+=`<div style="margin-top:16px;padding:12px 16px;background:linear-gradient(135deg,#FEF5E0,#FFFBF0);border-radius:10px;border-left:4px solid var(--gold);font-size:13px;color:#243860;line-height:1.65"><strong style="color:var(--gold)">◎ Priority action</strong>&ensp;Link tasks to KPI ${gaps[0].id} — ${gaps[0].name} (${gaps[0].w}% weight, target ${gaps[0].tgt})</div>`;
+  if(gaps.length)h+=`<div style="margin-top:16px;padding:12px 16px;background:var(--gold-p);border-radius:10px;border-left:3px solid var(--gold-b);font-size:13px;color:var(--tm);line-height:1.65"><strong style="color:var(--gold-b)">◎ Priority action</strong>&ensp;Link tasks to KPI ${gaps[0].id} — ${gaps[0].name} (${gaps[0].w}% weight, target ${gaps[0].tgt})</div>`;
   return h;
 }
 
@@ -868,17 +844,17 @@ function smartJourney(){
   const sdt=ld(K.SD,todayI);const dayC=Math.max(1,Math.round((new Date(todayI+'T00:00:00')-new Date(sdt+'T00:00:00'))/86400000)+1);
 
   let h=`<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px">`;
-  h+=`<div style="background:linear-gradient(135deg,var(--gold),var(--gold-b));border-radius:12px;padding:14px 16px;box-shadow:var(--sg)"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:3px;font-weight:700">Days Tracked</div><div style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:#fff">${dayC}</div></div>`;
-  h+=`<div style="background:var(--navy);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:3px;font-weight:700">Total Tasks</div><div style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:#fff">${allTot}</div></div>`;
-  h+=`<div style="background:var(--sf);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">Avg. Rate</div><div style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:${avg>=80?'var(--gn)':avg>=60?'var(--gold)':'var(--rs)'}">${avg}%</div></div>`;
+  h+=`<div style="background:var(--slate);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(148,163,184,.6);margin-bottom:3px;font-weight:700">Days Tracked</div><div style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:#F8FAFC">${dayC}</div></div>`;
+  h+=`<div style="background:var(--sf2);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">Total Tasks</div><div style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--slate)">${allTot}</div></div>`;
+  h+=`<div style="background:var(--sf2);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">Avg. Rate</div><div style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:${avg>=80?'var(--em)':avg>=60?'var(--gold-b)':'var(--ro)'}">${avg}%</div></div>`;
   h+=`</div>`;
 
   const msg=avg>=80?`You are performing above 80% consistently — that is the standard of a high-impact professional. ${allTot} tasks is not a small number. Each one is a data point in your case for advancement.`:avg>=60?`At ${avg}% average over ${dayC} days, you are building a solid record. Pushing toward 80% daily will significantly strengthen your case.`:`Every day you track counts. You are building your evidence file. Consistency over time creates a compelling argument for advancement.`;
-  h+=`<div style="padding:16px 18px;background:var(--sf);border-radius:12px;border:1px solid var(--br);margin-bottom:14px;line-height:1.75;font-size:13.5px;color:#243860">${msg}</div>`;
+  h+=`<div style="padding:16px 18px;background:var(--sf2);border-radius:12px;border:1px solid var(--br);margin-bottom:14px;line-height:1.75;font-size:13.5px;color:var(--tm)">${msg}</div>`;
 
-  if(wins.length){const wmsg=wins.length>=3?`With <strong>${wins.length} solo achievements</strong> logged, you have concrete, named examples of initiative and ownership. These are the stories that win salary reviews.`:`You have <strong>${wins.length} achievement${wins.length>1?'s':''}</strong> logged. Keep adding — each one is evidence of your value to Jibu.`;h+=`<div style="padding:14px 16px;background:var(--gold-p);border-radius:12px;border:1px solid var(--gold-br);margin-bottom:14px;font-size:13px;color:#243860;line-height:1.7">${wmsg}</div>`}
-  if(skills.length)h+=`<div style="padding:12px 16px;background:var(--navy-s);border-radius:10px;font-size:13px;color:var(--tm);line-height:1.65"><strong>${skills.length} skill${skills.length>1?'s':''} in your portfolio</strong> — your professional toolkit is growing with every week in this role.</div>`;
-  h+=`<div style="margin-top:14px;padding:14px 18px;background:linear-gradient(135deg,var(--gold),var(--gold-b));border-radius:12px;font-size:13px;font-weight:600;color:#fff;line-height:1.6;text-align:center;box-shadow:var(--sg)">"${avg>=70?'Your consistency speaks louder than any title. Keep the standard high.':'Every task you close is a brick in the case for your advancement. Build every day.'}"</div>`;
+  if(wins.length){const wmsg=wins.length>=3?`With <strong>${wins.length} solo achievements</strong> logged, you have concrete, named examples of initiative and ownership. These are the stories that win salary reviews.`:`You have <strong>${wins.length} achievement${wins.length>1?'s':''}</strong> logged. Keep adding — each one is evidence of your value to Jibu.`;h+=`<div style="padding:14px 16px;background:var(--gold-p);border-radius:12px;border:1px solid var(--gold-br);margin-bottom:14px;font-size:13px;color:var(--tm);line-height:1.7">${wmsg}</div>`}
+  if(skills.length)h+=`<div style="padding:12px 16px;background:var(--slate-s);border-radius:10px;font-size:13px;color:var(--tm);line-height:1.65"><strong>${skills.length} skill${skills.length>1?'s':''} in your portfolio</strong> — your professional toolkit is growing with every week in this role.</div>`;
+  h+=`<div style="margin-top:14px;padding:14px 18px;background:var(--slate);border-radius:12px;font-size:13px;font-weight:600;color:#F8FAFC;line-height:1.6;text-align:center">"${avg>=70?'Your consistency speaks louder than any title. Keep the standard high.':'Every task you close is a brick in the case for your advancement. Build every day.'}"</div>`;
   return h;
 }
 
@@ -886,91 +862,18 @@ function smartHandover(name,tasks){
   const pend=tasks.filter(t=>(t.status||'pending')==='pending');const prog=tasks.filter(t=>t.status==='in-progress');const done2=tasks.filter(t=>t.status==='done');
   let h=`<div style="display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap">`;
   h+=`<div style="flex:1;min-width:80px;background:var(--am-bg);border:1px solid var(--am-br);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--am)">${pend.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--am);font-weight:700">Pending</div></div>`;
-  h+=`<div style="flex:1;min-width:80px;background:var(--navy-s);border:1px solid rgba(14,31,64,.12);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--navy)">${prog.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);font-weight:700">In Progress</div></div>`;
-  h+=`<div style="flex:1;min-width:80px;background:var(--teal-bg);border:1px solid var(--teal-br);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--teal)">${done2.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);font-weight:700">Done</div></div>`;
+  h+=`<div style="flex:1;min-width:80px;background:var(--slate-s);border:1px solid var(--slate-br);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--slate)">${prog.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate-l);font-weight:700">In Progress</div></div>`;
+  h+=`<div style="flex:1;min-width:80px;background:var(--em-bg);border:1px solid var(--em-br);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--em)">${done2.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--em);font-weight:700">Done</div></div>`;
   h+=`</div>`;
   if(!tasks.length){h+=`<div style="padding:14px;background:var(--sf2);border-radius:10px;font-size:13px;color:var(--tmu);text-align:center;font-style:italic">No tasks currently assigned to ${name}.</div>`;return h}
-  if(prog.length){h+=S.sec('In Progress — Needs Immediate Handover','var(--rs)',prog.map(t=>S.item(t.text,'var(--rs-bg)')).join(''))}
-  if(pend.length){h+=S.sec('Pending — Not Started','var(--am)',pend.map(t=>S.item(t.text,'var(--am-bg)')).join(''))}
-  if(done2.length){h+=S.sec('Completed','var(--teal)',done2.map(t=>S.item(t.text,'var(--teal-bg)')).join(''))}
+  if(prog.length){h+=S.sec('In Progress — Needs Immediate Handover','var(--ro)',prog.map(t=>S.item(t.text,'var(--ro-bg)')).join(''))}
+  if(pend.length){h+=S.sec('Pending — Not Started','var(--gold-b)',pend.map(t=>S.item(t.text,'var(--gold-p)')).join(''))}
+  if(done2.length){h+=S.sec('Completed','var(--em)',done2.map(t=>S.item(t.text,'var(--em-bg)')).join(''))}
   const rec=prog.length>0?`In-progress tasks need immediate reassignment to a senior team member.`:`Review pending items and assign cover during Doreen's absence.`;
-  h+=`<div style="padding:12px 16px;background:linear-gradient(135deg,var(--gold-p),#FFFBF0);border-radius:10px;border-left:4px solid var(--gold);font-size:13px;color:#243860;line-height:1.65"><strong style="color:var(--gold)">◎ Recommendation</strong>&ensp;${rec}</div>`;
+  h+=`<div style="padding:12px 16px;background:var(--gold-p);border-radius:10px;border-left:3px solid var(--gold-b);font-size:13px;color:var(--tm);line-height:1.65"><strong style="color:var(--gold-b)">◎ Recommendation</strong>&ensp;${rec}</div>`;
   return h;
 }
-// ── OLD PLACEHOLDERS REMOVED ──
-function smartDay_OLD(){
-  const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;const tot=daily.length+adhoc.length;const pct=tot?Math.round(dn/tot*100):0;
-  const pend=daily.filter(t=>!t.done);const weighted=KPIS.filter(k=>k.w>0);const withT=weighted.filter(k=>kSc(k.id)!==null);const noT=weighted.filter(k=>kSc(k.id)===null);const strong=withT.filter(k=>kSc(k.id)>=80).sort((a,b)=>b.w-a.w);const weak=withT.filter(k=>kSc(k.id)<60).sort((a,b)=>b.w-a.w);
-  let r=[];
-  if(pct===100)r.push(`🟢 Perfect day — 100% of tasks completed. Every item closed.`);
-  else if(pct>=80)r.push(`🟢 Strong day — ${dn}/${tot} tasks done (${pct}%). Well above the 80% high-performance mark.`);
-  else if(pct>=50)r.push(`🟡 Decent progress — ${dn}/${tot} tasks done (${pct}%). Push to close the remaining ${tot-dn} before end of day.`);
-  else if(dn===0)r.push(`🔴 No tasks completed yet. Focus on your top checklist items first.`);
-  else r.push(`🔴 ${dn}/${tot} tasks done (${pct}%). Needs attention before close of business.`);
-  if(strong.length)r.push(`\n✅ KPIs well-supported today:\n${strong.slice(0,3).map(k=>`  · KPI ${k.id} — ${k.area} (${kSc(k.id)}% task completion)`).join('\n')}`);
-  if(noT.length)r.push(`\n⚠ KPIs with no tasks linked today:\n${noT.slice(0,4).map(k=>`  · KPI ${k.id} — ${k.area} [weight: ${k.w}%, target: ${k.tgt}]`).join('\n')}`);
-  if(weak.length)r.push(`\n🔶 KPIs with low completion:\n${weak.slice(0,3).map(k=>`  · KPI ${k.id} — ${k.area} (${kSc(k.id)}%, target: ${k.tgt})`).join('\n')}`);
-  if(pend.length)r.push(`\n⏳ Still pending:\n${pend.map(t=>`  · ${t.text}`).join('\n')}`);
-  if(wins.length)r.push(`\n⭐ You have ${wins.length} solo win${wins.length>1?'s':''} on record — your salary increment evidence file is building.`);
-  const tip=noT.length?`Focus tomorrow on KPI ${noT[0].id} (${noT[0].area}, weight ${noT[0].w}%) — it has no tasks linked today.`:pct<70?`Aim to close ${Math.max(1,Math.ceil(tot*.8)-dn)} more task${Math.ceil(tot*.8)-dn!==1?'s':''} to reach 80%.`:`Consistent performance like this is exactly what builds the case for your advancement.`;
-  r.push(`\n💡 ${tip}`);return r.join('\n');
-}
-function smartKpi(){
-  const weighted=KPIS.filter(k=>k.w>0);const scored=weighted.filter(k=>kSc(k.id)!==null);const ws=scored.length?Math.round(scored.reduce((acc,k)=>acc+(kSc(k.id)*k.w),0)/scored.reduce((acc,k)=>acc+k.w,0)):null;
-  let r=[`KPI SCORECARD — ${DY[now.getDay()]}, ${now.getDate()} ${MO[now.getMonth()]}\n`];
-  if(ws!==null)r.push(`Weighted KPI score today: ${ws}% across ${scored.length} active KPIs\n`);
-  r.push('─────────────────────────────────');
-  KPIS.forEach(k=>{const s=kSc(k.id);const bar=s===null?'○ No tasks':s>=80?`✅ ${s}%`:s>=50?`🟡 ${s}%`:`🔴 ${s}%`;r.push(`KPI ${k.id} | ${k.area}\n  ${k.name}\n  ${bar} · Target: ${k.tgt}${k.w?` · Weight: ${k.w}%`:' · Unweighted'}`)});
-  r.push('\n─────────────────────────────────');
-  const strong=KPIS.filter(k=>k.w>0&&kSc(k.id)!==null&&kSc(k.id)>=80);const gaps=KPIS.filter(k=>k.w>0&&kSc(k.id)===null).sort((a,b)=>b.w-a.w);
-  if(strong.length)r.push(`\nTop performing: ${strong.slice(0,3).map(k=>`KPI ${k.id}`).join(', ')}`);
-  if(gaps.length)r.push(`Gaps to address: ${gaps.slice(0,4).map(k=>`KPI ${k.id} (${k.area}, ${k.w}%)`).join(', ')}`);
-  if(gaps.length)r.push(`\nPriority: Link tasks to KPI ${gaps[0].id} — ${gaps[0].name} (weight: ${gaps[0].w}%)`);
-  return r.join('\n');
-}
-function smartJourney(){
-  const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;const tot=daily.length+adhoc.length;const pct=tot?Math.round(dn/tot*100):0;
-  const allTot=cumT+dn;const allR=[...cumR,...(tot>0?[pct]:[])];const avg=allR.length?Math.round(allR.reduce((a,b)=>a+b,0)/allR.length):0;
-  const sdt=ld(K.SD,todayI);const dayC=Math.max(1,Math.round((new Date(todayI+'T00:00:00')-new Date(sdt+'T00:00:00'))/86400000)+1);
-  let r=[`PERFORMANCE JOURNEY REFLECTION\n${dayC} day${dayC!==1?'s':''} tracked · ${allTot} tasks completed · ${avg}% avg. completion\n`];
-  if(avg>=80)r.push(`◎ You are consistently performing above 80% — the standard of a high-impact professional. ${allTot} tasks completed is not a small number. That is ${allTot} moments of showing up and delivering.`);
-  else if(avg>=60)r.push(`◎ At ${avg}% average completion over ${dayC} days, you are building a solid foundation. Pushing toward 80% daily will significantly strengthen your performance record.`);
-  else r.push(`◎ Every day you track is a day that counts. You are building your evidence file. Consistency over time is what creates a compelling case for advancement.`);
-  r.push('');if(wins.length>=3)r.push(`With ${wins.length} solo achievements logged, you have concrete examples of initiative and ownership. These are the stories that win salary reviews.`);
-  else r.push(`Keep logging your wins — even small ones. Each entry is evidence of your value to Jibu.`);
-  if(skills.length)r.push(`\nYou have ${skills.length} skill${skills.length!==1?'s':''} on record. Your portfolio is growing.`);
-  r.push(`\n"${avg>=70?'Your consistency speaks louder than any title. Keep the standard high.':'Every task you close is a brick in the case for your advancement. Build every day.'}" `);
-  return r.join('\n');
-}
-function smartHandover(name,tasks){
-  const pend=tasks.filter(t=>(t.status||'pending')==='pending');const prog=tasks.filter(t=>t.status==='in-progress');const done2=tasks.filter(t=>t.status==='done');
-  let r=[`HANDOVER BRIEF — ${name.toUpperCase()}\nPrepared: ${DY[now.getDay()]}, ${now.getDate()} ${MO[now.getMonth()]} ${now.getFullYear()}\n`];
-  r.push(`Tasks: ${tasks.length} total (${pend.length} pending · ${prog.length} in progress · ${done2.length} done)\n`);
-  if(prog.length)r.push(`IN PROGRESS — needs immediate handover:\n${prog.map(t=>`  · ${t.text}`).join('\n')}\n`);
-  if(pend.length)r.push(`PENDING — not yet started:\n${pend.map(t=>`  · ${t.text}`).join('\n')}\n`);
-  if(done2.length)r.push(`COMPLETED:\n${done2.map(t=>`  · ${t.text}`).join('\n')}\n`);
-  if(!tasks.length)r.push(`No tasks currently assigned to ${name}.\n`);
-  r.push(`RECOMMENDATION: ${prog.length>0?'The in-progress tasks need someone to take over immediately. Assign to a senior team member.':'Review pending items and reassign as needed during Doreen\'s absence.'}`);
-  return r.join('\n');
-}
 
-// GEMINI FALLBACK — silent upgrade if key works
-let cachedMdl=null;
-async function getBestModel(key){
-  if(cachedMdl)return cachedMdl;
-  try{const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models?key='+key);const d=await r.json();if(d.error||!d.models)return null;const av=d.models.filter(m=>(m.supportedGenerationMethods||[]).includes('generateContent')).map(m=>m.name.replace('models/',''));const pf=['gemini-1.5-flash','gemini-1.5-pro','gemini-1.0-pro'];for(const p of pf){const f=av.find(a=>a.startsWith(p));if(f){cachedMdl=f;return f}}if(av.length){cachedMdl=av[0];return av[0]}}catch{}return null;
-}
-async function tryGemini(prompt,el){
-  const key=ld(K.GK,'');if(!key)return;
-  try{const mdl=await getBestModel(key);if(!mdl)return;const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${mdl}:generateContent?key=${key}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:0.72,maxOutputTokens:600}})});const d=await r.json();const t=d?.candidates?.[0]?.content?.parts?.[0]?.text;if(t)el.textContent=t}catch{}
-}
-
-function buildDayP(){const dD=daily.filter(t=>t.done);const pD=daily.filter(t=>!t.done);const kl=KPIS.filter(k=>k.w>0).map(k=>`- KPI ${k.id} (${k.area}): ${kSc(k.id)===null?'no tasks':kSc(k.id)+'% done'} [target: ${k.tgt}, weight: ${k.w}%]`).join('\n');return`You are a performance coach for Doreen, Operations Liaison Officer & IT Support at Jibu (water franchise network, Africa), reporting to the COO.\n\nToday: ${DY[now.getDay()]}, ${now.getDate()} ${MO[now.getMonth()]} ${now.getFullYear()}\n\nDAILY COMPLETED (${dD.length}/${daily.length}):\n${dD.map(t=>`✓ ${t.text} [KPIs: ${(t.kpis||[]).join(', ')}]`).join('\n')||'None yet'}\n\nPENDING:\n${pD.map(t=>`○ ${t.text}`).join('\n')||'All done!'}\n\nKPI STATUS:\n${kl}\n\nWINS: ${wins.map(w=>w.title).join(', ')||'none yet'}\n\nGive Doreen a short (4-5 para) honest daily analysis: accomplishments, KPI impact, what needs attention, one strength, one tip for tomorrow. Tone: warm, direct manager who wants her to get that salary increment.`}
-function buildKpiP(){const kl=KPIS.map(k=>`KPI ${k.id} | ${k.area} | ${k.name} | ${kSc(k.id)===null?'no tasks':kSc(k.id)+'%'} | Target: ${k.tgt} | Weight: ${k.w}%`).join('\n');return`KPI advisor for Doreen, Operations Liaison Officer at Jibu.\n\nKPI STATUS:\n${kl}\n\nGive structured analysis (under 280 words): top 3 KPIs, 2-3 gaps, one recommendation, one COO-ready summary line. Use KPI numbers.`}
-function buildJrnP(){const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;const tot=daily.length+adhoc.length;const allTot=cumT+dn;const allR=[...cumR,...(tot>0?[tot?Math.round(dn/tot*100):0]:[])];const avg=allR.length?Math.round(allR.reduce((a,b)=>a+b,0)/allR.length):0;const dayC=Math.max(1,Math.round((new Date(todayI+'T00:00:00')-new Date(ld(K.SD,todayI)+'T00:00:00'))/86400000)+1);return`Career mentor for Doreen, Operations Liaison Officer & IT Support at Jibu.\n\nJourney: ${dayC} days tracked · ${allTot} tasks · ${avg}% avg · ${wins.length} wins (${wins.map(w=>w.title).join(', ')||'none'}) · ${skills.length} skills logged\n\nWrite warm 2-3 para reflection: what this shows about her discipline, what to be proud of, one powerful closing line. Tone: senior mentor.`}
-function buildHvP(name,tasks){const p=tasks.filter(t=>(t.status||'pending')==='pending');const pr=tasks.filter(t=>t.status==='in-progress');const d2=tasks.filter(t=>t.status==='done');return`Handover brief for IT intern ${name} at Jibu.\n\nIN PROGRESS: ${pr.map(t=>t.text).join(', ')||'none'}\nPENDING: ${p.map(t=>t.text).join(', ')||'none'}\nDONE: ${d2.map(t=>t.text).join(', ')||'none'}\n\nWrite clear 3-para handover: what ${name} worked on, what's pending and urgent, recommendation for coverage. Practical and concise.`}
-
-// WIRE BUTTONS
 document.getElementById('dayBtn').addEventListener('click',()=>{const el=document.getElementById('dayCnt');const pnl=document.getElementById('dayPnl');el.innerHTML=smartDay();pnl.classList.add('vis')});
 document.getElementById('kpiBtn').addEventListener('click',()=>{const el=document.getElementById('kpiCnt');const pnl=document.getElementById('kpiPnl');el.innerHTML=smartKpi();pnl.classList.add('vis')});
 document.getElementById('cAiBtn').addEventListener('click',()=>{document.getElementById('cAiTx').innerHTML=smartJourney();document.getElementById('cAiBtn').textContent='◎ Refresh reflection'});
