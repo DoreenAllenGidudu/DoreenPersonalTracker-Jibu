@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Doreen · Command Centre — Jibu</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<title>Doreen · Personal Tracker — Jibu</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   /* Navy — for text & structural elements */
-  --tl:#0A6B58;--tlb:#0D8A70;--tll:#12A882;--tlp:#EAF5F2;--tlbr:rgba(10,107,88,.18);
+  --navy:#0B1C3D;--navy-d:#060E22;--navy-l:#1A3268;--navy-s:#EBF0FA;--navy-p:#F3F6FD;
   /* Gold — THE signature color, rich & vibrant */
   --gold:#C07800;--gold-b:#E8960A;--gold-l:#F5B82A;--gold-p:#FEF5E0;--gold-br:rgba(192,120,0,.3);
+  --gold-glow:rgba(232,150,10,.18);
   /* Supporting palette */
   --teal:#0A7A6A;--teal-l:#0FA890;--teal-bg:#E4F5F2;--teal-br:rgba(10,122,106,.2);
   --vt:#5828A0;--vt-bg:#F0EAF8;--vt-br:rgba(88,40,160,.2);
@@ -21,32 +22,32 @@
   --in:#2638A0;--in-bg:#ECF0FA;--in-br:rgba(38,56,160,.2);
   --sk:#0868C0;--sk-bg:#E8F2FC;--sk-br:rgba(8,104,192,.2);
   /* Background & surfaces — LIGHT & CLEAN */
-  --bg:#FAF8F4;--sf:#FFFFFF;--sf2:#FEFDFB;--sf3:#F5F2EC;
+  --bg:#F0F2FA;--sf:#FFFFFF;--sf2:#FAFBFF;--sf3:#F5F7FF;
   --sf-warm:#FFFEF9;
-  --br:#E2DDD6;--brs:#EAE6DF;
+  --br:#DDE3F2;--brs:#E8EDF8;
   /* Text */
-  --tx:#1A1612;--tm:#2D2720;--tmu:#6B6560;--td:#A89F94;
+  --tx:#08152E;--tm:#1A2E58;--tmu:#546090;--td:#98AACE;
   /* Shadows — warmer, softer */
-  --s1:0 1px 3px rgba(26,22,18,.07),0 1px 2px rgba(26,22,18,.05);
-  --s2:0 4px 20px rgba(26,22,18,.09),0 1px 5px rgba(26,22,18,.05);
-  --s3:0 10px 40px rgba(26,22,18,.12),0 2px 10px rgba(26,22,18,.06);
+  --s1:0 1px 4px rgba(11,28,61,.07),0 1px 2px rgba(11,28,61,.05);
+  --s2:0 4px 20px rgba(11,28,61,.09),0 1px 5px rgba(11,28,61,.06);
+  --s3:0 10px 40px rgba(11,28,61,.13),0 2px 10px rgba(11,28,61,.07);
   --sg:0 4px 20px rgba(192,120,0,.22);
   --r:18px;--rs2:12px;--rx:8px;
 }
-body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;font-size:14px;min-height:100vh;line-height:1.6}
+body{background:var(--bg);color:var(--tx);font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;min-height:100vh;line-height:1.6}
 .wrap{max-width:1200px;margin:0 auto;padding:1.75rem 1.25rem 5rem}
 
 /* HEADER */
 header{background:linear-gradient(135deg,#0E1F1B 0%,#0A6B58 55%,#0D8A70 100%);border-radius:var(--r);padding:2rem 2.25rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--s3);position:relative;overflow:hidden;flex-wrap:wrap;gap:1rem}
-header::before{content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 65%);border-radius:50%;pointer-events:none}
+header::before{content:'';position:absolute;top:-40px;right:-40px;width:300px;height:300px;background:radial-gradient(circle,rgba(232,150,10,.22) 0%,rgba(192,120,0,.08) 40%,transparent 70%);border-radius:50%;pointer-events:none}
 header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;height:200px;background:radial-gradient(circle,rgba(232,150,10,.1) 0%,transparent 65%);border-radius:50%;pointer-events:none}
 .hl{position:relative;z-index:1}
 .heyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:rgba(247,200,74,.7);margin-bottom:8px;font-weight:500}
-.hl h1{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;color:#fff;line-height:1.05;letter-spacing:-.02em}
+.hl h1{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:700;color:#fff;line-height:1.05;letter-spacing:-.02em}
 .hl h1 em{color:var(--gold-l);font-style:italic}
 .hsub{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:8px}
 .hr{text-align:right;position:relative;z-index:1}
-.hdate{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(255,255,255,.8);letter-spacing:.04em;margin-bottom:8px}
+.hdate{font-family:'Playfair Display',serif;font-size:1.05rem;color:rgba(255,255,255,.8);letter-spacing:.04em;margin-bottom:8px}
 .htag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:5px 14px;font-size:11px;letter-spacing:.09em;color:var(--gold-l)}
 .ldot{width:6px;height:6px;border-radius:50%;background:var(--gold-b);animation:pu 2.4s ease infinite;flex-shrink:0}
 @keyframes pu{0%,100%{opacity:1}50%{opacity:.3}}
@@ -56,9 +57,9 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 /* TABS */
 .tabs{display:flex;gap:3px;margin-bottom:1.5rem;background:var(--sf);border:1px solid var(--br);border-radius:14px;padding:5px;box-shadow:var(--s1);overflow-x:auto;scrollbar-width:none;flex-wrap:nowrap}
 .tabs::-webkit-scrollbar{display:none}
-.tb{background:none;border:none;border-radius:10px;padding:8px 13px;font-family:'DM Sans',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tmu);cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0}
-.tb:hover:not(.active){background:var(--tlp);color:var(--tl)}
-.tb.active{background:var(--tl);color:#fff;font-weight:700;box-shadow:0 4px 14px rgba(10,107,88,.22)}
+.tb{background:none;border:none;border-radius:10px;padding:8px 13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tmu);cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.tb:hover:not(.active){background:var(--sf2);color:var(--tm)}
+.tb.active{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-b) 100%);color:#fff;box-shadow:var(--sg);font-weight:700}
 .tp{display:none}.tp.active{display:block}
 
 /* STATS */
@@ -67,48 +68,48 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 .sbox::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;opacity:0;transition:opacity .3s}
 .sbox:hover{transform:translateY(-3px);box-shadow:var(--sg)}.sbox:hover::after{opacity:1}
 .sb1::after{background:linear-gradient(90deg,var(--teal),var(--teal-l))}.sb2::after{background:linear-gradient(90deg,var(--navy),var(--navy-l))}.sb3::after{background:linear-gradient(90deg,var(--vt),#8050C8)}.sb4::after{background:linear-gradient(90deg,var(--gold),var(--gold-b))}
-.snum{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;line-height:1;margin-bottom:4px}
+.snum{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;line-height:1;margin-bottom:4px}
 .c1{color:var(--teal)}.c2{color:var(--navy)}.c3{color:var(--vt)}.c4{color:var(--gold)}
 .slbl{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--tmu);font-weight:600}
 
 /* CUMULATIVE ROW */
 .crow{display:grid;grid-template-columns:repeat(3,1fr) 1.4fr;gap:10px;margin-bottom:1.25rem}
-.cbox{background:linear-gradient(135deg,#0A6B58 0%,#0D8A70 100%);border-radius:var(--rs2);padding:16px 18px;box-shadow:0 4px 20px rgba(10,107,88,.22);position:relative;overflow:hidden}
+.cbox{background:linear-gradient(135deg,#7A4C00 0%,var(--gold) 60%,var(--gold-b) 100%);border-radius:var(--rs2);padding:16px 18px;box-shadow:var(--sg);position:relative;overflow:hidden}
 .cbox::after{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;background:radial-gradient(circle,rgba(255,255,255,.12),transparent 70%);border-radius:50%}
 .cey{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:5px;font-weight:700;position:relative;z-index:1}
-.cnum{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:#fff;line-height:1;margin-bottom:2px;position:relative;z-index:1;text-shadow:0 1px 8px rgba(0,0,0,.2)}
+.cnum{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:#fff;line-height:1;margin-bottom:2px;position:relative;z-index:1;text-shadow:0 1px 8px rgba(0,0,0,.2)}
 .clbl{font-size:10px;color:rgba(255,255,255,.7);position:relative;z-index:1}
 .caib{background:linear-gradient(135deg,var(--navy-d) 0%,var(--navy) 100%);border-radius:var(--rs2);padding:16px 18px;box-shadow:var(--s2);display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(232,150,10,.25)}
 .cait{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:7px;font-weight:700}
 .catx{font-size:12px;color:rgba(255,255,255,.78);line-height:1.6;flex:1;margin-bottom:10px;font-style:italic}
-.cab{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-b) 100%);border:none;border-radius:7px;color:#fff;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;padding:7px 14px;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(192,120,0,.35)}
+.cab{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-b) 100%);border:none;border-radius:7px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;padding:7px 14px;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(192,120,0,.35)}
 .cab:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(192,120,0,.4)}.cab:disabled{opacity:.5;cursor:not-allowed;transform:none}
 
 /* PROGRESS */
 .pw{background:var(--sf);border:1px solid var(--br);border-radius:var(--rs2);padding:16px 20px;margin-bottom:1.25rem;box-shadow:var(--s1)}
 .pm{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}
 .plbl{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--tmu);font-weight:600}
-.ppct{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:var(--navy)}
+.ppct{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--navy)}
 .ptr{height:8px;background:var(--bg);border-radius:8px;overflow:hidden}
-.pfl{height:100%;background:linear-gradient(90deg,var(--tl),var(--tll));border-radius:8px;transition:width .8s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px rgba(10,107,88,.25)}
+.pfl{height:100%;background:linear-gradient(90deg,var(--gold) 0%,var(--gold-b) 60%,var(--gold-l) 100%);border-radius:8px;transition:width .8s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px rgba(192,120,0,.3)}
 
 /* GRID & CARD */
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
 .cw{grid-column:span 2}
 .card{background:var(--sf);border:1px solid var(--br);border-radius:var(--r);padding:1.4rem 1.6rem;box-shadow:var(--s1);transition:box-shadow .2s,border-color .2s}
-.card:hover{border-color:var(--tlbr);box-shadow:var(--s2)}
+.card:hover{border-color:rgba(192,120,0,.18);box-shadow:var(--s2)}
 .ch{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding-bottom:.9rem;border-bottom:1px solid var(--brs)}
 .ct{display:flex;align-items:center;gap:7px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);font-weight:700}
 .ctd{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .dg{background:var(--gold)}.dt{background:var(--teal)}.dv{background:var(--vt)}.dn{background:var(--navy)}.dr{background:var(--rs)}.dgn{background:var(--gn)}.ds{background:var(--sk)}
-.cc{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--tmu)}
+.cc{font-family:'Playfair Display',serif;font-size:1rem;color:var(--tmu)}
 
 /* TASK */
 .ti{display:flex;align-items:flex-start;gap:11px;padding:10px 0;border-bottom:1px solid var(--brs);cursor:pointer;transition:opacity .15s}
 .ti:last-of-type{border-bottom:none}
 .ti:hover{opacity:.8}
 .tck{width:19px;height:19px;border:2px solid var(--br);border-radius:6px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.ti.done .tck{background:var(--tl);border-color:var(--tl);box-shadow:0 0 0 2px var(--tlp)}
+.ti.done .tck{background:linear-gradient(135deg,var(--gold),var(--gold-b));border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-p)}
 .ci{display:none;width:9px;height:7px}.ti.done .ci{display:block}
 .tb2{flex:1;min-width:0}
 .tt{font-size:13px;color:var(--tx);line-height:1.45;transition:all .2s}
@@ -125,12 +126,12 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 
 /* ADD ROW */
 .ar{display:flex;gap:8px;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--brs);flex-wrap:wrap}
-.ai2{flex:1;background:var(--sf2);border:1px solid var(--br);border-radius:var(--rx);color:var(--tx);font-family:'DM Sans',sans-serif;font-size:13px;padding:9px 13px;outline:none;transition:border-color .2s,box-shadow .2s;min-width:0}
+.ai2{flex:1;background:var(--sf2);border:1px solid var(--br);border-radius:var(--rx);color:var(--tx);font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;padding:9px 13px;outline:none;transition:border-color .2s,box-shadow .2s;min-width:0}
 .ai2::placeholder{color:var(--td)}
 .ai2:focus{border-color:var(--navy-l);box-shadow:0 0 0 3px rgba(14,31,64,.07)}
-.asel{flex:1;background:var(--sf2);border:1px solid var(--br);border-radius:var(--rx);color:var(--tm);font-family:'DM Sans',sans-serif;font-size:12px;padding:9px 10px;outline:none;cursor:pointer;min-width:0}
-.abtn{background:var(--tl);border:none;border-radius:var(--rx);color:#fff;font-size:20px;font-weight:300;padding:0 16px;cursor:pointer;transition:all .2s;line-height:1;flex-shrink:0;box-shadow:0 4px 14px rgba(10,107,88,.22)}
-.abtn:hover{background:var(--tlb);transform:scale(1.04)}.abtn:active{transform:scale(.97)}
+.asel{flex:1;background:var(--sf2);border:1px solid var(--br);border-radius:var(--rx);color:var(--tm);font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;padding:9px 10px;outline:none;cursor:pointer;min-width:0}
+.abtn{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-b) 100%);border:none;border-radius:var(--rx);color:#fff;font-size:20px;font-weight:300;padding:0 16px;cursor:pointer;transition:all .2s;line-height:1;flex-shrink:0;box-shadow:0 2px 8px rgba(192,120,0,.3)}
+.abtn:hover{transform:scale(1.05);box-shadow:0 4px 14px rgba(192,120,0,.4)}.abtn:active{transform:scale(.97)}
 
 /* PROJECT */
 .pji{padding:12px 0;border-bottom:1px solid var(--brs)}.pji:last-child{border-bottom:none}
@@ -170,7 +171,7 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 .wkd.today{background:var(--navy);border-color:var(--navy)}
 .wdl{font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:600}
 .wkd.today .wdl{color:rgba(255,255,255,.5)}
-.wdn{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--tm);line-height:1;margin-bottom:7px}
+.wdn{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--tm);line-height:1;margin-bottom:7px}
 .wkd.today .wdn{color:var(--gold-l)}
 .wbw{height:40px;display:flex;align-items:flex-end;justify-content:center}
 .wbr{width:16px;background:var(--br);border-radius:3px;position:relative;overflow:hidden;height:40px}
@@ -181,7 +182,7 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 .wkd.today .wpc{color:rgba(255,255,255,.65)}
 .wsr{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.25rem}
 .wsb{background:var(--sf);border:1px solid var(--br);border-radius:13px;padding:16px 18px;box-shadow:var(--s1)}
-.wsn{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--navy);line-height:1;margin-bottom:4px}
+.wsn{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--navy);line-height:1;margin-bottom:4px}
 .wsl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--tmu);font-weight:600}
 .htbl{width:100%;border-collapse:collapse;font-size:12.5px}
 .htbl th{text-align:left;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--tmu);font-weight:700;padding:9px 12px;border-bottom:1px solid var(--br)}
@@ -197,7 +198,7 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 .kpia{font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;margin-bottom:3px}
 .kpin{font-size:12.5px;color:var(--tx);font-weight:500;line-height:1.4}
 .kpsw{text-align:right;flex-shrink:0;margin-left:10px}
-.kps{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;line-height:1}
+.kps{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;line-height:1}
 .kptr{font-size:10px;color:var(--tmu);margin-top:2px}
 .kpbt{height:5px;background:var(--bg);border-radius:5px;margin-bottom:7px;overflow:hidden}
 .kpbf{height:100%;border-radius:5px;transition:width .6s ease}
@@ -205,11 +206,11 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 .kpwt{font-size:10px;color:var(--td);margin-top:5px}
 
 /* SMART ANALYSIS */
-.smart-btn{display:inline-flex;align-items:center;gap:8px;background:var(--tl);border:none;border-radius:10px;color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;padding:10px 20px;cursor:pointer;transition:all .2s;box-shadow:0 4px 14px rgba(10,107,88,.22)}
-.smart-btn:hover{background:var(--tlb);transform:translateY(-1px)}.smart-btn:active{transform:scale(.97)}.smart-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
-.aip{background:var(--sf);border:1px solid var(--tlbr);border-radius:14px;padding:20px 24px;margin-top:1rem;display:none;box-shadow:var(--s1)}
+.smart-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-b) 100%);border:none;border-radius:11px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;padding:10px 20px;cursor:pointer;transition:all .2s;box-shadow:var(--sg);letter-spacing:.02em}
+.smart-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(192,120,0,.38)}.smart-btn:active{transform:scale(.97)}.smart-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.aip{background:linear-gradient(135deg,#FFFBF0 0%,#FFFEF9 100%);border:1px solid rgba(192,120,0,.2);border-radius:14px;padding:20px 24px;margin-top:1rem;display:none;box-shadow:0 4px 20px rgba(192,120,0,.08)}
 .aip.vis{display:block}
-.aipt{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--tl);font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px;padding-bottom:12px;border-bottom:1px solid var(--brs)}
+.aipt{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px;padding-bottom:12px;border-bottom:1px solid rgba(192,120,0,.15)}
 .aic{font-size:13.5px;color:var(--tm);line-height:1.85}
 .aib2{width:100%;height:3px;background:var(--gold-p);border-radius:3px;overflow:hidden;margin-bottom:12px}
 .aibf{height:100%;background:var(--gold);border-radius:3px;animation:ald 1.6s ease infinite}
@@ -251,10 +252,10 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 .ing{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
 .inh{background:linear-gradient(130deg,var(--navy) 0%,var(--navy-l) 100%);border-radius:12px;padding:15px 18px;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between}
 .inab{display:flex;align-items:center;gap:11px}
-.ina{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:#fff;flex-shrink:0}
-.innm{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:#fff}
+.ina{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#fff;flex-shrink:0}
+.innm{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:#fff}
 .inrl{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:2px}
-.intc{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--gold-l)}
+.intc{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold-l)}
 .intl{font-size:10px;color:rgba(255,255,255,.45);text-align:right}
 .iti{display:flex;align-items:flex-start;gap:9px;padding:9px 0;border-bottom:1px solid var(--brs)}
 .iti:last-of-type{border-bottom:none}
@@ -267,15 +268,15 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 .itdt{font-size:10px;color:var(--td);margin-top:2px}
 .itdl{background:none;border:none;color:var(--td);cursor:pointer;font-size:14px;opacity:0;transition:opacity .2s;flex-shrink:0}
 .iti:hover .itdl{opacity:1}.itdl:hover{color:var(--rs)}
-.hvb{display:inline-flex;align-items:center;gap:6px;background:var(--sf2);border:1px solid var(--br);border-radius:9px;color:var(--tm);font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;padding:7px 14px;cursor:pointer;transition:all .2s}
+.hvb{display:inline-flex;align-items:center;gap:6px;background:var(--sf2);border:1px solid var(--br);border-radius:9px;color:var(--tm);font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;padding:7px 14px;cursor:pointer;transition:all .2s}
 .hvb:hover{background:var(--navy);color:#fff;border-color:var(--navy)}.hvb:disabled{opacity:.5;cursor:not-allowed}
 
 /* SETTINGS */
 .ssl2{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:7px;display:block}
 .ssd{font-size:12.5px;color:var(--tmu);margin-bottom:9px;line-height:1.6}
-.ssi{width:100%;background:var(--sf2);border:1px solid var(--br);border-radius:var(--rx);color:var(--tx);font-family:'DM Sans',sans-serif;font-size:13px;padding:9px 13px;outline:none;transition:border-color .2s}
+.ssi{width:100%;background:var(--sf2);border:1px solid var(--br);border-radius:var(--rx);color:var(--tx);font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;padding:9px 13px;outline:none;transition:border-color .2s}
 .ssi:focus{border-color:var(--vt);box-shadow:0 0 0 3px rgba(96,48,160,.08)}
-.svb{background:var(--navy);border:none;border-radius:var(--rx);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;padding:9px 22px;cursor:pointer;margin-top:9px;transition:background .2s}
+.svb{background:var(--navy);border:none;border-radius:var(--rx);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:600;padding:9px 22px;cursor:pointer;margin-top:9px;transition:background .2s}
 .svb:hover{background:var(--navy-l)}
 .okm{display:none;font-size:12px;color:var(--teal);margin-top:7px;font-weight:600}
 .stpl{list-style:none}
@@ -312,7 +313,7 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 <header>
   <div class="hl">
     <div class="heyebrow">Operations Liaison Officer &amp; IT Support · Jibu</div>
-    <h1>Doreen's <em>Command Centre</em></h1>
+    <h1>Doreen's <em>Personal</em> Tracker</h1>
     <p class="hsub">Personal Performance Dashboard · Jibu Network</p>
   </div>
   <div class="hr">
@@ -384,8 +385,8 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 <div class="tp" id="tab-kpi">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:10px">
     <div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--navy)">KPI Performance</h2>
-      <p style="font-size:12px;color:var(--tmu);margin-top:3px">Live scores based on today's task completions</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--navy)">KPI Performance</h2>
+  
     </div>
     <button class="smart-btn" id="kpiBtn" style="font-size:12px;padding:9px 16px">◎ Smart KPI Analysis</button>
   </div>
@@ -417,7 +418,7 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 <div class="tp" id="tab-wins">
   <div class="card">
     <div class="ch"><span class="ct"><span class="ctd dg"></span>Solo wins &amp; achievements</span><span class="cc" id="wnCnt">0</span></div>
-    <p style="font-size:13px;color:var(--tmu);margin-bottom:1.2rem;line-height:1.7;background:var(--navy-s);padding:12px 16px;border-radius:10px;border-left:3px solid var(--navy)">Every project you closed, every initiative you drove — this is your visible record of impact. This is what gets you that salary increment.</p>
+
     <div class="wg" id="wnList"></div>
     <div class="ar">
       <input class="ai2" id="wnInp" placeholder="Achievement title…" style="flex:2;min-width:150px"/>
@@ -443,9 +444,7 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 
 <!-- TOOLS & SKILLS -->
 <div class="tp" id="tab-tools">
-  <div style="background:linear-gradient(130deg,var(--navy-d) 0%,var(--navy) 100%);border-radius:var(--rs2);padding:16px 20px;margin-bottom:1.25rem">
-    <div style="font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.6"><strong style="color:#fff">Quick Access Hub</strong> — all your tools one click away. Plus your growing skills portfolio below.</div>
-  </div>
+
   <div class="tgrp tg-jibu">
     <div class="tstt">Jibu Systems</div>
     <div class="tgrd">
@@ -478,10 +477,10 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
   <div style="margin-top:1.75rem;padding-top:1.5rem;border-top:2px solid var(--brs)">
     <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:8px">
       <div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--navy)">Skills Attained</h3>
-        <p style="font-size:12px;color:var(--tmu);margin-top:3px">Your growing professional toolkit — built in this role at Jibu.</p>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--navy)">Skills Attained</h3>
+    
       </div>
-      <span id="skCnt" style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--tmu)">0 skills</span>
+      <span id="skCnt" style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--tmu)">0 skills</span>
     </div>
     <div class="skgd" id="skList"></div>
     <div class="card" style="padding:1.2rem 1.5rem">
@@ -508,9 +507,6 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
 
 <!-- MY TEAM -->
 <div class="tp" id="tab-interns">
-  <div style="background:var(--sk-bg);border:1px solid var(--sk-br);border-radius:10px;padding:12px 16px;margin-bottom:1.2rem;font-size:12.5px;color:var(--sk);font-weight:500;line-height:1.6">
-    IT task delegation tracker. Use this as your leave cover reference — anyone can pick up exactly where things stand.
-  </div>
   <div class="ing">
     <div class="card" style="padding:0;overflow:hidden">
       <div class="inh">
@@ -546,9 +542,9 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
     <div class="ibox">◎ Smart Analysis works instantly with zero internet. Add a free <strong>Groq API key</strong> below to upgrade all analysis with real AI narrative — works in East Africa, completely free.</div>
     <div style="margin-bottom:1.5rem">
       <span class="ssl2">Groq AI Key — Free &amp; works in East Africa</span>
-      <div class="ssd">Get a free key from <strong>console.groq.com</strong> — no credit card, 6,000 requests/day free. Uses Llama 3.3 — excellent quality AI.</div>
+      <div class="ssd">Get a free key from <strong>console.groq.com</strong> — no credit card, 6,000 requests/day. Uses Llama 3.3.</div>
       <ol class="stpl">
-        <li class="stpi"><div class="stn">1</div><div class="stt">Go to <a href="https://console.groq.com" target="_blank">console.groq.com</a> — sign up with Google (free, no card needed)</div></li>
+        <li class="stpi"><div class="stn">1</div><div class="stt">Go to <a href="https://console.groq.com" target="_blank">console.groq.com</a> — sign up with Google (free)</div></li>
         <li class="stpi"><div class="stn">2</div><div class="stt">Click <strong>"API Keys"</strong> in the left menu → <strong>"Create API Key"</strong></div></li>
         <li class="stpi"><div class="stn">3</div><div class="stt">Copy the key (starts with <strong>gsk_…</strong>) and paste below</div></li>
         <li class="stpi"><div class="stn">4</div><div class="stt">Click Save — all analysis buttons upgrade to real AI immediately.</div></li>
@@ -557,11 +553,14 @@ header::after{content:'';position:absolute;bottom:-60px;left:20%;width:380px;hei
       <br/><button class="svb" id="svGroq">Save Groq Key</button>
       <div class="okm" id="groqOk">✓ Groq key saved! AI analysis is now live.</div>
     </div>
+    <div style="border-top:1px solid var(--brs);padding-top:1.25rem">
+      <span class="ssl2">Reset daily checklist</span>
+      <div class="ssd">Restores the original 6 daily tasks. Your history is kept.</div>
+      <button class="svb" id="resetDailyBtn" style="background:var(--rs)">Reset checklist</button>
+    </div>
   </div>
 </div>
-</div>
 
-<script>
 const K={D:'dcc_daily_v6',A:'dcc_adhoc_v6',P:'dcc_proj_v6',W:'dcc_wins_v6',DT:'dcc_date_v6',HS:'dcc_hist_v6',WK:'dcc_week_v6',GK:'dcc_gemini_key',CT:'dcc_cum_total',CR:'dcc_cum_rates',SD:'dcc_start_date',SH:'dcc_sharon_v1',AA:'dcc_aalia_v1',SK:'dcc_skills_v1'};
 const todayS=new Date().toDateString(),todayI=new Date().toISOString().slice(0,10);
 const MO=["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -691,46 +690,7 @@ function rWins(){
   el.querySelectorAll('[data-dw]').forEach(btn=>{btn.addEventListener('click',()=>{wins=wins.filter(w=>w.id!==+btn.dataset.dw);sv(K.W,wins);rAll()})});
 }
 
-
-function calcStreak(){
-  let s=0;const d=new Date();
-  for(let i=0;i<60;i++){const ds=new Date(d);ds.setDate(d.getDate()-i);const key=ds.toDateString();
-  if(key===todayS){const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;if(dn>0)s++;continue;}
-  if(wkData[key]&&wkData[key].pct>=50)s++;else if(i>0)break;}return s;
-}
-function getWorstKpi(){
-  const data=KPIS.filter(k=>k.w>0);
-  const covered=new Set();hist.filter(h=>{return(new Date()-new Date(h.iso))<7*86400000}).forEach(h=>(h.kpis||[]).forEach(k=>covered.add(k)));
-  return data.find(k=>!covered.has(k.id))||null;
-}
-function rInsights(){
-  const allDays=Object.values(wkData).filter(d=>d.total>0);if(!allDays.length){const el=document.getElementById('insGrid');if(el)el.innerHTML='';return}
-  const pcts=allDays.map(d=>d.pct);const avg=Math.round(pcts.reduce((a,b)=>a+b,0)/pcts.length);
-  const streak=calcStreak();const worst=getWorstKpi();
-  const sdt=ld(K.SD,todayI);const dayC=Math.max(1,Math.round((new Date(todayI+'T00:00:00')-new Date(sdt+'T00:00:00'))/86400000)+1);
-  const trendDays=Object.entries(wkData).sort((a,b)=>new Date(b[0])-new Date(a[0])).slice(0,7);
-  const recentAvg=trendDays.length?Math.round(trendDays.reduce((a,b)=>a+b[1].pct,0)/trendDays.length):avg;
-  const trend=recentAvg>avg+5?'↑ Up vs all-time avg':recentAvg<avg-5?'↓ Down vs all-time avg':'→ Steady';
-  const el=document.getElementById('insGrid');if(!el)return;
-  el.innerHTML=`
-    <div class="ins-c"><div class="ins-lbl">All-time Avg.</div><div class="ins-val">${avg}%</div><div class="ins-sub">${avg>=80?'Above 80% benchmark — high performance':avg>=60?'Solid — push toward 80% daily':'Building your track record'}</div></div>
-    <div class="ins-c"><div class="ins-lbl">Day Streak</div><div class="ins-val">${streak}d</div><div class="ins-sub">${streak>=5?'Excellent consistency':streak>=3?'Good streak — keep going':streak>=1?'Building':'Log tasks daily to build streak'}</div></div>
-    <div class="ins-c"><div class="ins-lbl">Recent Trend</div><div class="ins-val" style="font-size:1.5rem">${trend.split(' ')[0]}</div><div class="ins-sub">${trend.substring(2)}</div></div>
-    <div class="ins-c"><div class="ins-lbl">Days Tracked</div><div class="ins-val">${dayC}</div><div class="ins-sub">Every day tracked is data in your favour</div></div>
-    ${worst?`<div class="ins-c"><div class="ins-lbl">KPI Gap (7 days)</div><div class="ins-val" style="font-size:1.3rem;color:var(--amber)">KPI ${worst.id}</div><div class="ins-sub">${worst.area} — ${worst.w}% weight, no tasks linked in 7 days</div></div>`:''}
-  `;
-}
-function autoEarnSkills(){
-  const activeAreas=new Set();
-  daily.filter(t=>t.done).forEach(t=>(t.kpis||[]).forEach(kid=>{const k=KPIS.find(x=>x.id===kid);if(k)activeAreas.add(k.area)}));
-  adhoc.filter(t=>t.done&&t.kpi).forEach(t=>{const k=KPIS.find(x=>x.id===t.kpi);if(k)activeAreas.add(k.area)});
-  const existing=skills.map(s=>s.name.toLowerCase());let added=false;
-  activeAreas.forEach(area=>{const sk=KPI_SKILL_MAP[area];if(sk&&!existing.some(n=>n.includes(sk.name.toLowerCase().slice(0,15)))){skills.push({id:Date.now()+Math.random(),name:sk.name,note:sk.note,cat:sk.cat,lv:'proficient',ao:todayI,auto:true});added=true}});
-  if(added)sv(K.SK,skills);
-}
-
 function rWeekly(){
-  rInsights();
   const td2=new Date();const mon=new Date(td2);mon.setDate(td2.getDate()-((td2.getDay()+6)%7));
   const days=Array.from({length:7},(_,i)=>{const d=new Date(mon);d.setDate(mon.getDate()+i);return d});
   document.getElementById('wRng').textContent=days[0].getDate()+' '+MO[days[0].getMonth()].slice(0,3)+' – '+days[6].getDate()+' '+MO[days[6].getMonth()].slice(0,3);
@@ -811,7 +771,7 @@ function rSkillSuggestions(){
   let el=document.getElementById('skSugg');
   if(!el){el=document.createElement('div');el.id='skSugg';el.style.cssText='margin-bottom:12px';const container=document.getElementById('skList')?.parentElement;if(container)container.insertBefore(el,document.getElementById('skList'));}
   if(!sug.length){el.innerHTML='';return}
-  el.innerHTML=`<div style="margin-bottom:10px"><div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px">◎ Suggested from your active KPIs today</div><div style="display:flex;flex-wrap:wrap;gap:7px">${sug.map(s=>`<button onclick="addSugSkill(${JSON.stringify(s).replace(/"/g,'&quot;')})" style="background:var(--gold-p);border:1px solid var(--gold-br);border-radius:9px;color:var(--gold);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;padding:6px 13px;cursor:pointer;transition:all .2s" onmouseover="this.style.background='var(--gold)';this.style.color='#fff'" onmouseout="this.style.background='var(--gold-p)';this.style.color='var(--gold)'">+ ${s.name}</button>`).join('')}</div></div>`;
+  el.innerHTML=`<div style="margin-bottom:10px"><div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px">◎ Suggested from your active KPIs today</div><div style="display:flex;flex-wrap:wrap;gap:7px">${sug.map(s=>`<button onclick="addSugSkill(${JSON.stringify(s).replace(/"/g,'&quot;')})" style="background:var(--gold-p);border:1px solid var(--gold-br);border-radius:9px;color:var(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:600;padding:6px 13px;cursor:pointer;transition:all .2s" onmouseover="this.style.background='var(--gold)';this.style.color='#fff'" onmouseout="this.style.background='var(--gold-p)';this.style.color='var(--gold)'">+ ${s.name}</button>`).join('')}</div></div>`;
 }
 function addSugSkill(s){skills.push({id:Date.now(),name:s.name,note:s.note,cat:s.cat,lv:'proficient',ao:todayI,auto:true});sv(K.SK,skills);rSkills()}
 window.addSugSkill=addSugSkill;
@@ -840,16 +800,16 @@ document.getElementById('prBtn').addEventListener('click',addProj);document.getE
 function addWin(){const t=document.getElementById('wnInp').value.trim();if(!t)return;const n=document.getElementById('wnNote').value.trim();wins.push({id:Date.now(),title:t,note:n,ao:todayI});sv(K.W,wins);document.getElementById('wnInp').value='';document.getElementById('wnNote').value='';rAll()}
 document.getElementById('wnBtn').addEventListener('click',addWin);document.getElementById('wnInp').addEventListener('keydown',e=>{if(e.key==='Enter')addWin()});
 
-// SETTINGS - Groq key
-const gk=ld('dcc_groq_key','');if(gk&&document.getElementById('groqInp'))document.getElementById('groqInp').value=gk;
-const svgb=document.getElementById('svGroq');if(svgb)svgb.addEventListener('click',()=>{sv('dcc_groq_key',document.getElementById('groqInp').value.trim());const ok=document.getElementById('groqOk');if(ok){ok.style.display='block';setTimeout(()=>ok.style.display='none',3500)}});
+// SETTINGS
+const sk2=ld(K.GK,'');if(sk2)document.getElementById('apiInp').value=sk2;
+document.getElementById('svKey').addEventListener('click',()=>{sv(K.GK,document.getElementById('apiInp').value.trim());const ok=document.getElementById('keyOk');ok.style.display='block';setTimeout(()=>ok.style.display='none',3500)});
 
 // ══ SMART ANALYSIS ENGINE — renders beautiful HTML sections ══
 const S={
   sec:(title,color,items)=>`<div style="margin-bottom:18px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:${color};margin-bottom:10px;display:flex;align-items:center;gap:7px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${color};flex-shrink:0"></span>${title}</div><div style="display:flex;flex-direction:column;gap:6px">${items}</div></div>`,
   item:(txt,col)=>`<div style="font-size:13px;color:#243860;line-height:1.6;padding:8px 12px;background:${col||'#F8FAFF'};border-radius:8px;border-left:3px solid rgba(0,0,0,.08)">${txt}</div>`,
   badge:(txt,bg,clr)=>`<span style="display:inline-flex;align-items:center;font-size:11px;padding:3px 10px;border-radius:10px;font-weight:600;background:${bg};color:${clr};margin:2px 3px 2px 0">${txt}</span>`,
-  krow:(k,s,c)=>`<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:${s===null?'#F8FAFF':s>=80?'#E8F5EE':s>=50?'#FEF5E0':'#FCEEF1'};border-radius:8px;border-left:3px solid ${s===null?'#D4DCF0':s>=80?'#1A7840':s>=50?'#C07800':'#B81C38'};margin-bottom:5px"><div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:${c};margin-bottom:1px">KPI ${k.id} · ${k.area}</div><div style="font-size:12px;color:#243860">${k.name}</div></div><div style="text-align:right;flex-shrink:0;margin-left:12px"><div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:${s===null?'#9AAACE':s>=80?'#1A7840':s>=50?'#C07800':'#B81C38'}">${s===null?'—':s+'%'}</div><div style="font-size:10px;color:#9AAACE">target: ${k.tgt}</div></div></div>`,
+  krow:(k,s,c)=>`<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:${s===null?'#F8FAFF':s>=80?'#E8F5EE':s>=50?'#FEF5E0':'#FCEEF1'};border-radius:8px;border-left:3px solid ${s===null?'#D4DCF0':s>=80?'#1A7840':s>=50?'#C07800':'#B81C38'};margin-bottom:5px"><div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:${c};margin-bottom:1px">KPI ${k.id} · ${k.area}</div><div style="font-size:12px;color:#243860">${k.name}</div></div><div style="text-align:right;flex-shrink:0;margin-left:12px"><div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:${s===null?'#9AAACE':s>=80?'#1A7840':s>=50?'#C07800':'#B81C38'}">${s===null?'—':s+'%'}</div><div style="font-size:10px;color:#9AAACE">target: ${k.tgt}</div></div></div>`,
 };
 
 function smartDay(){
@@ -865,7 +825,7 @@ function smartDay(){
   const statusBg=pct===100?'#E8F5EE':pct>=80?'#E8F5EE':pct>=50?'#FEF5E0':'#FCEEF1';
   const statusMsg=pct===100?'Perfect — every task closed today ✓':pct>=80?`Strong day — ${dn} of ${tot} tasks done`:pct>=50?`${dn} of ${tot} done — push for the remaining ${tot-dn}`:dn===0?'No tasks completed yet — start with the checklist':`${dn} of ${tot} done — needs attention before close`;
 
-  let h=`<div style="padding:12px 16px;background:${statusBg};border-radius:10px;border-left:4px solid ${statusClr};margin-bottom:20px"><div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:${statusClr}">${pct}%</div><div style="font-size:13px;color:#243860;margin-top:2px">${statusMsg}</div></div>`;
+  let h=`<div style="padding:12px 16px;background:${statusBg};border-radius:10px;border-left:4px solid ${statusClr};margin-bottom:20px"><div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:${statusClr}">${pct}%</div><div style="font-size:13px;color:#243860;margin-top:2px">${statusMsg}</div></div>`;
 
   if(strong.length){h+=S.sec('KPIs Well Supported','#1A7840',strong.slice(0,3).map(k=>S.item(`<strong>KPI ${k.id}</strong> · ${k.area} — ${kSc(k.id)}% completion&nbsp;&nbsp;<span style="color:#1A7840;font-weight:600">✓ ${k.tgt} target</span>`,'#E8F5EE')).join(''))}
 
@@ -886,10 +846,10 @@ function smartKpi(){
   const KC2={gold:'var(--gold)',teal:'var(--teal)',rose:'var(--rs)',violet:'var(--vt)',navy:'var(--navy)',indigo:'var(--in)',amber:'var(--am)',green:'var(--gn)'};
 
   let h=`<div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap">`;
-  if(ws!==null)h+=`<div style="flex:1;min-width:120px;background:linear-gradient(135deg,var(--gold),var(--gold-b));border-radius:12px;padding:14px 16px;box-shadow:var(--sg)"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:3px;font-weight:700">Weighted Score</div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:#fff">${ws}%</div></div>`;
-  h+=`<div style="flex:1;min-width:120px;background:var(--sf);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">Active KPIs</div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--navy)">${scored.length}/${weighted.length}</div></div>`;
+  if(ws!==null)h+=`<div style="flex:1;min-width:120px;background:linear-gradient(135deg,var(--gold),var(--gold-b));border-radius:12px;padding:14px 16px;box-shadow:var(--sg)"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:3px;font-weight:700">Weighted Score</div><div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#fff">${ws}%</div></div>`;
+  h+=`<div style="flex:1;min-width:120px;background:var(--sf);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">Active KPIs</div><div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--navy)">${scored.length}/${weighted.length}</div></div>`;
   const strong2=weighted.filter(k=>kSc(k.id)!==null&&kSc(k.id)>=80).length;
-  h+=`<div style="flex:1;min-width:120px;background:var(--sf);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">On Target</div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--gn)">${strong2}</div></div>`;
+  h+=`<div style="flex:1;min-width:120px;background:var(--sf);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">On Target</div><div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gn)">${strong2}</div></div>`;
   h+=`</div>`;
   h+=`<div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--tmu);margin-bottom:12px">All 14 KPIs</div>`;
   KPIS.forEach(k=>h+=S.krow(k,kSc(k.id),KC2[k.c]||'var(--navy)'));
@@ -904,9 +864,9 @@ function smartJourney(){
   const sdt=ld(K.SD,todayI);const dayC=Math.max(1,Math.round((new Date(todayI+'T00:00:00')-new Date(sdt+'T00:00:00'))/86400000)+1);
 
   let h=`<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px">`;
-  h+=`<div style="background:linear-gradient(135deg,var(--gold),var(--gold-b));border-radius:12px;padding:14px 16px;box-shadow:var(--sg)"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:3px;font-weight:700">Days Tracked</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:#fff">${dayC}</div></div>`;
-  h+=`<div style="background:var(--navy);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:3px;font-weight:700">Total Tasks</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:#fff">${allTot}</div></div>`;
-  h+=`<div style="background:var(--sf);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">Avg. Rate</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:${avg>=80?'var(--gn)':avg>=60?'var(--gold)':'var(--rs)'}">${avg}%</div></div>`;
+  h+=`<div style="background:linear-gradient(135deg,var(--gold),var(--gold-b));border-radius:12px;padding:14px 16px;box-shadow:var(--sg)"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:3px;font-weight:700">Days Tracked</div><div style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:#fff">${dayC}</div></div>`;
+  h+=`<div style="background:var(--navy);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:3px;font-weight:700">Total Tasks</div><div style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:#fff">${allTot}</div></div>`;
+  h+=`<div style="background:var(--sf);border:1px solid var(--br);border-radius:12px;padding:14px 16px"><div style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--tmu);margin-bottom:3px;font-weight:700">Avg. Rate</div><div style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:${avg>=80?'var(--gn)':avg>=60?'var(--gold)':'var(--rs)'}">${avg}%</div></div>`;
   h+=`</div>`;
 
   const msg=avg>=80?`You are performing above 80% consistently — that is the standard of a high-impact professional. ${allTot} tasks is not a small number. Each one is a data point in your case for advancement.`:avg>=60?`At ${avg}% average over ${dayC} days, you are building a solid record. Pushing toward 80% daily will significantly strengthen your case.`:`Every day you track counts. You are building your evidence file. Consistency over time creates a compelling argument for advancement.`;
@@ -921,9 +881,9 @@ function smartJourney(){
 function smartHandover(name,tasks){
   const pend=tasks.filter(t=>(t.status||'pending')==='pending');const prog=tasks.filter(t=>t.status==='in-progress');const done2=tasks.filter(t=>t.status==='done');
   let h=`<div style="display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap">`;
-  h+=`<div style="flex:1;min-width:80px;background:var(--am-bg);border:1px solid var(--am-br);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--am)">${pend.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--am);font-weight:700">Pending</div></div>`;
-  h+=`<div style="flex:1;min-width:80px;background:var(--navy-s);border:1px solid rgba(14,31,64,.12);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--navy)">${prog.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);font-weight:700">In Progress</div></div>`;
-  h+=`<div style="flex:1;min-width:80px;background:var(--teal-bg);border:1px solid var(--teal-br);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--teal)">${done2.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);font-weight:700">Done</div></div>`;
+  h+=`<div style="flex:1;min-width:80px;background:var(--am-bg);border:1px solid var(--am-br);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--am)">${pend.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--am);font-weight:700">Pending</div></div>`;
+  h+=`<div style="flex:1;min-width:80px;background:var(--navy-s);border:1px solid rgba(14,31,64,.12);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--navy)">${prog.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);font-weight:700">In Progress</div></div>`;
+  h+=`<div style="flex:1;min-width:80px;background:var(--teal-bg);border:1px solid var(--teal-br);border-radius:10px;padding:12px 14px;text-align:center"><div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--teal)">${done2.length}</div><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);font-weight:700">Done</div></div>`;
   h+=`</div>`;
   if(!tasks.length){h+=`<div style="padding:14px;background:var(--sf2);border-radius:10px;font-size:13px;color:var(--tmu);text-align:center;font-style:italic">No tasks currently assigned to ${name}.</div>`;return h}
   if(prog.length){h+=S.sec('In Progress — Needs Immediate Handover','var(--rs)',prog.map(t=>S.item(t.text,'var(--rs-bg)')).join(''))}
@@ -1008,72 +968,63 @@ function buildHvP(name,tasks){const p=tasks.filter(t=>(t.status||'pending')==='p
 
 // WIRE BUTTONS
 document.getElementById('dayBtn').addEventListener('click',()=>{const el=document.getElementById('dayCnt');const pnl=document.getElementById('dayPnl');el.innerHTML=smartDay();pnl.classList.add('vis')});
-document.getElementById('kpiBtn').addEventListener('click',()=>{const el=document.getElementById('kpiCnt');const pnl=document.getElementById('kpiPnl');const lb=document.getElementById('kpiLbar');el.innerHTML=smartKpi();pnl.classList.add('vis');smartUpgrade(el,lb,'You are a KPI advisor for Doreen at Jibu.',kUserP)});
-document.getElementById('cAiBtn').addEventListener('click',()=>{const el=document.getElementById('cAiTx');el.innerHTML=smartJourney();document.getElementById('cAiBtn').textContent='◎ Refresh';smartUpgrade(el,null,'You are a career mentor for Doreen at Jibu.',jUserP)});
+document.getElementById('kpiBtn').addEventListener('click',()=>{const el=document.getElementById('kpiCnt');const pnl=document.getElementById('kpiPnl');el.innerHTML=smartKpi();pnl.classList.add('vis')});
+document.getElementById('cAiBtn').addEventListener('click',()=>{document.getElementById('cAiTx').innerHTML=smartJourney();document.getElementById('cAiBtn').textContent='◎ Refresh reflection'});
 document.getElementById('shHv').addEventListener('click',()=>{const el=document.getElementById('shCt');const pnl=document.getElementById('shPnl');el.innerHTML=smartHandover('Sharon',sharon);pnl.classList.add('vis')});
 document.getElementById('aaHv').addEventListener('click',()=>{const el=document.getElementById('aaCt');const pnl=document.getElementById('aaPnl');el.innerHTML=smartHandover('Aalia',aalia);pnl.classList.add('vis')});
 
-// ══ GROQ AI — Free, works in East Africa ══
-async function callGroq(sy,up){
-  const k=ld('dcc_groq_key','');if(!k)return null;
-  try{
-    const r=await fetch('https://api.groq.com/openai/v1/chat/completions',{
-      method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+k},
-      body:JSON.stringify({model:'llama-3.3-70b-versatile',messages:[{role:'system',content:sy},{role:'user',content:up}],max_tokens:600,temperature:0.7})
-    });
-    const d=await r.json();if(d.error)return null;return d.choices?.[0]?.message?.content||null;
-  }catch{return null}
+// ══ PATTERN INSIGHTS ══
+function calcStreak(){let s=0;const d=new Date();for(let i=0;i<60;i++){const ds=new Date(d);ds.setDate(d.getDate()-i);const key=ds.toDateString();if(key===todayS){const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;if(dn>0)s++;continue;}if(wkData[key]&&wkData[key].pct>=50)s++;else if(i>0)break;}return s;}
+function getWorstKpi(){const data=KPIS.filter(k=>k.w>0);const covered=new Set();hist.filter(h=>(new Date()-new Date(h.iso))<7*86400000).forEach(h=>(h.kpis||[]).forEach(k=>covered.add(k)));return data.find(k=>!covered.has(k.id))||null;}
+function rInsights(){
+  const allDays=Object.values(wkData).filter(d=>d.total>0);const el=document.getElementById('insGrid');
+  if(!allDays.length){if(el)el.innerHTML='';return}
+  const pcts=allDays.map(d=>d.pct);const avg=Math.round(pcts.reduce((a,b)=>a+b,0)/pcts.length);
+  const streak=calcStreak();const worst=getWorstKpi();
+  const sdt=ld(K.SD,todayI);const dayC=Math.max(1,Math.round((new Date(todayI+'T00:00:00')-new Date(sdt+'T00:00:00'))/86400000)+1);
+  const trendDays=Object.entries(wkData).sort((a,b)=>new Date(b[0])-new Date(a[0])).slice(0,7);
+  const recentAvg=trendDays.length?Math.round(trendDays.reduce((a,b)=>a+b[1].pct,0)/trendDays.length):avg;
+  const trend=recentAvg>avg+5?'↑ Up vs all-time avg':recentAvg<avg-5?'↓ Down vs all-time avg':'→ Steady';
+  if(el)el.innerHTML=`<div class="ins-c"><div class="ins-lbl">All-time Avg.</div><div class="ins-val">${avg}%</div><div class="ins-sub">${avg>=80?'Above 80% — high performance':avg>=60?'Solid — push toward 80%':'Building your track record'}</div></div><div class="ins-c"><div class="ins-lbl">Day Streak</div><div class="ins-val">${streak}d</div><div class="ins-sub">${streak>=5?'Excellent consistency':streak>=3?'Good streak':streak>=1?'Building':'Log tasks daily'}</div></div><div class="ins-c"><div class="ins-lbl">Recent Trend</div><div class="ins-val" style="font-size:1.5rem">${trend.split(' ')[0]}</div><div class="ins-sub">${trend.substring(2)}</div></div><div class="ins-c"><div class="ins-lbl">Days Tracked</div><div class="ins-val">${dayC}</div><div class="ins-sub">Every day tracked is data in your favour</div></div>${worst?`<div class="ins-c"><div class="ins-lbl">KPI Gap (7 days)</div><div class="ins-val" style="font-size:1.3rem;color:var(--am)">KPI ${worst.id}</div><div class="ins-sub">${worst.area} — ${worst.w}% weight, no tasks in 7 days</div></div>`:''}`;
 }
+const KPI_SKILL_MAP={'Executive Support':{name:'Executive Support & COO Liaison',note:'Action tracking, meeting prep, pre-reads',cat:'ops'},'Country Coordination':{name:'Country Coordination',note:'Managing deliverables across country managers',cat:'lead'},'Issue Management':{name:'Escalation Management',note:'Issue identification and resolution',cat:'ops'},'POS ToTs':{name:'POS Training Coordination',note:'Training planning and execution',cat:'lead'},'Projects':{name:'Strategic Project Management',note:'Milestone tracking, initiative follow-through',cat:'lead'},'Reporting':{name:'Dashboard & Reporting',note:'Data health checks, accuracy validation',cat:'data'},'POS Product':{name:'Voice-of-Customer Research',note:'Franchise feedback and VOC coverage',cat:'ops'},'POS Delivery':{name:'Developer Delivery Management',note:'Sprint tracking, release follow-up',cat:'tech'},'POS Support':{name:'POS Technical Support',note:'Helpdesk oversight, SLA compliance',cat:'tech'},'POS Adoption':{name:'POS Adoption Tracking',note:'Franchise usage monitoring',cat:'data'},'POS Quality':{name:'POS Quality Assurance',note:'Repeat-issue monitoring',cat:'tech'}};
+function autoEarnSkills(){const activeAreas=new Set();daily.filter(t=>t.done).forEach(t=>(t.kpis||[]).forEach(kid=>{const k=KPIS.find(x=>x.id===kid);if(k)activeAreas.add(k.area)}));adhoc.filter(t=>t.done&&t.kpi).forEach(t=>{const k=KPIS.find(x=>x.id===t.kpi);if(k)activeAreas.add(k.area)});const existing=skills.map(s=>s.name.toLowerCase());let added=false;activeAreas.forEach(area=>{const sk=KPI_SKILL_MAP[area];if(sk&&!existing.some(n=>n.includes(sk.name.toLowerCase().slice(0,15)))){skills.push({id:Date.now()+Math.random(),name:sk.name,note:sk.note,cat:sk.cat,lv:'proficient',ao:todayI,auto:true});added=true}});if(added)sv(K.SK,skills);}
+
+// ══ GROQ AI ══
+async function callGroq(sy,up){const k=ld('dcc_groq_key','');if(!k)return null;try{const r=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+k},body:JSON.stringify({model:'llama-3.3-70b-versatile',messages:[{role:'system',content:sy},{role:'user',content:up}],max_tokens:600,temperature:0.7})});const d=await r.json();if(d.error)return null;return d.choices?.[0]?.message?.content||null}catch{return null}}
 function dSys(){return'You are a performance coach for Doreen, Operations Liaison Officer & IT Support at Jibu (water franchise, Africa). Be direct, warm, practical.'}
-function dUsr(){
-  const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;const tot=daily.length+adhoc.length;const pct=tot?Math.round(dn/tot*100):0;
-  const kl=KPIS.filter(k=>k.w>0).map(k=>'KPI '+k.id+' ('+k.area+', '+k.w+'%): '+(kSc(k.id)===null?'no tasks':kSc(k.id)+'%')+', target '+k.tgt).join('; ');
-  return DY[now.getDay()]+' '+now.getDate()+' '+MO[now.getMonth()]+'. Completion: '+pct+'% ('+dn+'/'+tot+'). KPIs: '+kl+'. Pending: '+(daily.filter(t=>!t.done).map(t=>t.text).join(', ')||'none')+'. Wins: '+wins.length+'. Write 3-4 para analysis: KPI performance, what needs attention, one strength, one tip for tomorrow.';
-}
+function dUsr(){const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;const tot=daily.length+adhoc.length;const pct=tot?Math.round(dn/tot*100):0;const kl=KPIS.filter(k=>k.w>0).map(k=>'KPI '+k.id+' ('+k.area+', '+k.w+'%): '+(kSc(k.id)===null?'no tasks':kSc(k.id)+'%')+', target '+k.tgt).join('; ');return DY[now.getDay()]+' '+now.getDate()+' '+MO[now.getMonth()]+'. Completion: '+pct+'% ('+dn+'/'+tot+'). KPIs: '+kl+'. Pending: '+(daily.filter(t=>!t.done).map(t=>t.text).join(', ')||'none')+'. Write 3-4 para analysis: KPI performance, what needs attention, one strength, one tip for tomorrow.';}
 function kUsr(){return'KPI status: '+KPIS.map(k=>'KPI '+k.id+' '+k.area+' '+(kSc(k.id)===null?'no tasks':kSc(k.id)+'%')+' target '+k.tgt+' weight '+k.w+'%').join('; ')+'. Under 250 words: top 3 KPIs, 2-3 gaps, one recommendation, one COO-ready line.';}
-function jUsr(){
-  const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;const tot=daily.length+adhoc.length;const allTot=cumT+dn;const allR=[...cumR,...(tot>0?[tot?Math.round(dn/tot*100):0]:[])];const avg=allR.length?Math.round(allR.reduce((a,b)=>a+b,0)/allR.length):0;const sdt=ld(K.SD,todayI);const dayC=Math.max(1,Math.round((new Date(todayI+'T00:00:00')-new Date(sdt+'T00:00:00'))/86400000)+1);
-  return dayC+' days, '+allTot+' tasks, '+avg+'% avg, '+wins.length+' achievements. 2-3 paras: discipline shown, what to be proud of, salary review advice. End with one memorable line.';
-}
-function aiWrap(t){return'<div style="margin-bottom:10px;padding:4px 9px;background:var(--tlp);border-radius:5px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tl);font-weight:700;display:inline-block">❖ Groq AI · Llama 3.3</div><div style="font-size:13.5px;color:var(--tm);line-height:1.85;white-space:pre-wrap">'+t+'</div>';}
-async function upgrade(el,lb,sy,uFn){
-  const k=ld('dcc_groq_key','');if(!k)return;
-  if(lb)lb.style.display='block';
-  const r=await callGroq(sy,uFn());
-  if(lb)lb.style.display='none';
-  if(r)el.innerHTML=aiWrap(r);
-}
+function jUsr(){const dn=daily.filter(t=>t.done).length+adhoc.filter(t=>t.done).length;const tot=daily.length+adhoc.length;const allTot=cumT+dn;const allR=[...cumR,...(tot>0?[tot?Math.round(dn/tot*100):0]:[])];const avg=allR.length?Math.round(allR.reduce((a,b)=>a+b,0)/allR.length):0;const sdt=ld(K.SD,todayI);const dayC=Math.max(1,Math.round((new Date(todayI+'T00:00:00')-new Date(sdt+'T00:00:00'))/86400000)+1);return dayC+' days, '+allTot+' tasks, '+avg+'% avg, '+wins.length+' achievements. 2-3 paras: discipline shown, what to be proud of, salary review advice. End with one memorable line.';}
+function aiWrap(t){return'<div style="margin-bottom:10px;padding:4px 9px;background:var(--teal-bg);border-radius:5px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:700;display:inline-block">❖ Groq AI · Llama 3.3</div><div style="font-size:13.5px;color:var(--tm);line-height:1.85;white-space:pre-wrap">'+t+'</div>';}
+async function groqUpgrade(el,sy,uFn){const k=ld('dcc_groq_key','');if(!k)return;const r=await callGroq(sy,uFn());if(r)el.innerHTML=aiWrap(r);}
 
-// ══ LOADING BAR CSS (dynamic) ══
-(function(){const s=document.createElement('style');s.textContent='.ai-loading-bar{height:3px;background:var(--tlp);border-radius:3px;overflow:hidden;margin-bottom:12px}.ai-lbf{height:100%;background:var(--tl);border-radius:3px;animation:aild 1.6s ease infinite}@keyframes aild{0%{width:0%;margin-left:0}50%{width:55%;margin-left:22%}100%{width:0%;margin-left:100%}}';document.head.appendChild(s)})();
-
-// ══ ADD LOADING BARS TO PANELS ══
-(function(){
-  const dp=document.getElementById('dayPnl');const kp=document.getElementById('kpiPnl');
-  function addLbar(panel,id){if(!panel||document.getElementById(id))return;const b=document.createElement('div');b.className='ai-loading-bar';b.id=id;b.style.display='none';b.innerHTML='<div class="ai-lbf"></div>';const pt=panel.querySelector('.aipt');if(pt)pt.after(b);else panel.prepend(b);}
-  addLbar(dp,'dayLbar');addLbar(kp,'kpiLbar');
-})();
+// ══ LOADING BAR CSS ══
+(function(){const s=document.createElement('style');s.textContent='.ins-grd{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:1.25rem}.ins-c{background:var(--sf);border:1px solid var(--br);border-radius:13px;padding:14px 16px;box-shadow:var(--s1);position:relative;overflow:hidden}.ins-c::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--teal-l))}.ins-lbl{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:5px}.ins-val{font-family:"Cormorant Garamond",serif;font-size:2rem;font-weight:700;color:var(--navy);line-height:1;margin-bottom:3px}.ins-sub{font-size:12px;color:var(--tmu);line-height:1.45}.ai-loading-bar{height:3px;background:var(--gold-p);border-radius:3px;overflow:hidden;margin-bottom:12px}.ai-lbf{height:100%;background:var(--gold);border-radius:3px;animation:aild 1.6s ease infinite}@keyframes aild{0%{width:0%;margin-left:0}50%{width:55%;margin-left:22%}100%{width:0%;margin-left:100%}}';document.head.appendChild(s)})();
 
 // ══ GROQ SETTINGS ══
+(function(){const gi=document.getElementById('groqInp');const gb=document.getElementById('svGroq');const go=document.getElementById('groqOk');const rb=document.getElementById('resetDailyBtn');if(gi){const k=ld('dcc_groq_key','');if(k)gi.value=k;}if(gb)gb.addEventListener('click',function(){sv('dcc_groq_key',document.getElementById('groqInp').value.trim());if(go){go.style.display='block';setTimeout(()=>go.style.display='none',3500);}});if(rb)rb.addEventListener('click',()=>{if(confirm('Reset checklist to original 6 tasks?')){sv(K.D,DEF_D.map(t=>({...t,done:false,ca:null})));daily=ld(K.D,DEF_D);rAll();}});})();
+
+// ══ UPGRADE ANALYSIS BUTTONS WITH GROQ ══
 (function(){
-  const gi=document.getElementById('groqInp');const gb=document.getElementById('svGroq');const go=document.getElementById('groqOk');
-  if(gi){const k=ld('dcc_groq_key','');if(k)gi.value=k;}
-  if(gb)gb.addEventListener('click',function(){sv('dcc_groq_key',document.getElementById('groqInp').value.trim());if(go){go.style.display='block';setTimeout(function(){go.style.display='none'},3500);}});
+  setTimeout(()=>{
+    const db=document.getElementById('dayBtn');const cb=document.getElementById('cAiBtn');
+    if(db)db.addEventListener('click',()=>{setTimeout(()=>{const el=document.getElementById('dayCnt');if(el)groqUpgrade(el,dSys(),dUsr);},80);});
+    if(cb)cb.addEventListener('click',()=>{setTimeout(()=>{const el=document.getElementById('cAiTx');if(el)groqUpgrade(el,'You are a career mentor for Doreen at Jibu.',jUsr);},80);});
+  },100);
 })();
 
-// ══ UPGRADE EXISTING BUTTON WIRES ══
-(function(){
-  const db=document.getElementById('dayBtn');const kb=document.getElementById('kpiBtn');const cb=document.getElementById('cAiBtn');
-  if(db){const orig=db.onclick;db.addEventListener('click',function(){
-    setTimeout(function(){const el=document.getElementById('dayCnt');const lb=document.getElementById('dayLbar');if(el)upgrade(el,lb,dSys(),dUsr);},50);
-  });}
-  if(kb){kb.addEventListener('click',function(){
-    setTimeout(function(){const el=document.getElementById('kpiCnt');const lb=document.getElementById('kpiLbar');if(el)upgrade(el,lb,'You are a KPI advisor for Doreen at Jibu.',kUsr);},50);
-  });}
-  if(cb){cb.addEventListener('click',function(){
-    setTimeout(function(){const el=document.getElementById('cAiTx');if(el)upgrade(el,null,'You are a career mentor for Doreen at Jibu.',jUsr);},50);
-  });}
-})();
+// ══ WEEKLY — add insights ══
+const _rW=rWeekly;
+rWeekly=function(){
+  _rW();
+  // add insights grid if not present
+  const tab=document.getElementById('tab-weekly');
+  if(!tab)return;
+  let ig=document.getElementById('insGrid');
+  if(!ig){ig=document.createElement('div');ig.id='insGrid';ig.className='ins-grd';tab.insertBefore(ig,tab.firstChild);}
+  rInsights();
+};
 
 rAll();
 </script>
